@@ -21,6 +21,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 PHONE_DISPLAY = "(305) 404-6659"
 PHONE_HREF = "+13054046659"
+# The practice's real online scheduler — the same one the main website books through.
+# With the hero form removed, every "book" CTA points here.
+BOOK_URL = "https://book.modento.io/everything-teeth"
+BOOK = f'href="{BOOK_URL}" target="_blank" rel="noopener noreferrer"'
+VIDEO_SRC = "assets/video/Everything-Teeth.webm"
+VIDEO_POSTER = "assets/img/img-Everything-Teeth-video-thumb.webp"
 ADDRESS = "12819 SW 42nd St, Miami, FL 33175"
 MAPS_URL = "https://maps.app.goo.gl/DFFwzWagf9iXXnX58"
 MAP_EMBED = "https://www.google.com/maps?q=12819+SW+42nd+St,+Miami,+FL+33175&output=embed"
@@ -83,6 +89,11 @@ ICONS = {
                  ' 88c0-8.8 7.2-16 16-16l32 0c8.8 0 16 7.2 16 16l0 40 40 0c8.8 0 16 7.2 16 16l0 32c0 8.8-7.2'
                  ' 16-16 16l-40 0 0 40c0 8.8-7.2 16-16 16l-32 0c-8.8 0-16-7.2-16-16l0-40-40 0c-8.8 0-16-7.2-16-16l0-32c0-8.8'
                  ' 7.2-16 16-16l40 0 0-40z'),
+    "play": ('0 0 384 512', 'M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7'
+             ' 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z'),
+    "pause": ('0 0 320 512', 'M48 64C21.5 64 0 85.5 0 112L0 400c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5'
+              ' 48-48l0-288c0-26.5-21.5-48-48-48L48 64zm192 0c-26.5 0-48 21.5-48 48l0 288c0 26.5 21.5 48 48'
+              ' 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48l-32 0z'),
     "drop": ('0 0 384 512', 'M192 512C86 512 0 426 0 320C0 228.8 130.2 57.7 166.6 11.7C172.6 4.2 181.5 0 191.1 0l1.8'
              ' 0c9.6 0 18.5 4.2 24.5 11.7C253.8 57.7 384 228.8 384 320c0 106-86 192-192 192zM96 336c0-8.8-7.2-16-16-16'
              's-16 7.2-16 16c0 61.9 50.1 112 112 112c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80-35.8-80-80z'),
@@ -144,63 +155,49 @@ def header(t) -> str:
         <strong>{PHONE_DISPLAY}</strong>
       </a>
       <a class="btn btn-navy" href="tel:{PHONE_HREF}">{ico('phone')}{t['call_now']}</a>
-      <a class="btn btn-primary btn-book-header" href="#book">{t['header_book']}</a>
+      <a class="btn btn-primary btn-book-header" {BOOK}>{t['header_book']}</a>
     </div>
   </div>
 </header>"""
 
 
-def lead_form(t, prefix: str, options) -> str:
-    opts = "".join(f"<option>{o}</option>" for o in options)
+def video_card(t, urgent: bool = False) -> str:
+    """The clinic's own hero video from the main website, in the slot the form used to occupy."""
+    # On an emergency page the phone is always the loudest CTA; elsewhere it is booking.
+    if urgent:
+        actions = (f'<a class="btn btn-primary btn-block btn-lg" href="tel:{PHONE_HREF}">'
+                   f'{ico("phone")}{t["call_display"]}</a>'
+                   f'<a class="btn btn-outline btn-block" {BOOK}>{t["video_cta"]}</a>')
+    else:
+        actions = (f'<a class="btn btn-primary btn-block btn-lg" {BOOK}>{t["video_cta"]}</a>'
+                   f'<a class="btn btn-outline btn-block" href="tel:{PHONE_HREF}">'
+                   f'{ico("phone")}{t["call_display"]}</a>')
     return f"""
-      <div class="lead-card" id="book">
-        <h2>{t['form_title']}</h2>
-        <p class="lead-note">{t['form_note']}</p>
+      <figure class="video-card">
+        <div class="video-frame">
+          <!-- No autoplay attribute on purpose: lp.js starts playback only once the
+               video is actually on screen, so mobile visitors never download it
+               while it sits below the fold. -->
+          <video class="clinic-video" poster="{VIDEO_POSTER}" preload="metadata"
+                 muted loop playsinline disablepictureinpicture
+                 aria-label="{t['video_alt']}">
+            <source src="{VIDEO_SRC}" type="video/webm">
+          </video>
+          <span class="video-badge">{ico('play')}{t['video_badge']}</span>
+          <button class="video-toggle" type="button"
+                  data-label-play="{t['video_play']}" data-label-pause="{t['video_pause']}"
+                  aria-label="{t['video_pause']}">
+            <span class="ico-play">{ico('play')}</span>
+            <span class="ico-pause">{ico('pause')}</span>
+          </button>
+        </div>
 
-        <form data-lp-form novalidate
-              data-msg-required="{t['err_required']}"
-              data-msg-phone="{t['err_phone']}"
-              data-msg-email="{t['err_email']}"
-              data-msg-ok="{t['form_ok']}"
-              data-msg-fallback="{t['form_fallback']}"
-              data-msg-sending="{t['form_sending']}">
-
-          <div class="hp-field" aria-hidden="true">
-            <label>Leave this empty<input type="text" name="company" tabindex="-1" autocomplete="off"></label>
-          </div>
-
-          <div class="field">
-            <label for="{prefix}-name">{t['f_name']}</label>
-            <input type="text" id="{prefix}-name" name="name" required autocomplete="name" placeholder="{t['f_name_ph']}">
-            <span class="err"></span>
-          </div>
-
-          <div class="field">
-            <label for="{prefix}-phone">{t['f_phone']}</label>
-            <input type="tel" id="{prefix}-phone" name="phone" required autocomplete="tel" placeholder="(305) 000-0000">
-            <span class="err"></span>
-          </div>
-
-          <div class="field">
-            <label for="{prefix}-email">{t['f_email']}</label>
-            <input type="email" id="{prefix}-email" name="email" required autocomplete="email" placeholder="{t['f_email_ph']}">
-            <span class="err"></span>
-          </div>
-
-          <div class="field">
-            <label for="{prefix}-service">{t['f_service']}</label>
-            <select id="{prefix}-service" name="service" required>
-              <option value="">{t['f_service_ph']}</option>
-              {opts}
-            </select>
-            <span class="err"></span>
-          </div>
-
-          <button class="btn btn-primary btn-block btn-lg" type="submit">{t['f_submit']}</button>
-          <div class="form-status" role="status" aria-live="polite"></div>
-          <p class="form-legal">{t['form_legal']} <a href="tel:{PHONE_HREF}"><strong>{PHONE_DISPLAY}</strong></a>.</p>
-        </form>
-      </div>"""
+        <figcaption class="video-caption">
+          <h2>{t['video_title']}</h2>
+          <p>{t['video_copy']}</p>
+          <div class="video-actions">{actions}</div>
+        </figcaption>
+      </figure>"""
 
 
 def trust_strip(items) -> str:
@@ -262,6 +259,8 @@ def location_section(t, urgent: bool = False) -> str:
         cls = ' class="is-closed"' if shut else ""
         rows += f'<tr data-day="{d}"{cls}><th scope="row">{label}</th><td>{hours}</td></tr>'
     note = f'<p class="plan-fine">{t["hours_note"]}</p>' if urgent else ""
+    # Emergency pages send this CTA to the phone; general pages to the online scheduler.
+    loc_cta_attrs = f'href="tel:{PHONE_HREF}"' if urgent else BOOK
 
     return f"""
 <section class="section section--sky" id="location">
@@ -290,7 +289,7 @@ def location_section(t, urgent: bool = False) -> str:
 
         <table class="hours-table"><tbody>{rows}</tbody></table>
         {note}
-        <a class="btn btn-primary btn-lg" href="{'tel:' + PHONE_HREF if urgent else '#book'}">{t['loc_cta']}</a>
+        <a class="btn btn-primary btn-lg" {loc_cta_attrs}>{t['loc_cta']}</a>
       </div>
 
       <div class="loc-map-wrap">
@@ -360,13 +359,13 @@ def payment_section(t, compact: bool = False) -> str:
         tag = f'<span class="tag">{o["tag"]}</span>' if o.get("tag") else ""
         per = f'<span class="per">{o["per"]}</span>' if o.get("per") else ""
         btn = "btn-primary" if o.get("featured") else "btn-outline"
-        href = "tel:" + PHONE_HREF if o.get("call") else "#book"
+        link = f'href="tel:{PHONE_HREF}"' if o.get("call") else BOOK
         offers += f"""
       <div class="offer-card{featured}">{tag}
         <h3>{o['title']}</h3>
         <div class="amount"><sup>$</sup>{o['amount']}{per}</div>
         <p>{o['copy']}</p>
-        <a class="btn {btn} btn-block" href="{href}">{o['cta']}</a>
+        <a class="btn {btn} btn-block" {link}>{o['cta']}</a>
         <p class="fine">{o['fine']}</p>
       </div>"""
 
@@ -380,7 +379,7 @@ def payment_section(t, compact: bool = False) -> str:
         <div class="price-row"><span class="who">{t['ppp_adult']}</span><span class="amt">$300<span>{t['per_year']}</span></span></div>
         <div class="price-row"><span class="who">{t['ppp_child']}</span><span class="amt">$175<span>{t['per_year']}</span></span></div>
         <div class="price-row"><span class="who">{t['ppp_family']}</span><span class="amt">$200<span>{t['per_year']}</span></span></div>
-        <a class="btn btn-primary btn-block btn-lg" href="#book" style="margin-top:22px;">{t['ppp_cta']}</a>
+        <a class="btn btn-primary btn-block btn-lg" {BOOK} style="margin-top:22px;">{t['ppp_cta']}</a>
       </div>
       <div class="plan-includes">
         <h4>{t['ppp_included']}</h4>
@@ -431,7 +430,7 @@ def payment_section(t, compact: bool = False) -> str:
 def final_cta(t, bg: str, urgent: bool = False) -> str:
     bullets = "".join(f"<li>{b}</li>" for b in t["final_points"])
     primary = f'<a class="btn btn-primary btn-lg{" btn-pulse" if urgent else ""}" href="tel:{PHONE_HREF}">{ico("phone")}{t["call_display"]}</a>'
-    secondary = f'<a class="btn btn-ghost-light btn-lg" href="#book">{t["final_secondary"]}</a>'
+    secondary = f'<a class="btn btn-ghost-light btn-lg" {BOOK}>{t["final_secondary"]}</a>'
     return f"""
 <section class="final-cta" style="background-image:url('assets/img/{bg}');">
   <div class="shell">
@@ -458,7 +457,7 @@ def bottom_bar(t) -> str:
 
 <div class="mobile-bar">
   <a class="btn btn-navy" href="tel:{PHONE_HREF}">{ico('phone')}{t['call_now']}</a>
-  <a class="btn btn-primary" href="#book">{t['mobile_book']}</a>
+  <a class="btn btn-primary" {BOOK}>{t['mobile_book']}</a>
 </div>"""
 
 
@@ -560,7 +559,7 @@ def build_general(lang, t) -> str:
         <p class="hero-sub">{t['hero_sub']}</p>
         <ul class="hero-points">{points}</ul>
         <div class="hero-cta">
-          <a class="btn btn-primary btn-lg" href="#book">{t['hero_cta']}</a>
+          <a class="btn btn-primary btn-lg" {BOOK}>{t['hero_cta']}</a>
           <a class="btn btn-ghost-light btn-lg" href="tel:{PHONE_HREF}">{ico('phone')}{PHONE_DISPLAY}</a>
         </div>
         <div class="hero-offer">
@@ -569,7 +568,7 @@ def build_general(lang, t) -> str:
         </div>
         <div class="hero-rating">{stars()}<span><strong>5.0</strong> {t['hero_rating']}</span></div>
       </div>
-{lead_form(t, 'g', t['form_options'])}
+{video_card(t)}
     </div>
   </div>
 </section>
@@ -585,7 +584,7 @@ def build_general(lang, t) -> str:
     </div>
 {groups}
     <div style="text-align:center;margin-top:40px;">
-      <a class="btn btn-primary btn-lg" href="#book">{t['svc_cta']}</a>
+      <a class="btn btn-primary btn-lg" {BOOK}>{t['svc_cta']}</a>
       <a class="btn btn-outline btn-lg" href="tel:{PHONE_HREF}" style="margin-left:10px;">{t['call_display']}</a>
     </div>
   </div>
@@ -668,7 +667,7 @@ def build_emergency(lang, t) -> str:
 
         <div class="hero-cta">
           <a class="btn btn-primary btn-lg btn-pulse" href="tel:{PHONE_HREF}">{ico('phone')}{t['hero_call_cta']}</a>
-          <a class="btn btn-ghost-light btn-lg" href="#book">{t['hero_cta2']}</a>
+          <a class="btn btn-ghost-light btn-lg" {BOOK}>{t['hero_cta2']}</a>
         </div>
 
         <p style="font-size:15px;color:rgba(255,255,255,.9);margin:-8px 0 20px;">
@@ -682,7 +681,7 @@ def build_emergency(lang, t) -> str:
 
         <div class="hero-rating">{stars()}<span><strong>5.0</strong> {t['hero_rating']}</span></div>
       </div>
-{lead_form(t, 'e', t['form_options'])}
+{video_card(t, urgent=True)}
     </div>
   </div>
 </section>

@@ -6,8 +6,8 @@ Sourced from everythingteethmiami.com (services, doctor bios, team, offers,
 Premium Patient Program, insurance/financing, first-visit steps) and from the
 practice's public Google Business Profile (5.0 rating, 640+ reviews).
 
-Rule for strings used inside HTML attributes (form messages, open/closed
-status, map title): no double quotes. Use typographic quotes in body copy.
+Rule for strings used inside HTML attributes (open/closed status, map title,
+video labels): no double quotes. Use typographic quotes in body copy.
 """
 
 # ==========================================================================
@@ -50,10 +50,10 @@ EN_LOCATION = {
     "call_or_text": "Call us",
     "office_hours": "Office hours",
     "open_now": "Open now — call us and we will get you scheduled",
-    "closed_now": "Currently closed — send your request and we will call you back",
+    "closed_now": "Currently closed — book online any time and we will confirm when we open",
     "map_title": "Map to Everything Teeth Family Dental, 12819 SW 42nd St, Miami, FL 33175",
     "hours_note": ("Dental emergencies are seen during office hours — call as early in the day as you can. "
-                   "If we are closed, leave a message or submit the form and we will reach out as soon as we open."),
+                   "If we are closed, leave a message or book online and we will reach out as soon as we open."),
 }
 
 EN_PAYMENT = {
@@ -93,24 +93,24 @@ EN_PAYMENT = {
                        "with insurance benefits. Financing subject to credit approval."),
 }
 
-EN_FORM = {
+EN_CHROME = {
     "language": "Language",
     "header_call_label": "Call our Miami office",
     "call_now": "Call Now",
     "call_display": "Call (305) 404-6659",
     "header_book": "Book Appointment",
     "mobile_book": "Book Appointment",
-    "err_required": "This field is required.",
-    "err_phone": "Please enter a valid phone number.",
-    "err_email": "Please enter a valid email address.",
-    "form_sending": "Sending…",
-    "f_name": "Full name",
-    "f_name_ph": "Your name",
-    "f_phone": "Phone number",
-    "f_email": "Email",
-    "f_email_ph": "you@email.com",
-    "f_service": "What do you need?",
-    "f_service_ph": "Select a service…",
+
+    # ---- Hero video (the clinic's own film, taken from the main website) ----
+    "video_title": "See Our Office Before You Ever Sit Down",
+    "video_copy": ("A look inside Everything Teeth Family Dental — the team, the technology and the calm, "
+                   "judgment-free space where we will take care of you."),
+    "video_badge": "Inside Our Miami Office",
+    "video_alt": "A look inside Everything Teeth Family Dental in Miami, Florida",
+    "video_play": "Play video",
+    "video_pause": "Pause video",
+    "video_cta": "Book Online Now",
+
     "rights": "All rights reserved.",
     "legal": ("Offers cannot be combined with insurance benefits. Financing subject to credit approval. "
               "This page is an advertisement and is not a substitute for professional dental advice."),
@@ -157,10 +157,10 @@ ES_LOCATION = {
     "call_or_text": "Llámenos",
     "office_hours": "Horario de atención",
     "open_now": "Abierto ahora — llámenos y le damos una cita",
-    "closed_now": "Cerrado en este momento — envíe su solicitud y le llamamos",
+    "closed_now": "Cerrado ahora — reserve en línea a cualquier hora y le confirmamos al abrir",
     "map_title": "Mapa hacia Everything Teeth Family Dental, 12819 SW 42nd St, Miami, FL 33175",
     "hours_note": ("Atendemos emergencias dentales durante el horario de oficina — llame lo más temprano posible. "
-                   "Si estamos cerrados, deje un mensaje o envíe el formulario y le contactaremos al abrir."),
+                   "Si estamos cerrados, deje un mensaje o reserve en línea y le contactaremos al abrir."),
 }
 
 ES_PAYMENT = {
@@ -200,24 +200,24 @@ ES_PAYMENT = {
                        "combinar con beneficios de seguro. El financiamiento está sujeto a aprobación de crédito."),
 }
 
-ES_FORM = {
+ES_CHROME = {
     "language": "Idioma",
     "header_call_label": "Llame a nuestra oficina",
     "call_now": "Llamar Ahora",
     "call_display": "Llame al (305) 404-6659",
     "header_book": "Pedir Cita",
     "mobile_book": "Pedir Cita",
-    "err_required": "Este campo es obligatorio.",
-    "err_phone": "Por favor ingrese un número de teléfono válido.",
-    "err_email": "Por favor ingrese un correo electrónico válido.",
-    "form_sending": "Enviando…",
-    "f_name": "Nombre completo",
-    "f_name_ph": "Su nombre",
-    "f_phone": "Número de teléfono",
-    "f_email": "Correo electrónico",
-    "f_email_ph": "usted@correo.com",
-    "f_service": "¿Qué necesita?",
-    "f_service_ph": "Seleccione un servicio…",
+
+    # ---- Video del consultorio (tomado del sitio web principal) ----
+    "video_title": "Conozca Nuestra Oficina Antes de Sentarse",
+    "video_copy": ("Un vistazo dentro de Everything Teeth Family Dental — el equipo, la tecnología y el "
+                   "ambiente tranquilo y sin juicios donde lo vamos a atender."),
+    "video_badge": "Por Dentro de Nuestra Oficina",
+    "video_alt": "Un vistazo dentro de Everything Teeth Family Dental en Miami, Florida",
+    "video_play": "Reproducir video",
+    "video_pause": "Pausar video",
+    "video_cta": "Reservar en Línea",
+
     "rights": "Todos los derechos reservados.",
     "legal": ("Las ofertas no se pueden combinar con beneficios de seguro. Financiamiento sujeto a aprobación de "
               "crédito. Esta página es un anuncio publicitario y no sustituye el consejo dental profesional."),
@@ -259,7 +259,7 @@ REVIEWS_ES = [
 #  GENERAL DENTIST — ENGLISH
 # ==========================================================================
 GENERAL_EN = {
-    **EN_FORM, **EN_DAYS, **EN_DOCTORS, **EN_REVIEWS_CORE, **EN_LOCATION, **EN_PAYMENT,
+    **EN_CHROME, **EN_DAYS, **EN_DOCTORS, **EN_REVIEWS_CORE, **EN_LOCATION, **EN_PAYMENT,
 
     "title": "General Dentist in Miami, FL | $159 New Patient Visit | Everything Teeth Family Dental",
     "description": ("Complete general dentistry in Miami, FL — cleanings, fillings, crowns, implants and more, all "
@@ -279,24 +279,12 @@ GENERAL_EN = {
         "Implants &amp; Invisalign from $199/month",
         "Se habla español — fully bilingual team",
     ],
-    "hero_cta": "Request My Appointment",
+    "hero_cta": "Book My Appointment",
     "hero_offer_title": "New Patient Visit",
     "hero_offer_copy": "Exam &amp; X-rays included — plus a free cleaning for qualifying patients.",
     "hero_rating": "from 640+ verified patient reviews",
 
     # ---- Form ----
-    "form_title": "Request Your Appointment",
-    "form_note": "We just need to ask you a few quick questions — our team calls you back to confirm.",
-    "form_ok": "Thank you! Your request has been received — our team will call you shortly to confirm your appointment.",
-    "form_fallback": "Thanks! To lock in the soonest appointment, please call us now at (305) 404-6659.",
-    "form_legal": "By submitting you agree to be contacted by phone, text or email about your appointment. Prefer to talk now? Call",
-    "f_submit": "Get My Appointment Time",
-    "form_options": [
-        "New patient exam &amp; cleaning", "Teeth cleaning / check-up", "Fillings or tooth pain",
-        "Crowns, bridges or dentures", "Dental implants", "Root canal treatment",
-        "Wisdom teeth removal", "Invisalign / clear aligners", "Teeth whitening / veneers",
-        "Children’s dentistry", "Something else",
-    ],
 
     # ---- Trust ----
     "trust": [
@@ -421,7 +409,7 @@ GENERAL_EN = {
         ("Your Cleaning", "Your hygienist completes the appointment with a gentle cleaning — take breaks any time you need one."),
     ],
 
-    "loc_cta": "Request an Appointment",
+    "loc_cta": "Book an Appointment",
 
     # ---- Final CTA ----
     "final_title": "Ready for a Dentist Who Treats You Like Family?",
@@ -433,14 +421,14 @@ GENERAL_EN = {
         "Implants &amp; Invisalign from $199/month",
         "Se habla español — bilingual team",
     ],
-    "final_secondary": "Request Online",
+    "final_secondary": "Book Online",
 }
 
 # ==========================================================================
 #  GENERAL DENTIST — SPANISH
 # ==========================================================================
 GENERAL_ES = {
-    **ES_FORM, **ES_DAYS, **ES_DOCTORS, **ES_REVIEWS_CORE, **ES_LOCATION, **ES_PAYMENT,
+    **ES_CHROME, **ES_DAYS, **ES_DOCTORS, **ES_REVIEWS_CORE, **ES_LOCATION, **ES_PAYMENT,
 
     "title": "Dentista General en Miami, FL | Visita de Paciente Nuevo $159 | Everything Teeth",
     "description": ("Odontología general completa en Miami, FL — limpiezas, empastes, coronas, implantes y más, todo "
@@ -459,23 +447,10 @@ GENERAL_ES = {
         "Implantes e Invisalign desde $199 al mes",
         "Equipo totalmente bilingüe — se habla español",
     ],
-    "hero_cta": "Solicitar Mi Cita",
+    "hero_cta": "Reservar Mi Cita",
     "hero_offer_title": "Visita de Paciente Nuevo",
     "hero_offer_copy": "Incluye examen y radiografías — más una limpieza gratis para pacientes que califiquen.",
     "hero_rating": "de más de 640 reseñas verificadas de pacientes",
-
-    "form_title": "Solicite Su Cita",
-    "form_note": "Solo necesitamos hacerle unas preguntas rápidas — nuestro equipo le llama para confirmar.",
-    "form_ok": "¡Gracias! Hemos recibido su solicitud — nuestro equipo le llamará en breve para confirmar su cita.",
-    "form_fallback": "¡Gracias! Para asegurar la cita más pronta, llámenos ahora al (305) 404-6659.",
-    "form_legal": "Al enviar acepta ser contactado por teléfono, mensaje o correo sobre su cita. ¿Prefiere hablar ahora? Llame al",
-    "f_submit": "Reservar Mi Cita",
-    "form_options": [
-        "Examen y limpieza de paciente nuevo", "Limpieza dental / chequeo", "Empastes o dolor de muela",
-        "Coronas, puentes o dentaduras", "Implantes dentales", "Tratamiento de conducto",
-        "Extracción de muelas del juicio", "Invisalign / alineadores transparentes",
-        "Blanqueamiento / carillas", "Odontología infantil", "Otra cosa",
-    ],
 
     "trust": [
         ("star", "Calificación 5.0", "Más de 640 reseñas"),
@@ -594,7 +569,7 @@ GENERAL_ES = {
         ("Su Limpieza", "Su higienista termina la cita con una limpieza suave — puede tomar descansos cuando lo necesite."),
     ],
 
-    "loc_cta": "Solicitar una Cita",
+    "loc_cta": "Reservar una Cita",
 
     "final_title": "¿Listo para un Dentista Que lo Trate Como Familia?",
     "final_copy": ("Siempre damos la bienvenida a pacientes nuevos y citas de emergencia. Comience con la visita de "
@@ -605,14 +580,14 @@ GENERAL_ES = {
         "Implantes e Invisalign desde $199 al mes",
         "Se habla español — equipo bilingüe",
     ],
-    "final_secondary": "Solicitar en Línea",
+    "final_secondary": "Reservar en Línea",
 }
 
 # ==========================================================================
 #  EMERGENCY DENTIST — ENGLISH
 # ==========================================================================
 EMERGENCY_EN = {
-    **EN_FORM, **EN_DAYS, **EN_DOCTORS, **EN_REVIEWS_CORE, **EN_LOCATION, **EN_PAYMENT,
+    **EN_CHROME, **EN_DAYS, **EN_DOCTORS, **EN_REVIEWS_CORE, **EN_LOCATION, **EN_PAYMENT,
 
     "title": "Emergency Dentist in Miami, FL | Same-Day Tooth Pain Relief | Call (305) 404-6659",
     "description": ("In pain right now? Emergency dentist in Miami, FL for toothaches, broken and knocked-out teeth, "
@@ -633,25 +608,19 @@ EMERGENCY_EN = {
         "All PPO insurance &amp; CareCredit® accepted",
     ],
     "hero_call_cta": "Call (305) 404-6659",
-    "hero_cta2": "Request a Callback",
+    "hero_cta2": "Book Online",
+
+    # Same clinic film, framed for someone who is in pain right now
+    "video_title": "This Is Where We Will Get You Out of Pain",
+    "video_copy": ("Twenty seconds inside Everything Teeth Family Dental — a calm, modern Miami office where "
+                   "emergencies are handled start to finish, without being sent anywhere else."),
+    "video_badge": "Inside Our Miami Office",
+    "video_cta": "Book Online Now",
     "hero_offer_title": "Emergency Limited Exam",
     "hero_offer_copy": "A focused exam and diagnosis on the tooth that hurts — so we can stop the pain fast.",
     "hero_rating": "from 640+ verified patient reviews",
 
     # ---- Form ----
-    "form_title": "Need Help Fast?",
-    "form_note": "Send this and we call you back — or skip the form and call (305) 404-6659 now.",
-    "form_ok": "Got it — we have your request. Our team is calling you back shortly. If the pain is severe, call us now at (305) 404-6659.",
-    "form_fallback": "For the fastest help with a dental emergency, please call us right now at (305) 404-6659.",
-    "form_legal": "By submitting you agree to be contacted by phone, text or email. For urgent pain, calling is fastest —",
-    "f_submit": "Call Me Back Now",
-    "f_service": "What is happening?",
-    "f_service_ph": "Select what is happening…",
-    "form_options": [
-        "Severe toothache", "Broken or chipped tooth", "Knocked-out tooth", "Lost filling or crown",
-        "Swelling or abscess", "Wisdom tooth pain", "Bleeding gums", "Broken denture",
-        "Injury from an accident", "Something else",
-    ],
 
     # ---- Trust ----
     "trust": [
@@ -736,14 +705,14 @@ EMERGENCY_EN = {
         "Sedation available for anxious patients",
         "Se habla español — bilingual team",
     ],
-    "final_secondary": "Request a Callback",
+    "final_secondary": "Book Online",
 }
 
 # ==========================================================================
 #  EMERGENCY DENTIST — SPANISH
 # ==========================================================================
 EMERGENCY_ES = {
-    **ES_FORM, **ES_DAYS, **ES_DOCTORS, **ES_REVIEWS_CORE, **ES_LOCATION, **ES_PAYMENT,
+    **ES_CHROME, **ES_DAYS, **ES_DOCTORS, **ES_REVIEWS_CORE, **ES_LOCATION, **ES_PAYMENT,
 
     "title": "Dentista de Emergencia en Miami, FL | Alivio del Dolor el Mismo Día | (305) 404-6659",
     "description": ("¿Con dolor ahora mismo? Dentista de emergencia en Miami, FL para dolor de muela, dientes rotos "
@@ -763,24 +732,17 @@ EMERGENCY_ES = {
         "Aceptamos seguros PPO y financiamiento CareCredit®",
     ],
     "hero_call_cta": "Llame al (305) 404-6659",
-    "hero_cta2": "Solicitar Llamada",
+    "hero_cta2": "Reservar en Línea",
+
+    # El mismo video, enfocado a quien tiene dolor en este momento
+    "video_title": "Aquí Es Donde le Quitaremos el Dolor",
+    "video_copy": ("Veinte segundos dentro de Everything Teeth Family Dental — una oficina moderna y tranquila "
+                   "en Miami donde las emergencias se resuelven aquí mismo, sin mandarlo a otro lugar."),
+    "video_badge": "Por Dentro de Nuestra Oficina",
+    "video_cta": "Reservar en Línea",
     "hero_offer_title": "Examen Limitado de Emergencia",
     "hero_offer_copy": "Examen y diagnóstico enfocados en el diente que le duele — para detener el dolor rápido.",
     "hero_rating": "de más de 640 reseñas verificadas de pacientes",
-
-    "form_title": "¿Necesita Ayuda Rápido?",
-    "form_note": "Envíe esto y le devolvemos la llamada — o llame directamente al (305) 404-6659.",
-    "form_ok": "Listo — recibimos su solicitud. Nuestro equipo le llamará en breve. Si el dolor es intenso, llámenos ahora al (305) 404-6659.",
-    "form_fallback": "Para atención más rápida en una emergencia dental, llámenos ahora mismo al (305) 404-6659.",
-    "form_legal": "Al enviar acepta ser contactado por teléfono, mensaje o correo. Para dolor urgente, llamar es lo más rápido —",
-    "f_submit": "Llámenme Ahora",
-    "f_service": "¿Qué está pasando?",
-    "f_service_ph": "Seleccione qué está pasando…",
-    "form_options": [
-        "Dolor de muela intenso", "Diente roto o astillado", "Diente caído por un golpe",
-        "Empaste o corona perdida", "Hinchazón o absceso", "Dolor de muela del juicio",
-        "Encías sangrantes", "Dentadura rota", "Lesión por un accidente", "Otra cosa",
-    ],
 
     "trust": [
         ("bolt", "Citas de Emergencia", "Bienvenidas todos los días que abrimos"),
@@ -860,9 +822,8 @@ EMERGENCY_ES = {
         "Sedación disponible para pacientes con ansiedad",
         "Se habla español — equipo bilingüe",
     ],
-    "final_secondary": "Solicitar Llamada",
+    "final_secondary": "Reservar en Línea",
 }
-
 
 CONTENT = {
     "general-dentist": {"en": GENERAL_EN, "es": GENERAL_ES},

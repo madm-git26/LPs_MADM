@@ -18,33 +18,15 @@ Phone number used on every page: **+1 (305) 404-6659** (`tel:+13054046659`).
 
 ## Before you run traffic — required setup
 
-Everything else works out of the box. These three items need your input:
+Everything else works out of the box. These two items need your input:
 
-### 1. Wire up the form (`assets/js/lp.js`)
-
-```js
-var CONFIG = {
-  FORM_ENDPOINT: '',      // <-- set this
-  ...
-};
-```
-
-Set `FORM_ENDPOINT` to your form handler URL — Formspree, HubSpot, a Zapier catch-hook, or your own
-endpoint. It receives a standard `multipart/form-data` POST with:
-
-`name`, `phone`, `email`, `service`, plus `page` (which landing page) and `page_url`.
-
-**Until you set it, no lead is lost:** the form validates, fires the conversion event, and shows
-*"To lock in the soonest appointment, please call us now at (305) 404-6659."* It fails safe to the phone.
-
-### 2. Google Ads conversion tracking
+### 1. Google Ads conversion tracking
 
 Paste your Google tag in the `<head>` of each page, then fill in the labels in `assets/js/lp.js`:
 
 ```js
 ADS_CONVERSION_ID: 'AW-XXXXXXXXX',
 LABEL_CALL: '...',   // click-to-call conversion label
-LABEL_FORM: '...',   // form submit conversion label
 LABEL_BOOK: '...',   // book-online click label
 ```
 
@@ -52,12 +34,15 @@ Events already fire on every page (to `gtag`, `fbq` and `dataLayer`):
 
 | Event | Trigger |
 |---|---|
-| `click_to_call` | any `tel:` link — header, hero, sticky mobile bar, final CTA |
-| `appointment_form_submit` | valid form submission |
-| `click_book_online` | any link to `book.modento.io` |
+| `click_to_call` | any `tel:` link — header, hero, video card, sticky mobile bar, final CTA |
+| `click_book_online` | any link to `book.modento.io` — the header, hero, video card, offers, mobile bar |
 | `click_directions` | Google Maps / directions link |
 
-### 3. Remove `noindex` if you want these indexed
+**There is no lead form.** The two conversion paths are the phone and the practice's own online
+scheduler at `https://book.modento.io/everything-teeth` — the same one the main website uses. Every
+"Book" CTA opens it in a new tab; every phone CTA dials (305) 404-6659.
+
+### 2. Remove `noindex` if you want these indexed
 
 Each page ships with `<meta name="robots" content="noindex, nofollow">` so the landing pages don't
 compete with the main site in organic search. Google Ads serves them fine either way — remove the tag
@@ -68,7 +53,7 @@ only if you want them in organic results too.
 ## What's on the pages
 
 ### General Dentist
-Hero with `$159` new patient offer + inline lead form → trust bar → **full general dentistry service list**
+Hero with the `$159` new patient offer + the clinic video → trust bar → **full general dentistry service list**
 (Preventive, Restorative, Cosmetic, Sedation & Emergency — 21 services) → why we're different →
 Dr. Omar & Dr. Diana → team → **offers + Premium Patient Program + insurance/financing** → reviews →
 first-visit steps → location & hours → final CTA.
@@ -79,6 +64,7 @@ open/closed status, and a call CTA repeated in five places:
 
 - Top bar + sticky header (always visible)
 - Hero — large pulsing **Call (305) 404-6659**
+- Under the hero video (phone is the primary button on this page, booking is secondary)
 - After the emergency-conditions grid
 - After "why Miami trusts us"
 - Location block + final CTA
@@ -88,6 +74,11 @@ Content: 8 emergency conditions → *"What to do right now"* first-aid steps (wi
 for airway/bleeding/trauma cases) → why us → doctors → `$75` limited exam offer → reviews → hours.
 
 ### Both pages include
+- **The clinic's own video**, in the hero where the form used to be — the same film that plays on the
+  main website's homepage (`Everything-Teeth.webm`, 21s, 1280×720), with the site's own poster frame.
+  It is muted, loops, and **only starts once it is actually on screen**, so a phone visitor who never
+  scrolls past the headline downloads none of it. A play/pause button sits in the corner, a manual
+  pause is never overridden by scrolling, and `prefers-reduced-motion` holds it on the poster frame.
 - **Real reviews** — from the website and the practice's Google Business Profile, with the live
   **5.0 / 640+** aggregate and a link to the GBP listing. Spanish pages use the real Spanish-language
   Google reviews.
@@ -134,8 +125,9 @@ general-dentist-es.html        │ the four landing pages
 emergency-dentist-en.html      │ (self-contained, deploy anywhere)
 emergency-dentist-es.html      ┘
 assets/css/theme.css           brand tokens + all components
-assets/js/lp.js                form, validation, tracking, hours logic
-assets/img/                    logo, photos, icons (from the live site)
+assets/js/lp.js                video control, tracking, hours logic
+assets/img/                    logo, photos, icons, video poster (from the live site)
+assets/video/                  the clinic's own film, taken from the main website
 build.py                       regenerates the four pages
 content.py                     all copy, both languages
 ```
@@ -159,8 +151,9 @@ python3 -m http.server 8000
 # then open http://localhost:8000/
 ```
 
-Use a server rather than opening the files directly — the Google Maps embed needs `http://`.
-(If the map is ever blocked, the panel falls back to an address card with a Get Directions button.)
+Use a server rather than opening the files directly — the Google Maps embed and the video both need
+`http://`. (If the map is ever blocked, the panel falls back to an address card with a Get Directions
+button; if the video cannot play, its poster frame stays up with a play button.)
 
 ---
 
@@ -175,5 +168,9 @@ Use a server rather than opening the files directly — the Google Maps embed ne
 - Review counts (640+) and the 5.0 rating reflect the Google Business Profile at build time. These are
   hard-coded, not live — refresh them in `content.py` periodically (`reviews_count`, `reviews_title`,
   `hero_rating`, and the `aggregateRating` in the schema block in `build.py`).
+- The hero video is WebM, the only format the practice publishes it in. That covers Chrome, Edge,
+  Firefox, Android, and Safari 14.1+ / iOS 17.4+. Anywhere it cannot decode, the poster frame shows
+  instead — nothing breaks. If you want an MP4 fallback for older iPhones, drop
+  `Everything-Teeth.mp4` into `assets/video/` and add a second `<source>` in `build.py`.
 - The practice's main website lists **(305) 777-7774**. These landing pages use the tracking number
   **(305) 404-6659** you supplied, everywhere.

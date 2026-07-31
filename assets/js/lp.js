@@ -1,26 +1,21 @@
 /* ==========================================================================
    Everything Teeth Family Dental — Landing Page behaviour
-   - Appointment form validation + submission
    - Google Ads / GA4 conversion event hooks
+   - Hero clinic video: autoplay with a graceful play/pause fallback
    - "Open now" + today's-hours highlighting
    ========================================================================== */
 (function () {
   'use strict';
 
   /* ------------------------------------------------------------------
-     CONFIG — set FORM_ENDPOINT to the practice's form handler.
-     Works with Formspree, HubSpot, Zapier catch-hooks, or a custom URL.
-     While it is empty the form falls back to a mailto-free "call us"
-     confirmation so no lead is ever silently lost.
+     CONFIG — paste your Google Ads conversion labels here.
+     Get them from Google Ads > Goals > Conversions > (your action).
      ------------------------------------------------------------------ */
   var CONFIG = {
-    FORM_ENDPOINT: '',                       // e.g. 'https://formspree.io/f/xxxxxxx'
     PHONE_E164: '+13054046659',
-    // Google Ads conversion labels — paste from Google Ads > Conversions
-    ADS_CONVERSION_ID: '',                   // e.g. 'AW-123456789'
-    LABEL_CALL: '',                          // e.g. 'abcDEFghIJKlmnOP'
-    LABEL_FORM: '',
-    LABEL_BOOK: ''
+    ADS_CONVERSION_ID: '',   // e.g. 'AW-123456789'
+    LABEL_CALL: '',          // click-to-call conversion label
+    LABEL_BOOK: ''           // book-online click conversion label
   };
 
   /* ---------------------- conversion tracking ---------------------- */
@@ -91,123 +86,72 @@
 
     document.querySelectorAll('[data-open-status]').forEach(function (el) {
       var openText = el.getAttribute('data-open-text') || 'Open now';
-      var shutText = el.getAttribute('data-closed-text') || 'Closed right now — leave us a message';
+      var shutText = el.getAttribute('data-closed-text') || 'Closed right now';
       el.textContent = isOpen ? openText : shutText;
       el.classList.toggle('is-open', isOpen);
     });
   }
 
-  /* --------------------------- the form --------------------------- */
-  function showError(field, message) {
-    field.classList.add('has-error');
-    var input = field.querySelector('input, select, textarea');
-    if (input) input.setAttribute('aria-invalid', 'true');
-    var err = field.querySelector('.err');
-    if (err && message) err.textContent = message;
-  }
+  /* ---------------------- hero clinic video -----------------------
+     The markup carries no `autoplay` attribute. Playback starts only when the
+     video is on screen, so a phone visitor who never scrolls past the headline
+     never downloads the file. If the visitor pauses it by hand, we leave it
+     paused — scrolling away and back will not override that choice.
+     ---------------------------------------------------------------- */
+  function initVideo() {
+    var video = document.querySelector('.clinic-video');
+    var toggle = document.querySelector('.video-toggle');
+    if (!video) return;
 
-  function clearError(field) {
-    field.classList.remove('has-error');
-    var input = field.querySelector('input, select, textarea');
-    if (input) input.removeAttribute('aria-invalid');
-  }
+    // Honour a reduced-motion preference: hold on the poster until asked.
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var userPaused = reduced;
 
-  function validPhone(value) {
-    return (value.replace(/\D/g, '').length >= 10);
-  }
+    function paint() {
+      if (!toggle) return;
+      var paused = video.paused;
+      toggle.classList.toggle('is-paused', paused);
+      toggle.setAttribute('aria-label', paused
+        ? (toggle.getAttribute('data-label-play') || 'Play video')
+        : (toggle.getAttribute('data-label-pause') || 'Pause video'));
+    }
 
-  function initForm(form) {
-    var statusBox = form.querySelector('.form-status');
-    var submitBtn = form.querySelector('[type="submit"]');
-    var strings = {
-      required: form.getAttribute('data-msg-required') || 'This field is required.',
-      phone:    form.getAttribute('data-msg-phone')    || 'Please enter a valid phone number.',
-      email:    form.getAttribute('data-msg-email')    || 'Please enter a valid email address.',
-      ok:       form.getAttribute('data-msg-ok')       || 'Thank you! Your request has been received — our team will call you shortly to confirm your appointment.',
-      fallback: form.getAttribute('data-msg-fallback') || 'Thanks! To lock in the soonest appointment, please call us now at (305) 404-6659.',
-      sending:  form.getAttribute('data-msg-sending')  || 'Sending…',
-      submit:   submitBtn ? submitBtn.textContent : ''
-    };
+    function play() {
+      var p = video.play();
+      if (p && p.catch) p.catch(paint);   // blocked? the poster simply stays up
+    }
 
-    form.querySelectorAll('input, select, textarea').forEach(function (input) {
-      input.addEventListener('input', function () {
-        var field = input.closest('.field');
-        if (field) clearError(field);
+    video.addEventListener('play', paint);
+    video.addEventListener('pause', paint);
+
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        if (video.paused) { userPaused = false; play(); }
+        else { userPaused = true; video.pause(); }
       });
-    });
+    }
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      // Honeypot — silently accept and discard bot submissions.
-      var hp = form.querySelector('.hp-field input');
-      if (hp && hp.value) return;
-
-      var ok = true;
-      form.querySelectorAll('.field').forEach(function (field) {
-        var input = field.querySelector('input, select, textarea');
-        if (!input || !input.required) return;
-        var value = (input.value || '').trim();
-
-        if (!value) { showError(field, strings.required); ok = false; return; }
-        if (input.type === 'tel' && !validPhone(value)) { showError(field, strings.phone); ok = false; return; }
-        if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
-          showError(field, strings.email); ok = false; return;
-        }
-        clearError(field);
-      });
-
-      if (!ok) {
-        var firstBad = form.querySelector('.field.has-error input, .field.has-error select, .field.has-error textarea');
-        if (firstBad) firstBad.focus();
-        return;
-      }
-
-      function say(message, isError) {
-        if (!statusBox) return;
-        statusBox.textContent = message;
-        statusBox.classList.add('is-visible');
-        statusBox.classList.toggle('is-error', !!isError);
-      }
-
-      track('appointment_form_submit', CONFIG.LABEL_FORM);
-
-      if (!CONFIG.FORM_ENDPOINT) {
-        // No endpoint wired up yet — never drop the lead, route it to the phone.
-        say(strings.fallback, false);
-        form.reset();
-        return;
-      }
-
-      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = strings.sending; }
-
-      var payload = new FormData(form);
-      payload.append('page', document.body.getAttribute('data-lp') || '');
-      payload.append('page_url', window.location.href);
-
-      fetch(CONFIG.FORM_ENDPOINT, {
-        method: 'POST',
-        body: payload,
-        headers: { Accept: 'application/json' }
-      })
-        .then(function (res) {
-          if (!res.ok) throw new Error('bad status');
-          say(strings.ok, false);
-          form.reset();
-        })
-        .catch(function () {
-          say(strings.fallback, true);
-        })
-        .then(function () {
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = strings.submit; }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            if (!userPaused && video.paused) play();
+          } else if (!video.paused) {
+            video.pause();   // off screen: stop spending battery and data
+          }
         });
-    });
+      }, { threshold: 0.25 }).observe(video);
+    } else if (!reduced) {
+      play();   // no IntersectionObserver: fall back to playing straight away
+    }
+
+    paint();
   }
 
   /* ----------------------------- boot ----------------------------- */
   function boot() {
     initHours();
-    document.querySelectorAll('form[data-lp-form]').forEach(initForm);
+    initVideo();
 
     // Smooth-scroll for in-page anchors (respects reduced-motion via CSS).
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {

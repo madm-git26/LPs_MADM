@@ -375,78 +375,89 @@ body.is-emergency .hero-offer .price { color: #fff; }
 .stars { display: inline-flex; gap: 2px; }
 .stars svg { width: 17px; height: 17px; fill: #FFC107; }
 
-/* ---------- Hero lead form card ---------- */
-.lead-card {
+/* ---------- Hero clinic video ---------- */
+.video-card {
+  margin: 0;
   background: #fff;
-  color: var(--ink);
-  padding: 28px;
-  box-shadow: 0 24px 60px rgba(0,0,0,.3);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .3);
   border-top: 5px solid var(--accent);
 }
-.lead-card h2 {
-  font-size: 25px;
-  margin-bottom: 6px;
-  color: var(--navy);
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--navy);
+  overflow: hidden;
 }
-.lead-card .lead-note {
-  font-size: 14px;
-  color: #63788c;
-  margin-bottom: 18px;
+/* Older browsers without aspect-ratio support */
+@supports not (aspect-ratio: 16 / 9) {
+  .video-frame { height: 0; padding-bottom: 56.25%; }
 }
-.field { margin-bottom: 13px; }
-.field label {
-  display: block;
-  font-family: var(--font-alt);
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--navy);
-  margin-bottom: 5px;
-}
-.field input,
-.field select,
-.field textarea {
+.clinic-video {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  padding: 12px 14px;
-  border: 1px solid #cfdbe6;
-  border-radius: var(--radius);
-  font-family: var(--font-body);
-  font-size: 15.5px;
-  color: var(--ink);
-  background: #fff;
-  transition: border-color .2s ease, box-shadow .2s ease;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: var(--navy);
 }
-.field textarea { min-height: 84px; resize: vertical; }
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-  outline: none;
-  border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(47,160,255,.18);
+.video-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px;
+  background: rgba(0, 51, 93, .82);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-family: var(--font-alt);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  pointer-events: none;
 }
-.field input[aria-invalid="true"],
-.field select[aria-invalid="true"] { border-color: var(--urgent); }
-.field .err {
-  display: none;
-  margin-top: 4px;
-  font-size: 12.5px;
-  color: var(--urgent-dark);
+.video-badge svg { width: 11px; height: 11px; fill: var(--lime); }
+body.is-emergency .video-badge { background: rgba(167, 16, 0, .85); }
+body.is-emergency .video-badge svg { fill: #fff; }
+
+.video-toggle {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 3;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, .8);
+  border-radius: 50%;
+  background: rgba(0, 51, 93, .7);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color .2s ease, border-color .2s ease, transform .18s ease;
 }
-.field.has-error .err { display: block; }
-.form-legal { font-size: 12px; line-height: 1.5; color: #7b8c9c; margin: 12px 0 0; }
-.form-status {
-  display: none;
-  margin-top: 14px;
-  padding: 13px 15px;
-  font-size: 14.5px;
-  border-left: 4px solid var(--lime-dark);
-  background: #f2f9e3;
-  color: #2f4a06;
-}
-.form-status.is-error { border-left-color: var(--urgent-dark); background: #fdecea; color: #7a1a0c; }
-.form-status.is-visible { display: block; }
-.hp-field { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
+.video-toggle:hover { background: var(--accent); border-color: var(--accent); transform: scale(1.06); }
+.video-toggle:hover svg { fill: var(--accent-ink); }
+.video-toggle:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.video-toggle svg { width: 16px; height: 16px; fill: #fff; }
+/* Show whichever glyph matches the current state */
+.video-toggle .ico-play { display: none; }
+.video-toggle .ico-pause { display: block; }
+.video-toggle.is-paused .ico-play { display: block; }
+.video-toggle.is-paused .ico-pause { display: none; }
+.video-toggle.is-paused { background: var(--accent); border-color: var(--accent); }
+.video-toggle.is-paused svg { fill: var(--accent-ink); }
+
+.video-caption { padding: 24px 26px 26px; }
+.video-caption h2 { font-size: 24px; margin-bottom: 8px; color: var(--navy); }
+.video-caption p { font-size: 14.8px; line-height: 1.55; color: #63788c; margin: 0 0 18px; }
+.video-actions { display: grid; gap: 10px; }
+.video-actions .btn { width: 100%; }
 
 /* ==========================================================================
    Trust strip
@@ -958,7 +969,10 @@ body.is-emergency .final-cta::before { background: linear-gradient(90deg, rgba(1
   .brand img { width: 200px; }
   .header-actions .header-phone { display: none; }
   .mobile-bar { display: flex; }
-  .lead-card { padding: 22px 20px; }
+  .video-caption { padding: 20px 20px 22px; }
+  .video-caption h2 { font-size: 21px; }
+  .video-toggle { width: 42px; height: 42px; right: 10px; bottom: 10px; }
+  .video-badge { top: 10px; left: 10px; font-size: 10.5px; padding: 6px 10px; }
   .plan-prices, .plan-includes, .loc-info { padding: 26px 22px; }
   .rating-summary { gap: 16px; padding: 18px; }
   .rating-summary .score { font-size: 42px; }
