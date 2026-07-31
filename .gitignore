@@ -1,0 +1,9 @@
+# Local dev / preview artifacts
+node_modules/
+package.json
+package-lock.json
+.shots/
+.research/
+__pycache__/
+*.pyc
+.DS_Store
