@@ -174,3 +174,29 @@ button; if the video cannot play, its poster frame stays up with a play button.)
   `Everything-Teeth.mp4` into `assets/video/` and add a second `<source>` in `build.py`.
 - The practice's main website lists **(305) 777-7774**. These landing pages use the tracking number
   **(305) 404-6659** you supplied, everywhere.
+
+---
+
+## Google Ads optimization agent
+
+`.claude/skills/google-ads-dental-optimizer/` holds an agent skill that audits and optimizes the
+Google Ads account driving traffic to these pages. It activates automatically when you ask Claude
+to audit the account, diagnose a drop in leads, find wasted spend, or run a weekly report.
+
+It needs a live Google Ads connection (Google Ads API/MCP, AdvisorPPC, Supermetrics, or similar)
+enabled for the chat. Without one it says so and refuses to produce numbers rather than guessing.
+
+| File | Contents |
+|---|---|
+| `SKILL.md` | Operating manual: discovery → audit → 6-level root-cause engine → recommendations → approval gate |
+| `references/gaql-library.md` | Every GAQL query the audit needs, keyed to the step it serves |
+| `references/root-cause-playbook.md` | The six diagnostic levels, keyword classification thresholds, anomaly severity table |
+| `references/search-term-taxonomy.md` | Dental search-intent classification, negative starter lists, per-service economics |
+| `references/health-score.md` | The 0–100 rubric and its weights |
+| `references/output-templates.md` | Daily, weekly, and audit output formats |
+| `references/write-safety.md` | Which actions are safe to auto-apply and which need approval |
+| `scripts/health_score.py` | Deterministic health-score calculation (`--self-test`, `--example`) |
+
+The agent optimizes toward qualified leads, booked appointments, and new patients — never clicks
+or CTR — and it will tell you when the problem is happening after the lead is generated rather
+than in the ad account.
