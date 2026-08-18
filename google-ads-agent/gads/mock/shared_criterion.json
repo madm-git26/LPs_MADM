@@ -1,0 +1,30 @@
+[
+  {
+    "shared_set.name": "ETFD - Master dental negatives",
+    "shared_set.id": 6001,
+    "shared_criterion.criterion_id": 720,
+    "shared_criterion.keyword.text": "dental assistant",
+    "shared_criterion.keyword.match_type": "PHRASE"
+  },
+  {
+    "shared_set.name": "ETFD - Master dental negatives",
+    "shared_set.id": 6001,
+    "shared_criterion.criterion_id": 721,
+    "shared_criterion.keyword.text": "hygienist",
+    "shared_criterion.keyword.match_type": "PHRASE"
+  },
+  {
+    "shared_set.name": "ETFD - Master dental negatives",
+    "shared_set.id": 6001,
+    "shared_criterion.criterion_id": 722,
+    "shared_criterion.keyword.text": "for dogs",
+    "shared_criterion.keyword.match_type": "PHRASE"
+  },
+  {
+    "shared_set.name": "ETFD - Master dental negatives",
+    "shared_set.id": 6001,
+    "shared_criterion.criterion_id": 723,
+    "shared_criterion.keyword.text": "medicaid",
+    "shared_criterion.keyword.match_type": "PHRASE"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "campaign_criterion.location.geo_target_constant": "geoTargetConstants/9060601",
+    "campaign_criterion.bid_modifier": 1.0,
+    "campaign_criterion.negative": false,
+    "metrics.impressions": 900,
+    "metrics.clicks": 88,
+    "metrics.cost_micros": 320000000,
+    "metrics.conversions": 6.0,
+    "metrics.conversions_value": 2100.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "campaign_criterion.location.geo_target_constant": "geoTargetConstants/9060602",
+    "campaign_criterion.bid_modifier": 1.0,
+    "campaign_criterion.negative": false,
+    "metrics.impressions": 900,
+    "metrics.clicks": 88,
+    "metrics.cost_micros": 320000000,
+    "metrics.conversions": 6.0,
+    "metrics.conversions_value": 2100.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "campaign_criterion.location.geo_target_constant": "geoTargetConstants/9060603",
+    "campaign_criterion.bid_modifier": 1.0,
+    "campaign_criterion.negative": false,
+    "metrics.impressions": 900,
+    "metrics.clicks": 88,
+    "metrics.cost_micros": 320000000,
+    "metrics.conversions": 6.0,
+    "metrics.conversions_value": 2100.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "campaign_criterion.location.geo_target_constant": "geoTargetConstants/9060604",
+    "campaign_criterion.bid_modifier": 1.0,
+    "campaign_criterion.negative": false,
+    "metrics.impressions": 900,
+    "metrics.clicks": 88,
+    "metrics.cost_micros": 320000000,
+    "metrics.conversions": 6.0,
+    "metrics.conversions_value": 2100.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "campaign_criterion.location.geo_target_constant": "geoTargetConstants/9060605",
+    "campaign_criterion.bid_modifier": 1.0,
+    "campaign_criterion.negative": false,
+    "metrics.impressions": 900,
+    "metrics.clicks": 88,
+    "metrics.cost_micros": 320000000,
+    "metrics.conversions": 6.0,
+    "metrics.conversions_value": 2100.0
+  }
+]

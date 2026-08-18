@@ -1,0 +1,9 @@
+# Google Ads Agent for dental practices
+google-ads>=31.0.0,<32.0.0      # Google Ads API client (defaults to API v25)
+google-auth-oauthlib>=1.2.0     # one-time refresh-token generation
+mcp>=1.9.0                      # Model Context Protocol server (stdio)
+PyYAML>=6.0                     # account + guardrail config
+requests>=2.31.0                # Census ACS pulls for ZIP research
+
+# dev
+pytest>=8.0.0

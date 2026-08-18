@@ -1,0 +1,12 @@
+[
+  {
+    "customer_client.client_customer": "customers/1234567890",
+    "customer_client.id": 1234567890,
+    "customer_client.descriptive_name": "Everything Teeth Family Dental (mock)",
+    "customer_client.currency_code": "USD",
+    "customer_client.time_zone": "America/New_York",
+    "customer_client.manager": false,
+    "customer_client.status": "ENABLED",
+    "customer_client.level": 1
+  }
+]

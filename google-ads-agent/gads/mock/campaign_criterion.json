@@ -1,0 +1,20 @@
+[
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "campaign_criterion.criterion_id": 700,
+    "campaign_criterion.keyword.text": "jobs",
+    "campaign_criterion.keyword.match_type": "PHRASE"
+  },
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "campaign_criterion.criterion_id": 701,
+    "campaign_criterion.keyword.text": "salary",
+    "campaign_criterion.keyword.match_type": "PHRASE"
+  },
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "campaign_criterion.criterion_id": 702,
+    "campaign_criterion.keyword.text": "school",
+    "campaign_criterion.keyword.match_type": "PHRASE"
+  }
+]

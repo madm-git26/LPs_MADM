@@ -1,0 +1,86 @@
+[
+  {
+    "campaign.id": 2001,
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "ad_group.id": 3001,
+    "ad_group.name": "Emergency Dentist - Exact",
+    "ad_group.status": "ENABLED",
+    "metrics.impressions": 8710,
+    "metrics.clicks": 1097,
+    "metrics.cost_micros": 4220000000,
+    "metrics.conversions": 88.0,
+    "metrics.conversions_value": 30800.0
+  },
+  {
+    "campaign.id": 2001,
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "ad_group.id": 3002,
+    "ad_group.name": "Tooth Pain - Phrase",
+    "ad_group.status": "ENABLED",
+    "metrics.impressions": 3630,
+    "metrics.clicks": 306,
+    "metrics.cost_micros": 1182000000,
+    "metrics.conversions": 13.0,
+    "metrics.conversions_value": 4550.0
+  },
+  {
+    "campaign.id": 2002,
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "ad_group.id": 3003,
+    "ad_group.name": "Dentist Near Me - Exact",
+    "ad_group.status": "ENABLED",
+    "metrics.impressions": 7510,
+    "metrics.clicks": 837,
+    "metrics.cost_micros": 3012000000,
+    "metrics.conversions": 59.0,
+    "metrics.conversions_value": 20650.0
+  },
+  {
+    "campaign.id": 2002,
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "ad_group.id": 3004,
+    "ad_group.name": "New Patient Special - Phrase",
+    "ad_group.status": "ENABLED",
+    "metrics.impressions": 860,
+    "metrics.clicks": 74,
+    "metrics.cost_micros": 288000000,
+    "metrics.conversions": 8.0,
+    "metrics.conversions_value": 2800.0
+  },
+  {
+    "campaign.id": 2002,
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "ad_group.id": 3005,
+    "ad_group.name": "General Dentistry - Broad",
+    "ad_group.status": "ENABLED",
+    "metrics.impressions": 12520,
+    "metrics.clicks": 609,
+    "metrics.cost_micros": 2345000000,
+    "metrics.conversions": 7.0,
+    "metrics.conversions_value": 2450.0
+  },
+  {
+    "campaign.id": 2003,
+    "campaign.name": "ETFD | Search | Dental Implants | Miami",
+    "ad_group.id": 3006,
+    "ad_group.name": "Dental Implants - Exact",
+    "ad_group.status": "ENABLED",
+    "metrics.impressions": 2720,
+    "metrics.clicks": 237,
+    "metrics.cost_micros": 2270000000,
+    "metrics.conversions": 9.0,
+    "metrics.conversions_value": 3150.0
+  },
+  {
+    "campaign.id": 2004,
+    "campaign.name": "ETFD | Search | Espanol | General + Emergency",
+    "ad_group.id": 3007,
+    "ad_group.name": "Dentista Cerca de Mi",
+    "ad_group.status": "ENABLED",
+    "metrics.impressions": 1740,
+    "metrics.clicks": 201,
+    "metrics.cost_micros": 620000000,
+    "metrics.conversions": 17.0,
+    "metrics.conversions_value": 5950.0
+  }
+]

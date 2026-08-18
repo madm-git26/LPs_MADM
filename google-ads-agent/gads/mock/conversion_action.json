@@ -1,0 +1,68 @@
+[
+  {
+    "conversion_action.id": 900,
+    "conversion_action.name": "Call from ad (60s+)",
+    "conversion_action.category": "PHONE_CALL_LEAD",
+    "conversion_action.type": "AD_CALL",
+    "conversion_action.status": "ENABLED",
+    "conversion_action.primary_for_goal": true,
+    "conversion_action.counting_type": "ONE_PER_CLICK",
+    "conversion_action.click_through_lookback_window_days": 30,
+    "conversion_action.value_settings.default_value": 0.0
+  },
+  {
+    "conversion_action.id": 901,
+    "conversion_action.name": "Click to call - LP",
+    "conversion_action.category": "PHONE_CALL_LEAD",
+    "conversion_action.type": "WEBPAGE",
+    "conversion_action.status": "ENABLED",
+    "conversion_action.primary_for_goal": true,
+    "conversion_action.counting_type": "ONE_PER_CLICK",
+    "conversion_action.click_through_lookback_window_days": 30,
+    "conversion_action.value_settings.default_value": 0.0
+  },
+  {
+    "conversion_action.id": 902,
+    "conversion_action.name": "Book online - Modento",
+    "conversion_action.category": "BOOK_APPOINTMENT",
+    "conversion_action.type": "WEBPAGE",
+    "conversion_action.status": "ENABLED",
+    "conversion_action.primary_for_goal": true,
+    "conversion_action.counting_type": "ONE_PER_CLICK",
+    "conversion_action.click_through_lookback_window_days": 30,
+    "conversion_action.value_settings.default_value": 0.0
+  },
+  {
+    "conversion_action.id": 903,
+    "conversion_action.name": "Directions click",
+    "conversion_action.category": "DEFAULT",
+    "conversion_action.type": "WEBPAGE",
+    "conversion_action.status": "ENABLED",
+    "conversion_action.primary_for_goal": false,
+    "conversion_action.counting_type": "MANY_PER_CLICK",
+    "conversion_action.click_through_lookback_window_days": 30,
+    "conversion_action.value_settings.default_value": 0.0
+  },
+  {
+    "conversion_action.id": 904,
+    "conversion_action.name": "Booked appointment (offline)",
+    "conversion_action.category": "BOOK_APPOINTMENT",
+    "conversion_action.type": "UPLOAD_CLICKS",
+    "conversion_action.status": "ENABLED",
+    "conversion_action.primary_for_goal": false,
+    "conversion_action.counting_type": "ONE_PER_CLICK",
+    "conversion_action.click_through_lookback_window_days": 30,
+    "conversion_action.value_settings.default_value": 0.0
+  },
+  {
+    "conversion_action.id": 905,
+    "conversion_action.name": "Patient showed (offline)",
+    "conversion_action.category": "BOOK_APPOINTMENT",
+    "conversion_action.type": "UPLOAD_CLICKS",
+    "conversion_action.status": "ENABLED",
+    "conversion_action.primary_for_goal": false,
+    "conversion_action.counting_type": "ONE_PER_CLICK",
+    "conversion_action.click_through_lookback_window_days": 30,
+    "conversion_action.value_settings.default_value": 0.0
+  }
+]

@@ -1,0 +1,103 @@
+# One block per practice.  Copy to accounts.yaml and edit.
+# Everything here is business context the optimisation rules need: what the
+# practice sells, what a patient is worth, and what it will not accept.
+
+accounts:
+  "123-456-7890":
+    name: "Everything Teeth Family Dental"
+    city: "Miami, FL"
+    timezone: "America/New_York"
+    currency: "USD"
+    website: "https://everythingteeth.com"
+    booking_url: "https://book.modento.io/everything-teeth"
+    phone: "+1 (305) 404-6659"
+
+    # The practice address the radius and ZIP research are measured from.
+    address: "1234 SW 8th St, Miami, FL 33135"
+    latitude: 25.7651
+    longitude: -80.2131
+
+    # Front desk hours. Used for dayparting and for the after-hours question:
+    # if nobody answers at 8pm, either bid down or route to an answering service.
+    hours:
+      monday: "10:30-18:30"
+      tuesday: "closed"
+      wednesday: "10:30-18:30"
+      thursday: "10:30-18:30"
+      friday: "07:30-15:30"
+      saturday: "closed"
+      sunday: "closed"
+    # No after-hours answering: this practice is closed three days a week, so the
+    # emergency campaign must NOT run 24/7 - clicks at 9pm Tuesday reach voicemail.
+    after_hours_answering: false
+
+    goals:
+      # What the practice is willing to pay for one booked new patient, by
+      # service line. These drive target CPA, not guesses.
+      target_cpa:
+        emergency: 75
+        general: 90
+        implants: 300
+        ortho: 250
+        cosmetic: 200
+      average_patient_value:
+        emergency: 450
+        general: 900
+        implants: 4200
+        ortho: 5000
+        cosmetic: 2500
+      monthly_budget: 9000
+      new_patients_per_month_target: 60
+
+    services_offered:
+      - general dentistry
+      - emergency dentistry
+      - dental implants
+      - cosmetic dentistry
+      - teeth whitening
+      - root canal
+      - extractions
+      - dentures
+      - sedation dentistry
+
+    # Anything here becomes a negative keyword. This is the single highest-value
+    # field in the file: most dental waste is traffic for services the practice
+    # does not perform.
+    services_not_offered:
+      - orthodontics
+      - invisalign
+      - braces
+      - pediatric dentistry
+      - oral surgery (wisdom teeth)
+      - periodontal surgery
+
+    insurance:
+      accepted: ["Delta Dental", "Cigna", "Aetna", "MetLife", "Guardian"]
+      not_accepted: ["Medicaid", "Medicare", "DentaQuest"]
+      offers_financing: true         # CareCredit, in-house plans
+
+    languages: ["en", "es"]
+
+    # Landing pages the agent maps campaigns to.
+    landing_pages:
+      emergency_en: "https://everythingteeth.com/emergency-dentist-en"
+      emergency_es: "https://everythingteeth.com/emergency-dentist-es"
+      general_en: "https://everythingteeth.com/general-dentist-en"
+      general_es: "https://everythingteeth.com/general-dentist-es"
+
+    # Conversion actions that count as a real new patient. Everything else is
+    # secondary and must not drive bidding.
+    primary_conversions:
+      - "Call from ad (60s+)"
+      - "Click to call - LP"
+      - "Book online - Modento"
+      - "Booked appointment (offline)"
+    qualified_call_seconds: 60
+
+    geo:
+      radius_miles: 10
+      # Income floor for the high-ticket campaigns (implants, cosmetic).
+      # ZIPs below this are excluded from those campaigns only.
+      high_ticket_min_median_income: 70000
+      exclude_zips: []
+      always_include_zips: ["33135", "33130"]

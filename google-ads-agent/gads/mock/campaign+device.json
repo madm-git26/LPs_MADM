@@ -1,0 +1,47 @@
+[
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.device": "MOBILE",
+    "metrics.impressions": 7400,
+    "metrics.clicks": 890,
+    "metrics.cost_micros": 3210000000,
+    "metrics.conversions": 74.0,
+    "metrics.conversions_value": 25900.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.device": "DESKTOP",
+    "metrics.impressions": 2100,
+    "metrics.clicks": 190,
+    "metrics.cost_micros": 780000000,
+    "metrics.conversions": 11.0,
+    "metrics.conversions_value": 3850.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.device": "TABLET",
+    "metrics.impressions": 310,
+    "metrics.clicks": 21,
+    "metrics.cost_micros": 88000000,
+    "metrics.conversions": 1.0,
+    "metrics.conversions_value": 350.0
+  },
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "segments.device": "MOBILE",
+    "metrics.impressions": 8200,
+    "metrics.clicks": 810,
+    "metrics.cost_micros": 2890000000,
+    "metrics.conversions": 52.0,
+    "metrics.conversions_value": 18200.0
+  },
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "segments.device": "DESKTOP",
+    "metrics.impressions": 3400,
+    "metrics.clicks": 290,
+    "metrics.cost_micros": 1120000000,
+    "metrics.conversions": 14.0,
+    "metrics.conversions_value": 4900.0
+  }
+]

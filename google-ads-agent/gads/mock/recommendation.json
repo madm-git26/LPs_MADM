@@ -1,0 +1,35 @@
+[
+  {
+    "recommendation.type": "CAMPAIGN_BUDGET",
+    "recommendation.campaign": "customers/1234567890/campaigns/2001",
+    "recommendation.resource_name": "customers/1234567890/recommendations/800",
+    "recommendation.impact.potential_metrics.impressions": 5200,
+    "recommendation.impact.potential_metrics.clicks": 610,
+    "recommendation.impact.potential_metrics.conversions": 79.0,
+    "recommendation.impact.potential_metrics.cost_micros": 4900000000,
+    "recommendation.impact.base_metrics.conversions": 68.0,
+    "recommendation.impact.base_metrics.cost_micros": 3600000000
+  },
+  {
+    "recommendation.type": "KEYWORD",
+    "recommendation.campaign": "customers/1234567890/campaigns/2002",
+    "recommendation.resource_name": "customers/1234567890/recommendations/801",
+    "recommendation.impact.potential_metrics.impressions": 5200,
+    "recommendation.impact.potential_metrics.clicks": 610,
+    "recommendation.impact.potential_metrics.conversions": 61.0,
+    "recommendation.impact.potential_metrics.cost_micros": 3100000000,
+    "recommendation.impact.base_metrics.conversions": 55.0,
+    "recommendation.impact.base_metrics.cost_micros": 2800000000
+  },
+  {
+    "recommendation.type": "SEARCH_PARTNERS_OPT_IN",
+    "recommendation.campaign": "customers/1234567890/campaigns/2002",
+    "recommendation.resource_name": "customers/1234567890/recommendations/802",
+    "recommendation.impact.potential_metrics.impressions": 5200,
+    "recommendation.impact.potential_metrics.clicks": 610,
+    "recommendation.impact.potential_metrics.conversions": 58.0,
+    "recommendation.impact.potential_metrics.cost_micros": 3300000000,
+    "recommendation.impact.base_metrics.conversions": 55.0,
+    "recommendation.impact.base_metrics.cost_micros": 2800000000
+  }
+]

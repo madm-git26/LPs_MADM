@@ -1,0 +1,32 @@
+[
+  {
+    "change_event.change_date_time": "2026-08-12 10:00:00",
+    "change_event.user_email": "agent@relevanceonlinemarketing.com",
+    "change_event.client_type": "GOOGLE_ADS_API",
+    "change_event.change_resource_type": "AD_GROUP_CRITERION",
+    "change_event.resource_change_operation": "CREATE",
+    "change_event.changed_fields": "negative,keyword.text",
+    "change_event.campaign": "customers/1234567890/campaigns/2001",
+    "change_event.ad_group": ""
+  },
+  {
+    "change_event.change_date_time": "2026-08-13 10:01:00",
+    "change_event.user_email": "agent@relevanceonlinemarketing.com",
+    "change_event.client_type": "GOOGLE_ADS_API",
+    "change_event.change_resource_type": "AD_GROUP_CRITERION",
+    "change_event.resource_change_operation": "UPDATE",
+    "change_event.changed_fields": "status",
+    "change_event.campaign": "customers/1234567890/campaigns/2001",
+    "change_event.ad_group": ""
+  },
+  {
+    "change_event.change_date_time": "2026-08-14 10:02:00",
+    "change_event.user_email": "owner@everythingteeth.com",
+    "change_event.client_type": "GOOGLE_ADS_WEB_CLIENT",
+    "change_event.change_resource_type": "CAMPAIGN_BUDGET",
+    "change_event.resource_change_operation": "UPDATE",
+    "change_event.changed_fields": "amount_micros",
+    "change_event.campaign": "customers/1234567890/campaigns/2001",
+    "change_event.ad_group": ""
+  }
+]

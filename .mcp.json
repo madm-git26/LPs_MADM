@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "google-ads-dental": {
+      "command": "python3",
+      "args": ["google-ads-agent/mcp_server/server.py"],
+      "env": {
+        "GADS_MOCK": "1"
+      }
+    }
+  }
+}

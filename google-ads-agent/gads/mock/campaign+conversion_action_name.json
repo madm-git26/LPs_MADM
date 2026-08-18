@@ -1,0 +1,47 @@
+[
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.conversion_action_name": "Call from ad (60s+)",
+    "metrics.conversions": 61.0,
+    "metrics.conversions_value": 25620.0,
+    "metrics.cost_micros": 2400000000,
+    "metrics.clicks": 620,
+    "metrics.impressions": 5580
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.conversion_action_name": "Click to call - LP",
+    "metrics.conversions": 34.0,
+    "metrics.conversions_value": 10200.0,
+    "metrics.cost_micros": 1200000000,
+    "metrics.clicks": 310,
+    "metrics.impressions": 2790
+  },
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "segments.conversion_action_name": "Book online - Modento",
+    "metrics.conversions": 29.0,
+    "metrics.conversions_value": 11020.0,
+    "metrics.cost_micros": 1600000000,
+    "metrics.clicks": 410,
+    "metrics.impressions": 3690
+  },
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "segments.conversion_action_name": "Click to call - LP",
+    "metrics.conversions": 26.0,
+    "metrics.conversions_value": 7800.0,
+    "metrics.cost_micros": 1100000000,
+    "metrics.clicks": 290,
+    "metrics.impressions": 2610
+  },
+  {
+    "campaign.name": "ETFD | Search | Dental Implants | Miami",
+    "segments.conversion_action_name": "Booked appointment (offline)",
+    "metrics.conversions": 5.0,
+    "metrics.conversions_value": 16000.0,
+    "metrics.cost_micros": 1900000000,
+    "metrics.clicks": 210,
+    "metrics.impressions": 1890
+  }
+]
