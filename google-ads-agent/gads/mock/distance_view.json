@@ -1,0 +1,38 @@
+[
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "distance_view.distance_bucket": "WITHIN_1_MILE",
+    "metrics.impressions": 3200,
+    "metrics.clicks": 410,
+    "metrics.cost_micros": 1420000000,
+    "metrics.conversions": 52.0,
+    "metrics.conversions_value": 18200.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "distance_view.distance_bucket": "WITHIN_5_MILES",
+    "metrics.impressions": 4100,
+    "metrics.clicks": 452,
+    "metrics.cost_micros": 1690000000,
+    "metrics.conversions": 41.0,
+    "metrics.conversions_value": 14350.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "distance_view.distance_bucket": "WITHIN_10_MILES",
+    "metrics.impressions": 2600,
+    "metrics.clicks": 240,
+    "metrics.cost_micros": 940000000,
+    "metrics.conversions": 12.0,
+    "metrics.conversions_value": 4200.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "distance_view.distance_bucket": "WITHIN_15_MILES",
+    "metrics.impressions": 1400,
+    "metrics.clicks": 96,
+    "metrics.cost_micros": 402000000,
+    "metrics.conversions": 2.0,
+    "metrics.conversions_value": 700.0
+  }
+]

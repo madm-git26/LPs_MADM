@@ -1,0 +1,32 @@
+[
+  {
+    "landing_page_view.unexpanded_final_url": "https://everythingteeth.com/emergency-dentist-en",
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "metrics.mobile_friendly_clicks_percentage": 1.0,
+    "metrics.impressions": 9800,
+    "metrics.clicks": 1100,
+    "metrics.cost_micros": 4100000000,
+    "metrics.conversions": 88.0,
+    "metrics.conversions_value": 30800.0
+  },
+  {
+    "landing_page_view.unexpanded_final_url": "https://everythingteeth.com/general-dentist-en",
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "metrics.mobile_friendly_clicks_percentage": 1.0,
+    "metrics.impressions": 11200,
+    "metrics.clicks": 1050,
+    "metrics.cost_micros": 3980000000,
+    "metrics.conversions": 62.0,
+    "metrics.conversions_value": 21700.0
+  },
+  {
+    "landing_page_view.unexpanded_final_url": "https://everythingteeth.com/general-dentist-es",
+    "campaign.name": "ETFD | Search | Espanol | General + Emergency",
+    "metrics.mobile_friendly_clicks_percentage": 1.0,
+    "metrics.impressions": 1740,
+    "metrics.clicks": 201,
+    "metrics.cost_micros": 620000000,
+    "metrics.conversions": 17.0,
+    "metrics.conversions_value": 5950.0
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "ad_group.name": "Dentist Near Me - Exact",
+    "ad_group_criterion.age_range.type": "AGE_RANGE_25_34",
+    "ad_group_criterion.bid_modifier": 1.0,
+    "metrics.impressions": 1900,
+    "metrics.clicks": 220,
+    "metrics.cost_micros": 760000000,
+    "metrics.conversions": 18.0,
+    "metrics.conversions_value": 6300.0
+  },
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "ad_group.name": "Dentist Near Me - Exact",
+    "ad_group_criterion.age_range.type": "AGE_RANGE_35_44",
+    "ad_group_criterion.bid_modifier": 1.0,
+    "metrics.impressions": 1700,
+    "metrics.clicks": 205,
+    "metrics.cost_micros": 720000000,
+    "metrics.conversions": 21.0,
+    "metrics.conversions_value": 7350.0
+  },
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "ad_group.name": "Dentist Near Me - Exact",
+    "ad_group_criterion.age_range.type": "AGE_RANGE_45_54",
+    "ad_group_criterion.bid_modifier": 1.0,
+    "metrics.impressions": 1200,
+    "metrics.clicks": 141,
+    "metrics.cost_micros": 502000000,
+    "metrics.conversions": 13.0,
+    "metrics.conversions_value": 4550.0
+  },
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "ad_group.name": "Dentist Near Me - Exact",
+    "ad_group_criterion.age_range.type": "AGE_RANGE_55_64",
+    "ad_group_criterion.bid_modifier": 1.0,
+    "metrics.impressions": 900,
+    "metrics.clicks": 96,
+    "metrics.cost_micros": 340000000,
+    "metrics.conversions": 7.0,
+    "metrics.conversions_value": 2450.0
+  },
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "ad_group.name": "Dentist Near Me - Exact",
+    "ad_group_criterion.age_range.type": "AGE_RANGE_18_24",
+    "ad_group_criterion.bid_modifier": 1.0,
+    "metrics.impressions": 700,
+    "metrics.clicks": 62,
+    "metrics.cost_micros": 210000000,
+    "metrics.conversions": 2.0,
+    "metrics.conversions_value": 700.0
+  }
+]

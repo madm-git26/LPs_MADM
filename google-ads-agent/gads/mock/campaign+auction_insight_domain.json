@@ -1,0 +1,42 @@
+[
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.auction_insight_domain": "you",
+    "metrics.auction_insight_search_impression_share": 0.62,
+    "metrics.auction_insight_search_absolute_top_impression_share": 0.31,
+    "metrics.auction_insight_search_overlap_rate": 1.0,
+    "metrics.auction_insight_search_outranking_share": 1.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.auction_insight_domain": "smilemiamidental.com",
+    "metrics.auction_insight_search_impression_share": 0.48,
+    "metrics.auction_insight_search_absolute_top_impression_share": 0.22,
+    "metrics.auction_insight_search_overlap_rate": 0.61,
+    "metrics.auction_insight_search_outranking_share": 0.44
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.auction_insight_domain": "brickellsmiles.com",
+    "metrics.auction_insight_search_impression_share": 0.41,
+    "metrics.auction_insight_search_absolute_top_impression_share": 0.19,
+    "metrics.auction_insight_search_overlap_rate": 0.55,
+    "metrics.auction_insight_search_outranking_share": 0.38
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.auction_insight_domain": "emergencydentistmiami.net",
+    "metrics.auction_insight_search_impression_share": 0.37,
+    "metrics.auction_insight_search_absolute_top_impression_share": 0.24,
+    "metrics.auction_insight_search_overlap_rate": 0.49,
+    "metrics.auction_insight_search_outranking_share": 0.51
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.auction_insight_domain": "coralwaydental.com",
+    "metrics.auction_insight_search_impression_share": 0.22,
+    "metrics.auction_insight_search_absolute_top_impression_share": 0.08,
+    "metrics.auction_insight_search_overlap_rate": 0.3,
+    "metrics.auction_insight_search_outranking_share": 0.19
+  }
+]

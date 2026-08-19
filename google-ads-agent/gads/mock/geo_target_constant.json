@@ -1,0 +1,72 @@
+[
+  {
+    "geo_target_constant.resource_name": "geoTargetConstants/9060601",
+    "geo_target_constant.id": 9060601,
+    "geo_target_constant.name": "33131",
+    "geo_target_constant.canonical_name": "33131,Florida,United States",
+    "geo_target_constant.target_type": "Postal Code"
+  },
+  {
+    "geo_target_constant.resource_name": "geoTargetConstants/9060602",
+    "geo_target_constant.id": 9060602,
+    "geo_target_constant.name": "33130",
+    "geo_target_constant.canonical_name": "33130,Florida,United States",
+    "geo_target_constant.target_type": "Postal Code"
+  },
+  {
+    "geo_target_constant.resource_name": "geoTargetConstants/9060603",
+    "geo_target_constant.id": 9060603,
+    "geo_target_constant.name": "33133",
+    "geo_target_constant.canonical_name": "33133,Florida,United States",
+    "geo_target_constant.target_type": "Postal Code"
+  },
+  {
+    "geo_target_constant.resource_name": "geoTargetConstants/9060604",
+    "geo_target_constant.id": 9060604,
+    "geo_target_constant.name": "33125",
+    "geo_target_constant.canonical_name": "33125,Florida,United States",
+    "geo_target_constant.target_type": "Postal Code"
+  },
+  {
+    "geo_target_constant.resource_name": "geoTargetConstants/9060605",
+    "geo_target_constant.id": 9060605,
+    "geo_target_constant.name": "33135",
+    "geo_target_constant.canonical_name": "33135,Florida,United States",
+    "geo_target_constant.target_type": "Postal Code"
+  },
+  {
+    "geo_target_constant.resource_name": "geoTargetConstants/9060606",
+    "geo_target_constant.id": 9060606,
+    "geo_target_constant.name": "33143",
+    "geo_target_constant.canonical_name": "33143,Florida,United States",
+    "geo_target_constant.target_type": "Postal Code"
+  },
+  {
+    "geo_target_constant.resource_name": "geoTargetConstants/9060607",
+    "geo_target_constant.id": 9060607,
+    "geo_target_constant.name": "33156",
+    "geo_target_constant.canonical_name": "33156,Florida,United States",
+    "geo_target_constant.target_type": "Postal Code"
+  },
+  {
+    "geo_target_constant.resource_name": "geoTargetConstants/9060608",
+    "geo_target_constant.id": 9060608,
+    "geo_target_constant.name": "33176",
+    "geo_target_constant.canonical_name": "33176,Florida,United States",
+    "geo_target_constant.target_type": "Postal Code"
+  },
+  {
+    "geo_target_constant.resource_name": "geoTargetConstants/9060609",
+    "geo_target_constant.id": 9060609,
+    "geo_target_constant.name": "33186",
+    "geo_target_constant.canonical_name": "33186,Florida,United States",
+    "geo_target_constant.target_type": "Postal Code"
+  },
+  {
+    "geo_target_constant.resource_name": "geoTargetConstants/9060610",
+    "geo_target_constant.id": 9060610,
+    "geo_target_constant.name": "33172",
+    "geo_target_constant.canonical_name": "33172,Florida,United States",
+    "geo_target_constant.target_type": "Postal Code"
+  }
+]

@@ -1,0 +1,274 @@
+# Master negative keyword list for local dental Search campaigns (US / CA).
+#
+# Format:
+#   [category name] mode=auto|review match=PHRASE|EXACT|BROAD
+#   one term per line
+#
+# mode=auto   the agent adds these itself when it sees them in search terms
+# mode=review the agent proposes them and explains why - these can be real
+#             patients in some practices, so a human decides once per account
+#
+# Terms are matched against the SEARCH TERM, not against your keywords. Adding a
+# phrase negative "job" blocks "dental assistant jobs" and "dentist job near me"
+# but not "jobst compression" - which is fine, no dentist wants that either.
+
+[employment] mode=auto match=PHRASE
+job
+jobs
+career
+careers
+hiring
+hire
+salary
+salaries
+wage
+wages
+pay scale
+resume
+cv
+employment
+apply
+application
+vacancy
+vacancies
+recruiter
+recruitment
+intern
+internship
+work from home
+how to become
+requirements to be
+job description
+staffing
+temp agency
+
+[education and training] mode=auto match=PHRASE
+school
+schools
+university
+college
+course
+courses
+class
+classes
+training
+certification
+certificate
+ceu
+continuing education
+degree
+diploma
+program
+curriculum
+tuition
+student
+students
+textbook
+syllabus
+exam
+board exam
+nbde
+dat test
+study guide
+quiz
+practice test
+
+[do it yourself and informational] mode=auto match=PHRASE
+diy
+do it yourself
+at home
+home remedy
+home remedies
+natural remedy
+how to pull
+how to remove
+how to fix
+homemade
+wikipedia
+reddit
+quora
+youtube
+video
+videos
+meaning
+definition
+wiki
+pdf
+worksheet
+images of
+pictures of
+photos of
+
+[free and charity] mode=auto match=PHRASE
+free
+free dental
+no cost
+charity
+charitable
+donate
+donation
+mission of mercy
+dental van
+mobile clinic
+grant
+grants
+voucher
+assistance program
+government help
+low income clinic
+sliding scale
+community health center
+
+[veterinary] mode=auto match=PHRASE
+dog
+dogs
+cat
+cats
+pet
+pets
+puppy
+kitten
+animal
+animals
+veterinary
+veterinarian
+vet
+horse
+cattle
+
+[products and retail] mode=auto match=PHRASE
+toothpaste
+mouthwash
+floss
+flossing device
+electric toothbrush
+water flosser
+whitening strips
+denture cream
+denture glue
+amazon
+walmart
+target
+ebay
+etsy
+cvs
+walgreens
+buy online
+kit
+diy kit
+coupon code
+
+[insurance shopping] mode=auto match=PHRASE
+dental insurance plan
+dental insurance plans
+insurance quote
+insurance quotes
+best dental insurance
+dental discount plan
+discount plan
+dental savings plan
+compare insurance
+insurance cost per month
+does insurance cover
+cpt code
+cdt code
+icd 10
+billing code
+claim form
+prior authorization
+
+[legal and regulatory] mode=auto match=PHRASE
+lawsuit
+sue
+suing
+malpractice
+negligence
+complaint
+report a dentist
+license lookup
+license verification
+board of dentistry
+disciplinary
+settlement
+
+[research and industry] mode=auto match=PHRASE
+statistics
+market size
+industry report
+journal
+research paper
+case study
+dso
+practice for sale
+buy a practice
+sell my practice
+practice management software
+dental software
+dental supplies
+dental equipment
+dental chair
+dental lab
+
+# --- these need a decision per practice -----------------------------------
+
+[government insurance] mode=review match=PHRASE
+medicaid
+medicare
+chip program
+dentaquest
+state insurance
+government insurance
+public aid
+# Auto-add ONLY if the practice does not accept these. A practice that does
+# accept Medicaid loses a large share of its emergency volume without them.
+
+[price sensitive] mode=review match=PHRASE
+cheap
+cheapest
+lowest price
+under 50
+under 100
+budget
+discount
+# Keep these if the practice leads with a $59-$159 new patient offer; block
+# them if it sells implants and full-mouth cases.
+
+[pediatric] mode=review match=PHRASE
+kids
+children
+child
+pediatric
+pedodontist
+toddler
+baby teeth
+# Auto-add only when the practice does not treat children.
+
+[orthodontics] mode=review match=PHRASE
+braces
+invisalign
+clear aligners
+orthodontist
+retainer
+# Auto-add only when the practice does not offer ortho.
+
+[oral surgery] mode=review match=PHRASE
+wisdom teeth
+wisdom tooth
+oral surgeon
+jaw surgery
+tmj surgery
+# Auto-add only when the practice refers these out.
+
+[competitor brands] mode=review match=PHRASE
+aspen dental
+western dental
+coast dental
+sage dental
+great expressions
+heartland dental
+smile direct
+smiledirectclub
+byte
+candid
+# Bidding on competitor names is legal but expensive and converts poorly for a
+# single-location practice. Block by default; unblock deliberately.

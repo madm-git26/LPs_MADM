@@ -1,0 +1,16 @@
+[
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "ad_group.name": "General Dentistry - Broad",
+    "ad_group_criterion.criterion_id": 710,
+    "ad_group_criterion.keyword.text": "free",
+    "ad_group_criterion.keyword.match_type": "PHRASE"
+  },
+  {
+    "campaign.name": "ETFD | Search | General Dentist | Miami",
+    "ad_group.name": "General Dentistry - Broad",
+    "ad_group_criterion.criterion_id": 711,
+    "ad_group_criterion.keyword.text": "cheap",
+    "ad_group_criterion.keyword.match_type": "PHRASE"
+  }
+]

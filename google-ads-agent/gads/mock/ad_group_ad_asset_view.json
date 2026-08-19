@@ -1,0 +1,80 @@
+[
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "ad_group.name": "Emergency Dentist - Exact",
+    "asset.text_asset.text": "Emergency Dentist Open Now",
+    "ad_group_ad_asset_view.field_type": "HEADLINE",
+    "ad_group_ad_asset_view.performance_label": "BEST",
+    "ad_group_ad_asset_view.pinned_field": "HEADLINE_1",
+    "metrics.impressions": 5200,
+    "metrics.clicks": 610,
+    "metrics.cost_micros": 2100000000,
+    "metrics.conversions": 58.0,
+    "metrics.conversions_value": 20300.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "ad_group.name": "Emergency Dentist - Exact",
+    "asset.text_asset.text": "Same-Day Tooth Pain Relief",
+    "ad_group_ad_asset_view.field_type": "HEADLINE",
+    "ad_group_ad_asset_view.performance_label": "GOOD",
+    "ad_group_ad_asset_view.pinned_field": "UNSPECIFIED",
+    "metrics.impressions": 4100,
+    "metrics.clicks": 420,
+    "metrics.cost_micros": 1500000000,
+    "metrics.conversions": 34.0,
+    "metrics.conversions_value": 11900.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "ad_group.name": "Emergency Dentist - Exact",
+    "asset.text_asset.text": "Miami Dentist Since 2009",
+    "ad_group_ad_asset_view.field_type": "HEADLINE",
+    "ad_group_ad_asset_view.performance_label": "LOW",
+    "ad_group_ad_asset_view.pinned_field": "UNSPECIFIED",
+    "metrics.impressions": 3800,
+    "metrics.clicks": 190,
+    "metrics.cost_micros": 700000000,
+    "metrics.conversions": 6.0,
+    "metrics.conversions_value": 2100.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "ad_group.name": "Emergency Dentist - Exact",
+    "asset.text_asset.text": "Walk-Ins Welcome 7 Days",
+    "ad_group_ad_asset_view.field_type": "HEADLINE",
+    "ad_group_ad_asset_view.performance_label": "GOOD",
+    "ad_group_ad_asset_view.pinned_field": "UNSPECIFIED",
+    "metrics.impressions": 3400,
+    "metrics.clicks": 360,
+    "metrics.cost_micros": 1300000000,
+    "metrics.conversions": 29.0,
+    "metrics.conversions_value": 10150.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "ad_group.name": "Emergency Dentist - Exact",
+    "asset.text_asset.text": "Call now - we answer 24/7 and see emergencies today.",
+    "ad_group_ad_asset_view.field_type": "DESCRIPTION",
+    "ad_group_ad_asset_view.performance_label": "BEST",
+    "ad_group_ad_asset_view.pinned_field": "UNSPECIFIED",
+    "metrics.impressions": 5000,
+    "metrics.clicks": 540,
+    "metrics.cost_micros": 1900000000,
+    "metrics.conversions": 51.0,
+    "metrics.conversions_value": 17850.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "ad_group.name": "Emergency Dentist - Exact",
+    "asset.text_asset.text": "Financing available. Most insurance accepted.",
+    "ad_group_ad_asset_view.field_type": "DESCRIPTION",
+    "ad_group_ad_asset_view.performance_label": "LOW",
+    "ad_group_ad_asset_view.pinned_field": "UNSPECIFIED",
+    "metrics.impressions": 3000,
+    "metrics.clicks": 140,
+    "metrics.cost_micros": 520000000,
+    "metrics.conversions": 4.0,
+    "metrics.conversions_value": 1400.0
+  }
+]

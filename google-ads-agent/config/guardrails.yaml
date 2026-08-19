@@ -1,0 +1,79 @@
+# How much rope the agent has.
+#
+#   auto      -> the agent applies it, logs it, and reports it afterwards
+#   approval  -> the agent proposes it with numbers and waits for a yes
+#   blocked   -> never, no matter who asks
+#
+# `default:` applies to every account.  Add a block under `accounts:` keyed by
+# the 10-digit customer id to override anything for one client.
+
+default:
+  limits:
+    # Biggest single step the agent takes on its own, as a percentage.
+    target_cpa_change_pct: 15.0
+    bid_modifier_change_pct: 30.0
+    budget_change_pct: 20.0
+
+    # Hard ceiling on any campaign's daily budget, in account currency.
+    max_daily_budget: 250.0
+
+    # Batch sizes. Negatives are cheap and reversible, so they get more room.
+    max_entities_per_batch: 50
+    max_negatives_per_batch: 200
+
+    # Total operations the agent may apply to one account in a day.
+    max_ops_per_day: 500
+
+    # Any change projected to move daily spend by more than this needs a yes.
+    max_daily_spend_delta: 50.0
+
+    # New campaigns are left alone (except negatives) while bidding learns.
+    learning_period_days: 14
+
+  actions:
+    add_negative_keywords: auto
+    create_shared_negative_list: auto
+    attach_shared_negative_list: auto
+    pause_keywords: auto
+    pause_ads: auto
+    set_keyword_bid: auto
+    set_target_cpa: auto
+    update_budget: auto
+    set_location_bid_modifier: auto
+    set_device_bid_modifier: auto
+    set_income_bid_modifier: auto
+    set_demographic_bid_modifier: auto
+    set_ad_schedule: auto
+    add_keywords: auto
+
+    create_campaign: approval
+    create_ad_group: approval
+    create_rsa: approval
+    pause_campaign: approval
+    pause_ad_group: approval
+    add_location_targets: approval
+    exclude_locations: approval
+    set_bidding_strategy: approval
+    apply_recommendation: approval
+    upload_offline_conversions: approval
+
+    remove_campaign: blocked
+    remove_ad_group: blocked
+    remove_conversion_action: blocked
+    change_account_settings: blocked
+    bulk_apply_recommendations: blocked
+
+  # Set enabled: true to stop all automatic changes (holidays, a practice
+  # closure, a dispute).  Reads keep working.
+  freeze:
+    enabled: false
+    until: null
+    reason: ""
+
+accounts:
+  # "1234567890":
+  #   limits:
+  #     max_daily_budget: 400.0
+  #     target_cpa_change_pct: 10.0
+  #   actions:
+  #     update_budget: approval     # this client wants to sign off on spend

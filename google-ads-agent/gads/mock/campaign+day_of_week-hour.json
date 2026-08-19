@@ -1,0 +1,1682 @@
+[
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 0,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 1,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 2,
+    "metrics.impressions": 0,
+    "metrics.clicks": 0,
+    "metrics.cost_micros": 0,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 3,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 4,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 5,
+    "metrics.impressions": 0,
+    "metrics.clicks": 0,
+    "metrics.cost_micros": 0,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 6,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 7,
+    "metrics.impressions": 16,
+    "metrics.clicks": 2,
+    "metrics.cost_micros": 7800000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 8,
+    "metrics.impressions": 256,
+    "metrics.clicks": 32,
+    "metrics.cost_micros": 124800000,
+    "metrics.conversions": 3.5,
+    "metrics.conversions_value": 1225.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 9,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.8,
+    "metrics.conversions_value": 280.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 10,
+    "metrics.impressions": 216,
+    "metrics.clicks": 27,
+    "metrics.cost_micros": 105300000,
+    "metrics.conversions": 3.0,
+    "metrics.conversions_value": 1050.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 11,
+    "metrics.impressions": 160,
+    "metrics.clicks": 20,
+    "metrics.cost_micros": 78000000,
+    "metrics.conversions": 2.2,
+    "metrics.conversions_value": 770.0000000000001
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 12,
+    "metrics.impressions": 280,
+    "metrics.clicks": 35,
+    "metrics.cost_micros": 136500000,
+    "metrics.conversions": 3.9,
+    "metrics.conversions_value": 1365.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 13,
+    "metrics.impressions": 200,
+    "metrics.clicks": 25,
+    "metrics.cost_micros": 97500000,
+    "metrics.conversions": 2.8,
+    "metrics.conversions_value": 979.9999999999999
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 14,
+    "metrics.impressions": 312,
+    "metrics.clicks": 39,
+    "metrics.cost_micros": 152100000,
+    "metrics.conversions": 4.3,
+    "metrics.conversions_value": 1505.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 15,
+    "metrics.impressions": 312,
+    "metrics.clicks": 39,
+    "metrics.cost_micros": 152100000,
+    "metrics.conversions": 4.3,
+    "metrics.conversions_value": 1505.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 16,
+    "metrics.impressions": 64,
+    "metrics.clicks": 8,
+    "metrics.cost_micros": 31200000,
+    "metrics.conversions": 0.9,
+    "metrics.conversions_value": 315.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 17,
+    "metrics.impressions": 96,
+    "metrics.clicks": 12,
+    "metrics.cost_micros": 46800000,
+    "metrics.conversions": 1.3,
+    "metrics.conversions_value": 455.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 18,
+    "metrics.impressions": 160,
+    "metrics.clicks": 20,
+    "metrics.cost_micros": 78000000,
+    "metrics.conversions": 2.2,
+    "metrics.conversions_value": 770.0000000000001
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 19,
+    "metrics.impressions": 8,
+    "metrics.clicks": 1,
+    "metrics.cost_micros": 3900000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 20,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 21,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 22,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "MONDAY",
+    "segments.hour": 23,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 0,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 1,
+    "metrics.impressions": 72,
+    "metrics.clicks": 9,
+    "metrics.cost_micros": 35100000,
+    "metrics.conversions": 0.3,
+    "metrics.conversions_value": 105.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 2,
+    "metrics.impressions": 0,
+    "metrics.clicks": 0,
+    "metrics.cost_micros": 0,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 3,
+    "metrics.impressions": 0,
+    "metrics.clicks": 0,
+    "metrics.cost_micros": 0,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 4,
+    "metrics.impressions": 40,
+    "metrics.clicks": 5,
+    "metrics.cost_micros": 19500000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 5,
+    "metrics.impressions": 8,
+    "metrics.clicks": 1,
+    "metrics.cost_micros": 3900000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 6,
+    "metrics.impressions": 8,
+    "metrics.clicks": 1,
+    "metrics.cost_micros": 3900000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 7,
+    "metrics.impressions": 32,
+    "metrics.clicks": 4,
+    "metrics.cost_micros": 15600000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 8,
+    "metrics.impressions": 216,
+    "metrics.clicks": 27,
+    "metrics.cost_micros": 105300000,
+    "metrics.conversions": 3.0,
+    "metrics.conversions_value": 1050.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 9,
+    "metrics.impressions": 272,
+    "metrics.clicks": 34,
+    "metrics.cost_micros": 132600000,
+    "metrics.conversions": 3.7,
+    "metrics.conversions_value": 1295.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 10,
+    "metrics.impressions": 312,
+    "metrics.clicks": 39,
+    "metrics.cost_micros": 152100000,
+    "metrics.conversions": 4.3,
+    "metrics.conversions_value": 1505.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 11,
+    "metrics.impressions": 248,
+    "metrics.clicks": 31,
+    "metrics.cost_micros": 120900000,
+    "metrics.conversions": 3.4,
+    "metrics.conversions_value": 1190.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 12,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.8,
+    "metrics.conversions_value": 280.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 13,
+    "metrics.impressions": 80,
+    "metrics.clicks": 10,
+    "metrics.cost_micros": 39000000,
+    "metrics.conversions": 1.1,
+    "metrics.conversions_value": 385.00000000000006
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 14,
+    "metrics.impressions": 304,
+    "metrics.clicks": 38,
+    "metrics.cost_micros": 148200000,
+    "metrics.conversions": 4.2,
+    "metrics.conversions_value": 1470.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 15,
+    "metrics.impressions": 168,
+    "metrics.clicks": 21,
+    "metrics.cost_micros": 81900000,
+    "metrics.conversions": 2.3,
+    "metrics.conversions_value": 804.9999999999999
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 16,
+    "metrics.impressions": 224,
+    "metrics.clicks": 28,
+    "metrics.cost_micros": 109200000,
+    "metrics.conversions": 3.1,
+    "metrics.conversions_value": 1085.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 17,
+    "metrics.impressions": 296,
+    "metrics.clicks": 37,
+    "metrics.cost_micros": 144300000,
+    "metrics.conversions": 4.1,
+    "metrics.conversions_value": 1434.9999999999998
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 18,
+    "metrics.impressions": 144,
+    "metrics.clicks": 18,
+    "metrics.cost_micros": 70200000,
+    "metrics.conversions": 2.0,
+    "metrics.conversions_value": 700.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 19,
+    "metrics.impressions": 0,
+    "metrics.clicks": 0,
+    "metrics.cost_micros": 0,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 20,
+    "metrics.impressions": 8,
+    "metrics.clicks": 1,
+    "metrics.cost_micros": 3900000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 21,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 22,
+    "metrics.impressions": 16,
+    "metrics.clicks": 2,
+    "metrics.cost_micros": 7800000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "TUESDAY",
+    "segments.hour": 23,
+    "metrics.impressions": 32,
+    "metrics.clicks": 4,
+    "metrics.cost_micros": 15600000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 0,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 1,
+    "metrics.impressions": 64,
+    "metrics.clicks": 8,
+    "metrics.cost_micros": 31200000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 2,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 3,
+    "metrics.impressions": 8,
+    "metrics.clicks": 1,
+    "metrics.cost_micros": 3900000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 4,
+    "metrics.impressions": 32,
+    "metrics.clicks": 4,
+    "metrics.cost_micros": 15600000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 5,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 6,
+    "metrics.impressions": 32,
+    "metrics.clicks": 4,
+    "metrics.cost_micros": 15600000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 7,
+    "metrics.impressions": 72,
+    "metrics.clicks": 9,
+    "metrics.cost_micros": 35100000,
+    "metrics.conversions": 0.3,
+    "metrics.conversions_value": 105.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 8,
+    "metrics.impressions": 152,
+    "metrics.clicks": 19,
+    "metrics.cost_micros": 74100000,
+    "metrics.conversions": 2.1,
+    "metrics.conversions_value": 735.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 9,
+    "metrics.impressions": 288,
+    "metrics.clicks": 36,
+    "metrics.cost_micros": 140400000,
+    "metrics.conversions": 4.0,
+    "metrics.conversions_value": 1400.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 10,
+    "metrics.impressions": 296,
+    "metrics.clicks": 37,
+    "metrics.cost_micros": 144300000,
+    "metrics.conversions": 4.1,
+    "metrics.conversions_value": 1434.9999999999998
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 11,
+    "metrics.impressions": 280,
+    "metrics.clicks": 35,
+    "metrics.cost_micros": 136500000,
+    "metrics.conversions": 3.9,
+    "metrics.conversions_value": 1365.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 12,
+    "metrics.impressions": 296,
+    "metrics.clicks": 37,
+    "metrics.cost_micros": 144300000,
+    "metrics.conversions": 4.1,
+    "metrics.conversions_value": 1434.9999999999998
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 13,
+    "metrics.impressions": 208,
+    "metrics.clicks": 26,
+    "metrics.cost_micros": 101400000,
+    "metrics.conversions": 2.9,
+    "metrics.conversions_value": 1015.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 14,
+    "metrics.impressions": 128,
+    "metrics.clicks": 16,
+    "metrics.cost_micros": 62400000,
+    "metrics.conversions": 1.8,
+    "metrics.conversions_value": 630.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 15,
+    "metrics.impressions": 112,
+    "metrics.clicks": 14,
+    "metrics.cost_micros": 54600000,
+    "metrics.conversions": 1.5,
+    "metrics.conversions_value": 525.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 16,
+    "metrics.impressions": 136,
+    "metrics.clicks": 17,
+    "metrics.cost_micros": 66300000,
+    "metrics.conversions": 1.9,
+    "metrics.conversions_value": 665.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 17,
+    "metrics.impressions": 208,
+    "metrics.clicks": 26,
+    "metrics.cost_micros": 101400000,
+    "metrics.conversions": 2.9,
+    "metrics.conversions_value": 1015.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 18,
+    "metrics.impressions": 208,
+    "metrics.clicks": 26,
+    "metrics.cost_micros": 101400000,
+    "metrics.conversions": 2.9,
+    "metrics.conversions_value": 1015.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 19,
+    "metrics.impressions": 72,
+    "metrics.clicks": 9,
+    "metrics.cost_micros": 35100000,
+    "metrics.conversions": 0.3,
+    "metrics.conversions_value": 105.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 20,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 21,
+    "metrics.impressions": 8,
+    "metrics.clicks": 1,
+    "metrics.cost_micros": 3900000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 22,
+    "metrics.impressions": 72,
+    "metrics.clicks": 9,
+    "metrics.cost_micros": 35100000,
+    "metrics.conversions": 0.3,
+    "metrics.conversions_value": 105.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "WEDNESDAY",
+    "segments.hour": 23,
+    "metrics.impressions": 16,
+    "metrics.clicks": 2,
+    "metrics.cost_micros": 7800000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 0,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 1,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 2,
+    "metrics.impressions": 16,
+    "metrics.clicks": 2,
+    "metrics.cost_micros": 7800000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 3,
+    "metrics.impressions": 40,
+    "metrics.clicks": 5,
+    "metrics.cost_micros": 19500000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 4,
+    "metrics.impressions": 0,
+    "metrics.clicks": 0,
+    "metrics.cost_micros": 0,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 5,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 6,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 7,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 8,
+    "metrics.impressions": 264,
+    "metrics.clicks": 33,
+    "metrics.cost_micros": 128700000,
+    "metrics.conversions": 3.6,
+    "metrics.conversions_value": 1260.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 9,
+    "metrics.impressions": 240,
+    "metrics.clicks": 30,
+    "metrics.cost_micros": 117000000,
+    "metrics.conversions": 3.3,
+    "metrics.conversions_value": 1155.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 10,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.8,
+    "metrics.conversions_value": 280.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 11,
+    "metrics.impressions": 192,
+    "metrics.clicks": 24,
+    "metrics.cost_micros": 93600000,
+    "metrics.conversions": 2.6,
+    "metrics.conversions_value": 910.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 12,
+    "metrics.impressions": 136,
+    "metrics.clicks": 17,
+    "metrics.cost_micros": 66300000,
+    "metrics.conversions": 1.9,
+    "metrics.conversions_value": 665.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 13,
+    "metrics.impressions": 160,
+    "metrics.clicks": 20,
+    "metrics.cost_micros": 78000000,
+    "metrics.conversions": 2.2,
+    "metrics.conversions_value": 770.0000000000001
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 14,
+    "metrics.impressions": 304,
+    "metrics.clicks": 38,
+    "metrics.cost_micros": 148200000,
+    "metrics.conversions": 4.2,
+    "metrics.conversions_value": 1470.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 15,
+    "metrics.impressions": 88,
+    "metrics.clicks": 11,
+    "metrics.cost_micros": 42900000,
+    "metrics.conversions": 1.2,
+    "metrics.conversions_value": 420.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 16,
+    "metrics.impressions": 272,
+    "metrics.clicks": 34,
+    "metrics.cost_micros": 132600000,
+    "metrics.conversions": 3.7,
+    "metrics.conversions_value": 1295.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 17,
+    "metrics.impressions": 200,
+    "metrics.clicks": 25,
+    "metrics.cost_micros": 97500000,
+    "metrics.conversions": 2.8,
+    "metrics.conversions_value": 979.9999999999999
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 18,
+    "metrics.impressions": 184,
+    "metrics.clicks": 23,
+    "metrics.cost_micros": 89700000,
+    "metrics.conversions": 2.5,
+    "metrics.conversions_value": 875.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 19,
+    "metrics.impressions": 32,
+    "metrics.clicks": 4,
+    "metrics.cost_micros": 15600000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 20,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 21,
+    "metrics.impressions": 40,
+    "metrics.clicks": 5,
+    "metrics.cost_micros": 19500000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 22,
+    "metrics.impressions": 40,
+    "metrics.clicks": 5,
+    "metrics.cost_micros": 19500000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "THURSDAY",
+    "segments.hour": 23,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 0,
+    "metrics.impressions": 64,
+    "metrics.clicks": 8,
+    "metrics.cost_micros": 31200000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 1,
+    "metrics.impressions": 16,
+    "metrics.clicks": 2,
+    "metrics.cost_micros": 7800000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 2,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 3,
+    "metrics.impressions": 8,
+    "metrics.clicks": 1,
+    "metrics.cost_micros": 3900000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 4,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 5,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 6,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 7,
+    "metrics.impressions": 72,
+    "metrics.clicks": 9,
+    "metrics.cost_micros": 35100000,
+    "metrics.conversions": 0.3,
+    "metrics.conversions_value": 105.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 8,
+    "metrics.impressions": 152,
+    "metrics.clicks": 19,
+    "metrics.cost_micros": 74100000,
+    "metrics.conversions": 2.1,
+    "metrics.conversions_value": 735.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 9,
+    "metrics.impressions": 272,
+    "metrics.clicks": 34,
+    "metrics.cost_micros": 132600000,
+    "metrics.conversions": 3.7,
+    "metrics.conversions_value": 1295.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 10,
+    "metrics.impressions": 104,
+    "metrics.clicks": 13,
+    "metrics.cost_micros": 50700000,
+    "metrics.conversions": 1.4,
+    "metrics.conversions_value": 489.99999999999994
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 11,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.8,
+    "metrics.conversions_value": 280.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 12,
+    "metrics.impressions": 288,
+    "metrics.clicks": 36,
+    "metrics.cost_micros": 140400000,
+    "metrics.conversions": 4.0,
+    "metrics.conversions_value": 1400.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 13,
+    "metrics.impressions": 232,
+    "metrics.clicks": 29,
+    "metrics.cost_micros": 113100000,
+    "metrics.conversions": 3.2,
+    "metrics.conversions_value": 1120.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 14,
+    "metrics.impressions": 136,
+    "metrics.clicks": 17,
+    "metrics.cost_micros": 66300000,
+    "metrics.conversions": 1.9,
+    "metrics.conversions_value": 665.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 15,
+    "metrics.impressions": 184,
+    "metrics.clicks": 23,
+    "metrics.cost_micros": 89700000,
+    "metrics.conversions": 2.5,
+    "metrics.conversions_value": 875.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 16,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.8,
+    "metrics.conversions_value": 280.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 17,
+    "metrics.impressions": 200,
+    "metrics.clicks": 25,
+    "metrics.cost_micros": 97500000,
+    "metrics.conversions": 2.8,
+    "metrics.conversions_value": 979.9999999999999
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 18,
+    "metrics.impressions": 304,
+    "metrics.clicks": 38,
+    "metrics.cost_micros": 148200000,
+    "metrics.conversions": 4.2,
+    "metrics.conversions_value": 1470.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 19,
+    "metrics.impressions": 0,
+    "metrics.clicks": 0,
+    "metrics.cost_micros": 0,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 20,
+    "metrics.impressions": 72,
+    "metrics.clicks": 9,
+    "metrics.cost_micros": 35100000,
+    "metrics.conversions": 0.3,
+    "metrics.conversions_value": 105.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 21,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 22,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "FRIDAY",
+    "segments.hour": 23,
+    "metrics.impressions": 40,
+    "metrics.clicks": 5,
+    "metrics.cost_micros": 19500000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 0,
+    "metrics.impressions": 40,
+    "metrics.clicks": 5,
+    "metrics.cost_micros": 19500000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 1,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 2,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 3,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 4,
+    "metrics.impressions": 72,
+    "metrics.clicks": 9,
+    "metrics.cost_micros": 35100000,
+    "metrics.conversions": 0.3,
+    "metrics.conversions_value": 105.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 5,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 6,
+    "metrics.impressions": 8,
+    "metrics.clicks": 1,
+    "metrics.cost_micros": 3900000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 7,
+    "metrics.impressions": 56,
+    "metrics.clicks": 7,
+    "metrics.cost_micros": 27300000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 8,
+    "metrics.impressions": 168,
+    "metrics.clicks": 21,
+    "metrics.cost_micros": 81900000,
+    "metrics.conversions": 2.3,
+    "metrics.conversions_value": 804.9999999999999
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 9,
+    "metrics.impressions": 256,
+    "metrics.clicks": 32,
+    "metrics.cost_micros": 124800000,
+    "metrics.conversions": 3.5,
+    "metrics.conversions_value": 1225.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 10,
+    "metrics.impressions": 176,
+    "metrics.clicks": 22,
+    "metrics.cost_micros": 85800000,
+    "metrics.conversions": 2.4,
+    "metrics.conversions_value": 840.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 11,
+    "metrics.impressions": 80,
+    "metrics.clicks": 10,
+    "metrics.cost_micros": 39000000,
+    "metrics.conversions": 1.1,
+    "metrics.conversions_value": 385.00000000000006
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 12,
+    "metrics.impressions": 256,
+    "metrics.clicks": 32,
+    "metrics.cost_micros": 124800000,
+    "metrics.conversions": 3.5,
+    "metrics.conversions_value": 1225.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 13,
+    "metrics.impressions": 136,
+    "metrics.clicks": 17,
+    "metrics.cost_micros": 66300000,
+    "metrics.conversions": 1.9,
+    "metrics.conversions_value": 665.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 14,
+    "metrics.impressions": 264,
+    "metrics.clicks": 33,
+    "metrics.cost_micros": 128700000,
+    "metrics.conversions": 3.6,
+    "metrics.conversions_value": 1260.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 15,
+    "metrics.impressions": 112,
+    "metrics.clicks": 14,
+    "metrics.cost_micros": 54600000,
+    "metrics.conversions": 1.5,
+    "metrics.conversions_value": 525.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 16,
+    "metrics.impressions": 104,
+    "metrics.clicks": 13,
+    "metrics.cost_micros": 50700000,
+    "metrics.conversions": 1.4,
+    "metrics.conversions_value": 489.99999999999994
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 17,
+    "metrics.impressions": 320,
+    "metrics.clicks": 40,
+    "metrics.cost_micros": 156000000,
+    "metrics.conversions": 4.4,
+    "metrics.conversions_value": 1540.0000000000002
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 18,
+    "metrics.impressions": 192,
+    "metrics.clicks": 24,
+    "metrics.cost_micros": 93600000,
+    "metrics.conversions": 2.6,
+    "metrics.conversions_value": 910.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 19,
+    "metrics.impressions": 32,
+    "metrics.clicks": 4,
+    "metrics.cost_micros": 15600000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 20,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 21,
+    "metrics.impressions": 72,
+    "metrics.clicks": 9,
+    "metrics.cost_micros": 35100000,
+    "metrics.conversions": 0.3,
+    "metrics.conversions_value": 105.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 22,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SATURDAY",
+    "segments.hour": 23,
+    "metrics.impressions": 8,
+    "metrics.clicks": 1,
+    "metrics.cost_micros": 3900000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 0,
+    "metrics.impressions": 40,
+    "metrics.clicks": 5,
+    "metrics.cost_micros": 19500000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 1,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 2,
+    "metrics.impressions": 32,
+    "metrics.clicks": 4,
+    "metrics.cost_micros": 15600000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 3,
+    "metrics.impressions": 64,
+    "metrics.clicks": 8,
+    "metrics.cost_micros": 31200000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 4,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 5,
+    "metrics.impressions": 8,
+    "metrics.clicks": 1,
+    "metrics.cost_micros": 3900000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 6,
+    "metrics.impressions": 64,
+    "metrics.clicks": 8,
+    "metrics.cost_micros": 31200000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 7,
+    "metrics.impressions": 8,
+    "metrics.clicks": 1,
+    "metrics.cost_micros": 3900000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 8,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 9,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 10,
+    "metrics.impressions": 16,
+    "metrics.clicks": 2,
+    "metrics.cost_micros": 7800000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 11,
+    "metrics.impressions": 72,
+    "metrics.clicks": 9,
+    "metrics.cost_micros": 35100000,
+    "metrics.conversions": 0.3,
+    "metrics.conversions_value": 105.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 12,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 13,
+    "metrics.impressions": 16,
+    "metrics.clicks": 2,
+    "metrics.cost_micros": 7800000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 14,
+    "metrics.impressions": 48,
+    "metrics.clicks": 6,
+    "metrics.cost_micros": 23400000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 15,
+    "metrics.impressions": 0,
+    "metrics.clicks": 0,
+    "metrics.cost_micros": 0,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 16,
+    "metrics.impressions": 32,
+    "metrics.clicks": 4,
+    "metrics.cost_micros": 15600000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 17,
+    "metrics.impressions": 0,
+    "metrics.clicks": 0,
+    "metrics.cost_micros": 0,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 18,
+    "metrics.impressions": 32,
+    "metrics.clicks": 4,
+    "metrics.cost_micros": 15600000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 19,
+    "metrics.impressions": 24,
+    "metrics.clicks": 3,
+    "metrics.cost_micros": 11700000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 20,
+    "metrics.impressions": 72,
+    "metrics.clicks": 9,
+    "metrics.cost_micros": 35100000,
+    "metrics.conversions": 0.3,
+    "metrics.conversions_value": 105.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 21,
+    "metrics.impressions": 64,
+    "metrics.clicks": 8,
+    "metrics.cost_micros": 31200000,
+    "metrics.conversions": 0.2,
+    "metrics.conversions_value": 70.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 22,
+    "metrics.impressions": 32,
+    "metrics.clicks": 4,
+    "metrics.cost_micros": 15600000,
+    "metrics.conversions": 0.1,
+    "metrics.conversions_value": 35.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.day_of_week": "SUNDAY",
+    "segments.hour": 23,
+    "metrics.impressions": 0,
+    "metrics.clicks": 0,
+    "metrics.cost_micros": 0,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  }
+]

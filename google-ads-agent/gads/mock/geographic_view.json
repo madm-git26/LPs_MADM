@@ -1,0 +1,102 @@
+[
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.geo_target_postal_code": "geoTargetConstants/9060601",
+    "geographic_view.location_type": "LOCATION_OF_PRESENCE",
+    "metrics.impressions": 1125,
+    "metrics.clicks": 125,
+    "metrics.cost_micros": 516353979,
+    "metrics.conversions": 5.2,
+    "metrics.conversions_value": 1820.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.geo_target_postal_code": "geoTargetConstants/9060602",
+    "geographic_view.location_type": "LOCATION_OF_PRESENCE",
+    "metrics.impressions": 882,
+    "metrics.clicks": 98,
+    "metrics.cost_micros": 418249835,
+    "metrics.conversions": 5.3,
+    "metrics.conversions_value": 1855.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.geo_target_postal_code": "geoTargetConstants/9060603",
+    "geographic_view.location_type": "LOCATION_OF_PRESENCE",
+    "metrics.impressions": 1062,
+    "metrics.clicks": 118,
+    "metrics.cost_micros": 578221196,
+    "metrics.conversions": 12.1,
+    "metrics.conversions_value": 4235.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.geo_target_postal_code": "geoTargetConstants/9060604",
+    "geographic_view.location_type": "LOCATION_OF_PRESENCE",
+    "metrics.impressions": 2304,
+    "metrics.clicks": 256,
+    "metrics.cost_micros": 997612641,
+    "metrics.conversions": 27.8,
+    "metrics.conversions_value": 9730.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.geo_target_postal_code": "geoTargetConstants/9060605",
+    "geographic_view.location_type": "LOCATION_OF_PRESENCE",
+    "metrics.impressions": 2142,
+    "metrics.clicks": 238,
+    "metrics.cost_micros": 889057359,
+    "metrics.conversions": 13.3,
+    "metrics.conversions_value": 4655.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.geo_target_postal_code": "geoTargetConstants/9060606",
+    "geographic_view.location_type": "LOCATION_OF_PRESENCE",
+    "metrics.impressions": 1791,
+    "metrics.clicks": 199,
+    "metrics.cost_micros": 620498741,
+    "metrics.conversions": 8.2,
+    "metrics.conversions_value": 2869.9999999999995
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.geo_target_postal_code": "geoTargetConstants/9060607",
+    "geographic_view.location_type": "LOCATION_OF_PRESENCE",
+    "metrics.impressions": 972,
+    "metrics.clicks": 108,
+    "metrics.cost_micros": 362433005,
+    "metrics.conversions": 8.5,
+    "metrics.conversions_value": 2975.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.geo_target_postal_code": "geoTargetConstants/9060608",
+    "geographic_view.location_type": "LOCATION_OF_PRESENCE",
+    "metrics.impressions": 585,
+    "metrics.clicks": 65,
+    "metrics.cost_micros": 345376146,
+    "metrics.conversions": 7.7,
+    "metrics.conversions_value": 2695.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.geo_target_postal_code": "geoTargetConstants/9060609",
+    "geographic_view.location_type": "LOCATION_OF_PRESENCE",
+    "metrics.impressions": 2088,
+    "metrics.clicks": 232,
+    "metrics.cost_micros": 1097373109,
+    "metrics.conversions": 31.2,
+    "metrics.conversions_value": 10920.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Emergency Dentist | Miami | 24-7",
+    "segments.geo_target_postal_code": "geoTargetConstants/9060610",
+    "geographic_view.location_type": "LOCATION_OF_PRESENCE",
+    "metrics.impressions": 1431,
+    "metrics.clicks": 159,
+    "metrics.cost_micros": 570678387,
+    "metrics.conversions": 20.9,
+    "metrics.conversions_value": 7314.999999999999
+  }
+]

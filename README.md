@@ -174,3 +174,25 @@ button; if the video cannot play, its poster frame stays up with a play button.)
   `Everything-Teeth.mp4` into `assets/video/` and add a second `<source>` in `build.py`.
 - The practice's main website lists **(305) 777-7774**. These landing pages use the tracking number
   **(305) 404-6659** you supplied, everywhere.
+
+---
+
+## Also in this repository: the Google Ads agent
+
+`google-ads-agent/` connects Claude to the Google Ads API and runs the account these pages receive
+traffic from — building campaigns, mining negatives, pausing dead keywords, moving target CPA and
+budgets inside guardrails, tuning postal-code and income targeting, and importing booked-appointment
+conversions so bidding optimises for patients in the chair rather than clicks on a phone number.
+
+```bash
+cd google-ads-agent
+pip install -r requirements.txt
+GADS_MOCK=1 python -m gads.selfcheck          # works with no credentials
+```
+
+Start with `google-ads-agent/README.md`. Routine changes apply themselves, structural ones wait for a
+yes, every change is logged, and `scripts/rollback.py --run-id` undoes a whole run.
+
+The landing pages and the agent meet in two places: the `click_to_call` / `click_book_online` events
+in `assets/js/lp.js` become the conversion actions the agent optimises towards, and the page URLs are
+what its campaigns point at.

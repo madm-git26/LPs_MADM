@@ -1,0 +1,57 @@
+[
+  {
+    "campaign.name": "ETFD | Search | Dental Implants | Miami",
+    "ad_group.name": "Dental Implants - Exact",
+    "ad_group_criterion.income_range.type": "INCOME_RANGE_90_UP",
+    "ad_group_criterion.bid_modifier": 1.0,
+    "metrics.impressions": 620,
+    "metrics.clicks": 74,
+    "metrics.cost_micros": 690000000,
+    "metrics.conversions": 6.0,
+    "metrics.conversions_value": 2100.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Dental Implants | Miami",
+    "ad_group.name": "Dental Implants - Exact",
+    "ad_group_criterion.income_range.type": "INCOME_RANGE_80_90",
+    "ad_group_criterion.bid_modifier": 1.0,
+    "metrics.impressions": 410,
+    "metrics.clicks": 44,
+    "metrics.cost_micros": 402000000,
+    "metrics.conversions": 3.0,
+    "metrics.conversions_value": 1050.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Dental Implants | Miami",
+    "ad_group.name": "Dental Implants - Exact",
+    "ad_group_criterion.income_range.type": "INCOME_RANGE_70_80",
+    "ad_group_criterion.bid_modifier": 1.0,
+    "metrics.impressions": 380,
+    "metrics.clicks": 39,
+    "metrics.cost_micros": 358000000,
+    "metrics.conversions": 1.0,
+    "metrics.conversions_value": 350.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Dental Implants | Miami",
+    "ad_group.name": "Dental Implants - Exact",
+    "ad_group_criterion.income_range.type": "INCOME_RANGE_50_60",
+    "ad_group_criterion.bid_modifier": 1.0,
+    "metrics.impressions": 290,
+    "metrics.clicks": 26,
+    "metrics.cost_micros": 240000000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  },
+  {
+    "campaign.name": "ETFD | Search | Dental Implants | Miami",
+    "ad_group.name": "Dental Implants - Exact",
+    "ad_group_criterion.income_range.type": "INCOME_RANGE_0_50",
+    "ad_group_criterion.bid_modifier": 1.0,
+    "metrics.impressions": 480,
+    "metrics.clicks": 41,
+    "metrics.cost_micros": 372000000,
+    "metrics.conversions": 0.0,
+    "metrics.conversions_value": 0.0
+  }
+]

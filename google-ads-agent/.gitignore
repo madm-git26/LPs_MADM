@@ -1,0 +1,10 @@
+.env
+.audit/
+out/
+*.pyc
+__pycache__/
+.pytest_cache/
+.cache/
+reports/
+config/accounts.yaml
+config/zip_demographics.csv
