@@ -203,3 +203,31 @@ reviews → "We're here when you need us most" CTA → 9-question FAQ → map �
 
 Structured data: `Dentist` (with hours, geo, `availableService`) + `FAQPage` covering all 9 visible FAQs.
 Ships with `noindex, nofollow` like the other landing pages — remove it if you want organic indexing.
+
+---
+
+## Additional landing page — Shades Creek Dental (Homewood, AL)
+
+`shades-creek-emergency-dentist.html` is a standalone, single-file emergency-dentistry landing page for
+**Shades Creek Dental**, 1045 Broadway Park, Suite 101, Homewood, AL 35209 — phone **205-417-2750**
+(`tel:2054172750`), booking at `https://www.shadescreekdental.com/book-an-appointment/`. Self-contained
+(inline CSS/JS); it is not part of the `build.py` pipeline.
+
+**Brand match.** Colors and assets are pulled from the live site: teal `#005E70`, light blue `#A8D3DB`,
+pale `#E4F1F4`. Headings use Cormorant Infant (the site's display serif); body uses Hanken Grotesk as a
+free stand-in for the site's Typekit `neuzeit-grotesk`. The header/footer logos are the site's own SVGs
+(both are white/light artwork, so they sit on the teal header and dark footer).
+
+**Content** is taken verbatim from `shadescreekdental.com/services/emergency-dentist/`: rapid-response
+copy, the 8 emergency types, the 3-step "what to do", 5 first-aid tips, "do not ignore dental pain",
+prevention, and all 8 FAQs (mirrored into `FAQPage` schema). Dr. Ron MacBeth's bio, photo, and the
+"Guided by Principle, Powered by Passion" section come from the client-supplied text. Reviews are real
+patient quotes from the site.
+
+**Animated hero.** Same rotating-keyword H1 as the Precision Dental page: `Dental Emergency? /
+<rotating phrase> / Starts Here` cycling seven emergency keywords every 2.8s, with the same
+accessibility handling (aria-hidden rotator + visually-hidden H1 sentence, pause on hover/focus and tab
+hide, single-line auto-fit, full `prefers-reduced-motion` opt-out). Open/closed badge and the
+highlighted "today" row use America/Chicago against Mon–Thu 8:00–4:00.
+
+Ships with `noindex, nofollow` like the other landing pages.
