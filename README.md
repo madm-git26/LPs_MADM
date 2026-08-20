@@ -208,26 +208,66 @@ Ships with `noindex, nofollow` like the other landing pages — remove it if you
 
 ## Additional landing page — Shades Creek Dental (Homewood, AL)
 
-`shades-creek-emergency-dentist.html` is a standalone, single-file emergency-dentistry landing page for
-**Shades Creek Dental**, 1045 Broadway Park, Suite 101, Homewood, AL 35209 — phone **205-417-2750**
+`shades-creek-emergency-dentist.html` is a standalone, single-file landing page for **Shades Creek
+Dental**, 1045 Broadway Park, Suite 101, Homewood, AL 35209 — phone **205-417-2750**
 (`tel:2054172750`), booking at `https://www.shadescreekdental.com/book-an-appointment/`. Self-contained
 (inline CSS/JS); it is not part of the `build.py` pipeline.
 
-**Brand match.** Colors and assets are pulled from the live site: teal `#005E70`, light blue `#A8D3DB`,
-pale `#E4F1F4`. Headings use Cormorant Infant (the site's display serif); body uses Hanken Grotesk as a
-free stand-in for the site's Typekit `neuzeit-grotesk`. The header/footer logos are the site's own SVGs
-(both are white/light artwork, so they sit on the teal header and dark footer).
+### Campaign intent
 
-**Content** is taken verbatim from `shadescreekdental.com/services/emergency-dentist/`: rapid-response
-copy, the 8 emergency types, the 3-step "what to do", 5 first-aid tips, "do not ignore dental pain",
-prevention, and all 8 FAQs (mirrored into `FAQPage` schema). Dr. Ron MacBeth's bio, photo, and the
-"Guided by Principle, Powered by Passion" section come from the client-supplied text. Reviews are real
-patient quotes from the site.
+Built for the **high-value emergency** angle, not new-patient volume: the practice is deliberately down
+from ~75 new patients a month to 30–50 with hygiene booked out two months, and wants emergencies as the
+gateway to crowns, root canals, bridges, dentures and implants. On a $500–$1,000/month budget every
+click has to count, so the page is phone-first (call CTA in the header, hero, every treatment block, the
+sticky mobile bar and the footer) and carries no new-patient-special or cleaning/exam offer.
 
-**Animated hero.** Same rotating-keyword H1 as the Precision Dental page: `Dental Emergency? /
-<rotating phrase> / Starts Here` cycling seven emergency keywords every 2.8s, with the same
-accessibility handling (aria-hidden rotator + visually-hidden H1 sentence, pause on hover/focus and tab
-hide, single-line auto-fit, full `prefers-reduced-motion` opt-out). Open/closed badge and the
-highlighted "today" row use America/Chicago against Mon–Thu 8:00–4:00.
+### Ad-group deep links
+
+Each keyword cluster has its own on-page block with a stable anchor, so ads can land on the section that
+matches the search term instead of the top of the page:
+
+| Ad group | Landing URL |
+|---|---|
+| Emergency dentist / urgent dental care | `…#emergencies` |
+| Broken / cracked / fractured tooth | `…#broken-tooth` |
+| Broken, lost or fallen-out crown | `…#emergency-crown` |
+| Same-day crown / CEREC | `…#same-day-crowns` |
+| Emergency & urgent root canal | `…#root-canal` |
+| Dentures (full, partial) & dental bridges | `…#replace-teeth` |
+
+### Brand match
+
+Colors and assets come from the live site: teal `#005E70`, light blue `#A8D3DB`, pale `#E4F1F4`.
+Headings use Cormorant Infant (the site's display serif); body uses Hanken Grotesk as a free stand-in
+for the site's Typekit `neuzeit-grotesk`. Header/footer logos are the site's own SVGs (both are
+white/light artwork, so they sit on the teal header and dark footer). The team photo, Dr. MacBeth's
+portrait and the emergency-service image are the practice's own files.
+
+### Animation
+
+All motion is scroll- or intent-triggered and fully disabled under `prefers-reduced-motion`:
+
+- **Rotating H1 keywords** — eight emergency-service phrases on a 2.8s cycle with a progress meter.
+  The rotator is `aria-hidden` with a visually-hidden H1 sentence for screen readers, pauses on
+  hover/focus and tab hide, and auto-fits each phrase to a single line at any width.
+- **Overlapping value cards** over the team photo (the layout the client asked for), lifting on hover.
+- **Staggered grid reveals** at 60ms per item for the emergency, first-aid and differentiator grids.
+- **Symptom triage chips** — tapping "my crown fell out", "severe toothache" etc. smooth-scrolls to the
+  matching treatment block and flashes it, so ad traffic reaches the right answer in one tap.
+- **Visit timeline** — the connector line draws left-to-right and the five step markers pop in sequence.
+- Live open/closed badge and highlighted "today" hours row, resolved against America/Chicago.
+
+### Content sourcing
+
+Emergency copy, the 8 emergency types, first-aid tips, "do not ignore dental pain", prevention and 8 of
+the 11 FAQs are verbatim from `shadescreekdental.com/services/emergency-dentist/`. Dr. MacBeth's bio and
+"Guided by Principle, Powered by Passion" are the client-supplied text. Reviews are real patient quotes
+from the site. Technology claims (CEREC same-day crowns, 3D cone beam, digital X-rays, intraoral
+cameras) come from the practice's "How We Are Different" page.
+
+**Needs practice sign-off before running traffic:** the treatment-block detail and three added FAQs
+(same-day crown replacement, re-cementing a crown that fell out, what happens when a tooth cannot be
+saved) describe standard workflows for the technology the practice advertises, but they were written for
+this page rather than lifted from the site.
 
 Ships with `noindex, nofollow` like the other landing pages.
