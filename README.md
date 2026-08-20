@@ -174,3 +174,32 @@ button; if the video cannot play, its poster frame stays up with a play button.)
   `Everything-Teeth.mp4` into `assets/video/` and add a second `<source>` in `build.py`.
 - The practice's main website lists **(305) 777-7774**. These landing pages use the tracking number
   **(305) 404-6659** you supplied, everywhere.
+
+---
+
+## Additional landing page — Precision Dental (Las Vegas, NV)
+
+`precision-dental-lv-emergency.html` is a standalone, single-file emergency-dentistry landing page for
+**Precision Dental**, 6545 S Fort Apache Rd Ste 110, Las Vegas, NV 89148 — phone **702-331-4444**
+(`tel:7023314444`). It is self-contained (inline CSS/JS, remote images from precisiondentallv.com) and
+unrelated to the Everything Teeth pages above, so it does not go through `build.py`.
+
+**Animated hero headline.** The H1 reads `In Pain? / <rotating keyword> / Starts Right Here`, where the
+gold script line cycles through eight emergency-dentistry keyword phrases every 2.8s: Fast Relief,
+Emergency Dental Care, Tooth Pain Relief, Same-Day Treatment, Broken Tooth Repair, Knocked-Out Tooth
+Care, Abscess & Swelling Care, Urgent Dental Care. To edit the list, change the `.kw` spans inside
+`#kwRotator`; timing lives in `KW_INTERVAL`.
+
+- All phrases sit in the DOM, so crawlers see every keyword; the rotator is `aria-hidden` and a
+  visually-hidden sentence gives screen readers one clean H1.
+- Rotation pauses on hover/focus of the hero and when the tab is hidden.
+- `prefers-reduced-motion: reduce` disables the rotation (first phrase stays), the progress meter, the
+  glow drift, the CTA pulse, and all scroll reveals.
+- Each phrase is auto-fitted to one line at any viewport width, so the headline never reflows.
+
+**Page sections:** hero → what counts as an emergency → 7 emergency types → 5-step visit process →
+why timing matters → hours + after-hours note → emergency services → doctors → insurance → location →
+reviews → "We're here when you need us most" CTA → 9-question FAQ → map → footer.
+
+Structured data: `Dentist` (with hours, geo, `availableService`) + `FAQPage` covering all 9 visible FAQs.
+Ships with `noindex, nofollow` like the other landing pages — remove it if you want organic indexing.
