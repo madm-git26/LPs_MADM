@@ -257,6 +257,30 @@ All motion is scroll- or intent-triggered and fully disabled under `prefers-redu
 - **Visit timeline** — the connector line draws left-to-right and the five step markers pop in sequence.
 - Live open/closed badge and highlighted "today" hours row, resolved against America/Chicago.
 
+### Hero video & required assets
+
+The hero plays the practice's own b-roll instead of a still:
+
+- `assets/video/shades-creek-hero.webm` — 1920×1080, 49s, 5.3 MB (supplied by the client)
+- `assets/img/shades-creek-hero-poster.jpg` — poster frame, also the still shown when motion is off
+
+Both are referenced with **relative paths**, so the HTML file must be deployed with the `assets/`
+folder alongside it. The video is `muted`, `loop`, `playsinline`, `preload="metadata"`, and it pauses
+automatically when the hero scrolls out of view or the tab is hidden. A 44px pause/play control sits on
+the video (WCAG 2.2.2 — auto-playing motion longer than 5s needs a stop control). Under
+`prefers-reduced-motion` or a `Save-Data` connection it never autoplays; the poster shows instead.
+
+**Recommended before launch:** add an MP4/H.264 source next to the WebM for older iOS Safari. Drop the
+file at `assets/video/shades-creek-hero.mp4` and add a second `<source>` above the WebM one. Without it
+those devices fall back to the poster image, which is graceful but static.
+
+### Header & logo
+
+The header is near-black teal (`#002A33`) under a lighter teal info strip (`#0A7186`). The practice's
+header SVG is a 57×66 icon and the footer SVG is a tall stacked lockup — neither reads as a name at
+header size, so the header pairs the icon with a typeset wordmark in Cormorant Infant (the brand serif).
+The full stacked lockup is still used in the footer, where it has room.
+
 ### Content sourcing
 
 Emergency copy, the 8 emergency types, first-aid tips, "do not ignore dental pain", prevention and 8 of
