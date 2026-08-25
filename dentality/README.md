@@ -39,7 +39,7 @@ Events already fire on every CTA, to `gtag`, `fbq` and `dataLayer`:
 | Event | Fires on |
 |---|---|
 | `click_to_call` | every `tel:` link — header, hero, service card, ribbon, insurance, FAQ, location, final CTA, sticky mobile bar |
-| `click_book_online` | every link to `book.modento.io` — 12 of them |
+| `click_book_online` | every link to `book.allinone.dental` — 12 of them |
 | `click_directions` | the Google Maps links |
 
 Any element can be instrumented by adding `data-track="call|book|directions"`.
@@ -50,9 +50,8 @@ The page ships with `<meta name="robots" content="noindex, nofollow">` so it doe
 with the main site organically. Google Ads serves it either way — remove the tag only if you
 want it indexed.
 
-**There is no lead form.** The two conversion paths are the phone and the practice's own
-scheduler at `https://book.modento.io/dentality-family-dentistry/reason-for-visit` — the same
-one the main website uses.
+**There is no lead form.** The two conversion paths are the phone (`(281) 407-8555`) and the
+online scheduler at `https://book.allinone.dental/dentality?referrer_id=4`.
 
 ---
 
@@ -106,21 +105,24 @@ The arch shapes on the hero, "why", experience and doctor images echo the "D" of
 Everything on the page comes from Dentality's own website. Nothing was invented — no awards,
 statistics, certifications, review counts, years of experience or guarantees.
 
-- **Office hours** are the practice's real hours: Mon/Wed 9–6, Fri 9–5, Sat 9–3, Tue/Thu/Sun closed.
-  Today's row highlights automatically, computed in **Katy time** (`America/Chicago`), not the
-  visitor's timezone.
-- **⚠️ One conflict was resolved.** The original landing page said *"Open Saturdays 8 AM – 2 PM"*
-  in its body copy but listed *Saturday 9:00 AM – 3:00 PM* in its own hours table — and the main
-  website also says 9–3. **This page uses 9 AM – 3 PM everywhere.** Please confirm which is right;
-  if it is 8–2, search `9:00 AM – 3:00 PM`, `9 AM – 3 PM` and `9–3` in `index.html`.
-- **Phone** is `(281) 407-8555`, the tracking number on the existing landing page. The main
-  website lists `281-712-2288`.
-- **Reviews** are the three real patient reviews from the practice's page, quoted verbatim, with
-  the same first-name attribution.
-- **Rating**: `4.9` is shown as "average patient rating", matching the original page. The
-  `Dentist` schema block deliberately **omits `aggregateRating`** — Google requires a verified
-  `reviewCount` alongside it, and no review count is published. Add it once you have the real
-  count from the Google Business Profile.
+- **Office hours** are the practice's real hours: Mon/Wed 9–6, Fri 9–5, **Sat 9–3**, Tue/Thu/Sun
+  closed — confirmed. Today's row highlights automatically, computed in **Katy time**
+  (`America/Chicago`), not the visitor's timezone.
+- **Phone** is `(281) 407-8555`, confirmed as the number for this page. The main website's
+  general listing shows a different number (`281-712-2288`); this page intentionally uses the
+  one given for its own traffic.
+- **Booking** goes to `https://book.allinone.dental/dentality?referrer_id=4`, confirmed as the
+  scheduler for this page.
+- **Rating and reviews are pulled from the practice's live Google Business Profile** (place ID
+  `ChIJh9j9SqUnQYYR2SSqO5Pt0vk`), via the Trustindex review widget embedded on the practice's own
+  homepage, which mirrors GBP data. At the time this page was built: **4.9 average, 582 Google
+  reviews**. This count changes daily — refresh it in `index.html` (the hero proof row, trust
+  strip, reviews section ×2, final CTA, and the `aggregateRating` block in the `Dentist` JSON-LD)
+  periodically, the same way you'd refresh any hard-coded review count.
+- **The three testimonials are real, recent Google reviews** (posted Aug 7–21, 2026), quoted
+  verbatim from the GBP feed except two silently corrected typos ("Denistry" → "Dentistry",
+  "throughly" → "thoroughly") and trimming each to its strongest sentences for a pull quote. Full
+  original text is on the practice's Google Business Profile.
 - **Doctor bios, credentials and schools** are the practice's own wording, lightly tightened.
 - Comfort-menu items and the "additional fees apply" caveat on nitrous oxide are unchanged.
 - The `$69` exam-and-X-rays offer is presented as a self-pay option, which is how the original
@@ -138,4 +140,5 @@ statistics, certifications, review counts, years of experience or guarantees.
 - Semantic HTML5, single `<h1>`, no heading-level skips, every image has alt text, a skip link,
   visible focus rings, and `prefers-reduced-motion` honoured.
 - No horizontal overflow at 390 / 768 / 1024 / 1440. No mobile tap target under 40 px.
-- `Dentist` and `FAQPage` JSON-LD, with address, hours, service list and the three clinicians.
+- `Dentist` and `FAQPage` JSON-LD, with address, hours, service list, the three clinicians and a
+  live-sourced `aggregateRating` (4.9 / 582 reviews at build time — refresh alongside the on-page count).
