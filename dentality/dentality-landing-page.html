@@ -270,15 +270,23 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); letter-spacing: -.018em; }
 .hero__badge span { font-size: .8125rem; color: var(--ink-mute); line-height: 1.35; display: block; }
 .hero__stamp {
   position: absolute; right: -4%; top: 7%;
-  width: clamp(96px, 11vw, 128px); aspect-ratio: 1; border-radius: 50%;
+  width: clamp(108px, 12vw, 148px); aspect-ratio: 1; border-radius: 50%;
   background: var(--navy-900); color: #fff; box-shadow: var(--shadow-md);
-  display: grid; place-content: center; text-align: center; padding: .5rem;
-  border: 1px solid rgba(37, 169, 224, .35);
+  display: grid; place-content: center; text-align: center; padding: .6rem;
+  border: 1px solid rgba(192, 138, 78, .5); text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
-.hero__stamp b { font-size: clamp(1.35rem, 1.8vw, 1.7rem); letter-spacing: -.03em; line-height: 1.05; }
+.hero__stamp:hover, .hero__stamp:focus-visible {
+  transform: translateY(-3px) scale(1.03); box-shadow: var(--shadow-lg);
+  border-color: var(--walnut-soft);
+}
+.hero__stamp b {
+  display: block; font-size: clamp(1.5rem, 2.1vw, 1.9rem);
+  color: var(--walnut-soft); letter-spacing: -.03em; line-height: 1.05;
+}
 .hero__stamp span {
-  font-size: .625rem; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--cyan); font-weight: 700; line-height: 1.6;
+  font-size: .5625rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--cyan); font-weight: 700; line-height: 1.5;
 }
 
 /* ---------------------------------------------------------- trust bar --- */
@@ -820,9 +828,10 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); letter-spacing: -.018em; }
              alt="The waiting lounge at Dentality Family Dentistry in Katy, Texas, with velvet armchairs and a curved walnut feature wall"
              fetchpriority="high" decoding="async">
       </div>
-      <div class="hero__stamp" aria-hidden="true">
-        <span>Open</span><b>Sat</b><span>9–3</span>
-      </div>
+      <a class="hero__stamp" href="#insurance" data-track="offer"
+         aria-label="New patient exam and X-rays, $69 — see offer details">
+        <span>New Patient</span><b>$69</b><span>Exam + X-Ray</span>
+      </a>
       <div class="hero__badge">
         <span class="hero__badge-dot" aria-hidden="true"></span>
         <div>
@@ -1152,7 +1161,7 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); letter-spacing: -.018em; }
 </section>
 
 <!-- 08 · insurance & affordability ----------------------------------------->
-<section class="section">
+<section class="section" id="insurance">
   <div class="wrap ins">
     <div class="reveal">
       <p class="eyebrow">Insurance &amp; Payment</p>
@@ -1460,7 +1469,8 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); letter-spacing: -.018em; }
   var EVENTS = {
     call:       'click_to_call',
     book:       'click_book_online',
-    directions: 'click_directions'
+    directions: 'click_directions',
+    offer:      'click_view_offer'
   };
 
   function track(kind) {

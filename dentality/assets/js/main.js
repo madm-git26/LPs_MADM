@@ -15,7 +15,8 @@
   var EVENTS = {
     call:       'click_to_call',
     book:       'click_book_online',
-    directions: 'click_directions'
+    directions: 'click_directions',
+    offer:      'click_view_offer'
   };
 
   function track(kind) {
