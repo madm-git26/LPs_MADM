@@ -174,3 +174,11 @@ button; if the video cannot play, its poster frame stays up with a play button.)
   `Everything-Teeth.mp4` into `assets/video/` and add a second `<source>` in `build.py`.
 - The practice's main website lists **(305) 777-7774**. These landing pages use the tracking number
   **(305) 404-6659** you supplied, everywhere.
+
+---
+
+## Also in this repo
+
+`dentality/` — a separate Google Ads landing page for **Dentality Family Dentistry** (Katy, TX).
+It is fully self-contained (its own HTML, CSS, JS and images) and shares nothing with the
+Everything Teeth pages above. See `dentality/README.md` for its setup and content notes.
