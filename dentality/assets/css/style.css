@@ -249,24 +249,31 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); letter-spacing: -.018em; }
 .hero__badge b { display: block; font-size: .9375rem; letter-spacing: -.02em; }
 .hero__badge span { font-size: .8125rem; color: var(--ink-mute); line-height: 1.35; display: block; }
 .hero__stamp {
-  position: absolute; right: -4%; top: 7%;
-  width: clamp(108px, 12vw, 148px); aspect-ratio: 1; border-radius: 50%;
-  background: var(--navy-900); color: #fff; box-shadow: var(--shadow-md);
-  display: grid; place-content: center; text-align: center; padding: .6rem;
-  border: 1px solid rgba(192, 138, 78, .5); text-decoration: none;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  position: absolute; right: -6%; top: 5%;
+  width: clamp(140px, 15vw, 196px); aspect-ratio: 1; border-radius: 50%;
+  background: var(--navy-900); color: #fff;
+  display: grid; place-content: center; text-align: center; padding: .7rem;
+  text-decoration: none;
+  box-shadow:
+    0 0 0 5px var(--sand),
+    0 0 0 8px var(--walnut-soft),
+    var(--shadow-lg);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 .hero__stamp:hover, .hero__stamp:focus-visible {
-  transform: translateY(-3px) scale(1.03); box-shadow: var(--shadow-lg);
-  border-color: var(--walnut-soft);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow:
+    0 0 0 5px var(--sand),
+    0 0 0 8px var(--walnut),
+    var(--shadow-lg);
 }
 .hero__stamp b {
-  display: block; font-size: clamp(1.5rem, 2.1vw, 1.9rem);
-  color: var(--walnut-soft); letter-spacing: -.03em; line-height: 1.05;
+  display: block; font-size: clamp(2.15rem, 3.4vw, 2.9rem); font-weight: 800;
+  color: var(--walnut-soft); letter-spacing: -.04em; line-height: 1;
 }
 .hero__stamp span {
-  font-size: .5625rem; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--cyan); font-weight: 700; line-height: 1.5;
+  font-size: .75rem; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--cyan); font-weight: 800; line-height: 1.5;
 }
 
 /* ---------------------------------------------------------- trust bar --- */
@@ -635,6 +642,7 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); letter-spacing: -.018em; }
   :root { --arch: 190px 190px 18px 18px; }
   .hero__grid { grid-template-columns: 1fr; gap: 3rem; }
   .hero__art { max-width: 34rem; margin-inline: auto; width: 100%; }
+  .hero__stamp { right: 2%; top: 4%; }
   .hero__badge { left: -4%; }
   .why, .exp__grid, .ins, .docs, .faq, .svc__head { grid-template-columns: minmax(0, 1fr); }
   .why__art, .faq__aside { position: static; }
