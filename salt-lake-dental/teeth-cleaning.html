@@ -121,9 +121,6 @@ section{padding:64px 0}
 .hero-points li{display:flex;gap:11px;align-items:flex-start;font-size:16.5px}
 .hero-points svg{width:19px;height:19px;fill:#F3C98B;flex:none;margin-top:3px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px}
-.open-status{font-size:15px;color:rgba(255,255,255,.9);margin-bottom:22px}
-.open-status .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#7ED957;margin-right:7px}
-.open-status.is-closed .dot{background:var(--gold)}
 .hero-rating{display:flex;align-items:center;gap:12px;font-size:15.5px;color:rgba(255,255,255,.95)}
 .stars{display:inline-flex;gap:2px}
 .stars svg{width:17px;height:17px;fill:var(--gold)}
@@ -331,7 +328,6 @@ footer .foot-nap{margin-bottom:8px}
           <a class="btn btn-cta btn-lg btn-pulse" href="tel:+18013969321" data-track="call"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call (801) 396-9321</a>
           <a class="btn btn-ghost btn-lg" href="https://book.modento.io/salt-lake-dental" target="_blank" rel="noopener noreferrer" data-track="book"><svg aria-hidden="true"><use href="#i-calendar"/></svg>Book Online in 60 Seconds</a>
         </div>
-        <p class="open-status" data-open-status><span class="dot"></span><span data-status-text>&nbsp;</span></p>
         <div class="hero-rating">
           <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
           <span><strong>4.6</strong> from 1,290+ Google reviews</span>
@@ -633,25 +629,12 @@ footer .foot-nap{margin-bottom:8px}
     else if (kind === 'directions') fire('click_directions', '');
   });
 
-  /* ==== Open / closed status (America/Denver) ==== */
-  var HOURS = {1:[8,17],2:[8,17],3:[11,19],4:[9,12],5:[8,17],6:[8,15]}; // 0=Sun closed
+  /* ==== Highlight today's row in the hours table (America/Denver) ==== */
   var now;
   try{
     now = new Date(new Date().toLocaleString('en-US',{timeZone:'America/Denver'}));
   }catch(e){ now = new Date(); }
-  var day = now.getDay(), hr = now.getHours() + now.getMinutes()/60;
-  var slot = HOURS[day], open = !!slot && hr >= slot[0] && hr < slot[1];
-
-  var box = document.querySelector('[data-open-status]');
-  if (box){
-    var txt = box.querySelector('[data-status-text]');
-    if (open){
-      txt.textContent = 'Open now — call and we’ll find you a time';
-    } else {
-      box.classList.add('is-closed');
-      txt.textContent = 'Currently closed — book online any time and we’ll confirm your appointment when we open';
-    }
-  }
+  var day = now.getDay();
 
   var row = document.querySelector('.hours-table tr[data-day="'+day+'"]');
   if (row) row.classList.add('today');
