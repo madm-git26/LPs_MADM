@@ -633,11 +633,11 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); letter-spacing: -.018em; }
 
 /* ----------------------------------------------------------- location --- */
 .loc { background: var(--sand); }
-.loc__grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: 0; align-items: center; }
+.loc__grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: stretch; }
 .loc__card {
   background: var(--navy-950); color: #fff; border-radius: 22px;
   padding: clamp(1.9rem, 3.2vw, 2.75rem); box-shadow: var(--shadow-lg);
-  position: relative; z-index: 2; margin-right: -4rem;
+  position: relative;
 }
 .loc__card h2 { color: #fff; font-size: clamp(1.75rem, 2.8vw, 2.5rem); margin-bottom: 1.5rem; }
 .loc__meta { display: grid; gap: 1.15rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, .13); }
@@ -767,8 +767,6 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); letter-spacing: -.018em; }
   .svc--feature, .svc--wide { grid-column: 1 / -1; }
   .review-grid { grid-template-columns: 1fr; }
   .loc__grid { grid-template-columns: minmax(0, 1fr); }
-  .loc__card { margin-right: 0; margin-bottom: -3rem; }
-  .loc__map { padding-top: 3rem; }
   .doc-lead { max-width: 30rem; margin-inline: auto; }
   .docs__intro, .doc-lead, .docs__side { grid-column: 1; }
   .docs__intro { grid-row: 1; }
