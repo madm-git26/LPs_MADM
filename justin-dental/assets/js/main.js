@@ -58,8 +58,25 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
+  /* ------------------------------------- highlight today's office hours -- */
+  /* Uses the practice's own timezone, not the visitor's. */
+  var hoursList = document.getElementById('hours-list');
+  if (hoursList) {
+    var today;
+    try {
+      today = new Date().toLocaleDateString('en-US', { timeZone: 'America/Chicago', weekday: 'short' });
+    } catch (err) {
+      today = null;
+    }
+    if (today) {
+      var dayIndex = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(today.slice(0, 3));
+      var todayRow = hoursList.querySelector('[data-day="' + dayIndex + '"]');
+      if (todayRow) todayRow.classList.add('today');
+    }
+  }
+
   /* ----------------------------------------------- one accordion open --- */
-  var faq = document.querySelectorAll('.faq-list details');
+  var faq = document.querySelectorAll('.faq__list details');
   faq.forEach(function (item) {
     item.addEventListener('toggle', function () {
       if (!item.open) return;
@@ -112,7 +129,7 @@
   /* Loads the background clip only on wider viewports and only when motion
      is welcome, so mobile visitors and prefers-reduced-motion users just get
      the static poster image -- never the ~640KB video download. */
-  var heroMedia = document.querySelector('.hero__media');
+  var heroMedia = document.getElementById('hero-media');
   var heroVideo = document.getElementById('hero-video');
   if (heroMedia && heroVideo) {
     var wideEnough = window.matchMedia('(min-width: 861px)').matches;

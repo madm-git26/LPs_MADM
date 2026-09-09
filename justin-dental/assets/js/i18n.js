@@ -11,7 +11,24 @@
     'header.callnow': 'Llamar Ahora',
     'trustbar.text': 'Más de 1,000+ ⭐⭐⭐⭐⭐ Reseñas de Google',
 
-    'hero.h1': 'Su Dentista de Confianza en Justin, TX',
+    'announce.c1': 'Nuevos Pacientes Bienvenidos',
+    'announce.c2': 'Hablamos Español',
+    'announce.c4': 'Atención de Emergencia Disponible',
+
+    'nav.why': 'Por Qué Elegirnos',
+    'nav.services': 'Servicios',
+    'nav.doctors': 'Nuestro Equipo',
+    'nav.reviews': 'Reseñas',
+    'nav.location': 'Visítenos',
+
+    'hero.eyebrow': 'Odontología Familiar y Brackets · Justin, TX',
+    'hero.stamp1': 'Hablamos',
+    'hero.stamp2': 'Español',
+    'hero.badgeh': '¿Necesita una cita?',
+    'hero.badgep': 'Reserve en línea en menos de un minuto, día o noche.',
+
+    'hero.h1line1': 'Su Dentista de Confianza en',
+    'hero.h1line2': 'Justin, TX',
     'hero.sub': 'Atención dental familiar enfocada en su comodidad, sus metas y la salud de su boca a largo plazo.',
     'hero.cta1': 'Programe Su Cita',
     'hero.cta2': 'Llame (940) 242-2022',
@@ -189,7 +206,56 @@
 
     'floating.h': '¿Necesita una Cita?',
     'floating.cta': 'Programar en Línea',
-    'mobile.call': 'Llamar', 'mobile.schedule': 'Programar', 'mobile.es': 'English'
+    'mobile.call': 'Llamar', 'mobile.schedule': 'Programar', 'mobile.es': 'English',
+
+    'trustbar.t1h': '1,000+ Reseñas de Google', 'trustbar.t1p': 'Atención con calificación de cinco estrellas',
+    'trustbar.t2h': 'Consultorio Familiar', 'trustbar.t2p': 'Todas las edades son bienvenidas',
+    'trustbar.t3h': 'Hablamos Español', 'trustbar.t3p': 'Se habla español',
+    'trustbar.t4h': 'Pago Flexible', 'trustbar.t4p': 'Financiamiento disponible',
+    'trustbar.t5h': 'Justin, TX', 'trustbar.t5p': '815 W 1st St Ste B',
+
+    'why.lede': 'Desde la primera limpieza de un niño hasta brackets y chequeos familiares, nuestro equipo local trata a cada paciente como familia — en inglés o en español.',
+    'why.quotecite': 'Justin Dental & Braces',
+
+    'es.point1': 'Se habla español con todo el equipo',
+    'es.point2': 'Formularios y opciones de tratamiento explicados en español',
+    'es.point3': 'Llámenos o visítenos, con o sin cita previa',
+
+    'svc.gd.p': 'Limpiezas, exámenes, empastes y coronas y puentes — el cuidado diario que mantiene la sonrisa de toda su familia saludable.',
+    'svc.rd.p': 'Coronas, puentes, endodoncias y dentaduras que devuelven la comodidad y la masticación normal.',
+    'svc.cd.p': 'Mejora de sonrisa y tratamiento cosmético planeado según lo que usted realmente quiere cambiar.',
+    'svc.ortho.p': 'Brackets, Invisalign y alineadores transparentes con el Dr. Ankit "Andy" Shah, nuestro ortodoncista.',
+    'svc.ws.p': 'Evaluación, extracción y cirugía oral de muelas del juicio, realizadas por nuestro propio equipo.',
+    'svc.em.p': 'Dolor de dientes, un diente roto, u otra emergencia dental que no puede esperar — llámenos de inmediato.',
+
+    'ribbon.h2': 'Citas disponibles esta semana.',
+    'ribbon.p': 'Solicite una cita en línea en menos de un minuto, o llame y le encontraremos un horario.',
+
+    'docs.intro': 'Un dentista general y un ortodoncista bajo un mismo techo, con la costumbre de explicar todo claramente — en inglés o en español.',
+    'docs.amee.focus': 'Odontología Familiar y General',
+    'docs.andy.creds': '10+ Años de Experiencia · St. Louis University',
+    'docs.teamquote': 'Dos dentistas, un equipo que cuida a toda su familia.',
+
+    'ins.pt1h': 'Verificamos sus beneficios por usted', 'ins.pt1p': 'Díganos su plan por teléfono y le ayudaremos a confirmar qué cubre antes de reservar.',
+    'ins.pt2h': 'Opciones de financiamiento flexibles', 'ins.pt2p': 'Múltiples opciones de financiamiento dental, incluyendo Cherry, para ajustarse a su presupuesto.',
+    'ins.pt3h': '¿Sin seguro? No hay problema', 'ins.pt3p': 'Pregunte por nuestra membresía del Plan de Ahorros Dental en el consultorio.',
+    'ins.p2': '¿No está seguro de su plan? Llámenos y nuestro equipo lo verificará por usted.',
+
+    'journey.eyebrow': 'Su Primera Visita',
+    'journey.h2': 'Tres pasos, sin sorpresas.',
+    'journey.s1h': 'Solicite su visita', 'journey.s1p': 'Complete el formulario a continuación o llámenos. Traiga su tarjeta de seguro y una lista de medicamentos.',
+    'journey.s2h': 'Conozca a su equipo dental', 'journey.s2p': 'Un examen y limpieza completos, a su ritmo — nuestro equipo le explica todo, en inglés o en español.',
+    'journey.s3h': 'Reciba un plan de cuidado claro', 'journey.s3p': 'Se irá sabiendo qué está saludable, qué necesita atención, cuánto cuesta y qué cubre su plan.',
+
+    'faq.aside.h2': 'Antes de reservar.',
+    'faq.aside.p': 'Respuestas directas a lo que normalmente detiene a las personas de llamar.',
+    'faq.aside.cta': 'Solicitar una Cita',
+
+    'map.hoursweekend2': 'Cerrado',
+    'map.book': 'Solicitar Cita',
+    'map.callus': 'Llámenos',
+
+    'footer.faq': 'Preguntas Frecuentes'
   };
 
   var EN = {};

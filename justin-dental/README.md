@@ -3,10 +3,20 @@
 A conversion-focused Google Ads landing page for **Justin Dental and Braces** (Justin, TX),
 built with an EN/ES language toggle, per the practice's family-owned, bilingual positioning.
 
+The design system (tokens, layout, and every component — arch-shaped imagery, the numbered
+"why us" list, the doctor lead card, the review grid, the overlapping map card, etc.) is ported
+directly from the **Dentality Family Dentistry** build (`dentality/`, a sibling project on this
+repo) so the two landing pages share one consistent visual language across the client portfolio.
+Only the palette (navy + teal, sampled from this practice's own logo, in place of Dentality's
+navy + cyan) and the content differ. Justin's own mandatory features — the EN/ES toggle, the
+"We Speak Spanish" messaging, Cherry financing, the Dental Savings Plan, and the hero video — are
+folded into that same component system rather than bolted on separately.
+
 ```
 justin-dental/
-  index.html                 the landing page (self-contained, deploy anywhere)
-  assets/css/style.css       design tokens + every component
+  index.html                 the landing page (deploy the whole folder)
+  justin-dental-landing-page.html   standalone build — same page, CSS/JS/images/video inlined
+  assets/css/style.css       design tokens (ported from Dentality) + every component
   assets/js/i18n.js          EN/ES text dictionary + language toggle
   assets/js/main.js          tracking hooks, scroll reveals, form, FAQ, floating CTA, hero video
   assets/img/                the practice's own real photography and logo
@@ -130,6 +140,10 @@ sourced during the site crawl.
   `prefers-reduced-motion` is off -- confirmed zero network requests for either video file on a
   390px viewport. Everyone else (mobile, reduced-motion) sees the static poster
   (`assets/img/hero-poster.webp`, the doctors-together photo) with no video downloaded at all.
+- The hero video and its poster now live inside `#hero-media` (`.hero__art-main`), the same
+  arch-shaped image container Dentality uses for its hero photo -- the video simply fades in over
+  the poster once it's ready to play (`.has-video`), so the layout is identical to Dentality's
+  hero on a page with no video at all.
 
 To re-cut the clip (a different 10 seconds, or a different bar position) from the original
 source, the exact command used was:
@@ -146,15 +160,22 @@ ffmpeg -i <source.mp4> -t 10 -an \
 
 ## Design system
 
+Ported from the Dentality Family Dentistry build (`dentality/assets/css/style.css`) so both
+landing pages share one component library — same tokens structure, same section patterns
+(`.hero__art-main` + `.hero__stamp` + `.hero__badge`, the numbered `.why__list`, `.doc-lead` /
+`.doc-row`, `.review--lead` / `.review--sm`, `.ins__points` / `.ins__card`, the overlapping
+`.loc__card`, etc.), re-colored to this practice's own logo:
+
 | Token | Value | Direction |
 |---|---|---|
-| `--navy-950` … `--navy-700` | `#071b30` → `#1c4368` | deep navy, per brief |
-| `--teal` / `--teal-700` | `#17a2a2` / `#0c6e6e` | soft teal accent |
-| `--cta` | `#f0663e` | high-contrast orange for primary conversion actions — deliberately distinct from the navy/teal palette so it's unmistakable |
-| `--sky` / `--sky-deep` | `#f2f7fb` / `#e7f0f7` | very light blue-gray supporting tone |
+| `--navy-950` … `--navy-700` | `#071b30` → `#1c4368` | deep navy, sampled from the logo |
+| `--cyan` / `--cyan-600` / `--cyan-700` | `#17a2a2` / `#128585` / `#0c6e6e` | the logo's teal accent |
+| `--walnut` / `--walnut-soft` | `#d9752c` / `#e69a5c` | warm accent for eyebrows, numerals and the "We Speak Español" stamp |
+| `--sand` / `--sand-deep` | `#f4f7f8` / `#e9f1f1` | light supporting tone for alternating sections |
 
-Headings use **Plus Jakarta Sans**, body copy uses **Inter** — the two families named in the brief.
-Moderate corner radius (16px cards, pill buttons), subtle shadows, no heavy gradients.
+Headings use **Plus Jakarta Sans**, with **Instrument Serif** italic for the pull-quote and step
+numerals — the same pairing as the Dentality build. Arch-shaped imagery (`--arch` token),
+pill buttons, and moderate corner radius throughout.
 
 ---
 
@@ -163,7 +184,7 @@ Moderate corner radius (16px cards, pill buttons), subtle shadows, no heavy grad
 - Semantic HTML5, single `<h1>`, no heading-level skips, alt text on every image, a skip link,
   visible focus rings, `prefers-reduced-motion` honoured.
 - Scroll reveals are gated behind a `js` class added by an inline script, so the page renders
-  fully with JavaScript disabled — verified: with JS off, all 42 reveal elements are visible and
+  fully with JavaScript disabled — verified: with JS off, all 34 reveal elements are visible and
   the FAQ (native `<details>`) works normally.
 - No horizontal overflow at 360 / 390 / 768 / 1024 / 1440 / 1920px. Every tap target is at or
   above the 44×44px minimum the brief specifies.
