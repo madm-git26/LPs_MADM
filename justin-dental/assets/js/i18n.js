@@ -25,7 +25,7 @@
     'hero.stamp1': 'Hablamos',
     'hero.stamp2': 'Español',
     'hero.badgeh': '¿Necesita una cita?',
-    'hero.badgep': 'Reserve en línea en menos de un minuto, día o noche.',
+    'hero.badgep': 'Llámenos y le encontraremos un horario, de día o de noche.',
 
     'hero.h1line1': 'Su Dentista de Confianza en',
     'hero.h1line2': 'Justin, TX',
@@ -34,7 +34,7 @@
     'hero.cta2': 'Llame (940) 242-2022',
     'hero.reviews': 'Más de 1,000+ ⭐⭐⭐⭐⭐ Reseñas de Google',
     'hero.spanish': 'HABLAMOS ESPAÑOL',
-    'hero.online': 'Programación de Citas en Línea las 24 Horas',
+    'hero.online': 'Llámenos Cuando Quiera — Le Encontraremos un Horario',
     'hero.trust1': 'Consultorio Familiar',
     'hero.trust2': 'Pacientes Nuevos Bienvenidos',
     'hero.trust3': 'Opciones de Pago Flexibles',
@@ -161,8 +161,8 @@
     'faq.a4': 'Muchas de nuestras opciones de financiamiento le permiten ver para cuánto podría precalificar. Precalificar no garantiza la aprobación. Llame a nuestro equipo y le explicaremos sus opciones disponibles.',
     'faq.q5': '¿Hablan español?',
     'faq.a5': 'Sí, hablamos español. Nuestro equipo está disponible para ayudarle a entender sus opciones de tratamiento en español.',
-    'faq.q6': '¿Puedo programar una cita en línea?',
-    'faq.a6': 'Sí, ofrecemos programación de citas en línea las 24 horas, para que pueda solicitar una visita cuando le convenga.',
+    'faq.q6': '¿Cómo solicito una cita?',
+    'faq.a6': 'Simplemente llame a nuestra oficina al (940) 242-2022 y nuestro equipo le encontrará un horario que le convenga.',
     'faq.q7': '¿Qué servicios dentales ofrecen?',
     'faq.a7': 'Ofrecemos odontología general, odontología restaurativa, odontología cosmética, ortodoncia (brackets e Invisalign), atención dental de emergencia, y muelas del juicio / cirugía oral.',
     'faq.q8': '¿Ofrecen brackets?',
@@ -205,7 +205,7 @@
     'footer.tagline': 'Confianza • Integridad • Compasión',
 
     'floating.h': '¿Necesita una Cita?',
-    'floating.cta': 'Programar en Línea',
+    'floating.cta': 'Llame para Programar',
     'mobile.call': 'Llamar', 'mobile.schedule': 'Programar', 'mobile.es': 'English',
 
     'trustbar.t1h': '1,000+ Reseñas de Google', 'trustbar.t1p': 'Atención con calificación de cinco estrellas',
@@ -229,7 +229,7 @@
     'svc.em.p': 'Dolor de dientes, un diente roto, u otra emergencia dental que no puede esperar — llámenos de inmediato.',
 
     'ribbon.h2': 'Citas disponibles esta semana.',
-    'ribbon.p': 'Solicite una cita en línea en menos de un minuto, o llame y le encontraremos un horario.',
+    'ribbon.p': 'Llámenos y le encontraremos un horario para su familia.',
 
     'docs.intro': 'Un dentista general y un ortodoncista bajo un mismo techo, con la costumbre de explicar todo claramente — en inglés o en español.',
     'docs.amee.focus': 'Odontología Familiar y General',
@@ -243,7 +243,7 @@
 
     'journey.eyebrow': 'Su Primera Visita',
     'journey.h2': 'Tres pasos, sin sorpresas.',
-    'journey.s1h': 'Solicite su visita', 'journey.s1p': 'Complete el formulario a continuación o llámenos. Traiga su tarjeta de seguro y una lista de medicamentos.',
+    'journey.s1h': 'Solicite su visita', 'journey.s1p': 'Llame a nuestra oficina. Traiga su tarjeta de seguro y una lista de medicamentos.',
     'journey.s2h': 'Conozca a su equipo dental', 'journey.s2p': 'Un examen y limpieza completos, a su ritmo — nuestro equipo le explica todo, en inglés o en español.',
     'journey.s3h': 'Reciba un plan de cuidado claro', 'journey.s3p': 'Se irá sabiendo qué está saludable, qué necesita atención, cuánto cuesta y qué cubre su plan.',
 

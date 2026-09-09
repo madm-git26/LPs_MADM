@@ -611,35 +611,6 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); letter-spacing: -.018em; }
 .faq__list details[open] .faq__answer { animation: reveal .3s ease both; }
 @keyframes reveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 
-/* -------------------------------------------------------- contact form -- */
-.form-card {
-  background: #fff; border: 1px solid var(--line); border-radius: 22px;
-  padding: clamp(1.75rem, 3.5vw, 2.75rem); box-shadow: var(--shadow-md);
-}
-.form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-.field { margin-bottom: 1rem; }
-.field label { display: block; font-size: .8125rem; font-weight: 700; color: var(--ink-soft); margin-bottom: .4rem; }
-.field input, .field textarea {
-  width: 100%; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: 12px;
-  font: inherit; font-size: .9375rem; color: var(--ink); background: var(--sand);
-}
-.field textarea { min-height: 6rem; resize: vertical; }
-.field input:focus, .field textarea:focus { outline: none; border-color: var(--cyan-600); background: #fff; }
-.field--check {
-  display: flex; align-items: flex-start; gap: .6rem; font-size: .8125rem; color: var(--ink-soft);
-  margin-bottom: 1.35rem; cursor: pointer;
-}
-.field--check input { width: 20px; height: 20px; flex: none; margin-top: .1rem; }
-.form-note { text-align: center; font-size: .8125rem; color: var(--ink-mute); margin-top: 1rem; }
-.form-success {
-  display: none; text-align: center; padding: clamp(2rem, 4vw, 3rem) 1rem;
-  background: #fff; border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow-md);
-}
-.form-success.is-shown { display: block; }
-.form-success svg { width: 48px; height: 48px; color: var(--cyan-600); margin: 0 auto 1rem; }
-.form-success h3 { margin-bottom: .6rem; }
-.form-success p { color: var(--ink-soft); max-width: 28rem; margin-inline: auto; }
-
 /* ----------------------------------------------------------- location --- */
 .loc { background: var(--sand); }
 .loc__grid { display: grid; grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr); gap: 0; align-items: center; }
@@ -767,7 +738,7 @@ h3 { font-size: clamp(1.15rem, 1.6vw, 1.4rem); letter-spacing: -.018em; }
   .hero__art { max-width: 34rem; margin-inline: auto; width: 100%; }
   .hero__stamp { right: 2%; top: 4%; }
   .hero__badge { left: -4%; }
-  .why, .exp__grid, .ins, .docs, .faq, .svc__head, .form-row { grid-template-columns: minmax(0, 1fr); }
+  .why, .exp__grid, .ins, .docs, .faq, .svc__head { grid-template-columns: minmax(0, 1fr); }
   .why__art, .faq__aside { position: static; }
   .why__art img, .exp__art > img { aspect-ratio: 16/11; border-radius: 18px; }
   .why__art { max-width: 32rem; }

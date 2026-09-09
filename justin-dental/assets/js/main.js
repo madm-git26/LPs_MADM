@@ -10,11 +10,11 @@
     ga4MeasurementId:     '',   // GA4_MEASUREMENT_ID
     adsConversionId:      '',   // GOOGLE_ADS_CONVERSION_ID
     adsLabelCall:         '',   // GOOGLE_ADS_CONVERSION_LABEL (phone_click)
-    adsLabelAppointment:  '',   // GOOGLE_ADS_CONVERSION_LABEL (appointment_click / form_submit)
+    adsLabelAppointment:  '',   // GOOGLE_ADS_CONVERSION_LABEL (appointment_click)
     gtmContainerId:       ''    // GTM_CONTAINER_ID
   };
 
-  var CONVERSION_EVENTS = { phone_click: 'adsLabelCall', appointment_click: 'adsLabelAppointment', form_submit: 'adsLabelAppointment' };
+  var CONVERSION_EVENTS = { phone_click: 'adsLabelCall', appointment_click: 'adsLabelAppointment' };
 
   function track(name) {
     if (typeof window.gtag === 'function') {
@@ -83,25 +83,6 @@
       faq.forEach(function (other) { if (other !== item) other.open = false; });
     });
   });
-
-  /* --------------------------------------------------- appointment form - */
-  var form = document.getElementById('appt-form');
-  var success = document.getElementById('form-success');
-  if (form && success) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      /* No backend is wired up yet -- see README "Needs verification before
-         launch". Point this at the practice's real form endpoint (Gravity
-         Forms, a CRM webhook, etc.) before this goes live; for now it just
-         confirms receipt in the browser so the UI can be reviewed end to end. */
-      track('form_submit');
-      form.hidden = true;
-      success.classList.add('is-shown');
-      success.setAttribute('tabindex', '-1');
-      success.focus();
-    });
-  }
 
   /* --------------------------------------------------- floating desktop - */
   var floating = document.getElementById('floating-cta');

@@ -18,7 +18,7 @@ justin-dental/
   justin-dental-landing-page.html   standalone build — same page, CSS/JS/images/video inlined
   assets/css/style.css       design tokens (ported from Dentality) + every component
   assets/js/i18n.js          EN/ES text dictionary + language toggle
-  assets/js/main.js          tracking hooks, scroll reveals, form, FAQ, floating CTA, hero video
+  assets/js/main.js          tracking hooks, scroll reveals, FAQ, floating CTA, hero video
   assets/img/                the practice's own real photography and logo
   assets/video/              the practice's own intro clip, used as the hero background
 ```
@@ -64,11 +64,12 @@ verified and need your input before this goes live:
    for your GA4 Measurement ID, Google Ads Conversion ID, two conversion labels, and a GTM
    container ID — fill these in, then paste your actual GA4/GTM snippet into `index.html`'s
    `<head>`.
-6. **Appointment form backend.** The form at `#contact-form` has no backend wired up — see
-   "Technical" below.
-
 None of the above were guessed or invented; they're either sourced generically and flagged, or
 left as an honest gap with a working fallback (calling the office) rather than a broken link.
+
+There is no appointment request form or online booking widget on this page — every "Schedule"
+CTA (hero, header, ribbon, FAQ, floating CTA, sticky mobile bar, footer, final CTA) calls the
+office directly at `tel:+19402422022` instead.
 
 ---
 
@@ -120,15 +121,17 @@ section) so a mobile visitor never leaves the page to switch languages.
 
 ## Hero video
 
-The hero background is the first 10 seconds of the practice's own intro clip (Dr. Amee Pathak
+The hero background is a 7-second clip of the practice's own intro video (Dr. Amee Pathak
 introducing herself, following the brand's blur-and-logo open), supplied directly rather than
-sourced during the site crawl.
+sourced during the site crawl. It's cut from seconds 3–10 of the original clip — the first 3
+seconds of the blur-in open are trimmed off so the loop gets to the logo and the doctor faster.
 
-- Muted, looped, `playsinline`, with a 0.4s fade in / 0.5s fade out so the loop point isn't a
-  jump cut. No audio track at all -- it's stripped at encode time since the video is always muted.
+- Muted, looped, `playsinline`, with a fresh 0.4s fade in (at the new start) and a 0.5s fade out
+  so the loop point isn't a jump cut. No audio track at all -- it's stripped at encode time since
+  the video is always muted.
 - Encoded to both WebM/VP9 (`assets/video/hero.webm`, served first) and H.264 MP4
   (`assets/video/hero.mp4`, fallback for browsers without VP9 support, mainly older Safari) --
-  about 900KB combined.
+  about 615KB combined.
 - **The source clip's own burned-in captions and lower-third graphic are permanently covered**
   with a solid navy bar baked into the video at encode time, not just a CSS overlay. They were
   written to accompany the clip's original audio, which never plays here since the hero video is
@@ -145,12 +148,12 @@ sourced during the site crawl.
   the poster once it's ready to play (`.has-video`), so the layout is identical to Dentality's
   hero on a page with no video at all.
 
-To re-cut the clip (a different 10 seconds, or a different bar position) from the original
+To re-cut the clip (a different window, or a different bar position) from the original
 source, the exact command used was:
 
 ```bash
-ffmpeg -i <source.mp4> -t 10 -an \
-  -vf "scale=1280:720,drawbox=x=0:y=504:w=1280:h=216:color=0x071b30@1.0:t=fill,fade=t=in:st=0:d=0.4,fade=t=out:st=9.5:d=0.5" \
+ffmpeg -ss 3 -i <source.mp4> -t 7 -an \
+  -vf "scale=1280:720,drawbox=x=0:y=504:w=1280:h=216:color=0x071b30@1.0:t=fill,fade=t=in:st=0:d=0.4,fade=t=out:st=6.5:d=0.5" \
   -c:v libx264 -profile:v main -pix_fmt yuv420p -crf 26 -preset slow -movflags +faststart \
   assets/video/hero.mp4
 # then swap -c:v libx264 ... for "-c:v libvpx-vp9 -crf 32 -b:v 0 -deadline good -cpu-used 2" -> hero.webm
@@ -184,17 +187,15 @@ pill buttons, and moderate corner radius throughout.
 - Semantic HTML5, single `<h1>`, no heading-level skips, alt text on every image, a skip link,
   visible focus rings, `prefers-reduced-motion` honoured.
 - Scroll reveals are gated behind a `js` class added by an inline script, so the page renders
-  fully with JavaScript disabled — verified: with JS off, all 34 reveal elements are visible and
+  fully with JavaScript disabled — verified: with JS off, all 32 reveal elements are visible and
   the FAQ (native `<details>`) works normally.
 - No horizontal overflow at 360 / 390 / 768 / 1024 / 1440 / 1920px. Every tap target is at or
   above the 44×44px minimum the brief specifies.
 - `Dentist` and `FAQPage` JSON-LD, with real NAP, hours, doctors and service list.
-- **The appointment form has no backend.** Submitting it validates the fields, fires the
-  `form_submit` tracking event, and shows a client-side "Request Received" confirmation — but
-  nothing is actually sent anywhere yet. Point `#appt-form`'s submit handler in
-  `assets/js/main.js` at the practice's real intake (a Gravity Forms endpoint, a CRM webhook, or
-  even a `mailto:`/Formspree fallback) before launch.
-- `data-track` attributes fire `phone_click`, `appointment_click`, `form_submit`,
-  `financing_click`, `language_es`, `directions_click`, and `review_click` events to `dataLayer`
+- **No appointment form.** Every "Schedule" / "Request an Appointment" button on the page links
+  straight to `tel:+19402422022` — there's no lead-capture form or booking widget to wire up a
+  backend for.
+- `data-track` attributes fire `phone_click`, `appointment_click`, `financing_click`,
+  `language_es`, `directions_click`, and `review_click` events to `dataLayer`
   and, once configured, to `gtag`. Fill in the `ADS` object at the top of `assets/js/main.js` and
   paste your GA4/Google Ads tag into `index.html`'s `<head>`.
