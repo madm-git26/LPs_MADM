@@ -155,11 +155,24 @@ h3 { font-size: clamp(1.125rem, 1.6vw, 1.3rem); }
 
 /* ---------------------------------------------------------------- hero -- */
 .hero { position: relative; overflow: hidden; background: var(--navy-950); color: #fff; }
-.hero__media { position: absolute; inset: 0; }
-.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 30%; }
+.hero__media { position: absolute; inset: 0; background: var(--navy-950); }
+.hero__media-fallback, .hero__media-video {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%;
+  position: absolute; inset: 0;
+}
+.hero__media-video { opacity: 0; transition: opacity .5s ease; }
+.hero__media.has-video .hero__media-fallback { opacity: 0; }
+.hero__media.has-video .hero__media-video { opacity: 1; }
 .hero__media::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(100deg, rgba(7,27,48,.94) 0%, rgba(7,27,48,.86) 42%, rgba(7,27,48,.42) 78%, rgba(7,27,48,.2) 100%);
+  /* Left-to-right layer keeps the headline legible; the bottom-anchored layer
+     also hides the source clip's own burned-in captions/lower-third, which
+     sit in the bottom quarter of frame and would otherwise show through
+     muted (the clip's caption text was written to accompany audio that
+     doesn't play here). */
+  background:
+    linear-gradient(0deg, rgba(7,27,48,.88) 0%, rgba(7,27,48,.45) 22%, rgba(7,27,48,0) 40%),
+    linear-gradient(100deg, rgba(7,27,48,.94) 0%, rgba(7,27,48,.86) 42%, rgba(7,27,48,.42) 78%, rgba(7,27,48,.2) 100%);
 }
 .hero__grid { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: center; padding-block: clamp(3rem, 7vw, 5.5rem); }
 .hero__copy { max-width: 34rem; }

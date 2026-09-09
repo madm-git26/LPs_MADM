@@ -15,7 +15,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/img/hero-team.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero-poster.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <script>document.documentElement.className += " js";</script>
@@ -96,7 +96,8 @@
 <!-- ================================================================ HERO -->
 <section class="hero">
   <div class="hero__media" aria-hidden="true">
-    <img src="assets/img/hero-team.webp" width="1600" height="1067" alt="" fetchpriority="high" decoding="async">
+    <img class="hero__media-fallback" src="assets/img/hero-poster.webp" width="760" height="590" alt="" fetchpriority="high" decoding="async">
+    <video class="hero__media-video" id="hero-video" muted loop playsinline preload="none" poster="assets/img/hero-poster.webp"></video>
   </div>
   <div class="wrap hero__grid">
     <div class="hero__copy">

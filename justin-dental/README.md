@@ -8,8 +8,9 @@ justin-dental/
   index.html                 the landing page (self-contained, deploy anywhere)
   assets/css/style.css       design tokens + every component
   assets/js/i18n.js          EN/ES text dictionary + language toggle
-  assets/js/main.js          tracking hooks, scroll reveals, form, FAQ, floating CTA
+  assets/js/main.js          tracking hooks, scroll reveals, form, FAQ, floating CTA, hero video
   assets/img/                the practice's own real photography and logo
+  assets/video/              the practice's own intro clip, used as the hero background
 ```
 
 Preview locally with a server (the map embed needs `http://`):
@@ -63,11 +64,13 @@ left as an honest gap with a working fallback (calling the office) rather than a
 
 ## What's real, and where it came from
 
-- **Both doctors are real**, with their own real bios and photos: **Dr. Amee Pathak** (12+ years,
-  Boston University's Henry M. Goldman School of Dental Medicine) and **Dr. Ankit "Andy" Shah**
+- **Both doctors are real**, with their own real bios: **Dr. Amee Pathak** (12+ years, Boston
+  University's Henry M. Goldman School of Dental Medicine) and **Dr. Ankit "Andy" Shah**
   (orthodontist, 10+ years in the Metroplex, Master of Science in Orthodontics from St. Louis
   University, member of the American Association of Orthodontics and Texas Association of
-  Orthodontists).
+  Orthodontists). Their portrait photos, the hero's doctors-together photo, the logo, and the
+  hero background video were all supplied directly by the practice/agency rather than sourced
+  during the site crawl — see "Hero video" below for how the clip was prepared.
 - **The team photo** is a genuine staff photo from the practice, including Dr. Shah.
 - **All three reviews are real**, quoted from the practice's own testimonials page: Laura C.,
   "Dr Green's C.", and kintu l.
@@ -102,6 +105,42 @@ redundant once the whole page is already in Spanish.
 
 The sticky mobile bar's "Español" button is a quick in-place toggle (not a link to the Spanish
 section) so a mobile visitor never leaves the page to switch languages.
+
+---
+
+## Hero video
+
+The hero background is the first 10 seconds of the practice's own intro clip (Dr. Amee Pathak
+introducing herself, following the brand's blur-and-logo open), supplied directly rather than
+sourced during the site crawl.
+
+- Muted, looped, `playsinline`, with a 0.4s fade in / 0.5s fade out so the loop point isn't a
+  jump cut. No audio track at all -- it's stripped at encode time since the video is always muted.
+- Encoded to both WebM/VP9 (`assets/video/hero.webm`, served first) and H.264 MP4
+  (`assets/video/hero.mp4`, fallback for browsers without VP9 support, mainly older Safari) --
+  about 900KB combined.
+- **The source clip's own burned-in captions and lower-third graphic are permanently covered**
+  with a solid navy bar baked into the video at encode time, not just a CSS overlay. They were
+  written to accompany the clip's original audio, which never plays here since the hero video is
+  muted -- left in, "(upbeat music)" would show up as a caption for sound that isn't playing. A
+  CSS-only fix (a bottom gradient) was tried first but proved unreliable, since how much of the
+  frame is actually visible shifts with hero height and viewport width; baking it into the pixels
+  makes it correct regardless of layout.
+- `assets/js/main.js` only injects a `<source>` and calls `.load()` on viewports ≥861px when
+  `prefers-reduced-motion` is off -- confirmed zero network requests for either video file on a
+  390px viewport. Everyone else (mobile, reduced-motion) sees the static poster
+  (`assets/img/hero-poster.webp`, the doctors-together photo) with no video downloaded at all.
+
+To re-cut the clip (a different 10 seconds, or a different bar position) from the original
+source, the exact command used was:
+
+```bash
+ffmpeg -i <source.mp4> -t 10 -an \
+  -vf "scale=1280:720,drawbox=x=0:y=504:w=1280:h=216:color=0x071b30@1.0:t=fill,fade=t=in:st=0:d=0.4,fade=t=out:st=9.5:d=0.5" \
+  -c:v libx264 -profile:v main -pix_fmt yuv420p -crf 26 -preset slow -movflags +faststart \
+  assets/video/hero.mp4
+# then swap -c:v libx264 ... for "-c:v libvpx-vp9 -crf 32 -b:v 0 -deadline good -cpu-used 2" -> hero.webm
+```
 
 ---
 

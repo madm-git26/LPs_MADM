@@ -108,6 +108,32 @@
     }
   }
 
+  /* ------------------------------------------------------ hero video ---- */
+  /* Loads the background clip only on wider viewports and only when motion
+     is welcome, so mobile visitors and prefers-reduced-motion users just get
+     the static poster image -- never the ~640KB video download. */
+  var heroMedia = document.querySelector('.hero__media');
+  var heroVideo = document.getElementById('hero-video');
+  if (heroMedia && heroVideo) {
+    var wideEnough = window.matchMedia('(min-width: 861px)').matches;
+    if (wideEnough && !reduced) {
+      [['assets/video/hero.webm', 'video/webm'], ['assets/video/hero.mp4', 'video/mp4']].forEach(function (pair) {
+        var source = document.createElement('source');
+        source.src = pair[0];
+        source.type = pair[1];
+        heroVideo.appendChild(source);
+      });
+      heroVideo.addEventListener('canplay', function () {
+        heroMedia.classList.add('has-video');
+      }, { once: true });
+      heroVideo.load();
+      var playPromise = heroVideo.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(function () { /* autoplay blocked -- poster stays visible */ });
+      }
+    }
+  }
+
   /* --------------------------------------------------------- footer ----- */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
