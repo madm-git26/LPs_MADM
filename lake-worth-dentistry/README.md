@@ -1,11 +1,14 @@
 # Lake Worth Dentistry — Greenacres, FL — "Use It or Lose It" Landing Page
 
-⚠️ **Not yet ready to run traffic.** This page is complete except for one deliberately-unfilled piece:
-the reviews section (`#reviews`) currently shows a `0.0` / `0+` placeholder instead of a real rating.
+⚠️ **One setup step left before this page shows real ratings/reviews.** The reviews section
+(`#reviews`) and the two hero rating badges now pull **live** from the practice's actual Google
+Business Profile via the Google Places API — no hardcoded number, no guessing. Until a Places API
+key is added, they fail open gracefully (see "Current state" below); nothing is broken or fake, it's
+just not live yet.
 
-## Why it's blocked
+## Why a live widget instead of a typed-in number
 
-Research turned up a real discrepancy that needed the client's input before publishing a number:
+Research turned up a real discrepancy that made publishing a static number unsafe:
 
 - The practice's own site self-reports two different, inconsistent ratings in its own schema.org
   markup: 5.0★/268 reviews in one block, 4.7★/421 in another.
@@ -17,22 +20,62 @@ Research turned up a real discrepancy that needed the client's input before publ
   **Sthefany A.** (5★, "I had the best experience going to this dentist!...", truncated on the source
   page).
 
-Rather than guess or publish an unsubstantiated star-rating claim on a paid ad page, this was flagged to
-the client, who is checking their live Google Business Profile for the real current number.
+Rather than guess, publish an unverified number, or hand-copy a screenshot that goes stale the moment
+the real rating changes, the page now pulls the rating, review count and top reviews **directly from
+Google, live, on every page load** — via `assets/js/gmb-widget.js`. This also means it never needs
+editing again as the real rating moves over time.
+
+## Live Google reviews widget — one-time setup (client's own Google account)
+
+The widget code is fully built and wired into the page; it just needs a Places-API-enabled key from
+**your own Google Cloud account** to switch on (this can't be a shared/demo key — it must be
+restricted to your domain and billed to your account):
+
+1. In [Google Cloud Console](https://console.cloud.google.com/), create/select a project and enable
+   the **"Places API"** (not "Places API (New)" unless you also update the code to match — this
+   widget uses the classic `PlacesService` JS library).
+2. Create an API key under **APIs & Services → Credentials**.
+3. **Restrict the key** (Application restrictions → HTTP referrers) to the domain(s) this page will be
+   published on, e.g. `https://www.lakeworth-dentistry.com/*`. This stops anyone else from using your
+   key/billing if they view-source the page.
+4. Open `assets/js/gmb-widget.js` and paste the key into `CONFIG.PLACES_API_KEY` near the top of the
+   file (currently `''`).
+5. Re-run the bundle command below so the standalone HTML picks up the key too.
+
+**💰 Cost note:** Places API "Place Details" requests that include reviews (Atmosphere Data) are a
+**paid** API beyond Google's small monthly free credit. Each page load makes one such request (results
+are cached in the visitor's browser for 60 minutes via `sessionStorage` to cut repeat calls). At Google
+Ads Display/Performance Max traffic volumes this has a real, ongoing dollar cost — check current
+pricing at [mapsplatform.google.com/pricing](https://mapsplatform.google.com/pricing) and consider
+setting a daily quota cap on the key in Cloud Console before running paid traffic to this page.
+
+### Current state (no key set yet)
+
+With `CONFIG.PLACES_API_KEY` still empty, the widget fails open cleanly and automatically:
+- The two hero rating badges (star+number under the H1, and the "★ Reviews" chip) simply don't render
+  — no broken placeholder, no `0.0`.
+- The reviews section keeps its heading and shows "See our latest reviews on Google" plus a working
+  **Read Reviews on Google** button that links straight to the practice's Google Maps listing — so
+  there's always a real, live path to reviews for visitors even before the key is added.
+- Once the key is added, all of that is replaced automatically with the real live star rating, review
+  count, and the 3 most recent 4★+ written reviews, matching the existing review-card design exactly.
+
+### If you'd rather not manage a Google Cloud key
+
+A no-code alternative is a hosted review-widget service (Elfsight, Trustindex, EmbedSocial, etc.) that
+connects to your Google Business Profile and gives you a single embeddable script — happy to swap
+`gmb-widget.js` for one of those instead if you provide the embed snippet.
 
 ## To finish this page
 
-1. Get the real rating and review count from the client.
-2. Fill in `#reviews` in `use-it-or-lose-it.html`: replace the `data-count-to="0"` placeholders on the
-   score and review-count spans, and the "Rated on Google" line, with the real values.
-3. If the client also confirms the site's own review count (268 vs 421) or the Yelp figure is the more
+1. Get a Places-API key from the client's Google Cloud account (see steps above) and drop it into
+   `assets/js/gmb-widget.js`.
+2. If the client also confirms the site's own review count (268 vs 421) or the Yelp figure is the more
    accurate one, add `aggregateRating` back into the JSON-LD `<script>` block in `<head>` (it was
-   intentionally omitted rather than publish a placeholder or unverified number in structured data).
-4. Optionally reinstate a `hero-badge.badge-rating` in the hero (CSS already supports it, see
-   `.hero-badge.badge-rating` in `assets/css/theme.css`) once a real number exists.
-5. Re-render and screenshot-check, then generate the standalone bundle:
+   intentionally omitted rather than publish a placeholder or unverified number in structured data) —
+   or leave it out permanently, since the visible widget is now always accurate without it.
+3. Re-render and screenshot-check, then generate the standalone bundle:
    `python3 bundle.py use-it-or-lose-it.html Lake-Worth-Dentistry-Use-It-Or-Lose-It.html`
-   (copy `bundle.py` from one of the other projects in this repo first — not yet added here).
 
 ## Everything else is real and ready
 
@@ -62,8 +105,11 @@ Book online link: **https://book.allinone.dental/lake-worth-dentistry?referrer_i
 ## Files
 
 ```
-use-it-or-lose-it.html     the landing page (production source) — reviews section pending
-assets/css/theme.css       brand tokens + all components (purple/charcoal palette)
-assets/js/lp.js            countdown, scroll-reveal, animated counters, hours logic, tracking
-assets/img/                real practice photography + logo
+use-it-or-lose-it.html                              the landing page (production source)
+Lake-Worth-Dentistry-Use-It-Or-Lose-It.html          standalone downloadable bundle (single file)
+assets/css/theme.css                                 brand tokens + all components (purple/charcoal palette)
+assets/js/lp.js                                       countdown, scroll-reveal, animated counters, hours logic, tracking
+assets/js/gmb-widget.js                               live Google rating/reviews widget — needs a Places API key, see above
+assets/img/                                           real practice photography + logo
+bundle.py                                             regenerates the standalone bundle after any edit
 ```

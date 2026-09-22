@@ -102,13 +102,22 @@
           <a class="btn btn-primary btn-lg" href="https://book.allinone.dental/lake-worth-dentistry?referrer_id=3" target="_blank" rel="noopener noreferrer">Book My Appointment</a>
           <a class="btn btn-ghost-light btn-lg" href="tel:+15617716540"><svg aria-hidden="true"><use href="#i-phone"/></svg>(561) 771-6540</a>
         </div>
+
+        <div class="hero-rating" data-gmb-widget>
+          <span class="stars" aria-hidden="true" data-gmb-stars><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <span class="gmb-skel"><strong data-gmb-rating>&nbsp;</strong> from <span data-gmb-count>&nbsp;</span> Google reviews</span>
+        </div>
       </div>
 
       <div class="hero-photo" data-reveal>
         <div class="hero-photo-frame">
           <img src="assets/img/img-hero-patient.webp" alt="A happy Lake Worth Dentistry patient smiling confidently" loading="eager">
         </div>
-        <div class="hero-badge badge-ppo" style="bottom:-16px; right:-16px;">
+        <div class="hero-badge badge-rating gmb-skel" data-gmb-widget>
+          <svg aria-hidden="true"><use href="#i-star"/></svg>
+          <div><span class="num"><span data-gmb-rating>&nbsp;</span>&#9733;</span><br><span class="lbl"><span data-gmb-count>&nbsp;</span> Reviews</span></div>
+        </div>
+        <div class="hero-badge badge-ppo">
           <svg aria-hidden="true"><use href="#i-card"/></svg>
           <div><span class="num">Most PPO</span><br><span class="lbl">Insurance Welcome</span></div>
         </div>
@@ -202,18 +211,20 @@
   <div class="shell">
     <div class="section-head" data-reveal>
       <span class="kicker">What Our Patients Are Saying</span>
-      <h2>Rated by Our Greenacres Patients</h2>
+      <h2>Live From Our Google Business Profile</h2>
     </div>
 
-    <div class="rating-summary" data-reveal>
-      <div class="score"><span data-count-to="0" data-count-decimals="1">0.0</span></div>
+    <div class="rating-summary" data-reveal data-gmb-widget>
+      <div class="score gmb-skel"><span data-gmb-rating>&nbsp;</span></div>
       <div>
-        <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
-        <div class="meta"><strong><span data-count-to="0" data-count-suffix="+">0</span> verified reviews</strong>Rated on Google by our Greenacres patients</div>
+        <span class="stars" aria-hidden="true" data-gmb-stars><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <div class="meta gmb-skel"><strong><span data-gmb-count>&nbsp;</span> verified reviews</strong><span data-gmb-status>Loading live ratings from Google&hellip;</span></div>
       </div>
-      <a class="btn btn-outline" href="https://www.google.com/search?q=Lake+Worth+Dentistry+Greenacres+reviews" target="_blank" rel="noopener">Read Reviews on Google</a>
+      <a class="btn btn-outline" data-gmb-link href="https://www.google.com/maps/place/Lake+Worth+Dentistry/@26.6196422,-80.1455344,15z/data=!4m2!3m1!1s0x0:0xdf0af5b92db6c441" target="_blank" rel="noopener">Read Reviews on Google</a>
     </div>
-    <!-- PENDING: awaiting the real, current Google rating + review count from the client before this ships. -->
+
+    <div class="review-grid" data-gmb-review-grid data-reveal></div>
+    <p class="gmb-attribution">Ratings and reviews shown live via Google.</p>
   </div>
 </section>
 
@@ -324,5 +335,6 @@
 </div>
 
 <script src="assets/js/lp.js"></script>
+<script src="assets/js/gmb-widget.js"></script>
 </body>
 </html>
