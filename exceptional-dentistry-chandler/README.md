@@ -5,9 +5,10 @@ A fresh, conversion-focused Google Ads landing page for **Exceptional Dentistry 
 year-end dental-insurance campaign. Built for Display / Performance Max traffic, aimed at one goal:
 **book before the 2026 benefits deadline.**
 
-| Page | File |
-|---|---|
-| Use It or Lose It | `use-it-or-lose-it.html` |
+| Page | File | Notes |
+|---|---|---|
+| Use It or Lose It | `use-it-or-lose-it.html` | Production source — links to `assets/`, deploy this with the folder alongside it |
+| Use It or Lose It (standalone) | `Exceptional-Dentistry-Chandler-Use-It-Or-Lose-It.html` | Everything (CSS, JS, images) bundled into one file — download and double-click to preview, no server or folder needed. Regenerate after editing the source with `python3 bundle.py use-it-or-lose-it.html Exceptional-Dentistry-Chandler-Use-It-Or-Lose-It.html` |
 
 Phone number used on this page: **(480) 806-2601** (`tel:+14808062601`) — a tracking number supplied
 for this campaign; the main site itself lists (480) 806-2602.
@@ -91,7 +92,9 @@ no content is ever permanently stuck invisible — verified against a full-page,
 ## Files
 
 ```
-use-it-or-lose-it.html     the landing page
+use-it-or-lose-it.html                                  the landing page (production source)
+Exceptional-Dentistry-Chandler-Use-It-Or-Lose-It.html    same page, bundled into one downloadable file
+bundle.py                                                regenerates the standalone bundle from the source
 assets/css/theme.css       brand tokens + all components (burgundy/gold/lavender palette)
 assets/js/lp.js            countdown, scroll-reveal, animated counters, hours logic, tracking
 assets/img/                real practice photography + logo, optimized to WebP/PNG
