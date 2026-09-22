@@ -36,6 +36,23 @@ The real logo (light cyan-blue + red "In Smyle... is always In Style") is used a
    `2026-12-31T23:59:59-06:00` (America/Chicago). Bump the year for future campaigns.
 3. Remove `<meta name="robots" content="noindex, nofollow">` only if you want this indexed.
 
+## What's on the page
+
+Trimmed to ~4.6 folds on desktop (~4,100px) per feedback on the first draft. Sticky urgency top bar →
+header → hero with live countdown + Dr. Mariscal's real photo, "USE IT OR LOSE IT" led → trust strip →
+one merged **USE IT OR LOSE IT** section (quick stat row, the 100/80/50% coverage tiers, accepted
+insurance logos, a "before you book" list and a patient-benefit checklist together) → a short doctor
+bio card (photo with the Best of 2026 badge, two credential chips) → 4.9★ reviews (animated counters) →
+location/hours/map → final CTA with a second countdown → a copyright-only footer (no link columns) →
+sticky mobile call/book bar.
+
+Cut from the original draft on request: the services grid, the "how it works" step section, and the
+office-photo gallery.
+
+All scroll animations and the animated stat counters fail open: a 3.5-second fallback timer finishes
+the job for anything that never scrolls into view (including the "4.9" / "1,400+" counters), so nothing
+is ever stuck at a placeholder value.
+
 ## Sourced from
 
 - **Existing page** (`book.insmyledental.com/claim-insurance-benefits/`): kept the "benefits don't roll

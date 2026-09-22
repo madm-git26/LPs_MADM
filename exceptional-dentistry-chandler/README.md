@@ -34,7 +34,7 @@ Events already fire on every interaction (to `gtag`, `fbq` and `dataLayer`):
 | Event | Trigger |
 |---|---|
 | `click_to_call` | any `tel:` link — topbar, header, hero, final CTA, mobile bar |
-| `click_book_online` | any link to `book.allinone.dental` — header, hero, offer card, final CTA, mobile bar |
+| `click_book_online` | any link to `book.allinone.dental` — header, hero, insurance section, final CTA, mobile bar |
 | `click_directions` | the Google Maps / directions links |
 
 There is no lead form on this page — the two conversion paths are **Call** and the practice's own
@@ -78,16 +78,22 @@ site in organic search. Google Ads serves it fine either way.
 
 ## What's on the page
 
-Sticky urgency top bar → header (logo, call, book) → hero with live countdown + real patient photo →
-trust strip → "what use it or lose it means" (3-step explainer) → insurance coverage tiers + accepted
-PPO plans → boutique practice / why-us → Dr. Hwang bio & credentials → services grid (9 services) →
-real before/after results → 5.0★ reviews (animated counters) → patient benefit checklist + free
-benefits-check offer card → 4-step booking process → location/hours/map → final CTA with a second
-countdown → footer → sticky mobile call/book bar.
+Trimmed to ~5 folds on desktop (~4,200px) per feedback on the first draft. Sticky urgency top bar →
+header (logo, call, book) → hero with live countdown + real patient photo, "USE IT OR LOSE IT" led →
+trust strip → one merged **USE IT OR LOSE IT** section (quick stat row on the deadline, the 100/80/50%
+coverage tiers, accepted PPO plans, a "before you book" list and a patient-benefit checklist, all in one
+place so insurance is explained clearly without being spread across separate sections) → a short Dr.
+Hwang bio card (single photo, two credential chips) → 5.0★ reviews (animated counters) →
+location/hours/map → final CTA with a second countdown → a copyright-only footer (no link columns) →
+sticky mobile call/book bar.
 
-All scroll animations (`data-reveal`) fail open: if JavaScript never runs, nothing is hidden. If it
-does run, a 3.5-second fallback timer force-reveals anything the scroll observer hasn't caught yet, so
-no content is ever permanently stuck invisible — verified against a full-page, no-scroll capture.
+Cut from the original draft on request: the services grid, the "how it works" step section, and the
+before/after gallery — all in service of keeping the page short and CTA-focused.
+
+All scroll animations (`data-reveal`) and the animated stat counters both fail open: if JavaScript never
+runs, nothing is hidden; if it does run, a 3.5-second fallback timer finishes the job for anything the
+scroll observer hasn't caught yet (including the "5.0" / "350+" counters), so nothing is ever stuck at
+a placeholder value — verified against a full-page, no-scroll capture.
 
 ## Files
 

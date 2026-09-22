@@ -110,6 +110,8 @@
     if (!items.length) return;
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     function animate(el) {
+      if (el.dataset.counted) return;
+      el.dataset.counted = '1';
       var to = parseFloat(el.getAttribute('data-count-to'));
       var decimals = el.getAttribute('data-count-decimals') ? parseInt(el.getAttribute('data-count-decimals'), 10) : 0;
       var suffix = el.getAttribute('data-count-suffix') || '';
@@ -129,6 +131,8 @@
       entries.forEach(function (entry) { if (entry.isIntersecting) { animate(entry.target); io.unobserve(entry.target); } });
     }, { threshold: 0.6 });
     items.forEach(function (el) { io.observe(el); });
+    // Fails open like initReveal: a page that never scrolls this far still gets real numbers.
+    setTimeout(function () { items.forEach(animate); }, 3500);
   }
 
   function boot() {

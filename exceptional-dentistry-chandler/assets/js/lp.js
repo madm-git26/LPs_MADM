@@ -156,6 +156,8 @@
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function animate(el) {
+      if (el.dataset.counted) return;
+      el.dataset.counted = '1';
       var to = parseFloat(el.getAttribute('data-count-to'));
       var decimals = el.getAttribute('data-count-decimals') ? parseInt(el.getAttribute('data-count-decimals'), 10) : 0;
       var suffix = el.getAttribute('data-count-suffix') || '';
@@ -178,6 +180,11 @@
       });
     }, { threshold: 0.6 });
     items.forEach(function (el) { io.observe(el); });
+
+    // A section that never scrolls into view (a fast visitor, or any tool that
+    // renders without scrolling) would otherwise leave these stuck at "0" —
+    // never a real number — so count them up for real once, after a delay.
+    setTimeout(function () { items.forEach(animate); }, 3500);
   }
 
   /* ----------------------------- boot ----------------------------- */
