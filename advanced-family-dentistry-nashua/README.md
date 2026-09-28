@@ -8,10 +8,20 @@ invented.
 This practice doesn't have a huge review volume, but what's there is consistently excellent and
 independently confirmed: **Healthgrades shows 5.0★**, **WebMD shows 5.0★ from 10 reviews**, and
 Yelp indexes 15 reviews for the location. The practice's own site makes no numeric review claim at
-all — just an unnumbered "5 Stars" badge. One third-party SEO aggregator claimed "907" then "932"
-reviews on two fetches minutes apart — a clear sign of fabricated/miscalculated content, so that
-number is **not used anywhere on this page**. Similarly, the *old* landing page's own schema.org
-markup claimed 4.8★/678 reviews, a number no independent source corroborates — also not reused.
+all — just an unnumbered "5 Stars" badge. Two different third-party SEO directory aggregators
+claimed wildly different, mutually-contradictory numbers — one said "907," then "932" on a re-fetch
+minutes later; another said "624" — a clear sign of fabricated/scraped-wrong content, so neither
+number is used anywhere on this page. Similarly, the *old* landing page's own schema.org markup
+claimed 4.8★/678 reviews, a number no independent source corroborates — also not reused.
+
+**GMB link correction**: the original short link provided resolved to the wrong pin/coordinates.
+The corrected, verified link — **https://maps.app.goo.gl/Uw71YGgtAaifpeGr6** — resolves to
+"Advanced Family Dentistry Nashua" at the correct 537 Amherst St address and is now used as the
+"Read Reviews on Google" button target. One more data-quality note surfaced while verifying this:
+Google's own listing for this correct pin shows the practice's phone number as **(603) 821-9046**
+— not (603) 836-9898 — which matches a wrong number already flagged elsewhere on the old LP's
+invisible schema data. Worth the client double-checking/updating the phone number on their actual
+Google Business Profile.
 
 This page shows a conservative, fully defensible **5.0★ / 10+ reviews** immediately — no loading
 skeleton, no placeholder — plus three real, name-attributed reviews pulled directly from the
