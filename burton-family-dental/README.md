@@ -20,6 +20,13 @@ the rating, review count, and review cards will silently upgrade to **live, real
 every page load. Without a key, the page simply keeps showing the verified real numbers above —
 nothing breaks, nothing looks unfinished.
 
+**GMB link**: all map touchpoints (the "Read Reviews on Google" button, both "Get Directions"
+links, and the embedded map) use the client-provided link —
+**https://maps.app.goo.gl/qR7kKq3oHFJEPjpy5** — which resolves to "Burton Family Dental" at the
+correct 5136 Davison Rd address/coordinates. The embedded map's query was also updated to include
+the business name (not just the address) so its pin resolves to the actual business listing rather
+than a generic street-address marker.
+
 ### To turn on live (auto-updating) data
 
 1. In [Google Cloud Console](https://console.cloud.google.com/), enable the **"Places API"**
