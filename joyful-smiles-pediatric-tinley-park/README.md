@@ -94,3 +94,67 @@ bundle.py                                                      regenerates the s
 ```
 
 Phone: **(708) 794-9526** (`tel:+17087949526`) · Request Appointment: **https://www.kidsdds.net/book-now/**
+
+
+---
+
+# Invisalign® for Kids & Teens — Tinley Park landing page (Google Ads)
+
+`invisalign.html` (+ standalone `Joyful-Smiles-Pediatric-Dentistry-Tinley-Park-Invisalign.html`).
+Uses the same Tinley Park theme as the page above — `theme.css` plus `assets/css/invisalign.css` for
+the Invisalign-only components — so the purple/amber/blue/navy palette, Signika + Bad Script fonts,
+logo, elephant/bird/bunny artwork, reviews, phone **(708) 794-9526**, GMB link and the booking link
+**https://www.kidsdds.net/book-now/** all match kidsdds.net. Dr. Elnagar's photo
+(`assets/img/doctor-elnagar.jpg`) is the one on his kidsdds.net bio page, cropped inside its frame.
+
+**Booking page update (checked 6 Oct 2026):** kidsdds.net/book-now/ now has a working Typeform embed,
+so the "Gravity Forms not active" problem flagged above appears fixed (a leftover Gravity Forms
+block still prints that message lower on the page — worth removing).
+
+Insurance wording is Tinley Park's: Aetna, Blue Cross Blue Shield, Cigna, Delta Dental, MetLife and
+United Healthcare; not HMO, Medicaid, Public Aid or All Kids. Financing: CareCredit.
+
+**Offer, as briefed:** regular price **$8,000** shown struck through, offer price **$6,500** directly
+below it. The $1,500 difference is presented as four "bonus rewards" (layout modeled on the reference
+image's dark reward cards with gold corner brackets and value pills — design only, no content taken):
+
+| Reward | Value |
+|---|---|
+| 01 · Free Retainers | $750 |
+| 02 · Free 3D Scan & Smile Preview | $250 |
+| 03 · Free Consultation | $150 |
+| 04 · Free X-Rays & Records | $350 |
+| **Total** | **$1,500** |
+
+Below the cards: "Total Invisalign® Bonus: $1,500 in free rewards — included with every Invisalign®
+booking", then a $8,000 − $1,500 = $6,500 strip. The split is my proposal — change the values in the
+reward cards, the pricing list and the FAQ if the practice wants different numbers (they must still
+add up to $1,500). Each reward was chosen because the practice's own content supports it: the
+orthodontic page offers a complimentary consultation, the Invisalign guide on the blog describes the
+digital 3D scan with a preview of the future smile, and the practice takes digital X-rays.
+
+**Sections:** hero with the price card → trust strip → $1,500 rewards band → why Invisalign for kids
++ "could it help my child?" checklist → Dr. Mo Elnagar (orthodontist) with Dr. Yaa McDonald →
+pricing & ways to pay → Google reviews → FAQ → location & hours → final CTA → footer with offer
+terms. No countdown (lp.js skips it when there are no countdown elements), no footer links.
+
+**Where the content comes from:** the practice's own "Invisalign First-Time Patient Guide" blog
+post (aligners worn 1–2 weeks each, 20–22 hours a day, 12–18 months typical / as little as six
+months, mild pressure for a day or two, Invisalign Teen's compliance indicators and replacement
+aligners), the orthodontic-treatment page (early treatment, expanders, space maintainers) and
+Dr. Mo Elnagar's bio on the site. His NPI record (1285124792) confirms he's an orthodontics
+specialist at UIC's College of Dentistry address.
+
+### Please confirm with the practice before running ads
+
+- **Invisalign provider status.** Neither site has an Invisalign service page; the blog post and
+  Dr. Elnagar's bio ("clear aligners") are the only references. The page uses the Invisalign® name
+  throughout, so the practice should be an active Invisalign provider (Align's trademark rules).
+- **"Board-certified."** Dr. Elnagar's bio says he is board-certified; the ABO directory couldn't be
+  checked, so the page doesn't say it (same rule as Dr. McDonald's board claim). Add it if confirmed.
+- **Which office/days Dr. Elnagar sees Invisalign patients** — his bio is on both sites.
+- **Offer terms in the footer** ("no cash value", "candidacy determined at consultation", etc.) are
+  standard wording I added; adjust to whatever the practice wants.
+
+Regenerate the bundle after edits:
+`python3 bundle.py invisalign.html Joyful-Smiles-Pediatric-Dentistry-Tinley-Park-Invisalign.html`

@@ -1,0 +1,145 @@
+/* ==========================================================================
+   Joyful Smiles Pediatric Dentistry of Bradley — Invisalign® for Kids & Teens
+   Loaded AFTER theme.css: reuses the Bradley tokens (purple #612B7D, teal,
+   gold/orange "Book Now" gradient, pink-magenta call gradient, dark
+   teal-to-purple band) and the Amatic SC + Lato type pairing. Only the
+   Invisalign-specific components live here.
+   ========================================================================== */
+
+/* Top bar offer line */
+.topbar-offer { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: #fff; }
+.topbar-offer svg { width: 14px; height: 14px; fill: var(--gold); flex: none; }
+.topbar-offer s { color: rgba(255,255,255,.7); text-decoration-color: var(--pink); text-decoration-thickness: 2px; }
+.topbar-offer strong { color: var(--gold); }
+
+/* Hero headline: the accent phrase gets its own line */
+.hero h1 .accent { display: block; }
+
+/* ---------- Hero price card (strike-through "was" price, offer price below) ---------- */
+.price-card {
+  display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+  max-width: 520px; padding: 16px 22px; margin-bottom: 22px;
+  background: rgba(255,255,255,.08); border: 1px dashed rgba(242,199,76,.75); border-radius: var(--radius-sm);
+}
+.price-label { display: block; font-size: 12.5px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 2px; }
+.price-was { display: block; font-size: 24px; font-weight: 700; line-height: 1.1; color: rgba(255,255,255,.62); }
+.price-was s { text-decoration-color: var(--pink); text-decoration-thickness: 3px; }
+/* Lato Black for prices — Amatic SC's loose digits read poorly as numbers */
+.price-now { display: block; font-size: 54px; font-weight: 900; line-height: 1; letter-spacing: -.02em; color: var(--gold); }
+.price-save { padding: 12px 16px; background: var(--grad-call); border-radius: var(--radius-sm); color: #fff; text-align: center; line-height: 1.15; box-shadow: 0 14px 30px -12px rgba(182,70,145,.7); }
+.price-save strong { display: block; font-size: 26px; font-weight: 900; }
+.price-save span { font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+
+/* ---------- Bonus rewards band (dark, corner-bracket cards) ---------- */
+.rewards { position: relative; overflow: hidden; padding: 62px 0 58px; background: var(--grad-dark); color: #fff; }
+.rewards::before { content: ""; position: absolute; inset: 0; background: radial-gradient(560px 380px at 8% 0%, rgba(0,201,191,.22), transparent 62%), radial-gradient(560px 380px at 96% 100%, rgba(242,199,76,.16), transparent 60%); pointer-events: none; }
+.rewards .shell { position: relative; z-index: 1; }
+.rewards .section-head .kicker { color: var(--gold); }
+.rewards .section-head h2 { color: #fff; }
+.rewards .section-head p { color: rgba(255,255,255,.82); }
+
+.reward-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 26px; }
+.reward-card {
+  position: relative; display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 36px 22px 30px; border-radius: 18px;
+  background: linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 24px 50px -24px rgba(0,0,0,.55);
+  transition: transform .3s var(--ease), border-color .3s ease;
+}
+.reward-card:hover { transform: translateY(-4px); border-color: rgba(242,199,76,.5); }
+.reward-card::before, .reward-card::after { content: ""; position: absolute; width: 30px; height: 30px; border: 2px solid var(--gold); pointer-events: none; }
+.reward-card::before { top: -3px; left: -3px; border-right: 0; border-bottom: 0; border-top-left-radius: 6px; }
+.reward-card::after { bottom: -3px; right: -3px; border-left: 0; border-top: 0; border-bottom-right-radius: 6px; }
+.reward-num { font-size: 13.5px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.reward-card h3 { font-family: var(--font-display); font-size: 36px; font-weight: 700; line-height: 1; color: #fff; margin: 0 0 10px; }
+.reward-card p { flex: 1; font-size: 14.5px; line-height: 1.6; color: rgba(255,255,255,.78); margin: 0 0 16px; }
+.reward-value { display: inline-block; padding: 8px 14px; background: var(--gold); border-radius: 6px; font-size: 12.5px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--purple-deep); }
+
+.reward-total { margin: 36px auto 0; text-align: center; font-size: 19px; font-weight: 900; color: #fff; }
+.reward-total strong { font-size: 30px; color: var(--gold); vertical-align: -2px; }
+
+.price-math { display: flex; align-items: stretch; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 22px auto 0; }
+.price-math .pm { min-width: 150px; padding: 12px 18px; text-align: center; border-radius: var(--radius-sm); background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); }
+.price-math .pm span { display: block; font-size: 11.5px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+.price-math .pm strong { display: block; font-size: 26px; font-weight: 900; line-height: 1.2; color: #fff; }
+.price-math .pm s { text-decoration-color: var(--pink); text-decoration-thickness: 3px; color: rgba(255,255,255,.75); }
+.price-math .pm-final { background: var(--gold); border-color: var(--gold); }
+.price-math .pm-final span { color: var(--purple-deep); }
+.price-math .pm-final strong { color: var(--purple-deep); }
+.price-math .op { display: grid; place-items: center; font-size: 26px; font-weight: 900; color: var(--gold); }
+.rewards-cta { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+
+/* ---------- Why Invisalign for kids ---------- */
+.why-wrap { display: grid; grid-template-columns: 1.25fr .75fr; gap: 26px; align-items: stretch; }
+.benefit-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+.benefit { display: flex; gap: 13px; align-items: flex-start; padding: 18px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
+.benefit svg { width: 26px; height: 26px; fill: var(--teal); flex: none; margin-top: 2px; }
+.benefit:nth-child(3n+2) svg { fill: var(--orange-solid); }
+.benefit:nth-child(3n) svg { fill: var(--magenta); }
+.benefit h3 { font-size: 16.5px; margin: 0 0 3px; }
+.benefit p { font-size: 14px; line-height: 1.5; color: var(--mute); margin: 0; }
+
+.candidate-card { display: flex; flex-direction: column; padding: 26px 26px 28px; background: var(--purple-deep); color: #fff; border-radius: var(--radius); box-shadow: var(--shadow); }
+.candidate-card h3 { font-family: var(--font-display); font-size: 40px; font-weight: 700; line-height: 1; color: var(--gold); margin-bottom: 8px; }
+.candidate-card > p { font-size: 14.5px; color: rgba(255,255,255,.85); margin-bottom: 14px; }
+.candidate-card ul { display: grid; gap: 9px; margin-bottom: 20px; }
+.candidate-card li { position: relative; padding-left: 26px; font-size: 14.5px; line-height: 1.45; color: rgba(255,255,255,.94); }
+.candidate-card li::before { content: ""; position: absolute; left: 0; top: .32em; width: 15px; height: 15px; border-radius: 50%; background: var(--teal-bright); }
+.candidate-card li:nth-child(even)::before { background: var(--gold); }
+.candidate-card .btn { margin-top: auto; }
+
+/* ---------- Doctors (orthodontist first, pediatric dentist second) ---------- */
+.doc-team { display: flex; align-items: center; gap: 16px; margin-top: 18px; padding: 16px 18px; background: var(--mint); border-radius: var(--radius-sm); }
+.doc-team img { width: 74px; height: 74px; flex: none; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: var(--shadow-sm); }
+.doc-team p { margin: 0; font-size: 14.5px; line-height: 1.5; }
+.doc-team strong { color: var(--purple); }
+
+/* ---------- Pricing & payment ---------- */
+.pay-wrap { display: grid; grid-template-columns: 1.1fr .9fr; box-shadow: var(--shadow); border-radius: var(--radius); overflow: hidden; }
+.pay-included { background: #fff; padding: 28px 30px; border: 1px solid var(--line); border-right: 0; }
+.pay-included h3 { font-size: 21px; color: var(--purple); margin-bottom: 6px; }
+.pay-price { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+.pay-price s { font-size: 24px; font-weight: 700; color: var(--mute); text-decoration-color: var(--pink); text-decoration-thickness: 3px; }
+.pay-price strong { font-size: 44px; font-weight: 900; color: var(--purple); line-height: 1; letter-spacing: -.02em; }
+.pay-price em { font-style: normal; font-size: 13px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; color: var(--magenta); }
+.incl-list { display: grid; gap: 9px; margin-bottom: 16px; }
+.incl-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14.5px; color: var(--ink-soft); }
+.incl-list svg { width: 18px; height: 18px; fill: var(--teal); flex: none; margin-top: 3px; }
+.incl-list b { color: var(--ink); }
+.incl-list .val { margin-left: auto; padding-left: 10px; font-size: 12.5px; font-weight: 900; color: var(--magenta); white-space: nowrap; }
+.pay-included .fine { font-size: 13px; color: var(--mute); margin: 0; }
+
+/* ---------- FAQ ---------- */
+.faq-list { max-width: 860px; margin: 0 auto; display: grid; gap: 12px; }
+.faq-item { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
+.faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 17px 20px; cursor: pointer; list-style: none; font-weight: 900; font-size: 16px; color: var(--ink); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--purple-pale); color: var(--purple); font-size: 20px; line-height: 1; transition: transform .25s var(--ease); }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { padding: 0 20px 18px; margin: 0; font-size: 15px; color: var(--ink-soft); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .reward-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 980px) {
+  .why-wrap, .pay-wrap { grid-template-columns: 1fr; }
+  .pay-included { border-right: 1px solid var(--line); }
+}
+@media (max-width: 720px) {
+  .topbar-offer { width: 100%; justify-content: center; }
+  .price-card { padding: 14px 16px; }
+  .price-now { font-size: 46px; }
+  .price-save strong { font-size: 22px; }
+  .rewards { padding: 46px 0 44px; }
+  .reward-grid, .benefit-grid { grid-template-columns: 1fr; gap: 20px; }
+  .reward-total { font-size: 17px; }
+  .reward-total strong { font-size: 26px; }
+  .price-math .op { width: 100%; font-size: 20px; }
+  .price-math .pm { width: 100%; }
+  .rewards-cta .btn { width: 100%; }
+  .pay-included { padding: 24px 20px; }
+  .pay-price strong { font-size: 38px; }
+  .doc-team { flex-direction: column; text-align: center; }
+}
