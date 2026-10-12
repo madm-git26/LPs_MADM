@@ -15,7 +15,7 @@
     // (HTTP referrers) to this page's domain in Google Cloud Console.
     PLACES_API_KEY: '',
     PLACE_QUERY: 'Madison Dental Loft, 30 E 40th St Rm 806, New York, NY 10016',
-    MAX_REVIEWS: 3,
+    MAX_REVIEWS: 0,   // 0 = keep the vetted review cards in the page; only rating and count go live
     CACHE_MINUTES: 60
   };
 
@@ -93,11 +93,10 @@
     if (typeof place.user_ratings_total === 'number') {
       setText('[data-gmb-count]', place.user_ratings_total + '+');
     }
-    setText('[data-gmb-status]', 'Live from Google — updated automatically');
-    if (place.url) {
-      document.querySelectorAll('[data-gmb-link]').forEach(function (a) { a.href = place.url; });
-    }
-    renderReviews(place.reviews);
+    setText('[data-gmb-status]', 'Rating and review count update automatically from Google');
+    document.querySelectorAll('[data-gmb-static]').forEach(function (el) { el.remove(); });
+    // The "Read Reviews on Google" button keeps the client's GMB link (data-gmb-link is not rewritten).
+    if (CONFIG.MAX_REVIEWS > 0) renderReviews(place.reviews);
     document.querySelectorAll('[data-gmb-widget]').forEach(function (el) { el.classList.add('is-loaded'); });
   }
 
@@ -134,12 +133,11 @@
         var svc = new google.maps.places.PlacesService(document.createElement('div'));
         svc.findPlaceFromQuery({ query: CONFIG.PLACE_QUERY, fields: ['place_id'] }, function (results, status) {
           if (status !== google.maps.places.PlacesServiceStatus.OK || !results || !results[0]) { fail(); return; }
-          svc.getDetails({ placeId: results[0].place_id, fields: ['rating', 'user_ratings_total', 'reviews', 'url'] }, function (place, status2) {
+          svc.getDetails({ placeId: results[0].place_id, fields: ['rating', 'user_ratings_total', 'reviews'] }, function (place, status2) {
             if (status2 !== google.maps.places.PlacesServiceStatus.OK || !place) { fail(); return; }
             var simplified = {
               rating: place.rating,
               user_ratings_total: place.user_ratings_total,
-              url: place.url,
               reviews: (place.reviews || []).map(function (r) {
                 return { author_name: r.author_name, rating: r.rating, text: r.text, relative_time_description: r.relative_time_description, time: r.time };
               })

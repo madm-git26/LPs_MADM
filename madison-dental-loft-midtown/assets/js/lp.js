@@ -63,12 +63,15 @@
     6: 'select',    // Sat  9:00a–3:00p on select Saturdays only
     0: null         // Sun closed
   };
+  // From the practice's booking calendar (Oct 2026). Confirm with the office and update as needed.
+  var OPEN_SATURDAYS = ['2026-10-17', '2026-10-31', '2026-11-14', '2026-12-05', '2026-12-12'];
+  var CLOSED_DATES = ['2026-11-26', '2026-11-27', '2026-12-24', '2026-12-25', '2026-12-31', '2027-01-01'];
 
   function localNow() {
-    var parts = new Intl.DateTimeFormat('en-US', { timeZone: CONFIG.TIMEZONE, weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+    var parts = new Intl.DateTimeFormat('en-US', { timeZone: CONFIG.TIMEZONE, weekday: 'short', year: 'numeric', month: '2-digit', day: '2-digit', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
     var map = {}; parts.forEach(function (p) { map[p.type] = p.value; });
     var days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
-    return { day: days[map.weekday], minutes: (parseInt(map.hour, 10) % 24) * 60 + parseInt(map.minute, 10) };
+    return { day: days[map.weekday], ymd: map.year + '-' + map.month + '-' + map.day, minutes: (parseInt(map.hour, 10) % 24) * 60 + parseInt(map.minute, 10) };
   }
 
   function initHours() {
@@ -77,7 +80,8 @@
     if (todayRow) todayRow.classList.add('is-today');
     var span = HOURS[now.day];
     var state;
-    if (span === 'select') state = (now.minutes >= 540 && now.minutes < 900) ? 'select' : 'closed';
+    if (CLOSED_DATES.indexOf(now.ymd) > -1) state = 'closed';
+    else if (span === 'select') state = (OPEN_SATURDAYS.indexOf(now.ymd) > -1 && now.minutes >= 540 && now.minutes < 900) ? 'select' : 'closed';
     else state = (span && now.minutes >= span[0] && now.minutes < span[1]) ? 'open' : 'closed';
     document.querySelectorAll('[data-open-status]').forEach(function (el) {
       var text = state === 'open' ? (el.getAttribute('data-open-text') || 'Open now')
