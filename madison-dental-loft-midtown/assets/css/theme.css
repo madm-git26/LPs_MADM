@@ -216,6 +216,10 @@ p { margin: 0 0 1em; }
 .doc-cred { display: flex; gap: 9px; align-items: flex-start; padding: 12px 14px; background: var(--sky-50); border: 1px solid var(--sky); }
 .doc-cred svg { width: 18px; height: 18px; fill: var(--brand); flex: none; margin-top: 2px; }
 .doc-cred span { font-size: 13.5px; color: var(--ink-soft); line-height: 1.35; }
+.doc-awards { display: flex; align-items: center; gap: 16px; margin: 0 0 14px; }
+.doc-awards img { height: 66px; width: auto; flex: none; }
+.doc-awards span { font-size: 13.5px; color: var(--ink-soft); letter-spacing: .04em; }
+.doc-awards strong { display: block; font-family: var(--font-display); font-size: 16px; font-weight: 500; color: var(--ink); letter-spacing: 0; }
 .doc-team { font-size: 14px; color: var(--mute); margin: 0; padding-top: 12px; border-top: 1px solid var(--line); }
 .doc-team strong { color: var(--ink-soft); }
 
@@ -318,6 +322,8 @@ p { margin: 0 0 1em; }
   .section-head { margin-bottom: 24px; }
   .fact-quote p { font-size: 17px; }
   .review-grid, .cov-grid, .stat-row, .doc-cred-grid { grid-template-columns: 1fr; }
+  .doc-awards { gap: 12px; }
+  .doc-awards img { height: 56px; }
   .trust-strip .shell { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
   .topbar-facts span.hide-sm { display: none; }
   .topbar-deadline { width: 100%; justify-content: center; }

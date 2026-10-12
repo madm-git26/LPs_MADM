@@ -44,6 +44,12 @@ and about 5.8 screens tall on desktop. There was no previous "Use It or Lose It"
   to Dec 31 because that's when most benefits expire, not the last day to be seen. The page
   words it as "most 2026 benefits expire".
 
+- **America's Best Dentists badges (2021, 2022, 2023).** Added on your instruction, shown small in
+  Dr. Kim's section. They're cut from the image you supplied
+  (`assets/img/badges-americas-best-dentists.webp`). I couldn't find the award online for Dr. Kim
+  or Madison Dental Loft, and nycdental.com doesn't show these badges. Confirm the award was given
+  to Dr. Kim / the Midtown office, not to the Downtown practice, and keep the award letter on file.
+
 ## Rating & reviews
 
 **5.0★ from 475 Google reviews** (466 five-star, 98%), read from the Google listing on
