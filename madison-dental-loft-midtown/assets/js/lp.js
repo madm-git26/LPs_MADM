@@ -100,17 +100,67 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  // Count numbers up from zero inside an element's first text node, e.g. "80–100%" or "$1,000–$2,000+".
+  function countUp(el) {
+    var node = el.firstChild;
+    if (!node || node.nodeType !== 3) return;
+    var original = node.nodeValue, start = null, DURATION = 1300;
+    if (!/\d/.test(original)) return;
+    function frame(ts) {
+      if (start === null) start = ts;
+      var t = Math.min(1, (ts - start) / DURATION), eased = 1 - Math.pow(1 - t, 3);
+      node.nodeValue = t < 1 ? original.replace(/\d[\d,]*(\.\d+)?/g, function (num) {
+        var value = parseFloat(num.replace(/,/g, '')) * eased, decimals = (num.split('.')[1] || '').length;
+        var out = value.toFixed(decimals);
+        return num.indexOf(',') > -1 ? Number(out).toLocaleString('en-US') : out;
+      }) : original;
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
   function initReveal() {
-    var items = document.querySelectorAll('[data-reveal]');
-    if (!items.length) return;
+    var blocks = [].slice.call(document.querySelectorAll('[data-reveal]'));
+    var groups = [].slice.call(document.querySelectorAll('[data-reveal-stagger]'));
+    var bands = [].slice.call(document.querySelectorAll('.final-cta'));
+    var targets = blocks.concat(groups, bands);
+    if (!targets.length) return;
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced || !('IntersectionObserver' in window)) { items.forEach(function (el) { el.classList.add('is-visible'); }); return; }
+    if (reduced || !('IntersectionObserver' in window)) return;   // content simply stays visible
+
+    groups.forEach(function (group) {
+      [].forEach.call(group.children, function (child, i) {
+        if (!child.style.getPropertyValue('--reveal-delay')) child.style.setProperty('--reveal-delay', (i * 90) + 'ms');
+      });
+    });
+
+    // After an element has animated in, hand it back to its own transitions (button hovers etc.).
+    function settle(el) {
+      var delay = parseInt(el.style.getPropertyValue('--reveal-delay'), 10) || 0;
+      setTimeout(function () { el.classList.add('reveal-done'); }, delay + 900);
+    }
+    function show(el) {
+      if (el.classList.contains('is-visible') || el.classList.contains('is-in-view')) return;
+      if (el.classList.contains('final-cta')) { el.classList.add('is-in-view'); return; }
+      el.classList.add('is-visible');
+      if (el.hasAttribute('data-reveal-stagger')) [].forEach.call(el.children, settle);
+      else settle(el);
+      el.querySelectorAll('[data-count-up]').forEach(countUp);
+      if (el.hasAttribute('data-count-up')) countUp(el);
+    }
+
     document.documentElement.classList.add('reveal-ready');
+    var observerAlive = false;
     var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); } });
-    }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
-    items.forEach(function (el) { io.observe(el); });
-    setTimeout(function () { items.forEach(function (el) { el.classList.add('is-visible'); }); }, 3500);
+      observerAlive = true;
+      entries.forEach(function (entry) {
+        // Reveal on entering the viewport, and anything already scrolled past (e.g. after a reload mid-page).
+        if (entry.isIntersecting || entry.boundingClientRect.bottom < 0) { show(entry.target); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+    targets.forEach(function (el) { io.observe(el); });
+    // Fail open: if the observer never reports back, show everything.
+    setTimeout(function () { if (!observerAlive) targets.forEach(show); }, 2500);
   }
 
   function boot() {

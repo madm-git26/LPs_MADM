@@ -62,9 +62,42 @@ p { margin: 0 0 1em; }
 .shell { width: 100%; max-width: var(--shell); margin: 0 auto; padding: 0 var(--gutter); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
-.reveal-ready [data-reveal] { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-.reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+/* ---- Scroll animations ----------------------------------------------------
+   lp.js adds .reveal-ready to <html> only when IntersectionObserver works and
+   the visitor hasn't asked for reduced motion, so content is never hidden
+   without JS. [data-reveal="up|left|right|zoom|fade"] animates one block;
+   [data-reveal-stagger="up|right|zoom|fade"] animates its children in turn.
+   .reveal-done hands each element back to its own hover transitions. */
+.reveal-ready [data-reveal]:not(.reveal-done),
+.reveal-ready [data-reveal-stagger] > :not(.reveal-done) {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal-ready [data-reveal="left"]:not(.reveal-done)  { transform: translateX(-40px); }
+.reveal-ready [data-reveal="right"]:not(.reveal-done),
+.reveal-ready [data-reveal-stagger="right"] > :not(.reveal-done) { transform: translateX(40px); }
+.reveal-ready [data-reveal="zoom"]:not(.reveal-done),
+.reveal-ready [data-reveal-stagger="zoom"] > :not(.reveal-done) { transform: scale(.92); }
+.reveal-ready [data-reveal="fade"]:not(.reveal-done),
+.reveal-ready [data-reveal-stagger="fade"] > :not(.reveal-done) { transform: none; }
+.reveal-ready [data-reveal-stagger] > :not(.reveal-done) { transition-duration: .65s; }
+.reveal-ready [data-reveal].is-visible:not(.reveal-done),
+.reveal-ready [data-reveal-stagger].is-visible > :not(.reveal-done) { opacity: 1; transform: none; }
+.section, .trust-strip { overflow-x: clip; }   /* side slides never cause sideways scroll */
+
+/* Hero photo: slow settle-in zoom on load; dark bands: gentle zoom when shown */
+.hero .band-bg { animation: bandSettle 14s var(--ease) both; }
+.final-cta .band-bg { transform: scale(1.08); transition: transform 6s var(--ease); }
+.final-cta.is-in-view .band-bg { transform: scale(1); }
+@keyframes bandSettle { from { transform: scale(1.1); } to { transform: scale(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal], [data-reveal-stagger] > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero .band-bg, .final-cta .band-bg { animation: none; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+@media print { [data-reveal], [data-reveal-stagger] > * { opacity: 1 !important; transform: none !important; } }
 
 /* ---------- Buttons (square, like the site) ---------- */
 .btn {
@@ -334,6 +367,9 @@ p { margin: 0 0 1em; }
   .rating-summary { gap: 14px; padding: 18px; }
   .rating-summary .score { font-size: 46px; }
   .hero-cta .btn { width: 100%; }
+  .reveal-ready [data-reveal="left"]:not(.reveal-done),
+  .reveal-ready [data-reveal="right"]:not(.reveal-done),
+  .reveal-ready [data-reveal-stagger="right"] > :not(.reveal-done) { transform: translateY(24px); }
   /* Mobile: center the whole hero */
   .hero-copy { text-align: center; }
   .hero-eyebrow { justify-content: center; gap: 7px; padding: 7px 10px; font-size: 11px; letter-spacing: .05em; white-space: nowrap; }

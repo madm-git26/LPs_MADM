@@ -163,7 +163,7 @@ confirming 930-9679 rings the Midtown front desk.
 use-it-or-lose-it.html                                the landing page (production source)
 Madison-Dental-Loft-Midtown-Use-It-Or-Lose-It.html    standalone downloadable bundle
 assets/css/theme.css                                  Madison brand tokens + all components
-assets/js/lp.js                                       countdown (Eastern time), reveal, hours, tracking
+assets/js/lp.js                                       countdown (Eastern time), scroll animations, hours, tracking
 assets/js/gmb-widget.js                               live Google rating/reviews upgrade — optional
 assets/img/                                           hero, doctor, reception, background bands, logo, icons
 bundle.py                                             regenerates the standalone bundle after any edit
