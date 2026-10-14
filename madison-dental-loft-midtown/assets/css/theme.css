@@ -120,6 +120,7 @@ p { margin: 0 0 1em; }
 .hero-eyebrow svg { width: 15px; height: 15px; fill: currentColor; }
 .hero h1 { font-size: 56px; color: #fff; margin: 0 0 16px; }
 .hero h1 .accent { color: var(--logo-1); }
+.nowrap { white-space: nowrap; }
 .hero-sub { font-size: 18px; line-height: 1.6; color: rgba(255,255,255,.9); max-width: 42em; margin-bottom: 22px; }
 .hero-sub strong { color: #fff; font-weight: 600; }
 
@@ -333,6 +334,14 @@ p { margin: 0 0 1em; }
   .rating-summary { gap: 14px; padding: 18px; }
   .rating-summary .score { font-size: 46px; }
   .hero-cta .btn { width: 100%; }
+  /* Mobile: center the whole hero */
+  .hero-copy { text-align: center; }
+  .hero-eyebrow { justify-content: center; gap: 7px; padding: 7px 10px; font-size: 11px; letter-spacing: .05em; white-space: nowrap; }
+  .hero-eyebrow svg { width: 13px; height: 13px; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-copy .countdown { flex-direction: column; align-items: center; gap: 10px; }
+  .hero-copy .countdown-units { justify-content: center; }
+  .hero-rating { justify-content: center; flex-wrap: wrap; gap: 8px 12px; }
   .hero-badge.badge-rating { top: -14px; left: -8px; padding: 8px 11px; }
   .hero-badge.badge-ppo { bottom: -12px; right: -4px; padding: 8px 11px; }
   .hero-badge .num { font-size: 17px; }
@@ -342,5 +351,8 @@ p { margin: 0 0 1em; }
 @media (max-width: 420px) {
   .hero h1 { font-size: 32px; }
   .countdown-units strong { font-size: 23px; }
+}
+@media (max-width: 359px) {
+  .hero-eyebrow { font-size: 10px; letter-spacing: .03em; }
 }
 @media print { .mobile-bar, .site-header, .topbar { display: none; } }
