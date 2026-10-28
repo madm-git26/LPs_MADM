@@ -18,15 +18,21 @@ implant animation, 3D procedure illustrations and a YouTube video section.
 - Title, meta description, canonical, `Dentist` + `FAQPage` structured data — unchanged.
 - The `<!-- Add your GTM / call-tracking snippet here -->` placeholder is still in `<head>`.
 
+## Brand
+
+Colours and fonts match pacificnorthwestdentist.com: black `#000` / charcoal `#2D2D2D` backgrounds,
+bright blue `#0397D6` buttons and accents, white and `#F6F6F6` light bands, gold `#F7B727` rating
+stars, Montserrat headings and Lato body text. All text, headings and buttons are centre-aligned.
+
 ## Sections
 
 1. Top bar + sticky header (Pricing · 3D Implant · Process · Dr. Bradley · Reviews · FAQ)
-2. **Hero** — full-bleed 3D implant animation (desktop 16:9 cut, phone 4:5 cut), headline, call/book CTAs, trust chips, and the **Get Pricing Instantly** form above the fold
+2. **Hero** — full-bleed 3D implant animation behind the headline and the **Get Pricing Instantly** form (desktop 16:9 cut). On phones the headline sits above the 4:5 video, followed by the CTAs and the form
 3. Value points
 4. Pricing — All-On-4 feature card + snap-in (2 / 4 implants), 3-tooth bridge, single tooth — each with its own 3D render
 5. Why choose our implant team
-6. **Inside a dental implant (3D)** — scroll-driven model: crown, abutment and titanium implant assemble as you scroll, with call CTA
-7. **The implant process in 3D** — five 3D stages (plan → place → heal → abutment → crown)
+6. **Inside a dental implant (3D)** — on desktop the crown, abutment and titanium implant assemble as you scroll; on phones the animation is removed (its frames never download) and the section shows the three parts + call CTA
+7. **The implant process in 3D** — five square 3D tiles in two rows (3 + 2): planning, placement, healing, abutment, new tooth
 8. What to expect (the original 3 steps, with a scroll progress line)
 9. Dr. Ryan Bradley (+ Dr. John Worthington from the main site)
 10. **Videos** — the practice's YouTube videos (load only when clicked, via youtube-nocookie)
