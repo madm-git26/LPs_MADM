@@ -27,7 +27,7 @@ stars, Montserrat headings and Lato body text. All text, headings and buttons ar
 ## Sections
 
 1. Top bar + sticky header (Pricing · 3D Implant · Process · Dr. Bradley · Reviews · FAQ)
-2. **Hero** — full-bleed 3D implant animation behind the headline and the **Get Pricing Instantly** form (desktop 16:9 cut). On phones the headline sits above the 4:5 video, followed by the CTAs and the form
+2. **Hero** — full-bleed 3D implant animation behind the headline and the **Get Pricing Instantly** form (desktop 16:9 cut). On phones the headline sits above the 4:5 video, followed by the CTAs and the form; the NewMouth "Best Dentist in Portland 2023" award badge sits under the trust chips (also shown beside the logo in the footer, `assets/img/award-newmouth-2023.webp`)
 3. Value points
 4. Pricing — All-On-4 feature card + snap-in (2 / 4 implants), 3-tooth bridge, single tooth — each with a realistic studio-lit 3D render (translucent bone showing the implants, stippled gum, anatomical teeth; source `3d-source/realistic.js`)
 5. Why choose our implant team

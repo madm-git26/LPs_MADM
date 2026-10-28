@@ -193,6 +193,8 @@ svg.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-
 .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
 .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:4px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);font-size:.84rem;font-weight:700;color:#fff}
 .chip svg{color:var(--blue-light);width:1em;height:1em}
+.award{display:flex;justify-content:center;margin-top:18px}
+.award img{height:96px;width:auto;filter:drop-shadow(0 6px 16px rgba(0,0,0,.55))}
 
 /* hero form card */
 .formcard{position:relative;background:#fff;color:var(--ink);border-radius:12px;padding:22px 18px 8px;box-shadow:var(--shadow-lg);scroll-margin-top:96px;border-top:5px solid var(--blue)}
@@ -429,7 +431,10 @@ details p{padding:0 0 16px;color:var(--muted);font-size:1.02rem}
 
 /* ---------- footer ---------- */
 footer{background:var(--char);color:rgba(255,255,255,.7);padding:26px 0;font-size:.9rem}
-footer .flogo{height:38px;width:auto;margin:0 auto 14px}
+footer .f-brand{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:14px}
+footer .flogo{height:38px;width:auto}
+footer .f-div{width:1px;height:52px;background:rgba(255,255,255,.25)}
+footer .f-award{height:86px;width:auto}
 footer a{color:#fff}
 footer .links{margin-top:10px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
 
@@ -607,6 +612,7 @@ footer .links{margin-top:10px;display:flex;gap:18px;justify-content:center;flex-
           <span class="chip"><svg class="i"><use href="#i-flask"/></svg>In-house lab</span>
           <span class="chip"><svg class="i"><use href="#i-moon"/></svg>IV sedation available</span>
         </div>
+        <div class="award" data-enter style="--d:.66s"><img src="assets/img/award-newmouth-2023.webp" alt="NewMouth Best Dentist in Portland 2023 award" width="484" height="411"></div>
       </div>
     </div>
     <aside class="formcard" id="pricing-form" aria-label="Get pricing instantly" data-enter style="--d:.35s">
@@ -958,7 +964,11 @@ footer .links{margin-top:10px;display:flex;gap:18px;justify-content:center;flex-
 
 <footer>
   <div class="wrap">
-    <img class="flogo" src="https://pacificnorthwestdentist.com/wp-content/uploads/2022/06/Pacific-Northwest-Dental-Dentist-logo_white.png" alt="Pacific Northwest Dental" width="153" height="34" loading="lazy">
+    <div class="f-brand">
+      <img class="flogo" src="https://pacificnorthwestdentist.com/wp-content/uploads/2022/06/Pacific-Northwest-Dental-Dentist-logo_white.png" alt="Pacific Northwest Dental" width="153" height="34" loading="lazy">
+      <span class="f-div" aria-hidden="true"></span>
+      <img class="f-award" src="assets/img/award-newmouth-2023.webp" alt="NewMouth Best Dentist in Portland 2023 award" width="484" height="411" loading="lazy">
+    </div>
     <p>&copy; 2026 Pacific Northwest Dental - Dentist Beaverton | All Rights Reserved</p>
     <div class="links">
       <a href="https://pacificnorthwestdentist.com/privacy-policy/">Privacy Policy</a>
