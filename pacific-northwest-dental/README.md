@@ -13,7 +13,7 @@ implant animation, 3D procedure illustrations and a YouTube video section.
 
 - Call tracking number **(971) 306-5712** → `tel:9713065712` on every call button (header, hero, form card, pricing cards, 3D section, process, what-to-expect, doctor, financing, location, final CTA, sticky mobile bar).
 - Every **Book Online** button → `#pricing-form` (the hero "Get Pricing Instantly" form).
-- Lead form: the same LeadConnector survey `uC0cfDGqyeVb4o6D2QvG` + `form_embed.js`.
+- Lead form: the All-in-One Dental implant quiz iframe (`forms.allinone.dental/form/159a64b0-…`, 610 px) + its `iframeresize.js`. The iframe carries `id="embededFormIframe"`, which that script needs to resize it.
 - Directions / map, Google reviews link, Privacy, Terms, Make a Payment, logo → same URLs as before.
 - Title, meta description, canonical, `Dentist` + `FAQPage` structured data — unchanged.
 - The `<!-- Add your GTM / call-tracking snippet here -->` placeholder is still in `<head>`.
