@@ -38,6 +38,24 @@ blue rim light, a soft brand-blue glow, light particles and a glowing ring at th
 - Directions / map, Google reviews link, Privacy, Terms, Make a Payment, logo → same URLs as before.
 - Canonical, `Dentist` + `FAQPage` structured data — unchanged.
 
+## Google rating banner (hero, both versions)
+
+- The first thing in the hero: Google "G", **4.9**, five gold stars filled to the exact rating and
+  **811 Google reviews**, linking to the Google Business Profile
+  (https://maps.app.goo.gl/ed1gZ21XjdENS5Ns9, place ID `ChIJqR93058OlVQRo_F-q8nS7M0`).
+- The same numbers are in the `Dentist` JSON-LD as `aggregateRating` (plus `hasMap` → the profile).
+- The page ships with the figures read from Google on 28 Oct 2026. **Live mode:** create a Google Maps
+  Platform API key with *Maps JavaScript API* and *Places API (New)* enabled, restrict it to this site's
+  URL (HTTP referrers), and paste it into `apiKey: ''` in the page script (search for `G_PLACE`), then
+  re-run `python3 make_photo_hero.py && python3 build_standalone.py`. The banner and the schema then
+  update from Google after the page loads; each visitor's browser caches the result for 12 hours.
+  Google bills these lookups (Place Details), so watch the usage in the Cloud console.
+- Without a key the banner simply shows the shipped figures — update the numbers in the banner and the
+  JSON-LD (or ask for a refresh) when the review count grows.
+- Search: this page is `noindex`, and Google does not show review stars for a business's own
+  `LocalBusiness`/`Dentist` markup, so the schema will not create stars in Google results; it describes
+  the rating shown on the page.
+
 ## Tracking & SEO tags (both versions, and both standalone files)
 
 - Title: `Dental Implants in Beaverton, OR | All-On-4 & Snap-In Dentures`
