@@ -33,12 +33,13 @@ swap('/* phones: headline first, then the 3D video, then the rest */',
      '/* phones: headline first, then the photo, then the rest */')
 
 swap('''  /* desktop hero: 3D video full-bleed behind headline + form */''',
-     '''  /* desktop hero: photo full-bleed behind headline + form; the patient sits in the gap between them */''')
-swap('  .hero-video{object-position:56% 50%}', '  .hero-photo img{object-position:50% 22%}')
+     '''  /* desktop hero: photo full-bleed behind headline + form; the subject sits in the gap between them */''')
+swap('  .hero-video{object-position:56% 50%}', '  .hero-photo img{object-position:50% 46%}')
 start = html.index('  .hero-shade{background:\n    linear-gradient(90deg,rgba(0,0,0,.95)')
 end = html.index('\n', html.index('  .vid-ctl{right:auto'))
+# 900-1199px: the copy column is pinned to the left edge (20-480px), so the shade is measured from there
 html = html[:start] + '''  .hero-shade{background:
-    linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.88) 30%,rgba(0,0,0,.5) 39%,rgba(0,0,0,0) 46%,rgba(0,0,0,0) 63%,rgba(0,0,0,.3) 71%,rgba(0,0,0,.62) 100%),
+    linear-gradient(90deg,rgba(0,0,0,.94) 0,rgba(0,0,0,.88) 420px,rgba(0,0,0,.5) 490px,rgba(0,0,0,0) 560px,rgba(0,0,0,0) calc(100% - 420px),rgba(0,0,0,.3) calc(100% - 300px),rgba(0,0,0,.62) 100%),
     linear-gradient(180deg,rgba(0,0,0,.42) 0%,transparent 18%,transparent 76%,rgba(0,0,0,.9) 100%)}''' + html[end:]
 swap('  .hero-grid{display:grid;grid-template-columns:minmax(0,540px) 1fr 430px;',
      '  .hero h1{font-size:clamp(2.9rem,4.4vw,3.6rem)}\n'
@@ -65,7 +66,7 @@ start = html.index('    <video class="hero-video"')
 end = html.index('  <div class="wrap hero-grid">')
 html = html[:start] + '''    <picture class="hero-photo">
       <source media="(max-width: 599px)" srcset="assets/img/hero/hero-photo-mobile.webp" width="960" height="842">
-      <img src="assets/img/hero/hero-photo.webp" alt="Smiling senior woman admiring her smile in a hand mirror beside a dental team member" width="2400" height="1939" fetchpriority="high">
+      <img src="assets/img/hero/hero-photo.webp" alt="Smiling senior man in a dark suit jacket with his arms crossed" width="2400" height="1847" fetchpriority="high">
     </picture>
     <div class="hero-shade" aria-hidden="true"></div>
   </div>
