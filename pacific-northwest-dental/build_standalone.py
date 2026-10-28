@@ -19,7 +19,7 @@ html = re.sub(r'\s*data-(desktop|mobile)-webm="[^"]+"', '', html)
 html = re.sub(r'<link rel="preload" as="image"[^>]*>\n', '', html)
 html = re.sub(r'<meta property="og:image"[^>]*>\n', '', html)
 # every remaining local asset reference becomes a data URI
-html = re.sub(r'(?<=")(assets/(?:video|img)/[^"{}]+\.(?:jpg|webp|mp4))(?=")', lambda m: data_uri(m.group(1)), html)
+html = re.sub(r'(?<=")(assets/(?:video|img)/[^"{}?]+\.(?:jpg|webp|mp4))(?:\?v=\d+)?(?=")', lambda m: data_uri(m.group(1)), html)
 # scroll-assembly frames
 frames = [data_uri(f'assets/img/3d/seq/{i:03d}.webp') for i in range(40)]
 html = html.replace('path:"assets/img/3d/seq/{i}.webp"', 'frames:' + json.dumps(frames), 1)

@@ -29,7 +29,7 @@ stars, Montserrat headings and Lato body text. All text, headings and buttons ar
 1. Top bar + sticky header (Pricing · 3D Implant · Process · Dr. Bradley · Reviews · FAQ)
 2. **Hero** — full-bleed 3D implant animation behind the headline and the **Get Pricing Instantly** form (desktop 16:9 cut). On phones the headline sits above the 4:5 video, followed by the CTAs and the form
 3. Value points
-4. Pricing — All-On-4 feature card + snap-in (2 / 4 implants), 3-tooth bridge, single tooth — each with its own 3D render
+4. Pricing — All-On-4 feature card + snap-in (2 / 4 implants), 3-tooth bridge, single tooth — each with a realistic studio-lit 3D render (translucent bone showing the implants, stippled gum, anatomical teeth; source `3d-source/realistic.js`)
 5. Why choose our implant team
 6. **Inside a dental implant (3D)** — on desktop the crown, abutment and titanium implant assemble as you scroll; on phones the animation is removed (its frames never download) and the section shows the three parts + call CTA
 7. **The implant process in 3D** — five square 3D tiles in two rows (3 + 2): planning, placement, healing, abutment, new tooth
