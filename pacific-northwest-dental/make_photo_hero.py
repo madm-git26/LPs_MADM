@@ -1,5 +1,5 @@
 """Build dental-implants-photo-hero.html from dental-implants.html: the same page, but the hero shows a
-marketing photo (assets/img/hero/) instead of the 3D video. Re-run after editing the main page:
+still image (assets/img/hero/: a 3D implant render) instead of the 3D video. Re-run after editing the main page:
 python3 make_photo_hero.py && python3 build_standalone.py"""
 from pathlib import Path
 
@@ -18,14 +18,16 @@ def swap(old, new):
 # preload the photo cut that fits the screen instead of the video posters
 swap('''<link rel="preload" as="image" href="assets/video/hero-poster.jpg" media="(min-width: 900px)">
 <link rel="preload" as="image" href="assets/video/hero-poster-mobile.jpg" media="(max-width: 899px)">''',
-     '''<link rel="preload" as="image" href="assets/img/hero/hero-photo.webp" media="(min-width: 600px)" fetchpriority="high">
-<link rel="preload" as="image" href="assets/img/hero/hero-photo-mobile.webp" media="(max-width: 599px)" fetchpriority="high">''')
+     '''<link rel="preload" as="image" href="assets/img/hero/hero-photo.webp" media="(min-width: 900px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero/hero-photo-mobile.webp" media="(max-width: 899px)" fetchpriority="high">''')
 
 # ---- CSS ----
 swap('.hero-video{width:100%;height:100%;object-fit:cover;object-position:50% 32%}',
      '.hero-photo,.hero-photo img{display:block;width:100%;height:100%}\n'
-     '.hero-photo img{object-fit:cover;object-position:50% 34%}\n'
-     '.hero .lead,.hero-note{text-wrap:balance}')
+     '.hero-photo img{object-fit:cover;object-position:50% 50%}\n'
+     '.hero .lead,.hero-note{text-wrap:balance}\n'
+     '/* tablets: the whole phone render, letterboxed into the black hero */\n'
+     '@media(min-width:600px) and (max-width:899px){.hero-photo img{object-fit:contain}}')
 start = html.index('.vid-ctl{position:absolute')
 end = html.index('/* phones: headline first')
 html = html[:start] + html[end:]
@@ -34,7 +36,7 @@ swap('/* phones: headline first, then the 3D video, then the rest */',
 
 swap('''  /* desktop hero: 3D video full-bleed behind headline + form */''',
      '''  /* desktop hero: photo full-bleed behind headline + form; the subject sits in the gap between them */''')
-swap('  .hero-video{object-position:56% 50%}', '  .hero-photo img{object-position:50% 46%}')
+swap('  .hero-video{object-position:56% 50%}', '  .hero-photo img{object-position:50% 50%}')
 start = html.index('  .hero-shade{background:\n    linear-gradient(90deg,rgba(0,0,0,.95)')
 end = html.index('\n', html.index('  .vid-ctl{right:auto'))
 # 900-1199px: the copy column is pinned to the left edge (20-480px), so the shade is measured from there
@@ -65,8 +67,8 @@ swap('''@media(min-width:1200px){
 start = html.index('    <video class="hero-video"')
 end = html.index('  <div class="wrap hero-grid">')
 html = html[:start] + '''    <picture class="hero-photo">
-      <source media="(max-width: 599px)" srcset="assets/img/hero/hero-photo-mobile.webp" width="960" height="842">
-      <img src="assets/img/hero/hero-photo.webp" alt="Smiling senior man in a dark suit jacket with his arms crossed" width="2400" height="1847" fetchpriority="high">
+      <source media="(max-width: 899px)" srcset="assets/img/hero/hero-photo-mobile.webp" width="960" height="842">
+      <img src="assets/img/hero/hero-photo.webp" alt="3D illustration of a dental implant: ceramic crown, abutment and threaded titanium implant" width="2400" height="1500" fetchpriority="high">
     </picture>
     <div class="hero-shade" aria-hidden="true"></div>
   </div>

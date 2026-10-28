@@ -13,8 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/hero/hero-photo.webp" media="(min-width: 600px)" fetchpriority="high">
-<link rel="preload" as="image" href="assets/img/hero/hero-photo-mobile.webp" media="(max-width: 599px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero/hero-photo.webp" media="(min-width: 900px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero/hero-photo-mobile.webp" media="(max-width: 899px)" fetchpriority="high">
 <!-- Add your GTM / call-tracking snippet here if this page is not served through the site's existing tag setup -->
 
 <script type="application/ld+json">
@@ -174,8 +174,10 @@ svg.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-
 .hero{position:relative;color:#fff;background:var(--black);overflow:hidden;isolation:isolate;display:flex;flex-direction:column}
 .hero-media{position:relative;order:2;width:100%;height:min(88vw,440px)}
 .hero-photo,.hero-photo img{display:block;width:100%;height:100%}
-.hero-photo img{object-fit:cover;object-position:50% 34%}
+.hero-photo img{object-fit:cover;object-position:50% 50%}
 .hero .lead,.hero-note{text-wrap:balance}
+/* tablets: the whole phone render, letterboxed into the black hero */
+@media(min-width:600px) and (max-width:899px){.hero-photo img{object-fit:contain}}
 .hero-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#000 0%,rgba(0,0,0,0) 14%,rgba(0,0,0,0) 78%,#000 100%)}
 /* phones: headline first, then the photo, then the rest */
 .hero-grid,.hero-copy{display:contents}
@@ -492,7 +494,7 @@ footer .links{margin-top:10px;display:flex;gap:18px;justify-content:center;flex-
   /* desktop hero: photo full-bleed behind headline + form; the subject sits in the gap between them */
   .hero{display:flex;flex-direction:row;align-items:center;min-height:clamp(660px,calc(100svh - 112px),880px)}
   .hero-media{position:absolute;inset:0;height:auto;z-index:-1}
-  .hero-photo img{object-position:50% 46%}
+  .hero-photo img{object-position:50% 50%}
   .hero-shade{background:
     linear-gradient(90deg,rgba(0,0,0,.94) 0,rgba(0,0,0,.88) 420px,rgba(0,0,0,.5) 490px,rgba(0,0,0,0) 560px,rgba(0,0,0,0) calc(100% - 420px),rgba(0,0,0,.3) calc(100% - 300px),rgba(0,0,0,.62) 100%),
     linear-gradient(180deg,rgba(0,0,0,.42) 0%,transparent 18%,transparent 76%,rgba(0,0,0,.9) 100%)}
@@ -635,8 +637,8 @@ footer .links{margin-top:10px;display:flex;gap:18px;justify-content:center;flex-
 <div class="hero">
   <div class="hero-media">
     <picture class="hero-photo">
-      <source media="(max-width: 599px)" srcset="assets/img/hero/hero-photo-mobile.webp" width="960" height="842">
-      <img src="assets/img/hero/hero-photo.webp" alt="Smiling senior man in a dark suit jacket with his arms crossed" width="2400" height="1847" fetchpriority="high">
+      <source media="(max-width: 899px)" srcset="assets/img/hero/hero-photo-mobile.webp" width="960" height="842">
+      <img src="assets/img/hero/hero-photo.webp" alt="3D illustration of a dental implant: ceramic crown, abutment and threaded titanium implant" width="2400" height="1500" fetchpriority="high">
     </picture>
     <div class="hero-shade" aria-hidden="true"></div>
   </div>

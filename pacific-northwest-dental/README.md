@@ -8,25 +8,25 @@ implant animation, 3D procedure illustrations and a YouTube video section.
 |---|---|
 | `dental-implants.html` + `assets/` | You can upload the page **and** its `assets/` folder together (fastest loading). |
 | `dental-implants-standalone.html` | You need one self-contained file (page builder / custom-code block). Every image and video is embedded. Rebuild with `python3 build_standalone.py`. |
-| `dental-implants-photo-hero.html` (+ `assets/`) | **Photo-hero version:** the same page, but the hero shows a marketing photo instead of the 3D video (see below). |
-| `dental-implants-photo-hero-standalone.html` | The photo-hero version as one self-contained file (3.7 MB — no video). |
+| `dental-implants-photo-hero.html` (+ `assets/`) | **Still-image hero version:** the same page, but the hero shows a still 3D implant image instead of the 3D video (see below). |
+| `dental-implants-photo-hero-standalone.html` | The still-image hero version as one self-contained file (3.7 MB — no video). |
 
-### Photo-hero version
+### Still-image hero version
 
 Identical to the main page (same text, form, phone number, links and sections) except the hero: the 3D
-video and its pause button are replaced by a photo of a confident senior man with a bright, full smile
-(the result implant patients are after), looking up towards the pricing form.
+video and its pause button are replaced by a still 3D render of a dental implant in an "exploded" view —
+ceramic crown, abutment with a brand-blue collar and threaded titanium implant — floating on black with
+blue rim light, a soft brand-blue glow, light particles and a glowing ring at the implant platform.
 
-- Desktop: the photo fills the hero behind the headline and the **Get Pricing Instantly** form; his
-  face sits in the gap between the two, with a dark shade behind the headline for legibility.
-  On very wide screens the photo stays 1500 px wide and fades into the black hero at its edges.
-- Phones: the headline sits above the photo (a tighter head-and-shoulders crop), followed by the CTAs
-  and the form — the same order as the video version.
-- Files: `assets/img/hero/hero-photo.webp` (desktop, 2400 px) and `hero-photo-mobile.webp` (phones).
-- Photo: "Man In Black Suit Jacket Smiling" by Andrea Piacquadio on Pexels
-  (https://www.pexels.com/photo/3782194/), free to use under the Pexels license — no attribution required.
-  It is a stock photo, not a Pacific Northwest Dental patient; swap in another photo any time by
-  replacing the two WebP files (desktop crop: put the face at about 54 % across, in the upper half).
+- Desktop: the upright implant sits in the gap between the headline and the **Get Pricing Instantly**
+  form, with a dark shade behind the headline for legibility. On very wide screens the image stays
+  1500 px wide and fades into the black hero at its edges.
+- Phones and tablets: the headline sits above a tilted (diagonal) version of the same render, followed
+  by the CTAs and the form — the same order as the video version.
+- Files: `assets/img/hero/hero-photo.webp` (desktop, 2400×1500) and `hero-photo-mobile.webp`
+  (phones/tablets, 960×842). Rendered for this page from the same original 3D model as the rest of the
+  artwork (`3d-source/hero3d.js`, `hero3d.html`, `hero3d-render.js`; glow and particles added by
+  `hero-composite.py`) — no stock imagery, so no licensing restrictions.
 - The page is generated from `dental-implants.html` by `make_photo_hero.py`, so edits to the main page
   carry over: run `python3 make_photo_hero.py && python3 build_standalone.py`.
 
