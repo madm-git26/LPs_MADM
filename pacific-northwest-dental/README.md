@@ -36,8 +36,17 @@ blue rim light, a soft brand-blue glow, light particles and a glowing ring at th
 - Every **Book Online** button → `#pricing-form` (the hero "Get Pricing Instantly" form).
 - Lead form: the All-in-One Dental implant quiz iframe (`forms.allinone.dental/form/159a64b0-…`, 610 px) + its `iframeresize.js`. The iframe carries `id="embededFormIframe"`, which that script needs to resize it.
 - Directions / map, Google reviews link, Privacy, Terms, Make a Payment, logo → same URLs as before.
-- Title, meta description, canonical, `Dentist` + `FAQPage` structured data — unchanged.
-- The `<!-- Add your GTM / call-tracking snippet here -->` placeholder is still in `<head>`.
+- Canonical, `Dentist` + `FAQPage` structured data — unchanged.
+
+## Tracking & SEO tags (both versions, and both standalone files)
+
+- Title: `Dental Implants in Beaverton, OR | All-On-4 & Snap-In Dentures`
+- Meta description: `Missing teeth? Dr. Ryan Bradley offers All-On-4, snap-in implant dentures and single tooth
+  implants in Beaverton, OR. Get pricing instantly. Monthly payments with approved credit.`
+- `<meta name="robots" content="noindex, follow">` — the landing page stays out of search results, links
+  are still followed.
+- Google Tag Manager container **GTM-KXLHG72**: the `<script>` snippet is at the top of `<head>` and
+  the `<noscript>` iframe is the first thing inside `<body>`, as Google recommends.
 
 ## Brand
 
