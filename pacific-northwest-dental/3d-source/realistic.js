@@ -17,8 +17,8 @@ function frame(curve, t) {
 }
 
 // ---------- teeth ----------
-const CERV = new THREE.Color(0xc4a878), BODY = new THREE.Color(0xe6dac3), EDGE = new THREE.Color(0xd3dbe0);
-function paintEnamel(g, incisalBlue = true) {
+const CERV = new THREE.Color(globalThis.TOOTH_CERV ?? 0xc4a878), BODY = new THREE.Color(globalThis.TOOTH_BODY ?? 0xe6dac3), EDGE = new THREE.Color(globalThis.TOOTH_EDGE ?? 0xd3dbe0);
+export function paintEnamel(g, incisalBlue = true) {
   g.computeBoundingBox(); const y0 = g.boundingBox.min.y, y1 = g.boundingBox.max.y;
   const p = g.attributes.position, col = new Float32Array(p.count * 3), c = new THREE.Color();
   for (let i = 0; i < p.count; i++) {
@@ -31,7 +31,7 @@ function paintEnamel(g, incisalBlue = true) {
   return g;
 }
 
-function incisorGeometry({ w = 7, h = 9.5, t = 5.6, canine = false } = {}) {
+export function incisorGeometry({ w = 7, h = 9.5, t = 5.6, canine = false } = {}) {
   let g = new THREE.CapsuleGeometry(0.5, 1, 18, 40);
   g.deleteAttribute('normal'); g.deleteAttribute('uv'); g = mergeVertices(g, 1e-5);
   const p = g.attributes.position;
@@ -48,7 +48,7 @@ function incisorGeometry({ w = 7, h = 9.5, t = 5.6, canine = false } = {}) {
   g.computeVertexNormals();
   return paintEnamel(g);
 }
-function boxy(g, k = 0.9, p = 3.2) {
+export function boxy(g, k = 0.9, p = 3.2) {
   g.computeBoundingBox(); const h = g.boundingBox.max.y;
   const pos = g.attributes.position;
   for (let i = 0; i < pos.count; i++) {
@@ -60,10 +60,10 @@ function boxy(g, k = 0.9, p = 3.2) {
   }
   g.computeVertexNormals(); return g;
 }
-function molarGeometry({ seed = 0, scale = 0.86, wide = 1 } = {}) {
+export function molarGeometry({ seed = 0, scale = 0.86, wide = 1 } = {}) {
   return paintEnamel(boxy(crownGeometry({ seed, scale, wide })), false);
 }
-function premolarGeometry({ seed = 0 } = {}) {
+export function premolarGeometry({ seed = 0 } = {}) {
   const g = boxy(crownGeometry({ seed, scale: 0.74, wide: 0.82 }), 0.92, 2.6);
   return paintEnamel(g, false);
 }

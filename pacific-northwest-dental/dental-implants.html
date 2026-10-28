@@ -246,7 +246,7 @@ main{overflow-x:clip}
 .prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px}
 .pr{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 12px 16px;display:flex;flex-direction:column;align-items:center;gap:6px;transition:transform .45s var(--ease),box-shadow .45s var(--ease);overflow:hidden}
 .pr:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.pr .art{align-self:stretch;margin:-2px -2px 8px;border-radius:8px;background:#0b1116;aspect-ratio:4/3;overflow:hidden}
+.pr .art{align-self:stretch;margin:-2px -2px 8px;border-radius:8px;background:#fff;aspect-ratio:4/3;overflow:hidden}
 .pr .art img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
 .pr:hover .art img{transform:scale(1.05)}
 .pr .tag{font-family:var(--head);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.74rem;color:var(--blue)}
@@ -257,19 +257,19 @@ main{overflow-x:clip}
 .pr p{color:var(--muted);font-size:1rem}
 .pr .pr-cta{margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;align-self:stretch}
 .pr .pr-cta a{flex:1 1 auto;padding:14px 16px;font-size:16px}
-.pr.feat{grid-column:1/-1;background:linear-gradient(150deg,#1f1f1f,#000 65%);border-color:transparent;color:#fff;padding:0;box-shadow:var(--shadow-lg)}
-.feat-art{position:relative;align-self:stretch;aspect-ratio:4/3;background:#0b1116}
-.feat-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pr.feat{grid-column:1/-1;background:#fff;border:1px solid var(--line);border-top:5px solid var(--blue);color:var(--ink);padding:0;box-shadow:var(--shadow)}
+.feat-art{position:relative;align-self:stretch;aspect-ratio:4/3;background:#fff}
+.feat-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px}
 .feat-body{padding:18px 20px 24px;display:flex;flex-direction:column;align-items:center;gap:8px}
-.pr.feat .tag{color:var(--blue-light)}
-.pr.feat h3{color:#fff;font-size:clamp(1.7rem,3vw,2.3rem)}
-.pr.feat .amt{color:#fff;font-size:clamp(3rem,6vw,4.4rem)}
-.pr.feat .amt small,.pr.feat p,.pr.feat .from{color:rgba(255,255,255,.76)}
+.pr.feat .tag{color:var(--blue)}
+.pr.feat h3{color:var(--char);font-size:clamp(1.7rem,3vw,2.3rem)}
+.pr.feat .amt{color:var(--char);font-size:clamp(3rem,6vw,4.4rem)}
+.pr.feat .amt small,.pr.feat p,.pr.feat .from{color:var(--muted)}
 .checks{list-style:none;display:grid;gap:10px;margin-top:12px;justify-items:center}
 .checks li{display:inline-flex;gap:10px;align-items:center}
 .checks li .ck{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--blue);color:#fff}
 .checks li .ck svg{width:13px;height:13px;stroke-width:3}
-.pr.feat .checks b{color:#fff}
+.pr.feat .checks b{color:var(--char)}
 .pr-note{margin-top:16px;font-size:.92rem;color:var(--muted)}
 
 /* ---------- why ---------- */
@@ -648,7 +648,7 @@ footer .links{margin-top:10px;display:flex;gap:18px;justify-content:center;flex-
     </div>
     <div class="prices">
       <div class="pr feat" data-reveal="zoom">
-        <div class="feat-art"><img src="assets/img/3d/opt-all-on-4.webp?v=3" alt="3D render of an All-On-4 full-arch bridge above four dental implants in the jaw" loading="lazy" width="1200" height="900"></div>
+        <div class="feat-art"><img src="assets/img/3d/opt-all-on-4.webp?v=4" alt="3D render of an All-On-4 full-arch bridge above four dental implants in the jaw" loading="lazy" width="1200" height="900"></div>
         <div class="feat-body">
           <span class="tag">Full-arch option</span>
           <h3>All-On-4 Dental Implants</h3>
@@ -661,30 +661,30 @@ footer .links{margin-top:10px;display:flex;gap:18px;justify-content:center;flex-
           </ul>
           <div class="cta-row">
             <a class="btn btn-primary" href="tel:9713065712"><svg class="i"><use href="#i-phone"/></svg>Call (971) 306-5712</a>
-            <a class="btn btn-ghost" href="#pricing-form">Book Online</a>
+            <a class="btn btn-outline" href="#pricing-form">Book Online</a>
           </div>
         </div>
       </div>
       <div class="pr" data-reveal style="--d:0s">
-        <div class="art"><img src="assets/img/3d/opt-snap-in-2.webp?v=3" alt="3D illustration of a lower snap-in denture on 2 implants" loading="lazy" width="800" height="600"></div>
+        <div class="art"><img src="assets/img/3d/opt-snap-in-2.webp?v=4" alt="3D illustration of a lower snap-in denture on 2 implants" loading="lazy" width="800" height="600"></div>
         <span class="tag">Snap-in implant dentures</span><h3>Lower denture stabilization</h3>
         <div class="amt">$<span data-count="375">375</span><small> /month</small></div><p>2 implants to stabilize your lower denture.</p>
         <div class="pr-cta"><a class="btn btn-dark" href="tel:9713065712"><svg class="i"><use href="#i-phone"/></svg>Call</a><a class="btn btn-outline" href="#pricing-form">Book Online</a></div>
       </div>
       <div class="pr" data-reveal style="--d:.08s">
-        <div class="art"><img src="assets/img/3d/opt-snap-in-4.webp?v=3" alt="3D illustration of a snap-in denture on 4 implants" loading="lazy" width="800" height="600"></div>
+        <div class="art"><img src="assets/img/3d/opt-snap-in-4.webp?v=4" alt="3D illustration of a snap-in denture on 4 implants" loading="lazy" width="800" height="600"></div>
         <span class="tag">Snap-in implant dentures</span><h3>Enhanced stability</h3>
         <div class="amt">$<span data-count="435">435</span><small> /month</small></div><p>4 implants for your upper or lower denture.</p>
         <div class="pr-cta"><a class="btn btn-dark" href="tel:9713065712"><svg class="i"><use href="#i-phone"/></svg>Call</a><a class="btn btn-outline" href="#pricing-form">Book Online</a></div>
       </div>
       <div class="pr" data-reveal style="--d:.16s">
-        <div class="art"><img src="assets/img/3d/opt-bridge.webp?v=3" alt="3D illustration of a three-unit bridge on two implants" loading="lazy" width="800" height="600"></div>
+        <div class="art"><img src="assets/img/3d/opt-bridge.webp?v=4" alt="3D illustration of a three-unit bridge on two implants" loading="lazy" width="800" height="600"></div>
         <span class="tag">Implant bridge</span><h3>Replace 3 teeth</h3>
         <div class="amt">$<span data-count="300">300</span><small> /month</small></div><p>Two implant bodies, two abutments and a three-unit bridge.</p>
         <div class="pr-cta"><a class="btn btn-dark" href="tel:9713065712"><svg class="i"><use href="#i-phone"/></svg>Call</a><a class="btn btn-outline" href="#pricing-form">Book Online</a></div>
       </div>
       <div class="pr" data-reveal style="--d:.24s">
-        <div class="art"><img src="assets/img/3d/opt-single.webp?v=3" alt="3D illustration of a single tooth implant with abutment and crown" loading="lazy" width="800" height="600"></div>
+        <div class="art"><img src="assets/img/3d/opt-single.webp?v=4" alt="3D illustration of a single tooth implant with abutment and crown" loading="lazy" width="800" height="600"></div>
         <span class="tag">Single tooth</span><h3>Single tooth implant</h3>
         <div class="amt">$<span data-count="135">135</span><small> /month</small></div><p>Implant, abutment and crown.</p>
         <div class="pr-cta"><a class="btn btn-dark" href="tel:9713065712"><svg class="i"><use href="#i-phone"/></svg>Call</a><a class="btn btn-outline" href="#pricing-form">Book Online</a></div>
