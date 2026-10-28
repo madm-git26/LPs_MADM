@@ -174,3 +174,9 @@ button; if the video cannot play, its poster frame stays up with a play button.)
   `Everything-Teeth.mp4` into `assets/video/` and add a second `<source>` in `build.py`.
 - The practice's main website lists **(305) 777-7774**. These landing pages use the tracking number
   **(305) 404-6659** you supplied, everywhere.
+
+---
+
+## Other clients in this repo
+
+- **Pacific Northwest Dental (Beaverton, OR) — Dental Implants** → [`pacific-northwest-dental/`](pacific-northwest-dental/README.md)

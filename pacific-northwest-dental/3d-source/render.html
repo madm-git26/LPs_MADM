@@ -1,0 +1,49 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:transparent;overflow:hidden}canvas{display:block}</style></head><body>
+<canvas id="c"></canvas>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { buildScene, heroState } from './pnw3d.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+const q = new URLSearchParams(location.search);
+const W = +q.get('w') || 1920, H = +q.get('h') || 1080, mode = q.get('mode') || 'hero';
+const cx = +(q.get('cx') || 0.56);
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: mode !== 'hero', preserveDrawingBuffer: true, stencil: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+let bg = null;
+if (mode === 'hero') {
+  const c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d');
+  const g = x.createRadialGradient(W * cx, H * 0.42, 0, W * cx, H * 0.5, W * 0.62);
+  g.addColorStop(0, '#173c5c'); g.addColorStop(0.35, '#0d2740'); g.addColorStop(0.75, '#071728'); g.addColorStop(1, '#040d18');
+  x.fillStyle = g; x.fillRect(0, 0, W, H);
+  bg = new THREE.CanvasTexture(c); bg.colorSpace = THREE.SRGBColorSpace;
+}
+const S = buildScene(renderer, { transparent: mode !== 'hero', bg, particles: mode === 'hero', neighbors: q.get('neighbors') !== '0', layout: q.get('layout') || 'single' });
+S.camera.aspect = W / H;
+if (mode !== 'hero') {
+  const g = S.parts.ghost.material; g.blending = THREE.NormalBlending; g.color.set(0x1f8fd6);
+  const sc = S.parts.scan.material; sc.blending = THREE.NormalBlending; sc.color.set(0x7fd0ff);
+  S.parts.scan.scale.set(0.9, 1, 0.85);
+}
+let composer = null;
+if (mode === 'hero' && q.get('bloom') !== '0') {
+  const rt = new THREE.WebGLRenderTarget(W, H, { type: THREE.HalfFloatType, stencilBuffer: true, depthBuffer: true, samples: 4 });
+  composer = new EffectComposer(renderer, rt);
+  composer.addPass(new RenderPass(S.scene, S.camera));
+  composer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), +(q.get('bs') || 0.16), 0.4, +(q.get('bt') || 1.05)));
+  composer.addPass(new OutputPass());
+}
+const draw = () => composer ? composer.render() : renderer.render(S.scene, S.camera);
+window.renderAt = (t, extra) => { S.apply(Object.assign(heroState(t), extra || {})); draw(); return true; };
+window.renderState = (st) => { S.apply(st); renderer.render(S.scene, S.camera); return true; };
+window.grab = (type, qual) => canvas.toDataURL(type || 'image/jpeg', qual || 0.95);
+window.anchors = () => { const P = S.parts, v = new THREE.Vector3(), out = [];
+  [[P.crown, 5.0, 3.3], [P.abut, 2.3, 3.4], [P.implant, -2.6, -5.2], [P.implant, 2.6, -5.2]].forEach(([o, x, dy]) => { v.set(x, o.position.y + dy, 0).project(S.camera); out.push([+((v.x + 1) / 2).toFixed(4), +((1 - v.y) / 2).toFixed(4)]); });
+  return out; };
+window.ready = true;
+</script></body></html>
