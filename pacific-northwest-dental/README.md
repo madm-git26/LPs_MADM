@@ -8,6 +8,27 @@ implant animation, 3D procedure illustrations and a YouTube video section.
 |---|---|
 | `dental-implants.html` + `assets/` | You can upload the page **and** its `assets/` folder together (fastest loading). |
 | `dental-implants-standalone.html` | You need one self-contained file (page builder / custom-code block). Every image and video is embedded. Rebuild with `python3 build_standalone.py`. |
+| `dental-implants-photo-hero.html` (+ `assets/`) | **Photo-hero version:** the same page, but the hero shows a marketing photo instead of the 3D video (see below). |
+| `dental-implants-photo-hero-standalone.html` | The photo-hero version as one self-contained file (3.9 MB — no video). |
+
+### Photo-hero version
+
+Identical to the main page (same text, form, phone number, links and sections) except the hero: the 3D
+video and its pause button are replaced by a photo of a smiling senior patient admiring her smile in a
+hand mirror beside a dental team member.
+
+- Desktop: the photo fills the hero behind the headline and the **Get Pricing Instantly** form; the
+  patient's face sits in the gap between the two, with a dark shade behind the headline for legibility.
+  On very wide screens the photo stays 1500 px wide and fades into the black hero at its edges.
+- Phones: the headline sits above the photo (a tighter crop showing the patient, mirror and team
+  member), followed by the CTAs and the form — the same order as the video version.
+- Files: `assets/img/hero/hero-photo.webp` (desktop, 2400 px) and `hero-photo-mobile.webp` (phones).
+- Photo: "Patient Looking into Mirror at Dentist Off" by Gustavo Fring on Pexels
+  (https://www.pexels.com/photo/5622001/), free to use under the Pexels license — no attribution required.
+  It is a stock photo, not a Pacific Northwest Dental patient; swap in an office photo any time by
+  replacing the two WebP files (keep the patient roughly centre-right in the desktop crop).
+- The page is generated from `dental-implants.html` by `make_photo_hero.py`, so edits to the main page
+  carry over: run `python3 make_photo_hero.py && python3 build_standalone.py`.
 
 ## Kept exactly as on the previous page
 
