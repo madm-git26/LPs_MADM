@@ -34,7 +34,7 @@ stars, Montserrat headings and Lato body text. All text, headings and buttons ar
 6. **Inside a dental implant (3D)** — on desktop the crown, abutment and titanium implant assemble as you scroll; on phones the animation is removed (its frames never download) and the section shows the three parts + call CTA
 7. **The implant process in 3D** — five square 3D tiles in two rows (3 + 2): planning, placement, healing, abutment, new tooth
 8. What to expect (the original 3 steps, with a scroll progress line)
-9. Dr. Ryan Bradley (+ Dr. John Worthington from the main site)
+9. Dr. Ryan Bradley
 10. **Videos** — the practice's YouTube videos (load only when clicked, via youtube-nocookie)
 11. Reviews (the same 7 Google reviews, auto-scrolling)
 12. Financing (CareCredit, Proceed Finance) + insurance logos from the main site
