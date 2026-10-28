@@ -23,6 +23,8 @@ html = re.sub(r'(?<=")(assets/(?:video|img)/[^"{}?]+\.(?:jpg|webp|mp4))(?:\?v=\d
 # scroll-assembly frames
 frames = [data_uri(f'assets/img/3d/seq/{i:03d}.webp') for i in range(40)]
 html = html.replace('path:"assets/img/3d/seq/{i}.webp"', 'frames:' + json.dumps(frames), 1)
+proc = [data_uri(f'assets/img/3d/proc/{i:03d}.webp') for i in range(48)]
+html = html.replace('path:"assets/img/3d/proc/{i}.webp"', 'frames:' + json.dumps(proc), 1)
 assert 'assets/' not in html.replace('wp-content/uploads', ''), 'unembedded local asset left'
 OUT.write_text(html)
 print(f'{OUT.name}: {OUT.stat().st_size / 1e6:.1f} MB')

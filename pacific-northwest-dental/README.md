@@ -32,7 +32,7 @@ stars, Montserrat headings and Lato body text. All text, headings and buttons ar
 4. Pricing — All-On-4 feature card + snap-in (2 / 4 implants), 3-tooth bridge, single tooth — each with a clinical-style 3D render on white (glassy translucent gum with the implants visible inside, blue-collared abutments, gold snap-in attachments, natural teeth floating above the jaw; source `3d-source/clinical.js`)
 5. Why choose our implant team
 6. **Inside a dental implant (3D)** — on desktop the crown, abutment and titanium implant assemble as you scroll; on phones the animation is removed (its frames never download) and the section shows the three parts + call CTA
-7. **The implant process in 3D** — five square 3D tiles in two rows (3 + 2): planning, placement, healing, abutment, new tooth
+7. **The implant process in 3D** — tablet & desktop: the section pins while you scroll and a 48-frame 3D sequence plays the whole procedure (3D scan + planned implant → implant screws in → bone heals → abutment → crown), with the active step highlighted and a progress bar (`assets/img/3d/proc/`, rendered by `3d-source/procseq.js`). Phones keep five square tiles in two rows (3 + 2) and never download the frames
 8. What to expect (the original 3 steps, with a scroll progress line)
 9. Dr. Ryan Bradley
 10. **Videos** — the practice's YouTube videos (load only when clicked, via youtube-nocookie)
