@@ -586,6 +586,11 @@ def document(page, title, desc, slug, body, faqs, review_keys, theme="#1E1B16", 
 <link rel="canonical" href="{url}">
 <meta name="theme-color" content="{theme}">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Belmont Dentistry">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{esc(title)}">
+<meta name="twitter:description" content="{esc(desc)}">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{url}">
@@ -780,8 +785,8 @@ def page_new_patients():
 
     return document(
         P,
-        "Dentist in Peoria, AZ | Family Dentist Near You | Belmont Dentistry",
-        f"Looking for a family dentist in Peoria, AZ? Belmont Dentistry is a local, family-owned dental office on W Thunderbird Rd near Arrowhead & Glendale — new patients seen within days, most PPO plans and {RATING}★ from {REVIEW_COUNT} Google reviews.",
+        "Dentist in Peoria, AZ | Family Dentist Near Me | Belmont",
+        f"Looking for the best dentist in Peoria, AZ? Belmont is a local family dentist near Arrowhead & Glendale. New patients seen within days. {RATING}★. Book online.",
         "new-patients-peoria", body, NP_FAQ, NP_REVIEWS)
 
 
@@ -960,8 +965,8 @@ def page_emergency():
 
     return document(
         P,
-        "Emergency Dentist Peoria, AZ | Same-Day Emergency Dental Care | Belmont Dentistry",
-        f"Need an emergency dentist in Peoria, AZ? Belmont Dentistry offers same-day emergency dental care, emergency tooth extraction, root canals and same-day crowns. {RATING}★ from {REVIEW_COUNT} Google reviews. Call {PHONE}.",
+        "Emergency Dentist Peoria, AZ | Same-Day Care | Belmont",
+        f"Need an emergency dentist in Peoria, AZ? Same-day emergency dental care & emergency tooth extraction near you. {RATING}★ on Google. Call {PHONE} now.",
         "emergency-dentist-peoria", body, EM_FAQ, EM_REVIEWS, theme="#1E1B16")
 
 

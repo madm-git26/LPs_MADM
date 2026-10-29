@@ -576,6 +576,11 @@ def document(page, title, desc, slug, body, faqs, review_keys, theme="#1E1B16", 
 <link rel="canonical" href="{url}">
 <meta name="theme-color" content="{theme}">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Belmont Dentistry">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{esc(title)}">
+<meta name="twitter:description" content="{esc(desc)}">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{url}">
@@ -770,8 +775,8 @@ def page_new_patients():
 
     return document(
         P,
-        "Scottsdale Dentist Near Me | New Patients Welcome | Belmont Dentistry",
-        f"Looking for a dentist in Scottsdale, AZ? Belmont Dentistry is a family-owned Scottsdale dentist near North Scottsdale & Old Town with same-day appointments, most PPO plans and {RATING}★ from {REVIEW_COUNT} Google reviews. Book online.",
+        "Dentist in Scottsdale, AZ | Family Dentist Near Me | Belmont",
+        f"Looking for a Scottsdale family dentist near you? Belmont Dentistry welcomes new patients near North Scottsdale & Old Town. {RATING}★ on Google. Book online today.",
         "new-patients-scottsdale", body, NP_FAQ, NP_REVIEWS)
 
 
@@ -948,8 +953,8 @@ def page_emergency():
 
     return document(
         P,
-        "Emergency Dentist Scottsdale, AZ | Same-Day Emergency Dental Care | Belmont Dentistry",
-        f"In pain? Belmont Dentistry is an emergency dentist in Scottsdale, AZ with same-day emergency appointments, on-site tooth extractions, root canals and same-day crowns. {RATING}★ from {REVIEW_COUNT} Google reviews. Call {PHONE}.",
+        "Emergency Dentist Scottsdale, AZ | Same-Day Care | Belmont",
+        f"Need an emergency dentist in Scottsdale? Same-day emergency dental care, emergency tooth extraction & root canals. {RATING}★ on Google. Call {PHONE} now.",
         "emergency-dentist-scottsdale", body, EM_FAQ, EM_REVIEWS, theme="#1E1B16")
 
 

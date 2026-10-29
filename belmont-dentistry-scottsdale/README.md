@@ -110,7 +110,7 @@ the video are the practice's own, taken from the Scottsdale pages of the site. N
 
 ## Keywords (Quality Score)
 
-- **New patients:** the H1 is "Scottsdale's Family Dentist", and the title is "Scottsdale Dentist Near Me". The copy works in North Scottsdale, Old Town, dentists in Scottsdale AZ, family dentist, dental care services, dental clinic for no insurance, general practice dentist and local dentist.
+- **New patients:** the H1 is "Scottsdale's Family Dentist", and the title is "Dentist in Scottsdale, AZ | Family Dentist Near Me | Belmont". The copy works in North Scottsdale, Old Town, dentists in Scottsdale AZ, family dentist, dental care services, dental clinic for no insurance, general practice dentist and local dentist.
 - **Emergency:** the H1 is "Emergency Dentist in Scottsdale. Get Seen Today." The page covers same-day / emergency dental care, emergency tooth extraction and Tooth Extraction Scottsdale. North Phoenix is covered in the location text and an FAQ.
 
 ## SEO / tracking

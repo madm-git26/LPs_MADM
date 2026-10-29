@@ -61,7 +61,7 @@ All of the following comes from belmontdentistry.com/peoria-az/ and the two curr
 ## Keywords (Quality Score)
 
 - **New patients:**
-  - **Title:** "Dentist in Peoria, AZ | Family Dentist Near You"
+  - **Title:** "Dentist in Peoria, AZ | Family Dentist Near Me | Belmont"
   - **H1:** "Peoria's Family Dentist. Never Rushed, Never Judged."
   - **Phrases in the copy:**
     - best dentist in Peoria, AZ
@@ -76,7 +76,7 @@ All of the following comes from belmontdentistry.com/peoria-az/ and the two curr
     - local dentist office
     - Glendale (several times)
 - **Emergency:**
-  - **Title:** "Emergency Dentist Peoria, AZ | Same-Day Emergency Dental Care"
+  - **Title:** "Emergency Dentist Peoria, AZ | Same-Day Care | Belmont"
   - **H1:** "Emergency Dentist in Peoria. Fast Pain Relief."
   - **Phrases in the copy:**
     - emergency dentist near me
