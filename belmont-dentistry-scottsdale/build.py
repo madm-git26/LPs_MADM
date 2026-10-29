@@ -156,16 +156,28 @@ def btn_call(label=None, cls="btn btn-dark", cta="", ring=True):
     return f'<a class="{cls}" {CALL} data-cta="{cta}">{ic("phone", "ring-icon" if ring else "")}<span>{label}</span></a>'
 
 
+def two(long, short):
+    """Full button label on desktop, short label on phones (where CTAs sit side by side)."""
+    return f'<span class="lbl-long">{long}</span><span class="lbl-short">{short}</span>'
+
+
 def section_cta(page, cta, note=None, dark=False):
     """Every section ends with a CTA pair. Emergency pages lead with the phone."""
     if page == "em":
-        first = btn_call(f"Call Now {PHONE}", "btn btn-red btn-lg btn-pulse", cta)
-        second = btn_book("Book Online", "btn btn-ghost btn-lg" if dark else "btn btn-outline btn-lg", cta)
+        first = btn_call(two(f"Call Now {PHONE}", "Call Now"), "btn btn-red btn-lg btn-pulse", cta)
+        second = btn_book(two("Book Online", "Book Online"), "btn btn-ghost btn-lg" if dark else "btn btn-outline btn-lg", cta)
     else:
-        first = btn_book("Book Your Visit Online", "btn btn-gold btn-lg", cta)
-        second = btn_call(f"Call {PHONE}", "btn btn-ghost btn-lg" if dark else "btn btn-outline btn-lg", cta)
+        first = btn_book(two("Book Your Visit Online", "Book Online"), "btn btn-gold btn-lg", cta)
+        second = btn_call(two(f"Call {PHONE}", "Call Us"), "btn btn-ghost btn-lg" if dark else "btn btn-outline btn-lg", cta)
     n = f'<p class="note">{note}</p>' if note else ""
     return f'<div class="section-cta" data-reveal>{first}{second}{n}</div>'
+
+
+def carousel(slides, label, cls="m-carousel", track_cls="", auto=False):
+    """Swipe carousel (arrows + dots). With m-carousel it is a plain grid above 760px."""
+    return (f'<div class="carousel {cls}" data-carousel{" data-auto" if auto else ""}><div class="carousel-track {track_cls}">{slides}</div>'
+            f'<div class="carousel-nav"><button class="carousel-btn" data-prev aria-label="Previous {label}">{ic("left")}</button><div class="dots"></div>'
+            f'<button class="carousel-btn" data-next aria-label="Next {label}">{ic("right")}</button></div></div>')
 
 
 def head_block(kicker, title, lead=None, cls="section-head"):
@@ -299,11 +311,13 @@ def awards_section(page):
              ("logo-ada.svg", "American Dental Association", 193, 86), ("logo-Ada-arizona-dental-association.png", "Arizona Dental Association", 570, 172),
              ("logo-CADSF.png", "Central Arizona Dental Society Foundation", 424, 172), ("logo-idia.webp", "International Dental Implant Association", 200, 158)]
     l = "".join(f'<img src="assets/img/{f}" alt="{a}" width="{w}" height="{h}" loading="lazy">' for f, a, w, h in logos)
+    l += "".join(f'<img class="dup" src="assets/img/{f}" alt="" aria-hidden="true" width="{w}" height="{h}" loading="lazy">' for f, a, w, h in logos)
     title = "Awards, Affiliations &amp; <em class=\"gold\">5-Star Care</em>"
     return (f'<section class="awards" aria-label="Awards and affiliations"><div class="shell">'
             f'<div class="awards-head" data-reveal><span class="kicker">Recognized &amp; Trusted</span><h2>{title}</h2>'
             f'<p>Advanced training, professional memberships and hundreds of happy Scottsdale patients.</p></div>'
-            f'<div class="badges">{b}</div><div class="logo-row" data-reveal>{l}</div>{section_cta(page, "awards")}</div></section>')
+            f'{carousel(b, "award", "m-carousel cols-3 badge-carousel", "badges")}'
+            f'<div class="logo-strip" data-reveal><div class="logo-row">{l}</div></div>{section_cta(page, "awards")}</div></section>')
 
 
 def insurance_section(page):
@@ -327,7 +341,7 @@ def insurance_section(page):
             "Pain shouldn’t have to wait on paperwork. Tell us your plan when you call and we’ll check your benefits — and if you don’t have insurance, you still have affordable options today.")
     return (f'<section class="insurance" id="insurance"><div class="bg"><img src="assets/img/img-dental-insurance-and-financing-banner-scottsdale.webp" alt="" loading="lazy" width="1920" height="1060"></div>'
             f'<div class="shell">{head_block("Insurance &amp; Financing", "Dental Insurance, Financing &amp; <em class=\"gold\">No-Insurance Options</em>", lead)}'
-            f'<div class="ins-grid">{cards}</div>'
+            f'{carousel(cards, "payment option", "m-carousel cols-3 ins-carousel", "ins-grid")}'
             f'<div class="pay-row" data-reveal><b>We accept</b>{pay}</div>'
             f'<div class="ins-callout" data-reveal>{ic("shield")}<p><strong>Not sure if we take your plan?</strong>Call {PHONE} — we’ll verify your benefits for free before your visit.</p>'
             f'<a class="btn btn-dark" {CALL} data-cta="insurance">{ic("phone", "ring-icon")}<span>Check My Insurance</span></a></div>'
@@ -371,8 +385,8 @@ def reviews_section(page, keys, cls=""):
             f'<div class="carousel" data-carousel data-auto data-reveal><div class="carousel-track">{cards}</div>'
             f'<div class="carousel-nav"><button class="carousel-btn" data-prev aria-label="Previous review">{ic("left")}</button><div class="dots"></div><button class="carousel-btn" data-next aria-label="Next review">{ic("right")}</button></div></div>'
             f'<div class="section-cta" data-reveal>'
-            f'{btn_call("Call Now " + PHONE, "btn btn-red btn-lg btn-pulse", "reviews") if page == "em" else btn_book("Book Your Visit Online", "btn btn-gold btn-lg", "reviews")}'
-            f'<a class="btn btn-outline btn-lg" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="reviews">{ic("star")}<span>Read All {REVIEW_COUNT} Reviews</span></a></div>'
+            f'{btn_call(two("Call Now " + PHONE, "Call Now"), "btn btn-red btn-lg btn-pulse", "reviews") if page == "em" else btn_book(two("Book Your Visit Online", "Book Online"), "btn btn-gold btn-lg", "reviews")}'
+            f'<a class="btn btn-outline btn-lg" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="reviews">{ic("star")}<span>{two(f"Read All {REVIEW_COUNT} Reviews", "All Reviews")}</span></a></div>'
             f'</div></section>')
 
 
@@ -468,14 +482,15 @@ def sticky(page):
 
 
 def usp_section(page, items_left, items_right, title, lead, img, cls="dark"):
-    def col(items, side):
-        return f'<div class="usp-col {side}">' + "".join(
-            f'<div class="usp-item" data-reveal="{"left" if side == "left" else "right"}" style="--d:{i * .1:.1f}s"><h3>{ic(icn)}{t}</h3><p>{s}</p></div>'
-            for i, (icn, t, s) in enumerate(items)) + "</div>"
+    items = "".join(
+        f'<div class="usp-item u{n + 1}{" r" if n >= 3 else ""}" data-reveal="{"right" if n >= 3 else "left"}" style="--d:{(n % 3) * .1:.1f}s">'
+        f'<span class="usp-ico">{ic(icn)}</span><h3>{t}</h3><p>{s}</p></div>'
+        for n, (icn, t, s) in enumerate(items_left + items_right))
+    photo = (f'<div class="usp-photo tilt float" data-tilt="8" data-reveal="zoom"><img src="assets/img/{img}" '
+             f'alt="Belmont Dentistry Scottsdale reception" width="510" height="683" loading="lazy"></div>')
     return (f'<section class="section {cls}" id="why"><div class="shell">{head_block("Why Belmont Dentistry", title, lead)}'
-            f'<div class="usp-grid">{col(items_left, "left")}'
-            f'<div class="usp-photo tilt float" data-tilt="8" data-reveal="zoom"><img src="assets/img/{img}" alt="Belmont Dentistry Scottsdale reception" width="510" height="683" loading="lazy"></div>'
-            f'{col(items_right, "right")}</div>{section_cta(page, "why", dark=True)}</div></section>')
+            f'{carousel(photo + items, "reason", "m-carousel usp-carousel", "usp-grid")}'
+            f'{section_cta(page, "why", dark=True)}</div></section>')
 
 
 def offers_section(page, offers, perks, kicker, title, lead, cls="cream"):
@@ -704,10 +719,11 @@ def page_new_patients():
             "A temporary crown for 2–3 weeks while a lab makes the real one", "Dental anxiety tolerated, not really addressed", "A different associate every visit", "Surprise costs discovered at checkout"]
     us = ["Early mornings and Saturday appointments, including same-day visits", "On-time appointments built around real treatment lengths", "Photos and X-rays reviewed on screen, with a written plan you keep",
           "A permanent CEREC crown designed, milled and placed in one visit", "Headphones, TVs, blankets and a calm chairside manner — every visit", "The same dentist and team who already know your history", "Benefits confirmed and costs reviewed before treatment begins"]
+    us_col = f'<div class="compare-col us"><h3>Belmont Dentistry</h3><ul>{"".join(f"<li>{ic("check")}<span>{x}</span></li>" for x in us)}</ul></div>'
+    them_col = f'<div class="compare-col them"><h3>A Typical Dental Office</h3><ul>{"".join(f"<li>{ic("x")}<span>{x}</span></li>" for x in them)}</ul></div>'
     compare = (f'<section class="section cream" id="difference"><div class="shell">'
                f'{head_block("The Belmont Difference", "Not Your Typical <em class=\"gold\">Dental Office</em>", "The difference shows up long before a drill ever comes out. Here’s why Scottsdale patients switch to us — and stay.")}'
-               f'<div class="compare" data-reveal="zoom"><div class="compare-col them"><h3>A Typical Dental Office</h3><ul>{"".join(f"<li>{ic("x")}<span>{x}</span></li>" for x in them)}</ul></div>'
-               f'<div class="compare-col us"><h3>Belmont Dentistry</h3><ul>{"".join(f"<li>{ic("check")}<span>{x}</span></li>" for x in us)}</ul></div></div>'
+               f'<div data-reveal="zoom">{carousel(us_col + them_col, "comparison", "m-carousel compare-carousel", "compare")}</div>'
                f'{section_cta(P, "compare")}</div></section>')
 
     steps = [("00:00", "Digital scan", "A 3D intraoral scanner captures the tooth in a few minutes. No trays, no impression putty."),

@@ -170,7 +170,8 @@
      ------------------------------------------------------------------ */
   document.querySelectorAll('[data-carousel]').forEach(function (car) {
     var track = car.querySelector('.carousel-track');
-    var slides = Array.prototype.slice.call(track.children);
+    // only visible children count as slides (e.g. the Why Belmont photo is hidden on phones)
+    function visible() { return Array.prototype.filter.call(track.children, function (el) { return el.offsetWidth > 0; }); }
     var dotsWrap = car.querySelector('.dots');
     var prev = car.querySelector('[data-prev]');
     var next = car.querySelector('[data-next]');
@@ -181,19 +182,23 @@
 
     function active() { return !mobileOnly || isPhone(); }
     function perView() {
-      var first = slides[0];
+      var first = visible()[0];
       if (!first) return 1;
       return Math.max(1, Math.round(track.clientWidth / first.getBoundingClientRect().width));
     }
-    function pages() { return Math.max(1, slides.length - perView() + 1); }
+    function pages() { return Math.max(1, visible().length - perView() + 1); }
     function current() {
-      var w = slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0);
+      var s = visible();
+      if (!s.length) return 0;
+      var w = s[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 0);
       return Math.round(track.scrollLeft / w);
     }
     function go(i) {
       var n = pages();
       i = (i + n) % n;
-      track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: reduceMotion ? 'auto' : 'smooth' });
+      var s = visible();
+      if (!s[i]) return;
+      track.scrollTo({ left: s[i].offsetLeft - track.offsetLeft, behavior: reduceMotion ? 'auto' : 'smooth' });
     }
     function buildDots() {
       if (!dotsWrap) return;

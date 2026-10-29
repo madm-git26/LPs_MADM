@@ -339,14 +339,14 @@ em.gold, .gold-text { font-style: italic; color: var(--gold); }
 /* --------------------------------------------------------------------------
    USP — "Why Scottsdale patients choose Belmont" (mirrors main site band)
    -------------------------------------------------------------------------- */
-.usp-grid { display: grid; grid-template-columns: 1fr minmax(260px, 340px) 1fr; gap: 40px; align-items: center; }
-.usp-col { display: grid; gap: 0; }
-.usp-item { padding: 24px 0; border-bottom: 1px solid rgba(219, 170, 75, .25); }
-.usp-item:last-child { border-bottom: 0; }
-.usp-col.right .usp-item { text-align: right; }
-.usp-item h3 { color: var(--white); font-size: 22px; margin-bottom: 8px; display: flex; gap: 12px; align-items: center; }
-.usp-col.right .usp-item h3 { justify-content: flex-end; }
-.usp-item h3 .icon { color: var(--gold); width: 22px; height: 22px; }
+.usp-grid { display: grid; grid-template-columns: 1fr minmax(260px, 340px) 1fr; column-gap: 40px; align-items: center; }
+.usp-item { position: relative; padding: 24px 0 24px 36px; border-bottom: 1px solid rgba(219, 170, 75, .25); }
+.usp-item.u3, .usp-item.u6 { border-bottom: 0; }
+.usp-item.r { text-align: right; padding: 24px 36px 24px 0; }
+.usp-ico { position: absolute; left: 0; top: 27px; color: var(--gold); }
+.usp-item.r .usp-ico { left: auto; right: 0; }
+.usp-ico .icon { width: 22px; height: 22px; }
+.usp-item h3 { color: var(--white); font-size: 22px; margin-bottom: 8px; }
 .usp-item p { margin: 0; font-size: 15.5px; color: rgba(255, 255, 255, .7); }
 .usp-photo { position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); transform-style: preserve-3d; }
 .usp-photo img { width: 100%; aspect-ratio: 510 / 683; object-fit: cover; }
@@ -681,9 +681,7 @@ em.gold, .gold-text { font-style: italic; color: var(--gold); }
    ========================================================================== */
 @media (max-width: 1180px) {
   .main-nav { display: none; }
-  .usp-grid { grid-template-columns: 1fr 1fr; }
   .usp-photo { display: none; }
-  .usp-col.right .usp-item, .usp-col.right .usp-item h3 { text-align: left; justify-content: flex-start; }
 }
 
 @media (max-width: 1024px) {
@@ -761,8 +759,6 @@ em.gold, .gold-text { font-style: italic; color: var(--gold); }
   .svc-list { grid-template-columns: 1fr 1fr; padding: 22px 18px; gap: 12px 14px; }
   .svc-list li { font-size: 14.5px; align-items: flex-start; }
   .svc { min-height: 400px; }
-  .usp-grid { grid-template-columns: 1fr; gap: 0; }
-  .usp-item { padding: 20px 0; }
   .timeline { grid-template-columns: 1fr; }
   .compare { grid-template-columns: 1fr; }
   .compare-col { padding: 28px 22px; }
@@ -842,7 +838,7 @@ em.gold, .gold-text { font-style: italic; color: var(--gold); }
   .timeline h4 { font-size: 19px; }
   .timeline p { font-size: 14px; }
   .doc-body .btn { white-space: nowrap; font-size: 14px; }
-  .hero-eyebrow .dot { display: none; }
+  .hero-eyebrow .dot { flex-basis: 100%; width: 0; height: 0; background: none; }
   .hero-eyebrow { gap: 4px 10px; }
 }
 
@@ -882,4 +878,135 @@ em.gold, .gold-text { font-style: italic; color: var(--gold); }
   .team-grid { grid-template-columns: 1fr; gap: 34px; }
   .team-mini img { width: 150px; height: 150px; }
   .ty-sub { font-size: 21px; margin-top: 44px; }
+}
+
+/* ==========================================================================
+   Why Belmont grid placement, carousel-wrapped sections (desktop / tablet)
+   ========================================================================== */
+.lbl-short { display: none; }
+@media (min-width: 761px) {
+  .usp-carousel .carousel-track.usp-grid { grid-template-columns: 1fr minmax(260px, 340px) 1fr; column-gap: 40px; row-gap: 0; align-items: center; }
+  .usp-grid .u1 { grid-area: 1 / 1; } .usp-grid .u2 { grid-area: 2 / 1; } .usp-grid .u3 { grid-area: 3 / 1; }
+  .usp-grid .u4 { grid-area: 1 / 3; } .usp-grid .u5 { grid-area: 2 / 3; } .usp-grid .u6 { grid-area: 3 / 3; }
+  .usp-grid .usp-photo { grid-area: 1 / 2 / 4 / 3; }
+  .compare-carousel .carousel-track.compare { grid-template-columns: 1fr 1fr; gap: 0; overflow: hidden; }
+  .compare-carousel .compare-col.them { order: -1; }
+  .logo-row .dup { display: none; }
+}
+@media (min-width: 761px) and (max-width: 1180px) {
+  .usp-carousel .carousel-track.usp-grid { grid-template-columns: 1fr 1fr; }
+  .usp-grid .usp-photo { display: none; }
+  .usp-grid .u4 { grid-area: 1 / 2; } .usp-grid .u5 { grid-area: 2 / 2; } .usp-grid .u6 { grid-area: 3 / 2; }
+  .usp-item.r { text-align: left; padding: 24px 0 24px 36px; }
+  .usp-item.r .usp-ico { right: auto; left: 0; }
+}
+@media (min-width: 761px) and (max-width: 1024px) {
+  .ins-carousel .carousel-track, .badge-carousel .carousel-track { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; }
+}
+
+/* ==========================================================================
+   Phones: everything centred, long sections turned into compact swipe cards
+   ========================================================================== */
+@media (max-width: 760px) {
+  /* --- centre alignment --- */
+  .split-copy, .faq-intro, .card, .offer, .cond, .aid, .step-card, .doc-body, .review, .ins-card,
+  .badge-card, .compare-col, .contact-card, .usp-item, .hero-card, .svc-body, .timeline .step { text-align: center; }
+  .left .kicker::before { display: block; }
+  .offer .tag, .review .tagline { align-self: center; }
+  .icon-badge { margin-left: auto; margin-right: auto; }
+  .doc-tags { justify-content: center; }
+  .review footer { justify-content: center; text-align: left; }
+  .aid h3, .compare-col h3 { justify-content: center; }
+  .btn-row { align-items: center; }
+  .hero-card .ticks li, .checklist li, .ins-card li, .compare-col li { display: block; text-align: center; }
+  .hero-card .ticks .tick, .checklist .tick { display: inline-grid; vertical-align: middle; width: 22px; height: 22px; margin: 0 6px 3px 0; }
+  .checklist li strong { display: inline; }
+  .checklist li span { display: block; }
+  .ins-card li .icon, .compare-col li .icon { display: inline-block; vertical-align: -3px; margin: 0 6px 0 0; }
+  .contact-row { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+  .contact-row > div { flex: none !important; }
+  .faq-list summary { justify-content: center; text-align: center; position: relative; padding: 18px 44px; }
+  .faq-list summary .icon { position: absolute; right: 0; top: 50%; margin-top: -17px; }
+  .faq-list .answer { text-align: center; }
+  .triage a { flex-direction: column; justify-content: center; text-align: center; gap: 6px; }
+  .timeline .step::before { left: 50%; margin-left: -6px; }
+  .card-badge { left: 50%; right: auto; transform: translateX(-50%); white-space: nowrap; }
+  .doc-role { left: 50%; transform: translateX(-50%); white-space: nowrap; }
+  .media-badge { left: 50%; transform: translateX(-50%); white-space: nowrap; }
+  .er-warning, .ins-callout { text-align: center; }
+
+  /* --- section CTAs: two short buttons side by side --- */
+  .section-cta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 30px; }
+  .section-cta .btn, .section-cta .btn-lg { width: 100%; min-height: 54px; padding: 12px 8px; font-size: 14px; letter-spacing: .05em; gap: 7px; }
+  .section-cta .btn .icon { width: 18px; height: 18px; }
+  .section-cta .note { grid-column: 1 / -1; font-size: 13px; }
+  .lbl-long { display: none; }
+  .lbl-short { display: inline; }
+
+  /* --- Why Belmont: one reason per swipe card --- */
+  .usp-carousel .carousel-track.usp-grid { grid-auto-columns: 82%; gap: 12px; align-items: stretch; }
+  .usp-grid .usp-photo { display: none; }
+  .usp-grid .usp-item, .usp-grid .usp-item.r {
+    grid-area: auto; text-align: center; padding: 26px 20px 24px; border: 1px solid rgba(219, 170, 75, .35);
+    border-radius: 20px; background: rgba(255, 255, 255, .06);
+  }
+  .usp-ico, .usp-item.r .usp-ico { position: static; display: grid; place-items: center; width: 52px; height: 52px; margin: 0 auto 14px; border-radius: 14px; background: linear-gradient(140deg, var(--gold-soft), var(--gold)); color: var(--brown); }
+  .usp-item h3 { font-size: 21px; }
+  .usp-item p { font-size: 14.5px; }
+
+  /* --- Insurance & financing: swipe cards + compact payment chips --- */
+  .insurance { padding: 64px 0; }
+  .ins-carousel .carousel-track.ins-grid { grid-auto-columns: 86%; gap: 12px; max-width: none; margin: 0; }
+  .ins-card { padding: 24px 18px 22px; }
+  .ins-card h3 { font-size: 21px; }
+  .ins-card p { font-size: 14.5px; margin-bottom: 12px; }
+  .ins-card ul { gap: 6px; }
+  .ins-card li { font-size: 14px; }
+  .ins-card .cc-logo { margin: 0 auto 12px; height: 24px; }
+  .ins-card .icon-badge { width: 50px; height: 50px; margin-bottom: 12px; }
+  .pay-row { gap: 6px; margin-top: 18px; }
+  .pay-row b { width: 100%; text-align: center; margin: 0 0 2px; font-size: 12.5px; }
+  .pay-row span { padding: 5px 9px; font-size: 12.5px; }
+  .ins-callout { margin-top: 22px; padding: 18px 16px; gap: 10px; }
+  .ins-callout > .icon { display: none; }
+  .ins-callout p { font-size: 15px; }
+  .ins-callout p strong { font-size: 20px; }
+
+  /* --- Awards: badge swipe cards + auto-scrolling logo strip --- */
+  .awards { padding: 52px 0; }
+  .awards-head { margin-bottom: 20px; }
+  .badge-carousel .carousel-track.badges { grid-auto-columns: 84%; gap: 12px; max-width: none; margin: 0; }
+  .badge-card { flex-direction: column; text-align: center; gap: 10px; padding: 20px 16px; }
+  .badge-medal { width: 54px; height: 54px; }
+  .badge-card strong { font-size: 19px; }
+  .badge-card span { font-size: 13.5px; }
+  .logo-strip { overflow: hidden; margin-top: 18px; -webkit-mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+  .logo-strip .logo-row { flex-wrap: nowrap; justify-content: flex-start; width: max-content; gap: 0; animation: marquee 22s linear infinite; }
+  .logo-strip .logo-row img { height: 34px; margin-right: 34px; filter: none; opacity: .9; }
+
+  /* --- Typical office vs Belmont: two swipe cards --- */
+  .compare-carousel .carousel-track.compare { grid-auto-columns: 88%; gap: 12px; border: 0; box-shadow: none; border-radius: 0; overflow-x: auto; }
+  .compare-col { border-radius: 20px; padding: 24px 18px; }
+  .compare-col.them { border: 1px solid var(--line); }
+  .compare-col ul { gap: 9px; }
+  .compare-col li { font-size: 14.5px; line-height: 1.45; }
+
+  /* --- services list as compact chips --- */
+  .svc-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0; margin-top: 24px; background: none; border: 0; }
+  .svc-list li { padding: 7px 12px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-size: 13.5px; align-items: center; gap: 6px; }
+  .svc-list .icon { width: 14px; height: 14px; }
+
+  /* --- other trims --- */
+  .map { min-height: 280px; }
+  .hours { font-size: 14px; }
+  .hours td { padding: 6px 0; }
+}
+/* carousel controls on the image-backed insurance band */
+.insurance .carousel-btn { border-color: var(--gold); color: var(--gold); }
+.insurance .carousel-btn:hover { background: var(--gold); color: var(--brown); }
+.insurance .dots button { background: rgba(255, 255, 255, .28); }
+.insurance .dots button.active { background: var(--gold); }
+@media (max-width: 760px) {
+  .contact-card .btn { font-size: 14px; letter-spacing: .04em; padding-left: 12px; padding-right: 12px; }
+  .faq-intro .btn { width: 100%; }
 }
