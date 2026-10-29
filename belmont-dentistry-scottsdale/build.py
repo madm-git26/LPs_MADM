@@ -872,7 +872,6 @@ def page_emergency():
                  f'{head_block("Before You Get Here", "What to Do <em class=\"gold\">Right Now</em>", "These steps from our Scottsdale team can protect your tooth and ease the pain while you’re on your way.")}'
                  f'<div class="carousel m-carousel cols-3" data-carousel><div class="carousel-track">{ac}</div>'
                  f'<div class="carousel-nav"><button class="carousel-btn" data-prev aria-label="Previous tip">{ic("left")}</button><div class="dots"></div><button class="carousel-btn" data-next aria-label="Next tip">{ic("right")}</button></div></div>'
-                 f'<div class="er-warning" data-reveal>{ic("siren")}<p><strong>Go to the ER or call 911</strong> if you have trouble breathing or swallowing, swelling spreading to your eye or neck, uncontrolled bleeding, or a possible broken jaw. For everything else, call us first.</p></div>'
                  f'{section_cta(P, "first-aid")}</div></section>')
 
     tx = [("Same-day tooth extractions", "Done on-site, gently — with bone grafting when needed to keep future options open."),

@@ -81,7 +81,7 @@ The hero shows a Google rating badge (4.9★ · 699 reviews) and a trust-stats b
 **Emergency page** (phone-first, with red pulsing call buttons):
 1. Hero with a "What's going on?" card: 8 tap-to-call problem buttons
 2. 8 emergencies we treat
-3. First aid ("What to do right now") with a warning box for when to go to the ER or call 911
+3. First aid ("What to do right now")
 4. Emergency treatments: extractions, root canal, CEREC, incision and drainage, pulpotomies, bonding
 5. The 6-step emergency visit
 6. Reviews, led by the real "got us in within 2 hours" review
