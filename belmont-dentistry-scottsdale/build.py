@@ -1011,8 +1011,8 @@ def page_thank_you():
                 f'{head_block("You’re in Good Hands", "Meet the Team <em class=\"gold\">Caring for You</em>", f"A family-owned Scottsdale practice rated {RATING}★ by {REVIEW_COUNT} Google reviewers. Here’s who you’ll meet.")}'
                 f'<div class="team-grid">{team}</div>'
                 f'<h3 class="ty-sub" data-reveal>Your comfort menu — included at every visit</h3><ul class="perks dark" data-reveal>{comfort}</ul>'
-                f'<div class="section-cta" data-reveal><a class="btn btn-gold btn-lg" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="dentists">{ic("star")}<span>Read Our {REVIEW_COUNT} Reviews</span></a>'
-                f'{btn_call(f"Call {PHONE}", "btn btn-ghost btn-lg", "dentists")}</div></div></section>')
+                f'<div class="section-cta" data-reveal><a class="btn btn-gold btn-lg" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="dentists">{ic("star")}<span>{two(f"Read Our {REVIEW_COUNT} Reviews", "Our Reviews")}</span></a>'
+                f'{btn_call(two(f"Call {PHONE}", "Call Us"), "btn btn-ghost btn-lg", "dentists")}</div></div></section>')
 
     body = "\n".join([site_header(P), "<main>", hero, next_steps, dentists, location_section(P), "</main>", footer(P), sticky(P)])
     return document(
