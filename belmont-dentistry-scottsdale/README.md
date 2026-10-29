@@ -93,7 +93,8 @@ the video are the practice's own, taken from the Scottsdale pages of the site. N
 
 - **Search indexing:** `noindex, follow` keeps the pages out of organic search, which Google Ads doesn't need. The canonical tag points to the existing `/lp/...` URLs.
 - **Structured data:** `Dentist` JSON-LD with `aggregateRating` (4.9 / 699), 4 `Review` items, hours, the address, the doctors and the services. There is also an `FAQPage` block. Google doesn't show review stars for a business's own markup, so this won't add stars to search results. It describes the rating that's on the page.
-- **Events:** `assets/js/lp.js` sends `click_to_call`, `click_book_online` and `click_directions` to `dataLayer`, `gtag` and `fbq`. Each event includes which button was clicked (`data-cta`). Add your GTM container to the `<head>` (send me the ID and I'll add it). If you want direct Google Ads conversions, fill in `ADS_CONVERSION_ID` / `LABEL_CALL` / `LABEL_BOOK` in `lp.js`.
+- **Google Tag Manager:** container **GTM-PKC6XXJ** is on both pages and both standalone copies. The script is the first thing in `<head>` and the `<noscript>` iframe is the first thing in `<body>`, as Google recommends. The ID is `GTM_ID` in `build.py`.
+- **Events:** `assets/js/lp.js` pushes `click_to_call`, `click_book_online` and `click_directions` to `dataLayer` (also `gtag` / `fbq` if present). Each includes `lp_location`, which says which button was clicked. In GTM, create Custom Event triggers on those event names for your Google Ads conversion tags. Optionally, fill in `ADS_CONVERSION_ID` / `LABEL_CALL` / `LABEL_BOOK` in `lp.js` to fire conversions directly instead.
 
 ## Please confirm before running ads
 

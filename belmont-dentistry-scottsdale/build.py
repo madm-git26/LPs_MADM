@@ -42,6 +42,20 @@ SITE = "https://www.belmontdentistry.com"
 LP_BASE = SITE + "/lp/"
 
 BOOK = f'href="{BOOK_URL}" target="_blank" rel="noopener"'
+
+# Google Tag Manager — script goes first in <head>, noscript first in <body>
+GTM_ID = "GTM-PKC6XXJ"
+GTM_HEAD = ("<!-- Google Tag Manager -->\n"
+            "<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n"
+            "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n"
+            "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n"
+            "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n"
+            f"}})(window,document,'script','dataLayer','{GTM_ID}');</script>\n"
+            "<!-- End Google Tag Manager -->")
+GTM_BODY = ("<!-- Google Tag Manager (noscript) -->\n"
+            f'<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={GTM_ID}" '
+            'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n'
+            "<!-- End Google Tag Manager (noscript) -->")
 CALL = f'href="{TEL}"'
 
 HOURS = [  # (schema day, label, display, js day index)
@@ -517,6 +531,7 @@ def document(page, title, desc, slug, body, faqs, review_keys, theme="#1E1B16"):
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
+{GTM_HEAD}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{esc(title)}</title>
@@ -538,6 +553,7 @@ def document(page, title, desc, slug, body, faqs, review_keys, theme="#1E1B16"):
 {schema(page, faqs, review_keys, url, desc)}
 </head>
 <body data-page="{slug}" id="top">
+{GTM_BODY}
 {sprite()}
 {body}
 <script src="assets/js/lp.js" defer></script>
