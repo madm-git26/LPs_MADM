@@ -845,3 +845,41 @@ em.gold, .gold-text { font-style: italic; color: var(--gold); }
   .hero-eyebrow .dot { display: none; }
   .hero-eyebrow { gap: 4px 10px; }
 }
+
+/* --------------------------------------------------------------------------
+   Thank-you page
+   -------------------------------------------------------------------------- */
+.ty-hero { text-align: center; min-height: min(760px, calc(100vh - var(--header-h))); }
+.ty-hero::before { background: radial-gradient(ellipse at center, rgba(47, 27, 0, .86), rgba(20, 14, 6, .96)); }
+.ty-hero h1 { max-width: 900px; margin-left: auto; margin-right: auto; }
+.ty-hero .hero-lead { margin-left: auto; margin-right: auto; max-width: 660px; }
+.ty-hero .hero-ctas { justify-content: center; }
+.ty-trust { display: flex; justify-content: center; margin-top: 8px; }
+.ty-check { width: 112px; height: 112px; margin: 0 auto 24px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 30% 30%, #F8E2A8, var(--gold) 55%, var(--gold-deep)); box-shadow: 0 0 0 10px rgba(219, 170, 75, .16), 0 20px 50px -14px rgba(219, 170, 75, .8); animation: ty-pop .7s var(--ease) both, ty-ring 2.6s 1s ease-out infinite; }
+.ty-check svg { width: 64px; height: 64px; fill: none; stroke: var(--brown); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.ty-check circle { stroke: rgba(47, 27, 0, .25); stroke-width: 2; }
+.ty-check path { stroke-dasharray: 40; stroke-dashoffset: 40; animation: ty-draw .6s .45s var(--ease) forwards; }
+@keyframes ty-pop { from { transform: scale(.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes ty-draw { to { stroke-dashoffset: 0; } }
+@keyframes ty-ring { 0% { box-shadow: 0 0 0 0 rgba(219, 170, 75, .55), 0 20px 50px -14px rgba(219, 170, 75, .8); } 80%, 100% { box-shadow: 0 0 0 26px rgba(219, 170, 75, 0), 0 20px 50px -14px rgba(219, 170, 75, .8); } }
+.step-card .btn { margin-top: 22px; }
+.ty-help { margin-top: 34px; }
+.ty-help .btn { margin-left: auto; flex: none; }
+.team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; max-width: 960px; margin: 0 auto; }
+.team-mini { text-align: center; }
+.team-mini img { width: 180px; height: 180px; object-fit: cover; object-position: top; border-radius: 50%; margin: 0 auto 18px; border: 3px solid var(--gold); box-shadow: 0 0 0 8px rgba(219, 170, 75, .12); transition: transform .5s var(--ease); }
+.team-mini:hover img { transform: scale(1.05) rotate(-2deg); }
+.team-mini h3 { color: var(--white); font-size: 24px; margin-bottom: 4px; }
+.team-mini span { font-size: 14.5px; color: rgba(255, 255, 255, .66); }
+.ty-sub { text-align: center; color: var(--white); font-size: 24px; margin: 56px 0 0; }
+.perks.dark li { background: rgba(255, 255, 255, .06); border-color: rgba(219, 170, 75, .35); color: var(--white); box-shadow: none; }
+.perks.dark .icon { color: var(--gold); }
+@media (max-width: 760px) {
+  .ty-hero { min-height: 0; padding: 56px 0 64px; }
+  .ty-check { width: 92px; height: 92px; }
+  .ty-check svg { width: 52px; height: 52px; }
+  .ty-help .btn { margin-left: 0; width: 100%; }
+  .team-grid { grid-template-columns: 1fr; gap: 34px; }
+  .team-mini img { width: 150px; height: 150px; }
+  .ty-sub { font-size: 21px; margin-top: 44px; }
+}

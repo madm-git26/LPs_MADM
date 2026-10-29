@@ -6,11 +6,35 @@ New designs for the two existing landing pages. **Scottsdale office only:** 8350
 |---|---|---|
 | New Patient / General Dentist | `new-patients-scottsdale.html` | belmontdentistry.com/lp/new-patients-scottsdale/ |
 | Emergency Dentist | `emergency-dentist-scottsdale.html` | belmontdentistry.com/lp/emergency-dentist-scottsdale/ |
+| Thank-you page (shared by both) | `thank-you-scottsdale.html` | New. Send patients here after they book. |
 | Single-file copies | `standalone/*.html` | CSS, JS and every image are built into the file. Use these if you're pasting into a page builder. |
 
 Upload the page and its `assets/` folder together (fastest). For the standalone files, also upload the 6 small files
 in `assets/video/` and set `VIDEO_BASE_STANDALONE` in `build.py` to their URL, then rebuild. Until you do, the hero
 shows the clinic's photo instead of the video. Nothing breaks.
+
+## Thank-you page
+
+`thank-you-scottsdale.html` is one shared confirmation page for both landing pages. It has:
+
+- an animated gold check and a "Thank You! We'll See You Soon." headline
+- three next steps: watch for your confirmation, fill out your forms online, and arrive 10 minutes early
+- a "what to bring" list
+- a box for rescheduling or pain before the appointment, with a call button
+- the three dentists, the comfort menu, and the map, hours and directions
+
+It has no booking buttons. It is `noindex, nofollow` and also loads GTM-PKC6XXJ.
+
+**Conversion tracking.** Before GTM loads, the page pushes `thank_you_view` to `dataLayer`, along with `lp_source`. The
+value is `emergency`, `new-patients` or `direct`. It comes from `?from=` in the URL, or from the referring page.
+
+**Setup:**
+
+1. Publish the page, e.g. at `belmontdentistry.com/lp/thank-you-scottsdale/`.
+2. In All-in-One Dental, set the Scottsdale booking widget's after-booking redirect to that URL.
+3. In GTM, create a Custom Event trigger on `thank_you_view` and fire your Google Ads booking conversion on it.
+
+To split conversions by page, add `?from=emergency` or `?from=new-patients` to the redirect.
 
 ## Links & numbers used on every button
 

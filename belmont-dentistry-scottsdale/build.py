@@ -228,13 +228,17 @@ def site_header(page):
     nav = [("services", "Services"), ("doctors", "Doctors"), ("insurance", "Insurance"), ("reviews", "Reviews"), ("faq", "FAQ"), ("location", "Location")]
     if page == "em":
         nav[0] = ("emergencies", "Emergencies")
+    if page == "ty":
+        nav = [("next-steps", "Next Steps"), ("dentists", "Your Dentists"), ("location", "Directions")]
     links = "".join(f'<a href="#{a}">{t}</a>' for a, t in nav)
     call_cls = "btn btn-red header-phone-em" if page == "em" else "btn header-phone"
+    second = (f'<a class="btn btn-gold btn-book-head" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="header">{ic("nav")}<span>Directions</span></a>'
+              if page == "ty" else btn_book("Book Online", "btn btn-gold btn-book-head", "header"))
     return (f'<header class="site-header"><div class="shell">'
             f'<a class="brand" href="#top" aria-label="Belmont Dentistry Scottsdale — back to top"><img src="assets/img/logo-belmont-dentistry.webp" width="520" height="240" alt="Belmont Dentistry — Complete Dental Care"></a>'
             f'<nav class="main-nav" aria-label="Page sections">{links}</nav>'
             f'<div class="header-actions"><a class="{call_cls}" {CALL} data-cta="header">{ic("phone", "ring-icon")}<span>{PHONE}</span></a>'
-            f'{btn_book("Book Online", "btn btn-gold btn-book-head", "header")}</div>'
+            f'{second}</div>'
             f'</div></header>')
 
 
@@ -392,15 +396,22 @@ def faq_section(page, faqs):
 
 def location_section(page):
     rows = "".join(f'<tr data-day="{d}"><td>{label}</td><td>{disp}</td></tr>' for _, label, disp, d in HOURS)
-    first = (btn_call(f"Call Now {PHONE}", "btn btn-red btn-lg btn-block btn-pulse", "location") if page == "em"
-             else btn_book("Book Your Visit Online", "btn btn-gold btn-lg btn-block", "location"))
-    second = (btn_book("Book Online", "btn btn-ghost btn-block", "location") if page == "em"
-              else btn_call(f"Call {PHONE}", "btn btn-ghost btn-block", "location"))
-    title = ("Your Local Dentist Near North Scottsdale &amp; <em class=\"gold\">Old Town</em>" if page == "np"
-             else "Emergency Dentist Near You in <em class=\"gold\">Scottsdale</em>")
-    lead = ("Easy to reach from North Scottsdale, Old Town, McCormick Ranch and Paradise Valley — in Raintree Crossing near Northsight Blvd, just off the Loop 101, with free parking."
-            if page == "np" else
-            "Minutes from the Loop 101 at Raintree Dr &amp; Northsight Blvd — an easy drive from North Scottsdale, Old Town, Paradise Valley, Fountain Hills and North Phoenix.")
+    directions = f'<a class="btn btn-ghost btn-block" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="location-directions" style="margin-top:12px">{ic("nav")}<span>Get Directions</span></a>'
+    if page == "ty":
+        first = f'<a class="btn btn-gold btn-lg btn-block" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="location-directions">{ic("nav")}<span>Get Directions</span></a>'
+        second, directions = btn_call(f"Call {PHONE}", "btn btn-ghost btn-block", "location"), ""
+    elif page == "em":
+        first = btn_call(f"Call Now {PHONE}", "btn btn-red btn-lg btn-block btn-pulse", "location")
+        second = btn_book("Book Online", "btn btn-ghost btn-block", "location")
+    else:
+        first = btn_book("Book Your Visit Online", "btn btn-gold btn-lg btn-block", "location")
+        second = btn_call(f"Call {PHONE}", "btn btn-ghost btn-block", "location")
+    title = {"np": "Your Local Dentist Near North Scottsdale &amp; <em class=\"gold\">Old Town</em>",
+             "em": "Emergency Dentist Near You in <em class=\"gold\">Scottsdale</em>",
+             "ty": "Getting to <em class=\"gold\">Our Scottsdale Office</em>"}[page]
+    lead = {"np": "Easy to reach from North Scottsdale, Old Town, McCormick Ranch and Paradise Valley — in Raintree Crossing near Northsight Blvd, just off the Loop 101, with free parking.",
+            "em": "Minutes from the Loop 101 at Raintree Dr &amp; Northsight Blvd — an easy drive from North Scottsdale, Old Town, Paradise Valley, Fountain Hills and North Phoenix.",
+            "ty": "We’re in Raintree Crossing near Northsight Blvd, just off the Loop 101, with free parking right outside. Look for Suite 115."}[page]
     return (f'<section class="section" id="location"><div class="shell">{head_block("Location &amp; Contact", title, lead)}'
             f'<div class="location-grid" data-reveal="zoom">'
             f'<div class="map"><div class="map-fallback"><div><p><strong>Belmont Dentistry Scottsdale</strong><br>{ADDRESS}</p>'
@@ -411,8 +422,7 @@ def location_section(page):
             f'<div class="contact-row">{ic("phone")}<div><strong>Call Us</strong><a {CALL} data-cta="location-phone">{PHONE}</a></div></div>'
             f'<div class="contact-row">{ic("clock")}<div style="flex:1"><strong>Office Hours</strong><span class="status" data-status style="margin-top:8px"><span class="live"></span><span class="label">Mon–Thu from 7 am</span></span></div></div>'
             f'<table class="hours" aria-label="Office hours">{rows}</table><p class="hours-note">*Friday &amp; Saturday hours run on alternate weeks — call to confirm.</p>'
-            f'{first}{second}'
-            f'<a class="btn btn-ghost btn-block" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="location-directions" style="margin-top:12px">{ic("nav")}<span>Get Directions</span></a>'
+            f'{first}{second}{directions}'
             f'</div></div></div></section>')
 
 
@@ -444,6 +454,10 @@ def footer(page):
 
 
 def sticky(page):
+    if page == "ty":
+        return (f'<div class="sticky-cta" role="region" aria-label="Quick contact">'
+                f'<a class="btn btn-ghost" {CALL} data-cta="sticky">{ic("phone", "ring-icon")}<span>Call Us</span></a>'
+                f'<a class="btn btn-gold" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="sticky">{ic("nav")}<span>Directions</span></a></div>')
     if page == "em":
         return (f'<div class="sticky-cta" role="region" aria-label="Quick contact">'
                 f'<a class="btn btn-red btn-pulse" {CALL} data-cta="sticky">{ic("phone", "ring-icon")}<span>Call Now</span></a>'
@@ -526,17 +540,18 @@ def schema(page, faqs, review_keys, url, desc):
             '<script type="application/ld+json">' + json.dumps(faq, ensure_ascii=False) + "</script>")
 
 
-def document(page, title, desc, slug, body, faqs, review_keys, theme="#1E1B16"):
+def document(page, title, desc, slug, body, faqs, review_keys, theme="#1E1B16", robots="noindex, follow", head_extra=""):
     url = LP_BASE + slug + "/"
+    ld = schema(page, faqs, review_keys, url, desc) if faqs else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-{GTM_HEAD}
+{head_extra}{GTM_HEAD}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc)}">
-<meta name="robots" content="noindex, follow">
+<meta name="robots" content="{robots}">
 <link rel="canonical" href="{url}">
 <meta name="theme-color" content="{theme}">
 <meta property="og:type" content="website">
@@ -550,7 +565,7 @@ def document(page, title, desc, slug, body, faqs, review_keys, theme="#1E1B16"):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Karla:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/belmont.css">
-{schema(page, faqs, review_keys, url, desc)}
+{ld}
 </head>
 <body data-page="{slug}" id="top">
 {GTM_BODY}
@@ -918,6 +933,81 @@ def page_emergency():
 
 
 # ==========================================================================
+# PAGE 3 — Thank-you page (shared by both landing pages)
+# ==========================================================================
+# Fires before GTM loads, so a "Custom Event = thank_you_view" trigger can
+# record the booking conversion. lp_source says which landing page sent the
+# visitor (?from=emergency|new-patients, or the referrer when present).
+TY_DATALAYER = """<script>
+window.dataLayer = window.dataLayer || [];
+(function () {
+  var q = new URLSearchParams(location.search), r = document.referrer || '';
+  var src = q.get('from') || (r.indexOf('emergency') > -1 ? 'emergency' : r.indexOf('new-patients') > -1 ? 'new-patients' : 'direct');
+  window.dataLayer.push({ event: 'thank_you_view', lp_page: 'thank-you-scottsdale', lp_source: src });
+})();
+</script>
+"""
+
+
+def page_thank_you():
+    P = "ty"
+    hero = f"""
+<section class="hero ty-hero" id="hero">
+  <div class="hero-media"><img src="assets/img/img-belmont-dentistry-waiting-room-interior.webp" alt="" width="1200" height="860" fetchpriority="high"></div>
+  <img class="hero-watermark" src="assets/img/logo_watermark.svg" alt="" aria-hidden="true">
+  <div class="shell">
+    <div class="ty-check" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg></div>
+    <p class="hero-eyebrow">Belmont Dentistry Scottsdale <span class="dot"></span> Request Received</p>
+    <h1>Thank You! <em>We’ll See You Soon.</em></h1>
+    <p class="hero-lead">Your request has been sent to our Scottsdale team. You’ll get a confirmation by text or email shortly — and if anything needs a quick check, we’ll call you from <strong>{PHONE}</strong>.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-gold btn-lg" href="#next-steps" data-cta="hero">{ic("check")}<span>See What Happens Next</span></a>
+      {btn_call(f"Call {PHONE}", "btn btn-ghost btn-lg", "hero")}
+    </div>
+    <div class="ty-trust">{rating_pill("hero-rating")}</div>
+  </div>
+</section>"""
+
+    steps = [
+        ("calendar", "Watch for your confirmation", f"Your appointment details arrive by text or email. Don’t see them within a few minutes? Check spam, or call us at {PHONE}.", ""),
+        ("file", "Fill out your forms online", "Save time at check-in by completing your new patient forms before your visit — it only takes a few minutes.",
+         f'<a class="btn btn-dark btn-block" href="{SITE}/scottsdale-az/patient-forms/" target="_blank" rel="noopener" data-cta="forms">{ic("file")}<span>Patient Forms</span></a>'),
+        ("clock", "Arrive 10 minutes early", "A few extra minutes lets us check you in, confirm your insurance and get you settled with a blanket and headphones.",
+         f'<a class="btn btn-outline btn-block" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="steps-directions">{ic("nav")}<span>Get Directions</span></a>'),
+    ]
+    sc = "".join(f'<article class="step-card tilt" data-tilt="6" data-reveal style="--d:{i * .1:.1f}s"><h3>{h}</h3><p>{d}</p>{b}</article>'
+                 for i, (_, h, d, b) in enumerate(steps))
+    bring = "".join(f"<li>{ic(i)}{t}</li>" for i, t in [("id", "Photo ID"), ("card", "Insurance card (if you have one)"), ("pill", "List of current medications"), ("file", "Previous X-rays (optional)")])
+    next_steps = (f'<section class="section cream" id="next-steps"><div class="shell">'
+                  f'{head_block("What Happens Next", "Three Easy Steps <em class=\"gold\">Before Your Visit</em>", "A little preparation makes your first visit quick, comfortable and stress-free.")}'
+                  f'<div class="carousel m-carousel cols-3 steps" data-carousel><div class="carousel-track">{sc}</div>'
+                  f'<div class="carousel-nav"><button class="carousel-btn" data-prev aria-label="Previous step">{ic("left")}</button><div class="dots"></div><button class="carousel-btn" data-next aria-label="Next step">{ic("right")}</button></div></div>'
+                  f'<ul class="perks" data-reveal><li style="background:var(--brown);color:#fff;border-color:var(--brown)">What to bring:</li>{bring}</ul>'
+                  f'<div class="er-warning ty-help" data-reveal>{ic("siren")}<p><strong>Need to reschedule, or in pain before your appointment?</strong> Call {PHONE} — we reserve time every day for dental emergencies.</p>'
+                  f'<a class="btn btn-red btn-pulse" {CALL} data-cta="ty-help">{ic("phone", "ring-icon")}<span>Call Now</span></a></div>'
+                  f'</div></section>')
+
+    team = "".join(f'<article class="team-mini" data-reveal style="--d:{i * .1:.1f}s"><img src="{img}" alt="{n}, {s}" width="467" height="611" loading="lazy">'
+                   f'<h3>{n}, {s}</h3><span>{r} · {c.split(" · ")[-1]}</span></article>'
+                   for i, (n, s, r, c, img, *_rest) in enumerate(DOCTORS))
+    comfort = "".join(f"<li>{ic(i)}{t}</li>" for i, t in [("headphones", "Noise-cancelling headphones"), ("monitor", "TVs in every room"), ("blanket", "Warm blankets"),
+                                                         ("coffee", "Complimentary beverages"), ("droplet", "Nitrous &amp; oral sedation"), ("heart", "A team that listens")])
+    dentists = (f'<section class="section ink" id="dentists"><div class="shell">'
+                f'{head_block("You’re in Good Hands", "Meet the Team <em class=\"gold\">Caring for You</em>", f"A family-owned Scottsdale practice rated {RATING}★ by {REVIEW_COUNT} Google reviewers. Here’s who you’ll meet.")}'
+                f'<div class="team-grid">{team}</div>'
+                f'<h3 class="ty-sub" data-reveal>Your comfort menu — included at every visit</h3><ul class="perks dark" data-reveal>{comfort}</ul>'
+                f'<div class="section-cta" data-reveal><a class="btn btn-gold btn-lg" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="dentists">{ic("star")}<span>Read Our {REVIEW_COUNT} Reviews</span></a>'
+                f'{btn_call(f"Call {PHONE}", "btn btn-ghost btn-lg", "dentists")}</div></div></section>')
+
+    body = "\n".join([site_header(P), "<main>", hero, next_steps, dentists, location_section(P), "</main>", footer(P), sticky(P)])
+    return document(
+        P,
+        "Thank You | Belmont Dentistry Scottsdale",
+        "Thank you for choosing Belmont Dentistry Scottsdale. Here’s what happens next, what to bring and how to find our office at 8350 E Raintree Dr, Suite 115.",
+        "thank-you-scottsdale", body, None, None, robots="noindex, nofollow", head_extra=TY_DATALAYER)
+
+
+# ==========================================================================
 # Standalone (single-file) copies
 # ==========================================================================
 VIDEO_BASE_STANDALONE = "assets/video/"   # change to an absolute URL once the videos are uploaded
@@ -949,6 +1039,7 @@ def main():
     pages = {
         "new-patients-scottsdale.html": page_new_patients(),
         "emergency-dentist-scottsdale.html": page_emergency(),
+        "thank-you-scottsdale.html": page_thank_you(),
     }
     (HERE / "standalone").mkdir(exist_ok=True)
     for name, doc in pages.items():
