@@ -408,18 +408,27 @@ def faq_section(page, faqs):
             f'<div class="faq-list" data-reveal="right">{items}</div></div></div></section>')
 
 
+def short_hours(disp):
+    """'7:30 am – 5:00 pm' -> '7:30am–5pm' so the week fits in a compact two-column grid."""
+    s = disp.replace(":00", "").replace(" am", "am").replace(" pm", "pm").replace(" – ", "–")
+    return s
+
+
 def location_section(page):
-    rows = "".join(f'<tr data-day="{d}"><td>{label}</td><td>{disp}</td></tr>' for _, label, disp, d in HOURS)
-    directions = f'<a class="btn btn-ghost btn-block" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="location-directions" style="margin-top:12px">{ic("nav")}<span>Get Directions</span></a>'
+    rows = "".join(f'<div class="h-row" data-day="{d}"><span>{label[:3]}{"*" if "*" in label else ""}</span><b>{short_hours(disp)}</b></div>'
+                   for _, label, disp, d in HOURS)
+    directions = (f'<a class="btn btn-gold btn-sm map-dir" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="map-directions">'
+                  f'{ic("nav")}<span>Get Directions</span></a>')
     if page == "ty":
-        first = f'<a class="btn btn-gold btn-lg btn-block" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="location-directions">{ic("nav")}<span>Get Directions</span></a>'
-        second, directions = btn_call(f"Call {PHONE}", "btn btn-ghost btn-block", "location"), ""
+        first = (f'<a class="btn btn-gold" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="location-directions">'
+                 f'{ic("nav")}<span>Directions</span></a>')
+        second = btn_call("Call Us", "btn btn-ghost", "location")
     elif page == "em":
-        first = btn_call(f"Call Now {PHONE}", "btn btn-red btn-lg btn-block btn-pulse", "location")
-        second = btn_book("Book Online", "btn btn-ghost btn-block", "location")
+        first = btn_call("Call Now", "btn btn-red btn-pulse", "location")
+        second = btn_book("Book Online", "btn btn-ghost", "location")
     else:
-        first = btn_book("Book Your Visit Online", "btn btn-gold btn-lg btn-block", "location")
-        second = btn_call(f"Call {PHONE}", "btn btn-ghost btn-block", "location")
+        first = btn_book("Book Online", "btn btn-gold", "location")
+        second = btn_call("Call Us", "btn btn-ghost", "location")
     title = {"np": "Your Local Dentist Near North Scottsdale &amp; <em class=\"gold\">Old Town</em>",
              "em": "Emergency Dentist Near You in <em class=\"gold\">Scottsdale</em>",
              "ty": "Getting to <em class=\"gold\">Our Scottsdale Office</em>"}[page]
@@ -428,15 +437,16 @@ def location_section(page):
             "ty": "We’re in Raintree Crossing near Northsight Blvd, just off the Loop 101, with free parking right outside. Look for Suite 115."}[page]
     return (f'<section class="section" id="location"><div class="shell">{head_block("Location &amp; Contact", title, lead)}'
             f'<div class="location-grid" data-reveal="zoom">'
-            f'<div class="map"><div class="map-fallback"><div><p><strong>Belmont Dentistry Scottsdale</strong><br>{ADDRESS}</p>'
-            f'<a class="btn btn-outline" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="map">{ic("nav")}<span>Get Directions</span></a></div></div>'
-            f'<iframe src="{MAP_EMBED}" title="Map to Belmont Dentistry Scottsdale, {ADDRESS}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>'
-            f'<div class="contact-card"><h3>Belmont Dentistry Scottsdale</h3>{rating_pill("location-rating")}'
-            f'<div class="contact-row">{ic("pin")}<div><strong>Address</strong><a href="{GMB_URL}" target="_blank" rel="noopener" data-cta="location-address">{STREET}<br>{CITY_LINE}</a><br><small>Located in Raintree Crossing · Free parking</small></div></div>'
-            f'<div class="contact-row">{ic("phone")}<div><strong>Call Us</strong><a {CALL} data-cta="location-phone">{PHONE}</a></div></div>'
-            f'<div class="contact-row">{ic("clock")}<div style="flex:1"><strong>Office Hours</strong><span class="status" data-status style="margin-top:8px"><span class="live"></span><span class="label">Mon–Thu from 7 am</span></span></div></div>'
-            f'<table class="hours" aria-label="Office hours">{rows}</table><p class="hours-note">*Friday &amp; Saturday hours run on alternate weeks — call to confirm.</p>'
-            f'{first}{second}{directions}'
+            f'<div class="map"><div class="map-fallback"><div><p><strong>Belmont Dentistry Scottsdale</strong><br>{ADDRESS}</p></div></div>'
+            f'<iframe src="{MAP_EMBED}" title="Map to Belmont Dentistry Scottsdale, {ADDRESS}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>{directions}</div>'
+            f'<div class="contact-card"><div class="cc-head"><h3>Belmont Dentistry Scottsdale</h3>{rating_pill("location-rating")}</div>'
+            f'<div class="cc-info">'
+            f'<a class="cc-item" href="{GMB_URL}" target="_blank" rel="noopener" data-cta="location-address">{ic("pin")}<span><strong>Address</strong>{STREET}, {CITY_LINE}<small>Located in Raintree Crossing · Free parking</small></span></a>'
+            f'<a class="cc-item" {CALL} data-cta="location-phone">{ic("phone")}<span><strong>Call Us</strong>{PHONE}<small>Tap to call</small></span></a></div>'
+            f'<div class="cc-hours"><div class="cc-hours-head"><strong>{ic("clock")}Office Hours</strong>'
+            f'<span class="status" data-status><span class="live"></span><span class="label">Mon–Thu from 7 am</span></span></div>'
+            f'<div class="hours" role="table" aria-label="Office hours">{rows}</div><p class="hours-note">*Friday &amp; Saturday hours run on alternate weeks — call to confirm.</p></div>'
+            f'<div class="cc-btns">{first}{second}</div>'
             f'</div></div></div></section>')
 
 
@@ -460,11 +470,7 @@ def final_cta(page):
 
 
 def footer(page):
-    legal = ("Same-day appointments depend on the schedule and the clinical situation. Insurance coverage varies by plan. "
-             "CareCredit financing is subject to credit approval. Reviews are from Google; individual results vary.")
-    return (f'<footer class="site-footer"><div class="shell"><img src="assets/img/logo-belmont-dentistry.webp" alt="Belmont Dentistry" width="520" height="240" loading="lazy">'
-            f'<p><strong style="color:#fff">Belmont Dentistry Scottsdale</strong> · {ADDRESS} · <a {CALL} data-cta="footer">{PHONE}</a></p>'
-            f'<p>© <span data-year>2026</span> Belmont Dentistry. All rights reserved.</p><p class="legal">{legal}</p></div></footer>')
+    return '<footer class="site-footer"><div class="shell"><p>© <span data-year>2026</span> Belmont Dentistry. All rights reserved.</p></div></footer>'
 
 
 def sticky(page):

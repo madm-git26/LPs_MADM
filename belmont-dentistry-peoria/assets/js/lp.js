@@ -298,7 +298,7 @@
   }
 
   var now = azNow();
-  document.querySelectorAll('.hours tr[data-day]').forEach(function (tr) {
+  document.querySelectorAll('.hours [data-day]').forEach(function (tr) {
     if (parseInt(tr.dataset.day, 10) === now.day) tr.classList.add('today');
   });
   document.querySelectorAll('[data-status]').forEach(function (el) {
