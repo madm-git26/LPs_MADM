@@ -1142,3 +1142,12 @@ em.gold, .gold-text { color: var(--gold-ink); }
 .team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px 40px; max-width: 960px; margin: 0 auto; }
 .team-mini { flex: 0 1 280px; }
 @media (max-width: 760px) { .team-mini { flex-basis: 100%; } }
+
+/* header: no menu links; logo vertically centred with breathing room */
+.main-nav { display: none; }
+.site-header .brand { display: flex; align-items: center; height: 100%; padding: 8px 0; }
+.brand img, .site-header.scrolled .brand img { width: auto; height: 58px; }
+@media (max-width: 760px) {
+  .site-header .brand { padding: 6px 0; }
+  .brand img, .site-header.scrolled .brand img { height: 48px; }
+}

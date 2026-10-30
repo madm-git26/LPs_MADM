@@ -259,8 +259,7 @@ def site_header(page):
               if page == "ty" else btn_book("Book Online", "btn btn-gold btn-book-head", "header"))
     return (f'<header class="site-header"><div class="shell">'
             f'<a class="brand" href="#top" aria-label="Belmont Dentistry Peoria — back to top"><img src="assets/img/logo-belmont-dentistry.webp" width="520" height="240" alt="Belmont Dentistry — Complete Dental Care"></a>'
-            f'<nav class="main-nav" aria-label="Page sections">{links}</nav>'
-            f'<div class="header-actions"><a class="{call_cls}" {CALL} data-cta="header">{ic("phone", "ring-icon")}<span>{PHONE}</span></a>'
+                        f'<div class="header-actions"><a class="{call_cls}" {CALL} data-cta="header">{ic("phone", "ring-icon")}<span>{PHONE}</span></a>'
             f'{second}</div>'
             f'</div></header>')
 
