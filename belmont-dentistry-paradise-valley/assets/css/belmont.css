@@ -183,8 +183,9 @@ em.gold, .gold-text { font-style: italic; color: var(--gold-tx); }
 .hero-media { position: absolute; inset: 0; z-index: -2; }
 .hero-media video, .hero-media img { width: 100%; height: 100%; object-fit: cover; }
 .hero-media img { position: absolute; inset: 0; }
-.hero-media video { position: relative; opacity: 0; transition: opacity 1.2s ease; }
-.hero-media video.playing { opacity: 1; }
+.hero-media video { position: relative; }
+.js .hero-media video[data-lazy] { opacity: 0; transition: opacity 1.2s ease; }
+.js .hero-media video[data-lazy].playing { opacity: 1; }
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:

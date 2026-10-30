@@ -67,11 +67,12 @@
     function load() {
       if (loaded) return;
       loaded = true;
-      video.querySelectorAll('source[data-src]').forEach(function (s) { s.src = s.dataset.src; });
-      video.load();
+      var lazy = video.querySelectorAll('source[data-src]');
+      lazy.forEach(function (s) { s.src = s.dataset.src; });
+      if (lazy.length) video.load();   // native-autoplay videos already have their sources
     }
     function play() {
-      if (userPaused || reduceMotion) return;
+      if (userPaused || (reduceMotion && !video.hasAttribute('data-auto'))) return;
       load();
       var p = video.play();
       if (p && p.catch) p.catch(function () { if (toggle) toggle.classList.add('paused'); });
@@ -88,7 +89,8 @@
         else { userPaused = true; video.pause(); }
       });
     }
-    if (reduceMotion && toggle) toggle.classList.add('paused');
+    if (reduceMotion && toggle && !video.hasAttribute('data-auto')) toggle.classList.add('paused');
+    if (!video.paused) { video.classList.add('playing'); if (toggle) toggle.classList.remove('paused'); }
 
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
@@ -103,7 +105,7 @@
   }
   // Defer video work until the page itself has loaded so it never competes
   // with the headline, CTAs and images for bandwidth.
-  function initVideos() { document.querySelectorAll('video[data-lazy]').forEach(setupVideo); }
+  function initVideos() { document.querySelectorAll('video[data-lazy], video[data-auto]').forEach(setupVideo); }
   if (document.readyState === 'complete') initVideos();
   else window.addEventListener('load', initVideos);
 

@@ -216,8 +216,9 @@ em.gold, .gold-text { font-style: italic; color: var(--gold-tx); }
 .hero-media { position: absolute; inset: 0; z-index: -2; }
 .hero-media video, .hero-media img { width: 100%; height: 100%; object-fit: cover; }
 .hero-media img { position: absolute; inset: 0; }
-.hero-media video { position: relative; opacity: 0; transition: opacity 1.2s ease; }
-.hero-media video.playing { opacity: 1; }
+.hero-media video { position: relative; }
+.js .hero-media video[data-lazy] { opacity: 0; transition: opacity 1.2s ease; }
+.js .hero-media video[data-lazy].playing { opacity: 1; }
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:
@@ -1456,11 +1457,12 @@ em.gold, .gold-text { color: var(--gold-ink); }
     function load() {
       if (loaded) return;
       loaded = true;
-      video.querySelectorAll('source[data-src]').forEach(function (s) { s.src = s.dataset.src; });
-      video.load();
+      var lazy = video.querySelectorAll('source[data-src]');
+      lazy.forEach(function (s) { s.src = s.dataset.src; });
+      if (lazy.length) video.load();   // native-autoplay videos already have their sources
     }
     function play() {
-      if (userPaused || reduceMotion) return;
+      if (userPaused || (reduceMotion && !video.hasAttribute('data-auto'))) return;
       load();
       var p = video.play();
       if (p && p.catch) p.catch(function () { if (toggle) toggle.classList.add('paused'); });
@@ -1477,7 +1479,8 @@ em.gold, .gold-text { color: var(--gold-ink); }
         else { userPaused = true; video.pause(); }
       });
     }
-    if (reduceMotion && toggle) toggle.classList.add('paused');
+    if (reduceMotion && toggle && !video.hasAttribute('data-auto')) toggle.classList.add('paused');
+    if (!video.paused) { video.classList.add('playing'); if (toggle) toggle.classList.remove('paused'); }
 
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
@@ -1492,7 +1495,7 @@ em.gold, .gold-text { color: var(--gold-ink); }
   }
   // Defer video work until the page itself has loaded so it never competes
   // with the headline, CTAs and images for bandwidth.
-  function initVideos() { document.querySelectorAll('video[data-lazy]').forEach(setupVideo); }
+  function initVideos() { document.querySelectorAll('video[data-lazy], video[data-auto]').forEach(setupVideo); }
   if (document.readyState === 'complete') initVideos();
   else window.addEventListener('load', initVideos);
 

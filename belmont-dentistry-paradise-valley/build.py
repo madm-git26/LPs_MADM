@@ -575,11 +575,18 @@ def smile_section(page):
 WEBSITE_HERO_VIDEO = SITE + "/wp-content/uploads/2026/10/Phoenix.mp4"
 
 
-def hero_media(poster, video, fallback_mp4=None):
-    mp4 = fallback_mp4 or f"assets/video/{video}.mp4"
-    return (f'<div class="hero-media"><img src="assets/img/{poster}" alt="" width="1280" height="720" fetchpriority="high">'
-            f'<video data-lazy muted loop playsinline preload="none" poster="assets/img/{poster}" aria-hidden="true">'
-            f'<source data-src="assets/video/{video}.webm" type="video/webm"><source data-src="{mp4}" type="video/mp4"></video></div>'
+def hero_media(poster, video, website_mp4=None):
+    if website_mp4:
+        # Same behaviour as the website's hero: a plain autoplaying, muted, looping
+        # video that starts without JavaScript. H.264 MP4 first (plays everywhere),
+        # then WebM, then the original file on belmontdentistry.com as a fallback.
+        player = (f'<video data-auto autoplay muted loop playsinline preload="auto" poster="assets/img/{poster}" aria-hidden="true">'
+                  f'<source src="assets/video/{video}.mp4" type="video/mp4"><source src="assets/video/{video}.webm" type="video/webm">'
+                  f'<source src="{website_mp4}" type="video/mp4"></video>')
+    else:
+        player = (f'<video data-lazy muted loop playsinline preload="none" poster="assets/img/{poster}" aria-hidden="true">'
+                  f'<source data-src="assets/video/{video}.webm" type="video/webm"><source data-src="assets/video/{video}.mp4" type="video/mp4"></video>')
+    return (f'<div class="hero-media"><img src="assets/img/{poster}" alt="" width="1280" height="720" fetchpriority="high">{player}</div>'
             f'<img class="hero-watermark" src="assets/img/logo_watermark.svg" alt="" aria-hidden="true">'
             f'<button class="video-toggle" type="button" aria-label="Pause or play background video">{ic("pause", "i-pause")}{ic("play", "i-play")}</button>')
 
@@ -1105,6 +1112,10 @@ def bundle(src: Path, out: Path):
                   lambda m: "<script>\n" + (HERE / m.group(1)).read_text(encoding="utf-8") + "\n</script>", text)
     text = re.sub(r'(src|href|poster)="(assets/img/[^"]+)"', lambda m: f'{m.group(1)}="{data_uri(m.group(2))}"', text)
     text = text.replace('data-src="assets/video/', f'data-src="{VIDEO_BASE_STANDALONE}')
+    if VIDEO_BASE_STANDALONE == "assets/video/":
+        text = re.sub(r'<source src="assets/video/[^"]+" type="[^"]+">', '', text)
+    else:
+        text = text.replace('<source src="assets/video/', f'<source src="{VIDEO_BASE_STANDALONE}')
     out.write_text(text, encoding="utf-8")
     return out.stat().st_size
 
