@@ -1137,3 +1137,8 @@ em.gold, .gold-text { color: var(--gold-ink); }
   .cc-hours-head { margin-bottom: 2px; }
   .contact-card { gap: 12px; }
 }
+
+/* thank-you page: team row always centred, whatever the number of doctors */
+.team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px 40px; max-width: 960px; margin: 0 auto; }
+.team-mini { flex: 0 1 280px; }
+@media (max-width: 760px) { .team-mini { flex-basis: 100%; } }

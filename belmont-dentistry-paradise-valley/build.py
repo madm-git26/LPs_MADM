@@ -1055,10 +1055,10 @@ def page_thank_you():
                   f'</div></section>')
 
     team = "".join(f'<article class="team-mini" data-reveal style="--d:{i * .1:.1f}s"><img src="{img}" alt="{full_name(n, s)}" width="467" height="611" loading="lazy">'
-                   f'<h3>{full_name(n, s)}</h3><span>{r} · {c.split(" · ")[-1] if c.startswith("DDS") else c.split(" · ")[0]}</span></article>'
+                   f'<h3>{full_name(n, s)}</h3><span>{r} · {c.split(" · ")[-1]}</span></article>'
                    for i, (n, s, r, c, img, *_rest) in enumerate(DOCTORS))
-    comfort = "".join(f"<li>{ic(i)}{t}</li>" for i, t in [("headphones", "Noise-cancelling headphones"), ("monitor", "TVs in every room"), ("blanket", "Warm blankets"),
-                                                         ("coffee", "Complimentary beverages"), ("droplet", "Nitrous &amp; oral sedation"), ("heart", "A team that listens")])
+    comfort = "".join(f"<li>{ic(i)}{t}</li>" for i, t in [("coffee", "Coffee bar"), ("sparkles", "Soft scent of lavender"), ("heart", "Hot towel service"),
+                                                         ("headphones", "Noise-canceling headphones"), ("monitor", "Soothing videos"), ("droplet", "Nitrous &amp; oral sedation")])
     dentists = (f'<section class="section ink" id="dentists"><div class="shell">'
                 f'{head_block("You’re in Good Hands", "Meet the Team <em class=\"gold\">Caring for You</em>", f"A privately owned practice rated {RATING}★ by {REVIEW_COUNT} Google reviewers. Here’s who you’ll meet.")}'
                 f'<div class="team-grid">{team}</div>'
