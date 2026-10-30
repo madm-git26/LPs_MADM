@@ -29,6 +29,7 @@
             inner.textContent = part;
             inner.style.setProperty('--i', i++);
             outer.appendChild(inner);
+            inner.addEventListener('animationend', function () { outer.classList.add('done'); });
             frag.appendChild(outer);
           });
           child.parentNode.replaceChild(frag, child);

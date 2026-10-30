@@ -1192,7 +1192,9 @@ em.gold, .gold-text { color: var(--gold-ink); }
   background: linear-gradient(90deg, var(--gold-soft), var(--gold), var(--gold-deep)); box-shadow: 0 0 12px rgba(219, 170, 75, .7); }
 
 /* --- headline words slide up into place --------------------------------- */
-.js h1[data-split] .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.js h1[data-split] .w { display: inline-block; overflow: hidden; vertical-align: top;
+  padding: .06em .14em .3em .04em; margin: -.06em -.14em -.3em -.04em; } /* room for italic overhang and descenders (y, g, p) */
+.js h1[data-split] .w.done { overflow: visible; }
 .js h1[data-split] .w > span { display: inline-block; transform: translateY(110%); animation: pv-word-up .9s cubic-bezier(.2, .8, .2, 1) forwards; animation-delay: calc(var(--i) * 70ms + .15s); }
 @keyframes pv-word-up { to { transform: none; } }
 
@@ -1754,6 +1756,7 @@ em.gold, .gold-text { color: var(--gold-ink); }
             inner.textContent = part;
             inner.style.setProperty('--i', i++);
             outer.appendChild(inner);
+            inner.addEventListener('animationend', function () { outer.classList.add('done'); });
             frag.appendChild(outer);
           });
           child.parentNode.replaceChild(frag, child);
