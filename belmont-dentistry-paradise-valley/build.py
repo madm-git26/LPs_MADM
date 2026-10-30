@@ -569,10 +569,17 @@ def smile_section(page):
             f'</div></div></div></section>')
 
 
-def hero_media(poster, video):
+# The office film the website plays in its Paradise Valley hero. Our compressed copy
+# (assets/video/hero-new-patients.webm) plays first; if it isn't uploaded alongside
+# the page, the browser falls back to the original file on belmontdentistry.com.
+WEBSITE_HERO_VIDEO = SITE + "/wp-content/uploads/2026/10/Phoenix.mp4"
+
+
+def hero_media(poster, video, fallback_mp4=None):
+    mp4 = fallback_mp4 or f"assets/video/{video}.mp4"
     return (f'<div class="hero-media"><img src="assets/img/{poster}" alt="" width="1280" height="720" fetchpriority="high">'
             f'<video data-lazy muted loop playsinline preload="none" poster="assets/img/{poster}" aria-hidden="true">'
-            f'<source data-src="assets/video/{video}.webm" type="video/webm"><source data-src="assets/video/{video}.mp4" type="video/mp4"></video></div>'
+            f'<source data-src="assets/video/{video}.webm" type="video/webm"><source data-src="{mp4}" type="video/mp4"></video></div>'
             f'<img class="hero-watermark" src="assets/img/logo_watermark.svg" alt="" aria-hidden="true">'
             f'<button class="video-toggle" type="button" aria-label="Pause or play background video">{ic("pause", "i-pause")}{ic("play", "i-play")}</button>')
 
@@ -693,7 +700,7 @@ def page_new_patients():
     P = "np"
     hero = f"""
 <section class="hero" id="hero">
-  {hero_media("hero-poster-new-patients.webp", "hero-new-patients")}
+  {hero_media("hero-poster-new-patients.webp", "hero-new-patients", WEBSITE_HERO_VIDEO)}
   <div class="shell hero-grid">
     <div class="hero-copy">
       {rating_pill("hero-rating")}

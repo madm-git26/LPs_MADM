@@ -31,9 +31,14 @@ smile makeover, insurance & financing, the membership plan, both doctor pages an
 - **Savings plan:** $349/year. It includes 2 check-ups, 1 emergency exam, 2 regular cleanings and all X-rays, plus 50% off Cone Beam CT scans and 20% off all services. This is the price published on the Paradise Valley membership page.
 - **Spa-style first visit:** coffee bar, lavender, a hot towel, and forms available in English and Spanish (from the new-patients page).
 - **Before/after cases:** the 4 smile cases shown on the Paradise Valley page.
-- **Photos & video:** the office's own photos and its film.
-  - The hero videos start after the opening shots of the "Complete Dental Care" sign and the door lettering, so the old name and phone number never appear.
-  - Neither hero video uses the CEREC milling clip, because the Paradise Valley page doesn't advertise same-day CEREC crowns. Its "Why Phoenix Patients" section mentions porcelain crowns only.
+- **Photos & video:** the office's own photos.
+  - **New-patient hero:** the full office film (`Phoenix.mp4`), exactly as the website plays it in its Paradise Valley hero.
+    - The page plays a compressed copy, `assets/video/hero-new-patients.webm` (1.9 MB instead of 9.8 MB).
+    - If that copy isn't uploaded, the browser falls back to the original file on belmontdentistry.com, so the single-file download plays the video with nothing else uploaded.
+    - The poster image is the website's own video thumbnail.
+    - The film's opening shows the "Complete Dental Care" sign and door lettering, including the office's other phone number.
+  - **Emergency hero:** still a shorter cut of the film that starts after those shots.
+  - Neither page uses the CEREC milling clip, because the Paradise Valley page doesn't advertise same-day CEREC crowns.
 
 ## What's new in the design (Paradise Valley only)
 
@@ -75,5 +80,6 @@ All copy is in `build.py` (Python 3.12+). Rebuild after editing:
 python3 build.py
 ```
 
-To use the standalone files with video, upload `assets/video/` and set `VIDEO_BASE_STANDALONE` to that URL. Until
-then, the clinic photo shows instead of the video.
+The standalone new-patient page plays its hero video straight from belmontdentistry.com. For the emergency page's video,
+upload `assets/video/` and set `VIDEO_BASE_STANDALONE` to that URL. Until then, the emergency hero shows the clinic
+photo instead.
