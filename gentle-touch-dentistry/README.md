@@ -52,3 +52,4 @@ excluded). They're served from Unsplash's image CDN with `auto=format&w=…&q=80
 | Both · Insurance card | [Dentist consulting a patient](https://unsplash.com/photos/a-man-smiling-at-another-man-t5o3tjnaFMk) |
 | Emergency · Toothache tab | [Person with tooth pain](https://unsplash.com/photos/woman-in-black-framed-eyeglasses-and-black-long-sleeve-shirt-2QOMia2irCU) |
 | Emergency · Broken teeth tab | [Dentist showing a damaged tooth model](https://unsplash.com/photos/dentist-showing-a-model-of-a-damaged-tooth-SU6EGDd-ySQ) |
+| Emergency · Extraction tab | [Panoramic dental X-ray showing teeth and jawbone](https://unsplash.com/photos/panoramic-dental-x-ray-showing-teeth-and-jawbone-QWgq6Rjw0SE) |

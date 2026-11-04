@@ -609,7 +609,7 @@ treatments = f"""<!-- ============ TREATMENTS ============ -->
           [("Dental Bonding", "Fast repair for chips"), ("Same-Day CEREC Crowns", "Crowns in a single visit"),
            ("Lost Crown or Filling", "Re-cement or replace"), ("Temporary Repairs", "Protect the tooth now")],
           "Call to Fix It Today") \
-  + panel("p-ext", "t-ext", "img-meet-our-doctors-dr-kolli.webp", "Dr. Usha Kolli, surgical-focused dentist for emergency tooth extraction", 608, 684,
+  + panel("p-ext", "t-ext", "https://images.unsplash.com/photo-1777445374290-eedda5be8e5b?auto=format&fit=crop&w=1200&q=80", "Panoramic dental X-ray showing wisdom teeth before an emergency tooth extraction", 1200, 800,
           "i-grad", "Surgical-focused dentist", "Emergency Tooth Extraction",
           "Need an emergency dental extraction near you? When a tooth can't be saved, we remove it gently and comfortably — and talk you through replacement options before you leave.",
           [("Emergency Tooth Removal", "Gentle, numbed extractions"), ("Wisdom Tooth Extraction", "With Dr. Kolli"),
