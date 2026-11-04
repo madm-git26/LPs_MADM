@@ -15,3 +15,22 @@
   `dataLayer` / `gtag`. Paste the Google Ads ID + labels into `CONFIG` at the top of the page script.
 - Ships with `noindex, nofollow` (same as the other LPs in this repo) — remove it if you want it indexed.
 - Rating (5.0 / 107 reviews) is hard-coded from the practice website — refresh periodically.
+
+## Emergency Dentist page
+
+| Page | File |
+|---|---|
+| Emergency Dentist | `emergency-dentist.html` (generated) |
+
+`emergency-dentist.html` is built by `build_emergency.py` from `general-new-patient.html`: it reuses the
+general page's CSS, icons, script and shared sections (credentials, doctors, reviews, gallery, insurance,
+contact) and adds the emergency-only sections (conditions, emergency treatments, first aid + ER warning,
+5-step emergency visit, emergency FAQ + FAQ schema). Calls are the primary CTA everywhere; booking is
+secondary. After editing the general page, rebuild with:
+
+```bash
+python3 build_emergency.py
+```
+
+Emergency copy is taken from the practice's own emergency-care page. The page never claims 24/7 care —
+it says same-day appointments "whenever possible" and points life-threatening cases to 911/ER.
