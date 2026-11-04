@@ -490,14 +490,6 @@ first_aid = f"""<!-- ============ FIRST AID ============ -->
     f"""      <div class="aid-card rv" data-d="{i % 3}"><span class="n">{i + 1:02d}</span><h3>{t}</h3><p>{d}</p>{f'<span class="tip">{tip}</span>' if tip else ''}</div>\n"""
     for i, (t, d, tip) in enumerate(AID)) + f"""    </div>
     <div class="dots mdots" aria-hidden="true"></div></div>
-    <div class="er rv">
-      <span class="er-ico"><svg><use href="#i-hospital"/></svg></span>
-      <div>
-        <h3>When to go to the ER instead</h3>
-        <p>Call 911 or go to the nearest emergency room for uncontrolled bleeding, swelling that affects breathing or swallowing, a possible broken jaw, a serious head or facial injury, or a high fever with facial swelling. Once you're stable, call us for the dental follow-up.</p>
-      </div>
-      <a class="btn" href="tel:911"><svg class="ico"><use href="#i-phone"/></svg>Call 911</a>
-    </div>
     <div class="sec-cta rv">
       <div class="cta-row center">
         <a class="btn btn-urgent btn-xl btn-pulse" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call Our Emergency Dentist</a>
