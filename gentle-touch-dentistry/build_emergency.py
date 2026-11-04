@@ -75,14 +75,10 @@ style += r"""
 .live-hero.is-open i{background:#3ddc97}
 .live-hero.is-open i::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #3ddc97;animation:ring 1.8s infinite}
 .hero-copy .live-hero{order:2}
-.btn-urgent{background:var(--brand);color:#fff;box-shadow:0 14px 34px rgba(31,78,140,.55)}
-.btn-urgent:hover{background:var(--sky);color:var(--ink)}
-.hero .btn-urgent{background:#fff;color:var(--ink);box-shadow:0 14px 34px rgba(0,0,0,.3)}
-.hero .btn-urgent:hover{background:var(--sky)}
-.hero .btn-urgent.btn-pulse::before{border-color:#fff}
-.hero .hero-card .btn-urgent{background:var(--brand);color:#fff;box-shadow:0 12px 28px rgba(31,78,140,.4)}
-.hero .hero-card .btn-urgent:hover{background:var(--ink)}
-.hero .hero-card .btn-urgent.btn-pulse::before{border-color:var(--brand)}
+.btn-urgent{background:var(--urgent);color:#fff;box-shadow:0 14px 34px rgba(229,72,77,.42)}
+.btn-urgent:hover{background:var(--urgent-deep);color:#fff;box-shadow:0 18px 40px rgba(229,72,77,.5)}
+.btn-urgent.btn-pulse::before{border-color:var(--urgent)}
+.dark .btn-urgent.btn-pulse::before,.final .btn-urgent.btn-pulse::before,.loc-d .btn-urgent.btn-pulse::before{border-color:#ff8a8d}
 
 /* conditions grid */
 .cond{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -111,10 +107,73 @@ style += r"""
 .er .btn{background:var(--urgent);color:#fff;box-shadow:0 10px 24px rgba(229,72,77,.35)}
 .er .btn:hover{background:var(--urgent-deep)}
 
+/* ---- urgency: alert bar ---- */
+.alertbar{display:block;background:linear-gradient(90deg,var(--urgent-deep),var(--urgent));color:#fff;font-size:14px;line-height:1.35;text-align:center;padding:9px 16px;position:relative;z-index:101}
+.alertbar .in{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.alertbar .wd{width:9px;height:9px;border-radius:50%;background:#fff;position:relative;flex:none}
+.alertbar .wd::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #fff;animation:ring 1.6s infinite}
+.alertbar b{font-family:var(--f-display);font-weight:800}
+.alertbar .go{font-weight:800;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.alertbar:hover .go{text-decoration-thickness:2px}
+.urg-chip{display:inline-flex;align-items:center;gap:8px;margin:0 0 10px;padding:6px 12px;border-radius:var(--pill);background:var(--urgent-soft);color:var(--urgent-deep);font-weight:800;font-size:13px}
+.urg-chip .ico{width:14px;height:14px}
+
+/* ---- urgency: what's your emergency picker ---- */
+.triage{background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh);border:1px solid #e3edf6;padding:22px 16px}
+.tri-opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tri-opt{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;border-radius:var(--r);border:1.5px solid #d6e5f2;background:var(--ivory);color:var(--ink);font-family:var(--f-display);font-weight:700;font-size:14.5px;line-height:1.2;text-align:center;transition:all .3s var(--ease)}
+.tri-opt .t-ico{width:44px;height:44px;border-radius:14px;background:#fff;color:var(--urgent);display:grid;place-items:center;box-shadow:var(--sh-sm);transition:transform .35s var(--ease)}
+.tri-opt .t-ico svg{width:20px;height:20px;fill:currentColor}
+.tri-opt:hover{border-color:#f3c4c5;transform:translateY(-3px)}
+.tri-opt[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:var(--sh)}
+.tri-opt[aria-pressed="true"] .t-ico{transform:scale(1.08) rotate(-6deg)}
+.tri-out{margin-top:18px;border-radius:var(--r);padding:22px 20px;background:linear-gradient(135deg,#fff5f5,#fdeeee);border:1.5px solid #f3c4c5;text-align:center}
+.tri-out.swap{animation:panelIn .5s var(--ease)}
+.tri-lvl{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:var(--pill);background:var(--urgent);color:#fff;font-family:var(--f-display);font-weight:800;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+.tri-lvl.today{background:#f59e0b}
+.tri-out h3{font-size:22px;margin-bottom:6px}
+.tri-out p{color:#5a4446;margin:0 auto 16px;max-width:640px}
+.tri-out .cta-row{justify-content:center}
+
+/* ---- urgency: don't wait ---- */
+.wait{position:relative;overflow:hidden;background:linear-gradient(120deg,#2a0f14,var(--ink) 55%);color:#d8e3ef}
+.wait::after{content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(229,72,77,.35),transparent 70%);pointer-events:none}
+.wait h2,.wait h3{color:#fff}
+.wait .eyebrow{color:#ff8a8d}.wait .eyebrow::before,.wait .eyebrow::after{background:#ff8a8d}
+.wait .head p{color:#c3cfdc}
+.wait-grid{display:grid;gap:14px;position:relative;z-index:1}
+.wait-card{position:relative;padding:26px 22px;border-radius:var(--r);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);text-align:center}
+.wait-card .when{display:inline-block;font-family:var(--f-display);font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--urgent);padding:6px 12px;border-radius:var(--pill);margin-bottom:12px}
+.wait-card h3{font-size:19px;margin-bottom:6px}
+.wait-card p{margin:0;color:#c3cfdc;font-size:15px}
+.wait-bar{height:6px;border-radius:6px;background:rgba(255,255,255,.1);margin-top:16px;overflow:hidden}
+.wait-bar i{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,#f59e0b,var(--urgent));transition:width 1.6s var(--ease)}
+.wait-card.rv.in .wait-bar i{width:var(--w)}
+
+/* ---- urgency: desktop floating call + exit prompt ---- */
+.fab{position:fixed;right:24px;bottom:24px;z-index:140;display:none;align-items:center;gap:12px;padding:12px 22px 12px 12px;border-radius:var(--pill);background:var(--urgent);color:#fff;box-shadow:0 18px 40px rgba(229,72,77,.45);font-family:var(--f-display);font-weight:800;transform:translateY(140%);transition:transform .5s var(--ease),background .3s}
+.fab.on{transform:none}
+.fab:hover{background:var(--urgent-deep)}
+.fab .fi{width:44px;height:44px;border-radius:50%;background:#fff;color:var(--urgent);display:grid;place-items:center;position:relative}
+.fab .fi::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid #fff;animation:ring 1.8s infinite}
+.fab .fi svg{width:20px;height:20px;fill:currentColor}
+.fab small{display:block;font-family:var(--f-body);font-weight:600;font-size:12px;opacity:.9}
+.exit{position:fixed;inset:0;z-index:320;background:rgba(8,18,33,.72);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.exit.on{display:flex;animation:fade .3s}
+.exit-box{position:relative;max-width:520px;width:100%;background:#fff;border-radius:var(--r-lg);padding:38px 34px 30px;text-align:center;box-shadow:var(--sh-lg);animation:panelIn .5s var(--ease)}
+.exit-box .x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:0;background:var(--mist);color:var(--ink);font-size:24px;line-height:1}
+.exit-box .e-ico{width:66px;height:66px;margin:0 auto 14px;border-radius:50%;background:var(--urgent-soft);color:var(--urgent);display:grid;place-items:center}
+.exit-box .e-ico svg{width:30px;height:30px;fill:currentColor}
+.exit-box h3{font-size:28px;margin-bottom:8px}
+.exit-box p{color:var(--slate);margin-bottom:18px}
+.exit-box .btn{width:100%;margin-top:10px}
+
 /* visit steps (5) */
 .steps.five .step h3{font-size:18px}
 
 @media (min-width:640px){
+  .tri-opts{grid-template-columns:repeat(3,1fr)}
+  .wait-grid{grid-template-columns:repeat(3,1fr)}
   .cond{grid-template-columns:repeat(3,1fr)}
   .aid{grid-template-columns:repeat(2,1fr)}
 }
@@ -122,6 +181,11 @@ style += r"""
   .h-live{display:flex}
   .h-call-d{display:inline-flex !important}
   .h-book{display:none !important}
+  .fab{display:flex}
+  .triage{padding:30px}
+  .tri-opts{grid-template-columns:repeat(6,1fr);gap:12px}
+  .tri-out{padding:28px 34px}
+  .wait-grid{gap:20px}
   .cond{grid-template-columns:repeat(5,1fr);gap:16px}
   .aid{grid-template-columns:repeat(3,1fr);gap:18px}
   .er{grid-template-columns:auto 1fr auto;padding:26px 30px;gap:22px}
@@ -143,6 +207,14 @@ style += r"""
   .er{text-align:center;justify-items:center}
   .er .btn{width:100%}
   .mbar{grid-template-columns:1.35fr 1fr}
+  .alertbar{font-size:13px;padding:8px 12px}
+  .topbar{display:none}
+  .mbar .btn{white-space:nowrap;padding:10px 8px;font-size:15.5px;gap:8px}
+  .alertbar .long{display:none}
+  .triage{padding:18px 12px}
+  .tri-opt{font-size:13.5px;padding:14px 6px}
+  .tri-out{padding:20px 16px}
+  .tri-out .btn{width:100%}
   .mbar .rate{color:var(--ink);font-weight:700}
 }
 """
@@ -212,6 +284,10 @@ faq_schema = ('<script type="application/ld+json">\n{\n  "@context": "https://sc
               + "\n  ]\n}\n</script>")
 
 # ------------------------------------------------------------------ chrome
+alertbar = f"""<a class="alertbar" href="{TEL}" aria-label="Dental emergency? Call {PHONE}">
+  <span class="in"><span class="wd" aria-hidden="true"></span><b>Dental emergency?</b><span class="long" data-urgency>Same-day openings are limited — call now for the soonest one.</span><span class="go">Call {PHONE} →</span></span>
+</a>"""
+
 topbar = f"""<div class="topbar">
   <div class="shell">
     <div class="t-left">
@@ -232,7 +308,7 @@ header = f"""<header class="header" id="top">
       <span class="h-rating"><svg class="g-logo"><use href="#g"/></svg><span><b>5.0</b> <span class="stars" aria-hidden="true">{STARS}</span><br>107 Google reviews</span></span>
       <span class="h-live"><small><span class="dot-urgent" aria-hidden="true"></span>Dental emergency?</small><strong data-live-text>Same-day appointments</strong></span>
       <a class="btn btn-urgent btn-pulse btn-shine h-call-d" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call {PHONE}</a>
-      <a class="btn btn-call h-call-m" href="{TEL}" aria-label="Call {PHONE}"><svg class="ico phone-ico"><use href="#i-phone"/></svg><span>Call</span></a>
+      <a class="btn btn-urgent h-call-m" href="{TEL}" aria-label="Call {PHONE}"><svg class="ico phone-ico"><use href="#i-phone"/></svg><span>Call</span></a>
     </div>
   </div>
 </header>"""
@@ -296,6 +372,7 @@ hero = f"""<!-- ============ HERO ============ -->
         <span class="ribbon">Emergency Visit</span>
         <span class="float-chip c1"><span class="fi"><svg><use href="#i-bolt"/></svg></span>Same-day when possible</span>
         <span class="float-chip c2"><span class="fi"><svg><use href="#i-shield"/></svg></span>Insured or not</span>
+        <span class="urg-chip"><svg class="ico"><use href="#i-clock"/></svg><span data-urgency-short>Same-day openings are limited</span></span>
         <h2 id="hc-title">Get Out of Pain, Fast</h2>
         <p class="lead">What happens when you call our emergency dentist in Richardson:</p>
         <ul class="inc">
@@ -369,6 +446,83 @@ conditions = f"""<!-- ============ CONDITIONS ============ -->
   </div>
 </section>"""
 
+# ------------------------------------------------------------ triage picker
+TRIAGE = [
+    ("ko", "i-warning", "Knocked-Out Tooth", "now", "Call immediately",
+     "Every minute counts",
+     "A knocked-out tooth has the best chance of being saved within 30–60 minutes. Pick it up by the crown, keep it moist in milk or back in the socket, and call us right now."),
+    ("pain", "i-bolt", "Severe Toothache", "today", "Call today",
+     "Don't wait for it to get worse",
+     "Severe or throbbing pain often means infection or a deep crack. Call now for the soonest same-day opening — rinse with warm salt water and use a cold compress meanwhile."),
+    ("swell", "i-drop", "Swelling or Abscess", "now", "Call immediately",
+     "Swelling can mean a spreading infection",
+     "Facial or gum swelling, or a pimple-like bump on the gum, needs prompt care. Call us right away so we can see you as soon as possible. If swelling affects breathing or swallowing, call 911."),
+    ("broke", "i-tooth", "Broken or Cracked Tooth", "today", "Call today",
+     "Protect the tooth before it splits further",
+     "Save any pieces and avoid chewing on that side. Many broken teeth can be repaired in a single visit with a same-day CEREC crown."),
+    ("crown", "i-shield", "Lost Crown or Filling", "today", "Call today",
+     "An exposed tooth is vulnerable",
+     "Keep the crown and bring it with you. Avoid chewing on that side — we'll re-cement or replace it and protect the tooth before it gets worse."),
+    ("ext", "i-kit", "Tooth Needs Pulling", "today", "Call today",
+     "Gentle emergency tooth extraction",
+     "If a tooth is too damaged or infected to save, we can remove it gently with numbing and sedation available — and talk you through replacement options."),
+]
+opts = "".join(
+    f'''<button type="button" class="tri-opt" aria-pressed="{'true' if i == 0 else 'false'}" data-tri="{k}"><span class="t-ico"><svg><use href="#{ico}"/></svg></span>{label}</button>'''
+    for i, (k, ico, label, *_rest) in enumerate(TRIAGE))
+tri_data = "".join(
+    f'<template data-tri-for="{k}"><span class="tri-lvl{" today" if lvl == "today" else ""}"><span class="wd" style="width:8px;height:8px;border-radius:50%;background:#fff"></span>{lvl_txt}</span><h3>{head}</h3><p>{body}</p></template>'
+    for k, ico, label, lvl, lvl_txt, head, body in TRIAGE)
+first = TRIAGE[0]
+triage = f"""<!-- ============ WHAT'S YOUR EMERGENCY ============ -->
+<section class="section tint" id="triage">
+  <div class="shell">
+    <div class="head rv">
+      <span class="eyebrow">Tap Your Emergency</span>
+      <h2>What's Your <em class="acc">Dental Emergency?</em></h2>
+      <p>Choose what's happening and we'll tell you how urgent it is and what to do right now — then call us for the soonest same-day opening.</p>
+    </div>
+    <div class="triage rv rv-z">
+      <div class="tri-opts" role="group" aria-label="Choose your dental emergency">{opts}</div>
+      <div class="tri-out" aria-live="polite">
+        <div data-tri-out><span class="tri-lvl"><span class="wd" style="width:8px;height:8px;border-radius:50%;background:#fff"></span>{first[4]}</span><h3>{first[5]}</h3><p>{first[6]}</p></div>
+        <div class="cta-row">
+          <a class="btn btn-urgent btn-xl btn-pulse btn-shine" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call {PHONE}</a>
+          <a class="btn btn-primary btn-xl" href="{BOOK}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-cal"/></svg>Book My Slot For Today</a>
+        </div>
+      </div>
+      {tri_data}
+    </div>
+  </div>
+</section>"""
+
+WAIT = [
+    ("30–60 min", "Knocked-out tooth", "The best window to save a knocked-out tooth. After that, the chances drop quickly.", "92%"),
+    ("Hours to days", "Abscess &amp; infection", "Left untreated, a dental infection can spread and swelling can get worse.", "70%"),
+    ("Days to weeks", "Cracks &amp; lost crowns", "A small crack or exposed tooth can deepen — some emergencies lead to tooth loss.", "48%"),
+]
+wait = f"""<!-- ============ DON'T WAIT ============ -->
+<section class="section wait" id="dont-wait">
+  <div class="shell">
+    <div class="head rv">
+      <span class="eyebrow">Don't Wait</span>
+      <h2>Waiting Makes Dental Emergencies <em class="acc">Worse</em></h2>
+      <p>Prompt emergency dental care relieves pain, stops infection from spreading and gives you the best chance of saving your tooth. The sooner you call, the more options you have.</p>
+    </div>
+    <div class="wait-grid">
+""" + "".join(
+    f'      <div class="wait-card rv" data-d="{i}"><span class="when">{w}</span><h3>{t}</h3><p>{d}</p><div class="wait-bar" aria-hidden="true"><i style="--w:{pct}"></i></div></div>\n'
+    for i, (w, t, d, pct) in enumerate(WAIT)) + f"""    </div>
+    <div class="sec-cta rv">
+      <p style="color:#fff;font-weight:700;margin-bottom:14px" data-urgency>Same-day openings are limited — call now for the soonest one.</p>
+      <div class="cta-row center">
+        <a class="btn btn-urgent btn-xl btn-pulse btn-shine" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call {PHONE} Now</a>
+        <a class="btn btn-ghost btn-xl" href="{BOOK}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-cal"/></svg>Book My Slot For Today</a>
+      </div>
+    </div>
+  </div>
+</section>"""
+
 # ---------------------------------------------------------- offers / payment
 offers = f"""<!-- ============ OFFERS ============ -->
 <section class="section" id="offers">
@@ -385,7 +539,7 @@ offers = f"""<!-- ============ OFFERS ============ -->
         <h3>Same-Day Emergency Visit</h3>
         <div class="big">Seen Today<small>Whenever possible — we reserve the soonest opening</small></div>
         <p>Exam, digital X-rays and pain relief — then we treat or stabilize the tooth so you can get back to your day.</p>
-        <a class="btn btn-primary btn-block btn-shine" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call Now</a>
+        <a class="btn btn-urgent btn-block btn-pulse" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call Now</a>
       </article>
       <article class="offer rv" data-d="1" data-tilt>
         <span class="o-ico"><svg><use href="#i-card"/></svg></span>
@@ -523,7 +677,7 @@ why = f"""<!-- ============ WHY US ============ -->
     <div class="dots mdots" aria-hidden="true"></div></div>
     <div class="sec-cta rv">
       <div class="cta-row center">
-        <a class="btn btn-primary btn-xl btn-shine" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call {PHONE}</a>
+        <a class="btn btn-urgent btn-xl btn-pulse btn-shine" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call {PHONE}</a>
         <a class="btn btn-ghost btn-xl" href="{BOOK}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-cal"/></svg>Book Online</a>
       </div>
     </div>
@@ -613,7 +767,7 @@ contact_d = sub(contact_d, '<span class="cx-eyebrow">Have a question?</span>', '
 contact_d = sub(contact_d, "Call us with any question or book your visit online in a few clicks. New patients and same-day emergencies are always welcome at our Richardson dental office.",
                 "Call our emergency dentist in Richardson now — we'll triage your symptoms over the phone and reserve the soonest opening. Same-day emergency appointments whenever possible.")
 contact_d = sub(contact_d, f'<a class="btn btn-primary btn-xl btn-shine" href="{BOOK}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-cal"/></svg>Book Online Now<svg class="ico"><use href="#i-right"/></svg></a>\n          <a class="btn btn-ghost btn-xl btn-pulse" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>{PHONE}</a>',
-                f'<a class="btn btn-primary btn-xl btn-shine" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call {PHONE}</a>\n          <a class="btn btn-ghost btn-xl" href="{BOOK}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-cal"/></svg>Book Online<svg class="ico"><use href="#i-right"/></svg></a>')
+                f'<a class="btn btn-urgent btn-xl btn-pulse btn-shine" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call {PHONE}</a>\n          <a class="btn btn-ghost btn-xl" href="{BOOK}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-cal"/></svg>Book Online<svg class="ico"><use href="#i-right"/></svg></a>')
 
 final = f"""<!-- ============ FINAL CTA ============ -->
 <section class="final">
@@ -622,7 +776,7 @@ final = f"""<!-- ============ FINAL CTA ============ -->
     <h2 class="rv" data-d="1">Dental Emergency? Get Relief <em class="acc">Today</em></h2>
     <p class="rv" data-d="2">Prompt dental emergency care relieves pain, stops infection from spreading and gives you the best chance of saving your tooth. Call now — we'll make room for you whenever possible.</p>
     <div class="cta-row center rv" data-d="3">
-      <a class="btn btn-primary btn-xl btn-pulse btn-shine" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call {PHONE}</a>
+      <a class="btn btn-urgent btn-xl btn-pulse btn-shine" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call {PHONE}</a>
       <a class="btn btn-ghost btn-xl" href="{BOOK}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-cal"/></svg>Book My Slot For Today</a>
     </div>
   </div>
@@ -632,21 +786,101 @@ footer = between(SRC, '<footer class="footer">', "</footer>") + "</footer>"
 
 mbar = f"""<!-- Mobile sticky CTA -->
 <nav class="mbar" aria-label="Quick contact">
-  <div class="rate"><span class="dot-urgent" aria-hidden="true"></span><span data-live-text>Same-day emergencies</span></div>
+  <div class="rate"><span class="dot-urgent" aria-hidden="true"></span><span>Dental emergency? <span data-urgency-short>Call for the soonest opening</span></span></div>
   <a class="btn btn-urgent btn-pulse" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call Now</a>
   <a class="btn btn-primary btn-shine" href="{BOOK}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-cal"/></svg>Book Online</a>
 </nav>
 
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Office photo"><button type="button" aria-label="Close">&times;</button><img alt=""></div>"""
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Office photo"><button type="button" aria-label="Close">&times;</button><img alt=""></div>
+
+<a class="fab" href="{TEL}" aria-label="Dental emergency? Call {PHONE}"><span class="fi"><svg><use href="#i-phone"/></svg></span><span>Call {PHONE}<small data-urgency-short>Dental emergency? Call now</small></span></a>
+
+<div class="exit" role="dialog" aria-modal="true" aria-labelledby="exit-title">
+  <div class="exit-box">
+    <button type="button" class="x" aria-label="Close">&times;</button>
+    <span class="e-ico"><svg><use href="#i-bolt"/></svg></span>
+    <h3 id="exit-title">Still in Pain? Don't Wait.</h3>
+    <p><span data-urgency>Same-day openings are limited — call now for the soonest one.</span> Insured or not, we'll take care of you.</p>
+    <a class="btn btn-urgent btn-xl btn-pulse" href="{TEL}"><svg class="ico phone-ico"><use href="#i-phone"/></svg>Call {PHONE}</a>
+    <a class="btn btn-primary btn-xl" href="{BOOK}" target="_blank" rel="noopener"><svg class="ico"><use href="#i-cal"/></svg>Book My Slot For Today</a>
+  </div>
+</div>"""
+
+URGENCY_JS = r"""<script>
+/* Emergency urgency layer: real countdowns from the office hours (America/Chicago),
+   the "what's your emergency" picker, floating call button and a one-time exit prompt. */
+(function(){
+  'use strict';
+  var HOURS = {1:[480,1020],2:null,3:[600,1110],4:[600,960],5:[420,990],6:[600,840],0:null};
+  var NAMES = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  function fmt(m){ var h=Math.floor(m/60), mm=m%60, ap=h>=12?'pm':'am'; h=h%12||12; return h+(mm?':'+(mm<10?'0':'')+mm:'')+' '+ap; }
+  function dur(m){ var h=Math.floor(m/60), mm=m%60; return (h? h+'h ':'')+mm+'m'; }
+  function now(){
+    var parts = new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()), m={};
+    parts.forEach(function(p){ m[p.type]=p.value; });
+    return { day:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[m.weekday], mins:(parseInt(m.hour,10)%24)*60+parseInt(m.minute,10) };
+  }
+  function urgency(){
+    var n = now(), span = HOURS[n.day], long, short;
+    if (span && n.mins >= span[0] && n.mins < span[1]) {
+      var left = span[1] - n.mins;
+      if (left <= 60) { long = 'Closing in ' + left + ' min — call right now to be seen today.'; short = 'Closing in ' + left + ' min — call now'; }
+      else { long = 'Open now — closes in ' + dur(left) + '. Call now to be seen today.'; short = 'Open now · closes in ' + dur(left); }
+    } else if (span && n.mins < span[0]) {
+      long = 'Opens today at ' + fmt(span[0]) + ' — book online now to request the earliest emergency slot.';
+      short = 'Opens today ' + fmt(span[0]) + ' · book now';
+    } else {
+      var d = n.day, add = 0, s;
+      do { d = (d + 1) % 7; add++; s = HOURS[d]; } while (!s && add < 7);
+      var when = add === 1 ? 'tomorrow' : NAMES[d];
+      long = 'Closed now — book online now to request the first opening ' + when + ' at ' + fmt(s[0]) + '.';
+      short = 'Opens ' + when + ' ' + fmt(s[0]) + ' · book now';
+    }
+    document.querySelectorAll('[data-urgency]').forEach(function(el){ el.textContent = long; });
+    document.querySelectorAll('[data-urgency-short]').forEach(function(el){ el.textContent = short; });
+  }
+  try { urgency(); setInterval(urgency, 60000); } catch(e) {}
+
+  /* what's-your-emergency picker */
+  var out = document.querySelector('[data-tri-out]'), box = document.querySelector('.tri-out');
+  document.querySelectorAll('.tri-opt').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.tri-opt').forEach(function(o){ o.setAttribute('aria-pressed', o===b ? 'true' : 'false'); });
+      var t = document.querySelector('template[data-tri-for="' + b.getAttribute('data-tri') + '"]');
+      if (t && out) { out.innerHTML = t.innerHTML; box.classList.remove('swap'); void box.offsetWidth; box.classList.add('swap'); }
+      try { (window.dataLayer = window.dataLayer || []).push({event:'triage_select', emergency:b.getAttribute('data-tri')}); } catch(e) {}
+    });
+  });
+
+  /* floating call button (desktop) after the hero */
+  var fab = document.querySelector('.fab'), hero = document.querySelector('.hero');
+  function fabPaint(){ if (fab && hero) fab.classList.toggle('on', window.scrollY > hero.offsetTop + hero.offsetHeight - 80); }
+  addEventListener('scroll', fabPaint, {passive:true}); fabPaint();
+
+  /* one-time exit prompt (desktop, mouse leaving toward the tab bar) */
+  var exit = document.querySelector('.exit'), shown = false;
+  try { shown = sessionStorage.getItem('gt_exit') === '1'; } catch(e) {}
+  function closeExit(){ exit.classList.remove('on'); }
+  if (exit && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    document.addEventListener('mouseout', function(e){
+      if (shown || e.relatedTarget || e.clientY > 8 || window.scrollY < 400) return;
+      shown = true; try { sessionStorage.setItem('gt_exit','1'); } catch(err) {}
+      exit.classList.add('on');
+    });
+    exit.addEventListener('click', function(e){ if (e.target === exit || e.target.closest('.x')) closeExit(); });
+    addEventListener('keydown', function(e){ if (e.key === 'Escape') closeExit(); });
+  }
+})();
+</script>"""
 
 page = "\n\n".join([
     head + practice_schema + "\n" + faq_schema + "\n\n<style>" + style + "</style>\n</head>\n<body>\n",
     "<!-- Icon sprite -->" + sprite.rstrip(),
     '<div class="progress" aria-hidden="true"></div>',
-    topbar, header, "<main>",
-    hero, stats, conditions, offers, treatments, first_aid, why, creds, doctors,
+    alertbar, topbar, header, "<main>",
+    hero, stats, triage, conditions, wait, offers, treatments, first_aid, why, creds, doctors,
     reviews, steps, insurance, gallery, faq, contact_m, contact_d, final,
-    "</main>", footer, mbar, script, "</body>\n</html>\n",
+    "</main>", footer, mbar, script, URGENCY_JS, "</body>\n</html>\n",
 ])
 OUT.write_text(page, encoding="utf-8")
 print(f"wrote {OUT.name} ({len(page):,} bytes)")
