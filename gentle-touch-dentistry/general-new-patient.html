@@ -743,6 +743,56 @@ em.acc,.acc{font-family:var(--f-accent);font-style:italic;font-weight:500;letter
   .final p{font-size:16px}
 }
 
+/* ---------------- Desktop "Connect" contact panel ---------------- */
+.loc-d{display:none}
+@media (min-width:1024px){
+  .loc-m{display:none}
+  .loc-d{display:block}
+  .cx{display:grid;grid-template-columns:1.5fr .95fr .75fr;gap:24px;align-items:stretch;background:var(--ink);border-radius:var(--r-lg);padding:48px 44px;color:#c9d7e6;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+  .cx::before{content:"";position:absolute;left:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(91,184,232,.18),transparent 70%);pointer-events:none}
+  .cx-info{position:relative;display:flex;flex-direction:column;justify-content:center}
+  .cx-eyebrow{font-weight:700;font-size:14px;color:var(--sky);margin-bottom:12px}
+  .cx h2{color:#fff;font-size:clamp(32px,3vw,42px);line-height:1.08;margin-bottom:16px}
+  .cx-lead{font-size:16.5px;color:#c9d7e6;max-width:520px;margin-bottom:18px}
+  .cx-rating{display:flex;align-items:center;gap:10px;margin-bottom:24px;font-size:14.5px;color:#c9d7e6}
+  .cx-rating b{font-family:var(--f-display);font-size:20px;color:#fff}
+  .cx-rating .g-chip{width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center}
+  .cx-rating .g-logo{width:18px;height:18px}
+  .cx .cta-row{margin-bottom:30px;flex-wrap:nowrap;gap:12px}
+  .cx .cta-row .btn{min-height:58px;padding:14px 22px;font-size:16px;white-space:nowrap}
+  .cx-facts{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-top:26px;border-top:1px solid rgba(255,255,255,.1)}
+  .cx-label{display:block;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#8fa6bd;margin-bottom:8px;font-weight:600}
+  .cx-facts address{font-style:normal;color:#fff;font-size:16.5px;line-height:1.5}
+  .cx-link{display:inline-block;margin-top:6px;color:var(--sky);font-weight:700;font-size:14.5px}
+  .cx-link:hover{color:#fff}
+  .cx-phone{display:block;color:#fff;font-family:var(--f-display);font-weight:800;font-size:22px;line-height:1.3}
+  .cx-phone:hover{color:var(--sky)}
+  .cx-sub{display:block;margin-top:6px;font-size:14px;color:#8fa6bd}
+  .cx-hours{position:relative;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:26px 18px;backdrop-filter:blur(6px)}
+  .cx-hours h3{display:flex;align-items:center;gap:10px;color:#fff;font-size:21px;margin-bottom:12px}
+  .cx-hours h3 .ico{color:var(--sky);width:20px;height:20px}
+  .cx-status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;padding:6px 12px;border-radius:var(--pill);background:rgba(255,255,255,.08);color:#c9d7e6;margin-bottom:10px}
+  .cx-status i{width:8px;height:8px;border-radius:50%;background:#8fa6bd}
+  .cx-status.is-open{background:rgba(61,220,151,.14);color:#7ff0c0}
+  .cx-status.is-open i{background:#3ddc97}
+  .hours-d{width:100%;border-collapse:collapse;font-size:15px}
+  .hours-d th,.hours-d td{padding:12px 8px;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.1);vertical-align:top}
+  .hours-d tr:last-child th,.hours-d tr:last-child td{border-bottom:0}
+  .hours-d th{text-align:left;font-weight:500;color:#b5c6d8}
+  .hours-d td{text-align:right;color:#fff;font-weight:600}
+  .hours-d td small{display:block;font-weight:500;font-size:12.5px;color:#8fa6bd}
+  .hours-d tr.closed td{color:#8fa6bd;font-weight:500}
+  .hours-d tr.today th,.hours-d tr.today td{color:var(--sky)}
+  .hours-d tr.today{background:rgba(91,184,232,.12)}
+  .hours-d tr.today th{border-radius:10px 0 0 10px}.hours-d tr.today td{border-radius:0 10px 10px 0}
+  .hours-d tr.today th,.hours-d tr.today td{font-weight:700}
+  .cx-map{position:relative;border-radius:var(--r);overflow:hidden;background:var(--mist);min-height:440px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+  .cx-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .cx-open{position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--brand);font-weight:700;font-size:14px;padding:9px 14px;border-radius:10px;box-shadow:var(--sh-sm);transition:transform .3s var(--ease),background .3s}
+  .cx-open:hover{transform:translateY(-2px);background:var(--sky-soft)}
+  .cx-open .ico{width:14px;height:14px}
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none !important;transition:none !important}
   .rv{opacity:1;transform:none}
@@ -1344,7 +1394,7 @@ em.acc,.acc{font-family:var(--f-accent);font-style:italic;font-weight:500;letter
 </section>
 
 <!-- ============ LOCATION / CONTACT ============ -->
-<section class="section" id="contact">
+<section class="section loc-m" id="contact">
   <div class="shell">
     <div class="head rv">
       <span class="eyebrow">Find Us</span>
@@ -1400,6 +1450,64 @@ em.acc,.acc{font-family:var(--f-accent);font-style:italic;font-weight:500;letter
           <div><b>1750 Alma Rd #110</b><small>Richardson, TX 75081</small></div>
           <a class="btn btn-call btn-sm" href="https://maps.app.goo.gl/3b5hkvUb6ybnhUne9" target="_blank" rel="noopener"><svg class="ico"><use href="#i-dir"/></svg>Directions</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT / CONTACT (desktop) ============ -->
+<section class="section loc-d" id="visit">
+  <div class="shell">
+    <div class="cx rv">
+      <div class="cx-info" itemscope itemtype="https://schema.org/Dentist" itemid="https://mygentletouchdentistry.com/#practice">
+        <span class="cx-eyebrow">Have a question?</span>
+        <h2>Connect with <span itemprop="name">Gentle Touch Dentistry Richardson</span>.</h2>
+        <p class="cx-lead">Call us with any question or book your visit online in a few clicks. New patients and same-day emergencies are always welcome at our Richardson dental office.</p>
+        <div class="cx-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+          <span class="g-chip"><svg class="g-logo"><use href="#g"/></svg></span>
+          <b itemprop="ratingValue">5.0</b>
+          <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <span><span itemprop="reviewCount">107</span> Google reviews</span>
+          <meta itemprop="bestRating" content="5">
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-xl btn-shine" href="https://book.allinone.dental/gentle?referrer_id=3" target="_blank" rel="noopener"><svg class="ico"><use href="#i-cal"/></svg>Book Online Now<svg class="ico"><use href="#i-right"/></svg></a>
+          <a class="btn btn-ghost btn-xl btn-pulse" href="tel:+14693363069"><svg class="ico phone-ico"><use href="#i-phone"/></svg>(469) 336-3069</a>
+        </div>
+        <div class="cx-facts">
+          <div>
+            <span class="cx-label">Visit</span>
+            <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">1750 Alma Rd #110</span><br><span itemprop="addressLocality">Richardson</span>, <span itemprop="addressRegion">TX</span> <span itemprop="postalCode">75081</span></address>
+            <a class="cx-link" href="https://maps.app.goo.gl/3b5hkvUb6ybnhUne9" target="_blank" rel="noopener">Get Directions →</a>
+          </div>
+          <div>
+            <span class="cx-label">Call or Text</span>
+            <a class="cx-phone" href="tel:+14693363069" itemprop="telephone" content="+1-469-336-3069">(469) 336-3069</a>
+            <span class="cx-sub">Near Campbell Rd &amp; Prairie Creek Park</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cx-hours">
+        <h3><svg class="ico"><use href="#i-clock"/></svg>Office Hours</h3>
+        <span class="cx-status" data-status><i></i><span data-live-text>Office hours</span></span>
+        <table class="hours-d" aria-label="Office hours">
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>8 am – 5 pm</td></tr>
+            <tr data-day="2" class="closed"><th scope="row">Tuesday</th><td>Closed</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>10 am – 6:30 pm</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>10 am – 4 pm</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>7 am – 4:30 pm</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>10 am – 2 pm<small>(By Appointment Only)</small></td></tr>
+            <tr data-day="0" class="closed"><th scope="row">Sunday</th><td>Closed</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cx-map">
+        <div class="map-fb" aria-hidden="true"><svg><use href="#i-pin"/></svg><b>1750 Alma Rd #110</b><span>Richardson, TX 75081</span></div>
+        <iframe src="https://maps.google.com/maps?q=Gentle+Touch+Dentistry+Richardson,+1750+Alma+Rd+%23110,+Richardson,+TX+75081&z=15&output=embed" title="Map to Gentle Touch Dentistry Richardson" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="cx-open" href="https://maps.app.goo.gl/3b5hkvUb6ybnhUne9" target="_blank" rel="noopener">Open in Maps<svg class="ico"><use href="#i-dir"/></svg></a>
       </div>
     </div>
   </div>
@@ -1617,7 +1725,7 @@ em.acc,.acc{font-family:var(--f-accent);font-style:italic;font-weight:500;letter
     }
     document.querySelectorAll('[data-live-text]').forEach(function(el){ el.textContent = txt; });
     document.querySelectorAll('[data-live],[data-status]').forEach(function(el){ el.classList.toggle('is-open', open); });
-    var row = document.querySelector('.hours tr[data-day="'+day+'"]'); if (row) row.classList.add('today');
+    document.querySelectorAll('tr[data-day="'+day+'"]').forEach(function(r){ r.classList.add('today'); });
   }catch(e){}
 
   var yr = document.querySelector('[data-year]'); if (yr) yr.textContent = new Date().getFullYear();
