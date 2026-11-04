@@ -234,7 +234,8 @@ head = f"""<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://mygentletouchdentistry.com">
-<link rel="preload" as="image" href="{IMG}img-video-thumb-banner.jpg">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1777331903190-341a3dd0441b?auto=format&fit=crop&w=1920&q=80">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 """
 
@@ -316,7 +317,7 @@ header = f"""<header class="header" id="top">
 # -------------------------------------------------------------------- hero
 hero = f"""<!-- ============ HERO ============ -->
 <section class="hero" id="hero">
-  <video muted loop playsinline preload="none" aria-hidden="true" poster="{IMG}img-video-thumb-banner.jpg"
+  <video muted loop playsinline preload="none" aria-hidden="true" poster="https://images.unsplash.com/photo-1777331903190-341a3dd0441b?auto=format&fit=crop&w=1920&q=80"
          data-src-desktop="https://mygentletouchdentistry.com/videos/hero-desktop.mp4"
          data-src-mobile="https://mygentletouchdentistry.com/videos/hero-mobile.mp4"></video>
   <div class="shell">
@@ -572,7 +573,7 @@ offers = f"""<!-- ============ OFFERS ============ -->
 def panel(pid, tid, img, alt, w, h, badge_ico, badge, title, intro, items, cta, on=False):
     lis = "".join(f'<li><span class="ck"><svg><use href="#i-check"/></svg></span><div><b>{b}</b><span>{s}</span></div></li>' for b, s in items)
     return f"""    <div class="panel{' on' if on else ''}" role="tabpanel" id="{pid}" aria-labelledby="{tid}"{'' if on else ' hidden'}>
-      <div class="p-img"><img src="{IMG}{img}" alt="{alt}" loading="lazy" width="{w}" height="{h}"><span class="badge"><svg><use href="#{badge_ico}"/></svg>{badge}</span></div>
+      <div class="p-img"><img src="{img if img.startswith('http') else IMG + img}" alt="{alt}" loading="lazy" width="{w}" height="{h}"><span class="badge"><svg><use href="#{badge_ico}"/></svg>{badge}</span></div>
       <div class="p-body">
         <h3>{title}</h3>
         <p>{intro}</p>
@@ -596,13 +597,13 @@ treatments = f"""<!-- ============ TREATMENTS ============ -->
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-ext" id="t-ext"><svg><use href="#i-kit"/></svg>Emergency Extraction</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="p-ko" id="t-ko"><svg><use href="#i-warning"/></svg>Knocked-Out Tooth</button>
     </div>
-""" + panel("p-pain", "t-pain", "emergency-dentist-richardson.jpg", "Patient with a severe toothache — emergency dentist in Richardson", 650, 475,
+""" + panel("p-pain", "t-pain", "https://images.unsplash.com/photo-1592400400196-bf709e32aa88?auto=format&fit=crop&w=1200&q=80", "Person with a severe toothache — emergency dentist in Richardson", 1200, 800,
             "i-clock", "Same-day when possible", "Severe Toothache &amp; Abscess",
             "Throbbing pain, swelling or a pimple-like bump on the gum usually means infection. Prompt care stops it from spreading and can save the tooth.",
             [("Emergency Exam &amp; X-Rays", "Find the cause fast"), ("Emergency Root Canal", "Remove infection, keep the tooth"),
              ("Abscess Treatment", "Drain &amp; relieve swelling"), ("Gum Infection Care", "Board-certified periodontist")],
             "Call for Pain Relief", on=True) \
-  + panel("p-broke", "t-broke", "dental-equipment.jpg", "Same-day CEREC crown technology at Gentle Touch Dentistry", 867, 648,
+  + panel("p-broke", "t-broke", "https://images.unsplash.com/photo-1777793389944-f7165259a05c?auto=format&fit=crop&w=1200&q=80", "Dentist showing a model of a damaged tooth", 1200, 900,
           "i-bolt", "Same-day CEREC crowns", "Chipped, Cracked or Broken Teeth",
           "A broken tooth can be sharp, sensitive and painful. We repair it quickly — often with a same-day CEREC crown, so you don't wait weeks for a lab.",
           [("Dental Bonding", "Fast repair for chips"), ("Same-Day CEREC Crowns", "Crowns in a single visit"),

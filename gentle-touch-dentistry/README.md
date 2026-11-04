@@ -34,3 +34,21 @@ python3 build_emergency.py
 
 Emergency copy is taken from the practice's own emergency-care page. The page never claims 24/7 care —
 it says same-day appointments "whenever possible" and points life-threatening cases to 911/ER.
+
+## Stock photography
+
+The practice's own photos (doctors, office tour, patient videos, logo) are used wherever possible. The
+generic stock images from the old website were replaced with recent photos from Unsplash, all under the
+free **Unsplash License** (commercial use allowed, no attribution required — Unsplash+ paid photos were
+excluded). They're served from Unsplash's image CDN with `auto=format&w=…&q=80`, so browsers get WebP/AVIF.
+
+| Where | Unsplash photo |
+|---|---|
+| Hero background before the video loads (both pages) | [Dentist talking to patient in a modern dental office](https://unsplash.com/photos/dentist-talking-to-patient-in-a-modern-dental-office-Bg81yWKZlMg) |
+| General · Cleanings tab | [Dentist examining a man's teeth](https://unsplash.com/photos/dentist-examining-teeth-in-dental-office-BiknMFl7iOw) |
+| General · Family tab | [A happy family of three on a couch](https://unsplash.com/photos/a-happy-family-of-three-sitting-on-a-couch-tdkQ_CLYtCc) |
+| General · Cosmetic tab | [Close-up of a smiling mouth](https://unsplash.com/photos/close-up-of-a-womans-smiling-mouth-with-red-lipstick-KzmhiJJ041M) |
+| General · Emergency tab | [Woman holding a cold compress](https://unsplash.com/photos/woman-in-black-tank-top-holding-white-textile-NKTJCOHzrUM) |
+| Both · Insurance card | [Dentist consulting a patient](https://unsplash.com/photos/a-man-smiling-at-another-man-t5o3tjnaFMk) |
+| Emergency · Toothache tab | [Person with tooth pain](https://unsplash.com/photos/woman-in-black-framed-eyeglasses-and-black-long-sleeve-shirt-2QOMia2irCU) |
+| Emergency · Broken teeth tab | [Dentist showing a damaged tooth model](https://unsplash.com/photos/dentist-showing-a-model-of-a-damaged-tooth-SU6EGDd-ySQ) |
