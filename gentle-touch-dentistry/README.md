@@ -53,3 +53,13 @@ excluded). They're served from Unsplash's image CDN with `auto=format&w=…&q=80
 | Emergency · Toothache tab | [Person with tooth pain](https://unsplash.com/photos/woman-in-black-framed-eyeglasses-and-black-long-sleeve-shirt-2QOMia2irCU) |
 | Emergency · Broken teeth tab | [Dentist showing a damaged tooth model](https://unsplash.com/photos/dentist-showing-a-model-of-a-damaged-tooth-SU6EGDd-ySQ) |
 | Emergency · Extraction tab | [Panoramic dental X-ray showing teeth and jawbone](https://unsplash.com/photos/panoramic-dental-x-ray-showing-teeth-and-jawbone-QWgq6Rjw0SE) |
+
+## Tracking & SEO head
+
+- **Google Tag Manager `GTM-K5NBNR7`** is installed on both pages: the head snippet right after the viewport
+  meta (with the `dataLayer`/`gtag()` init supplied by the client) and the `<noscript>` iframe right after
+  `<body>`. The emergency page copies these blocks from the general page at build time.
+- Events pushed to `dataLayer` for GTM triggers: `click_to_call`, `click_book_online`, `click_directions`,
+  `play_testimonial`, and on the emergency page `triage_select` (with an `emergency` field).
+- Robots: `noindex, follow`. Titles are ≤ 60 characters and descriptions ≤ 160, each with Open Graph /
+  Twitter card tags for link previews.

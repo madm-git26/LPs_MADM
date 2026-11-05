@@ -225,9 +225,16 @@ head = f"""<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Emergency Dentist Richardson, TX | Same-Day Emergency Dental Care | Gentle Touch Dentistry</title>
-<meta name="description" content="Need an emergency dentist in Richardson, TX? Same-day emergency dental care whenever possible for toothaches, broken teeth, abscesses &amp; emergency tooth extractions. Insured or not, 5.0 stars from 107 reviews. Call {PHONE}.">
-<meta name="robots" content="noindex, nofollow">
+<title>Emergency Dentist Richardson, TX | Same-Day | Gentle Touch</title>
+<meta name="description" content="Emergency dentist in Richardson, TX. Same-day visits whenever possible for toothaches, broken teeth &amp; extractions. Insured or not — call (469) 336-3069.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gentle Touch Dentistry Richardson">
+<meta property="og:title" content="Emergency Dentist Richardson, TX | Same-Day | Gentle Touch">
+<meta property="og:description" content="Emergency dentist in Richardson, TX. Same-day visits whenever possible for toothaches, broken teeth &amp; extractions. Insured or not — call (469) 336-3069.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1777331903190-341a3dd0441b?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1f4e8c">
 <link rel="icon" href="https://mygentletouchdentistry.com/icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="https://mygentletouchdentistry.com/apple-touch-icon.png">
@@ -239,8 +246,16 @@ head = f"""<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 """
 
+# Google Tag Manager: copied from the general page so both pages always share one container
+GTM_HEAD = between(SRC, "<!-- Google Tag Manager -->", "<!-- End Google Tag Manager -->") + "<!-- End Google Tag Manager -->\n"
+GTM_BODY = between(SRC, "<!-- Google Tag Manager (noscript) -->", "<!-- End Google Tag Manager (noscript) -->") + "<!-- End Google Tag Manager (noscript) -->\n"
+VIEWPORT = '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'
+assert head.count(VIEWPORT) == 1
+head = head.replace(VIEWPORT, VIEWPORT + GTM_HEAD)
+
 # Practice schema is identical to the general page; FAQ schema is emergency-specific.
-practice_schema = SRC[SRC.index('<script type="application/ld+json">'):SRC.index("</script>") + len("</script>")]
+_ps = SRC.index('<script type="application/ld+json">')
+practice_schema = SRC[_ps:SRC.index("</script>", _ps) + len("</script>")]
 practice_schema = sub(practice_schema, '"medicalSpecialty": ["Dentistry", "Periodontics", "CosmeticDentistry"],',
                       '"medicalSpecialty": ["Dentistry", "Periodontics", "CosmeticDentistry"],\n  "availableService": [\n    {"@type": "MedicalProcedure", "name": "Emergency dental care"},\n    {"@type": "MedicalProcedure", "name": "Emergency tooth extraction"},\n    {"@type": "MedicalProcedure", "name": "Emergency root canal therapy"},\n    {"@type": "MedicalProcedure", "name": "Same-day CEREC crowns"}\n  ],')
 
@@ -875,7 +890,7 @@ URGENCY_JS = r"""<script>
 </script>"""
 
 page = "\n\n".join([
-    head + practice_schema + "\n" + faq_schema + "\n\n<style>" + style + "</style>\n</head>\n<body>\n",
+    head + practice_schema + "\n" + faq_schema + "\n\n<style>" + style + "</style>\n</head>\n<body>\n" + GTM_BODY,
     "<!-- Icon sprite -->" + sprite.rstrip(),
     '<div class="progress" aria-hidden="true"></div>',
     alertbar, topbar, header, "<main>",
