@@ -31,8 +31,8 @@ RATING, COUNT = "4.7", "520"       # Google Business Profile, Nov 2026
 LIVE = "https://d9hhrg4mnvzow.cloudfront.net/book.boyntontownsquaredentist.com/clear-aligners"
 TS_SITE = "https://www.boyntonbeachtownsquaredentistry.com/wp-content/themes/naved-dental/assets/media"
 TITLE = "Clear Aligners Boynton Beach, FL | $1500 Off | Town Square"
-DESC = ("Clear aligners in Boynton Beach, FL — limited-time $1500 off: $4499 OrthoFX aligners or $188/month. "
-        "Free consultation, 3D smile scan & X-rays.")
+DESC = ("Clear aligners for teeth in Boynton Beach, FL — $1500 off: $4499 OrthoFX or $188/month. "
+        "Free consultation, 3D smile scan & X-rays with your Invisalign dentist.")
 
 
 def read(name):
@@ -92,6 +92,8 @@ FAQ = [
      "Invisalign® treatment typically lasts between 6 to 11 months. However, the duration varies based on individual treatment plans and goals."),
     ("What are the key differences between Invisalign® and traditional braces?",
      "Unlike traditional braces, Invisalign® is made from SmartTrack technology for enhanced effectiveness, predictability, and better oral hygiene. Additionally it is virtually invisible. Invisalign® is also made from SmartTrack materials providing an enhanced effectiveness of aligners."),
+    ("Are you orthodontists, or braces doctors near me?",
+     "Town Square Dentistry is a general dental practice: our dentists provide clear aligners for teeth, including Invisalign®, for patients in Boynton Beach. If your case is complex and traditional braces would serve you better, we will discuss your options during your free consultation."),
     ("Do I need to wear my Invisalign® trays all day?",
      "It's recommended to wear Invisalign® trays for 24 hours daily to ensure effective teeth alignment and to maintain the progress of your treatment plan."),
 ]
