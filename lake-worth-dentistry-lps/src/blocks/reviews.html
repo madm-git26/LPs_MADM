@@ -1,0 +1,73 @@
+<!-- ============ REVIEWS ============ -->
+<section class="section" id="reviews">
+  <div class="shell">
+    <div class="head rv">
+      <span class="eyebrow">Patient Reviews</span>
+      <h2>{{RATING}} Stars. {{COUNT}} Google Reviews. <em class="acc">Real Smiles.</em></h2>
+      <p>Don't take our word for it — here's what Lake Worth and Greenacres patients say about our dentists, hygienists and front-desk team.</p>
+    </div>
+
+    <div class="rsum rv">
+      <div style="display:flex;align-items:center;gap:18px">
+        <svg class="g-logo" style="width:46px;height:46px"><use href="#g"/></svg>
+        <div class="score"><span data-count="{{RATING}}" data-dec="1">{{RATING}}</span></div>
+        <div>{{STARS}}<div class="meta"><b><span data-count="{{COUNT}}">{{COUNT}}</span> Google reviews</b><br>for {{PRACTICE}}, Greenacres</div></div>
+      </div>
+      <a class="btn btn-outline" href="{{MAPS}}" target="_blank" rel="noopener">{{G}}Read Reviews on Google</a>
+    </div>
+
+    <div class="hl rv" aria-label="What reviewers mention">
+      <span>{{G}}&ldquo;Made me feel comfortable from the moment I walked in.&rdquo;</span>
+      <span>{{G}}&ldquo;Pricing is fair and transparent.&rdquo;</span>
+      <span>{{G}}&ldquo;I was treated like family.&rdquo;</span>
+    </div>
+
+    <div class="carousel rev" data-carousel data-auto="5200">
+      <div class="track">
+        <article class="rcard rv">
+          <span class="q" aria-hidden="true">&ldquo;</span>
+          {{STARS5}}
+          <span class="tagr">Nervous patient</span>
+          <blockquote>I was very nervous about my appointment, but everyone at Lake Worth Dentistry made me feel comfortable from the moment I walked in&hellip; Dr. Macedo was incredibly caring, patient, and reassuring. I do not have dental insurance, and Leyvis was extremely helpful in discussing my financial options. The prices were very reasonable.</blockquote>
+          <div class="who"><span class="av" aria-hidden="true">R</span><div><b>Rosalie Fernandez</b><small><svg><use href="#g"/></svg>Google review</small></div></div>
+        </article>
+        <article class="rcard rv" data-d="1">
+          <span class="q" aria-hidden="true">&ldquo;</span>
+          {{STARS5}}
+          <span class="tagr">Dental anxiety</span>
+          <blockquote>As someone with dentist anxiety, this place put me completely at ease. Gentle dentist, thoughtful hygienist, and even the assistants and front desk were genuinely polite. Pricing is fair and transparent&hellip; This is my dentist for good now.</blockquote>
+          <div class="who"><span class="av" aria-hidden="true">D</span><div><b>Duncan McKinley</b><small><svg><use href="#g"/></svg>Google review</small></div></div>
+        </article>
+        <article class="rcard rv" data-d="2">
+          <span class="q" aria-hidden="true">&ldquo;</span>
+          {{STARS5}}
+          <span class="tagr">Urgent implant visit</span>
+          <blockquote>Bella, the receptionist, Kaya, the hygienist, and Dr. Antezanna were all fantastic. I walked in as a stranger with my upper full implants loose. I was treated like family&hellip; I highly recommend Lake Worth Dentistry for any dental needs or concerns.</blockquote>
+          <div class="who"><span class="av" aria-hidden="true">S</span><div><b>Steven Curtiss</b><small><svg><use href="#g"/></svg>Google review</small></div></div>
+        </article>
+        <article class="rcard rv">
+          <span class="q" aria-hidden="true">&ldquo;</span>
+          {{STARS5}}
+          <span class="tagr">Teeth whitening</span>
+          <blockquote>Amazing team. Dr Chelsea and Angie did a great job with my whitening today. Leyvis and everyone else in the office helped me out to start my treatment and make me feel like family. You need to bring your family here.</blockquote>
+          <div class="who"><span class="av" aria-hidden="true">M</span><div><b>Marie Armand</b><small><svg><use href="#g"/></svg>Google review</small></div></div>
+        </article>
+        <article class="rcard rv" data-d="1">
+          <span class="q" aria-hidden="true">&ldquo;</span>
+          {{STARS5}}
+          <span class="tagr">Smile restoration</span>
+          <blockquote>I had extreme anxiety about dental work, but Dr. Fatmi and his staff are friendly, patient and incredibly gentle. More importantly, they gave me the smile I had been missing for so many years.</blockquote>
+          <div class="who"><span class="av" aria-hidden="true">V</span><div><b>Verified patient</b><small><svg><use href="#i-check"/></svg>Full-mouth restoration</small></div></div>
+        </article>
+      </div>
+      <div class="arrows"><button type="button" data-prev aria-label="Previous review"><svg><use href="#i-left"/></svg></button><button type="button" data-next aria-label="Next review"><svg><use href="#i-right"/></svg></button></div>
+      <div class="dots" aria-hidden="true"></div>
+    </div>
+
+    <div class="sec-cta rv">
+      <div class="cta-row center">
+        {{REV_BTNS}}
+      </div>
+    </div>
+  </div>
+</section>

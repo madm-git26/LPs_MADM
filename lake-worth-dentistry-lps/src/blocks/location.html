@@ -1,0 +1,113 @@
+<!-- ============ LOCATION / CONTACT (mobile + tablet) ============ -->
+<section class="section loc-m" id="contact">
+  <div class="shell">
+    <div class="head rv">
+      <span class="eyebrow">Find Us</span>
+      <h2>{{LOC_H2}}</h2>
+      <p>Right on Lake Worth Road in Greenacres — an easy drive from Lake Worth, Lantana, Atlantis, Wellington, Boynton Beach and West Palm Beach.</p>
+    </div>
+    <div class="loc">
+      <div class="loc-card rv rv-l" itemscope itemtype="https://schema.org/Dentist" itemid="https://www.lakeworth-dentistry.com/#practice">
+        <h2 itemprop="name" style="font-size:clamp(24px,3.4vw,30px)">Lake Worth Dentistry</h2>
+        <div class="rating-line" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+          {{G}}
+          <b style="font-size:20px" itemprop="ratingValue">{{RATING}}</b>
+          {{STARS}}
+          <span style="color:var(--slate);font-size:14.5px"><span itemprop="reviewCount">{{COUNT}}</span> Google reviews</span>
+          <meta itemprop="bestRating" content="5">
+        </div>
+        <span class="status" data-status><i></i><span data-live-text>Office hours</span></span>
+
+        <div class="l-line" style="margin-top:10px"><span class="li"><svg><use href="#i-pin"/></svg></span>
+          <div><b>Address</b>
+            <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">6427 Lake Worth Rd Ste B</span>, <span itemprop="addressLocality">Greenacres</span>, <span itemprop="addressRegion">FL</span> <span itemprop="postalCode">33463</span></address>
+            <a href="{{MAPS}}" target="_blank" rel="noopener">Get Directions →</a>
+          </div>
+        </div>
+        <div class="l-line"><span class="li"><svg><use href="#i-phone"/></svg></span>
+          <div><b>Call Us</b><a href="{{TEL}}" itemprop="telephone" content="+1-561-771-6540" style="font-size:21px">{{PHONE}}</a></div>
+        </div>
+        <div class="l-line" style="border-bottom:0"><span class="li"><svg><use href="#i-users"/></svg></span>
+          <div><b>Areas We Serve</b><div class="areas"><span>Greenacres</span><span>Lake Worth</span><span>Lantana</span><span>Atlantis</span><span>Wellington</span><span>Boynton Beach</span><span>West Palm Beach</span></div></div>
+        </div>
+
+        <table class="hours" aria-label="Office hours">
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>8:00 am – 5:00 pm</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>8:00 am – 5:00 pm</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>8:00 am – 5:00 pm</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>8:00 am – 5:00 pm</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>8:00 am – 5:00 pm</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>8:00 am – 2:00 pm*</td></tr>
+            <tr data-day="0" class="closed"><th scope="row">Sunday</th><td>Closed</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:13px;color:var(--slate);margin-top:-10px">*Saturday appointments fill quickly — please call ahead.</p>
+        <div class="cta-row">{{LOC_BTNS}}</div>
+      </div>
+      <div class="map-wrap rv rv-r">
+        <div class="map-fb" aria-hidden="true"><svg><use href="#i-pin"/></svg><b>6427 Lake Worth Rd Ste B</b><span>Greenacres, FL 33463</span></div>
+        <iframe src="{{MAPEMBED}}" title="Map to Lake Worth Dentistry, 6427 Lake Worth Rd Ste B, Greenacres, FL 33463" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <div class="map-pin">
+          <div><b>6427 Lake Worth Rd Ste B</b><small>Greenacres, FL 33463</small></div>
+          <a class="btn btn-call btn-sm" href="{{MAPS}}" target="_blank" rel="noopener">{{ICO:dir}}Directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT / CONTACT (desktop) ============ -->
+<section class="section loc-d" id="visit">
+  <div class="shell">
+    <div class="cx rv">
+      <div class="cx-info" itemscope itemtype="https://schema.org/Dentist" itemid="https://www.lakeworth-dentistry.com/#practice">
+        <span class="cx-eyebrow">{{CX_EYEBROW}}</span>
+        <h2>Connect with <span itemprop="name">Lake Worth Dentistry</span> <em class="acc">in Greenacres</em>.</h2>
+        <p class="cx-lead">{{CX_LEAD}}</p>
+        <div class="cx-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+          <span class="g-chip">{{G}}</span>
+          <b itemprop="ratingValue">{{RATING}}</b>
+          {{STARS}}
+          <span><span itemprop="reviewCount">{{COUNT}}</span> Google reviews</span>
+          <meta itemprop="bestRating" content="5">
+        </div>
+        <div class="cta-row">{{CX_BTNS}}</div>
+        <div class="cx-facts">
+          <div>
+            <span class="cx-label">Visit</span>
+            <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">6427 Lake Worth Rd Ste B</span><br><span itemprop="addressLocality">Greenacres</span>, <span itemprop="addressRegion">FL</span> <span itemprop="postalCode">33463</span></address>
+            <a class="cx-link" href="{{MAPS}}" target="_blank" rel="noopener">Get Directions →</a>
+          </div>
+          <div>
+            <span class="cx-label">Call Us</span>
+            <a class="cx-phone" href="{{TEL}}" itemprop="telephone" content="+1-561-771-6540">{{PHONE}}</a>
+            <span class="cx-sub">On Lake Worth Rd · Greenacres</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cx-hours">
+        <h3>{{ICO:clock}}Office Hours</h3>
+        <span class="cx-status" data-status><i></i><span data-live-text>Office hours</span></span>
+        <table class="hours-d" aria-label="Office hours">
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>8 am – 5 pm</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>8 am – 5 pm</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>8 am – 5 pm</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>8 am – 5 pm</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>8 am – 5 pm</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>8 am – 2 pm<small>Please call ahead</small></td></tr>
+            <tr data-day="0" class="closed"><th scope="row">Sunday</th><td>Closed</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cx-map">
+        <div class="map-fb" aria-hidden="true"><svg><use href="#i-pin"/></svg><b>6427 Lake Worth Rd Ste B</b><span>Greenacres, FL 33463</span></div>
+        <iframe src="{{MAPEMBED}}" title="Map to Lake Worth Dentistry" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="cx-open" href="{{MAPS}}" target="_blank" rel="noopener">Open in Maps{{ICO:dir}}</a>
+      </div>
+    </div>
+  </div>
+</section>
