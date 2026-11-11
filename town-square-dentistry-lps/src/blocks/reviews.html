@@ -1,0 +1,73 @@
+<!-- ============ REVIEWS ============ -->
+<section class="section" id="reviews">
+  <div class="shell">
+    <div class="head rv">
+      <span class="eyebrow">Patient Reviews</span>
+      <h2>{{RATING}} Stars. {{COUNT}} Google Reviews. <em class="acc">Real Smiles.</em></h2>
+      <p>Don't take our word for it — here's what Boynton Beach patients say about our dentists, hygienists and front-desk team.</p>
+    </div>
+
+    <div class="rsum rv">
+      <div style="display:flex;align-items:center;gap:18px">
+        <svg class="g-logo" style="width:46px;height:46px"><use href="#g"/></svg>
+        <div class="score"><span data-count="{{RATING}}" data-dec="1">{{RATING}}</span></div>
+        <div>{{STARS}}<div class="meta"><b><span data-count="{{COUNT}}">{{COUNT}}</span> Google reviews</b><br>for {{PRACTICE}}, Boynton Beach</div></div>
+      </div>
+      <a class="btn btn-outline" href="{{MAPS}}" target="_blank" rel="noopener">{{G}}Read Reviews on Google</a>
+    </div>
+
+    <div class="hl rv" aria-label="What reviewers mention">
+      <span>{{G}}&ldquo;Very very professional office.&rdquo;</span>
+      <span>{{G}}&ldquo;They even adjusted the schedule so I could have my scaling done that day.&rdquo;</span>
+      <span>{{G}}&ldquo;Everything runs efficiently.&rdquo;</span>
+    </div>
+
+    <div class="carousel rev" data-carousel data-auto="5200">
+      <div class="track">
+        <article class="rcard rv">
+          <span class="q" aria-hidden="true">&ldquo;</span>
+          {{STARS5}}
+          <span class="tagr">Same-day infection care</span>
+          <blockquote>I had an infection that needed attention, and they even adjusted the schedule so I could have my scaling done that day, which I really appreciated. A special shout-out to Eduardo, who did my X-rays and scaling. He was incredibly gentle, kind, patient, and made a not so fun procedure much easier.</blockquote>
+          <div class="who"><span class="av" aria-hidden="true">T</span><div><b>Tanya Guez-Nisenson</b><small><svg><use href="#g"/></svg>Google review</small></div></div>
+        </article>
+        <article class="rcard rv" data-d="1">
+          <span class="q" aria-hidden="true">&ldquo;</span>
+          {{STARS5}}
+          <span class="tagr">Wisdom teeth removal</span>
+          <blockquote>I recently had my wisdom teeth removed by Dr. Indictor, and I had a really great experience. I was pretty nervous going into the procedure, but Dr. Indictor and his assistant, Jessica, were so patient and reassuring that they helped me feel calm the entire time&hellip; The procedure went smoothly.</blockquote>
+          <div class="who"><span class="av" aria-hidden="true">R</span><div><b>Roya Gandjei</b><small><svg><use href="#g"/></svg>Google review</small></div></div>
+        </article>
+        <article class="rcard rv" data-d="2">
+          <span class="q" aria-hidden="true">&ldquo;</span>
+          {{STARS5}}
+          <span class="tagr">Teeth cleaning</span>
+          <blockquote>Very very professional office, everybody is so sweet, they enjoy their job you can tell. I have my teeth cleaned and it was the best&hellip; I ever had in my whole life. This is the best dental I have had in my whole life. Trust me when I tell you this.</blockquote>
+          <div class="who"><span class="av" aria-hidden="true">K</span><div><b>Kimberly Chavez</b><small><svg><use href="#g"/></svg>Google review</small></div></div>
+        </article>
+        <article class="rcard rv">
+          <span class="q" aria-hidden="true">&ldquo;</span>
+          {{STARS5}}
+          <span class="tagr">Regular patient</span>
+          <blockquote>Dr. Finer and her team are personable and do great work! I like the smaller office and everything runs efficiently. There has been consistent availability around my work schedule.</blockquote>
+          <div class="who"><span class="av" aria-hidden="true">R</span><div><b>R.</b><small><svg><use href="#g"/></svg>Google review · Local Guide</small></div></div>
+        </article>
+        <article class="rcard rv" data-d="1">
+          <span class="q" aria-hidden="true">&ldquo;</span>
+          {{STARS5}}
+          <span class="tagr">Smile restoration</span>
+          <blockquote>I had extreme anxiety about dental work, but Dr. Fatmi and his staff are friendly, patient and incredibly gentle. More importantly, they gave me the smile I had been missing for so many years.</blockquote>
+          <div class="who"><span class="av" aria-hidden="true">V</span><div><b>Verified patient</b><small><svg><use href="#i-check"/></svg>Full-mouth restoration</small></div></div>
+        </article>
+      </div>
+      <div class="arrows"><button type="button" data-prev aria-label="Previous review"><svg><use href="#i-left"/></svg></button><button type="button" data-next aria-label="Next review"><svg><use href="#i-right"/></svg></button></div>
+      <div class="dots" aria-hidden="true"></div>
+    </div>
+
+    <div class="sec-cta rv">
+      <div class="cta-row center">
+        {{REV_BTNS}}
+      </div>
+    </div>
+  </div>
+</section>

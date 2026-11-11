@@ -1,0 +1,52 @@
+<!-- ============ INSURANCE & PAYMENT ============ -->
+<section class="section ivory" id="insurance">
+  <div class="shell">
+    <div class="head rv">
+      <span class="eyebrow">Insurance &amp; Payment</span>
+      <h2>Most PPO Plans Accepted — <em class="acc">We File for You</em></h2>
+      <p>{{INS_LEAD}}</p>
+    </div>
+    <div class="ins-wrap">
+      <div class="ins-check rv rv-l" data-tilt>
+        <h3>Check Your Insurance in Seconds</h3>
+        <p>Tap your dental plan — then call and our team will verify your benefits before your visit.</p>
+        <div class="carriers" role="group" aria-label="Choose your dental insurance">
+          <button type="button" class="carrier" aria-pressed="false" data-name="Delta Dental">Delta Dental</button>
+          <button type="button" class="carrier" aria-pressed="false" data-name="Aetna">Aetna</button>
+          <button type="button" class="carrier" aria-pressed="false" data-name="Cigna">Cigna</button>
+          <button type="button" class="carrier" aria-pressed="false" data-name="MetLife">MetLife</button>
+          <button type="button" class="carrier" aria-pressed="false" data-name="Guardian">Guardian</button>
+          <button type="button" class="carrier" aria-pressed="false" data-name="United Healthcare">United Healthcare</button>
+          <button type="button" class="carrier" aria-pressed="false" data-name="another PPO plan">Other PPO</button>
+          <button type="button" class="carrier" aria-pressed="false" data-name="none">No Insurance</button>
+        </div>
+        <div class="ins-out" aria-live="polite">
+          <div data-ins-out><p>We accept a wide range of <b>PPO dental plans</b>. Pick yours above, or simply call <b>{{PHONE}}</b> and we&rsquo;ll check your coverage while you&rsquo;re on the phone.</p></div>
+          <div class="cta-row">
+            <a class="btn btn-call btn-pulse" href="{{TEL}}">{{PHI}}Verify My Insurance</a>
+            <a class="btn btn-primary" {{BOOK}}>{{ICO:cal}}Book Online</a>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--mute);margin:14px 0 0">Plan acceptance and coverage vary — we confirm your specific plan and benefits before treatment.</p>
+      </div>
+
+      <div class="rv rv-r">
+        <div class="pay">
+          <div class="pay-card"><span class="pi"><svg><use href="#i-shield"/></svg></span><div><h4>We File Every Claim</h4><p>Our office files with all dental insurances on your behalf and helps you maximize your benefits.</p></div></div>
+          <div class="pay-card"><span class="pi"><svg><use href="#i-card"/></svg></span><div><h4>CareCredit&reg; Financing</h4><p>Third-party financing through CareCredit spreads treatment into easy monthly payments.</p></div></div>
+          <div class="pay-card"><span class="pi"><svg><use href="#i-check"/></svg></span><div><h4>All Major Cards</h4><p>Visa, MasterCard, Discover and American Express, plus check, cash and dental financing.</p></div></div>
+          <div class="pay-card"><span class="pi"><svg><use href="#i-tooth"/></svg></span><div><h4>No Insurance?</h4><p>{{INS_NOINS}}</p></div></div>
+        </div>
+        <div class="pay-card" style="margin-top:14px;display:block">
+          <h4 style="margin-bottom:10px">How PPO dental coverage typically works</h4>
+          <div class="cov">
+            <div><b>~100%</b><span>Cleanings, exams &amp; X-rays</span></div>
+            <div><b>~80%</b><span>Fillings &amp; basic care</span></div>
+            <div><b>~50%</b><span>Crowns, implants &amp; major work</span></div>
+          </div>
+          <p style="font-size:13px;color:var(--mute);margin:10px 0 0">Typical PPO structure shown for illustration — your plan's exact coverage is confirmed when we verify your benefits.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
