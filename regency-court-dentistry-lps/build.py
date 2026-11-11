@@ -19,6 +19,7 @@ icon; {{INCLUDE:name}} pulls in src/blocks/name.html. Re-run after editing:
 
     python3 build.py
 """
+import html as htmllib
 import json
 import os
 import re
@@ -87,11 +88,13 @@ REVIEWS = [
 # ---------------------------------------------------------------- page definitions
 PAGES = {
     "general": {
-        "out": "regency-court-new-patient-dentist-boca-raton.html",
+        # Recommended WordPress slug: /dentist-boca-raton/
+        "out": "dentist-boca-raton.html",
         "lp": "regency-general-new-patient",
-        "title": "Dentist in Boca Raton, FL | New Patients | Regency Court",
-        "desc": ("4.6★ dentist in Boca Raton, FL with 688 Google reviews. New patient exam & X-rays $69, "
-                 "teeth cleaning, Saturday hours & most PPO plans. Book online today!"),
+        # SEO: title <= 60 chars, description <= 160 chars, keyword + location first, no phone number
+        "title": "Dentist in Boca Raton, FL – New Patients | Regency Court",
+        "desc": ("Looking for a dentist in Boca Raton, FL? Regency Court Dentistry welcomes new patients: "
+                 "$69 exam & X-rays, teeth cleaning, Saturday hours & most PPO plans."),
         "og_img": UN + "1777331903190-341a3dd0441b?auto=format&fit=crop&w=1200&q=80",
         "preload": UN + "1777331903190-341a3dd0441b?auto=format&fit=crop&w=1920&q=75",
         "css": ["base.css"],
@@ -126,11 +129,13 @@ PAGES = {
         ],
     },
     "emergency": {
-        "out": "regency-court-emergency-dentist-boca-raton.html",
+        # Recommended WordPress slug: /emergency-dentist-boca-raton/
+        "out": "emergency-dentist-boca-raton.html",
         "lp": "regency-emergency",
+        # SEO: title <= 60 chars, description <= 160 chars, keyword + location first, no phone number
         "title": "Emergency Dentist Boca Raton, FL | Same-Day | Regency Court",
-        "desc": ("Emergency dentist in Boca Raton, FL — same-day urgent dental care, emergency tooth extraction & "
-                 "Saturday hours. FREE emergency exam & X-ray for new patients. Call now!"),
+        "desc": ("Need an emergency dentist in Boca Raton, FL? Same-day urgent dental care, emergency tooth "
+                 "extraction & Saturday hours. Free emergency exam for new patients."),
         "og_img": CF + "/Emergency-Dentist-Boca-Raton-1.jpg",
         "preload": CF + "/Emergency-Dentist-Boca-Raton-1.jpg",
         "css": ["base.css", "emergency.css"],
@@ -254,7 +259,12 @@ def faq_html(page):
 
 def build(key):
     page = PAGES[key]
+    for field, limit in (("title", 60), ("desc", 160)):
+        val = page[field]
+        assert len(val) <= limit, f"{key} {field} is {len(val)} chars (max {limit})"
+        assert not re.search(r"\d{3}\D{0,2}\d{3}\D?\d{4}", val), f"{key} {field} contains a phone number"
     css = "\n".join(read(c) for c in page["css"])
+    page = dict(page, title=htmllib.escape(page["title"]), desc=htmllib.escape(page["desc"]))
     head = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -270,6 +280,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>{page['title']}</title>
 <meta name="description" content="{page['desc']}">
 <meta name="robots" content="noindex, follow">
+<meta name="googlebot" content="noindex, follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{PRACTICE}">
 <meta property="og:title" content="{page['title']}">
@@ -277,6 +288,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:image" content="{page['og_img']}">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{page['title']}">
+<meta name="twitter:description" content="{page['desc']}">
 <meta name="theme-color" content="#1E211C">
 <meta name="format-detection" content="telephone=no">
 <link rel="icon" href="{LOGO}" type="image/png">

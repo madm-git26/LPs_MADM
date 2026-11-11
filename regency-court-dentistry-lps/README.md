@@ -1,9 +1,21 @@
 # Regency Court Dentistry of Boca Raton — Google Ads Landing Pages (Draft 1)
 
-| Page | File | Primary CTA |
+| Page | File | Recommended slug | Primary CTA |
+|---|---|---|---|
+| General / New Patient | `dentist-boca-raton.html` | `/dentist-boca-raton/` | Book Online |
+| Emergency Dentist | `emergency-dentist-boca-raton.html` | `/emergency-dentist-boca-raton/` | Call (red), Book secondary |
+
+## SEO head
+| Page | Meta title (chars) | Meta description (chars) |
 |---|---|---|
-| General / New Patient | `regency-court-new-patient-dentist-boca-raton.html` | Book Online |
-| Emergency Dentist | `regency-court-emergency-dentist-boca-raton.html` | Call (red), Book secondary |
+| General | Dentist in Boca Raton, FL – New Patients \| Regency Court (56) | Looking for a dentist in Boca Raton, FL? Regency Court Dentistry welcomes new patients: $69 exam & X-rays, teeth cleaning, Saturday hours & most PPO plans. (155) |
+| Emergency | Emergency Dentist Boca Raton, FL \| Same-Day \| Regency Court (59) | Need an emergency dentist in Boca Raton, FL? Same-day urgent dental care, emergency tooth extraction & Saturday hours. Free emergency exam for new patients. (156) |
+
+Keyword + location lead every title and description; no phone numbers (the build fails if one is added or a
+title/description goes over 60/160 characters). Open Graph and Twitter tags reuse the same title/description.
+Robots: `<meta name="robots" content="noindex, follow">` + `<meta name="googlebot" content="noindex, follow">`.
+In WordPress, also set the page to **noindex, follow** in Yoast/Rank Math (and exclude it from the XML
+sitemap) so the SEO plugin doesn't print a conflicting robots tag.
 
 Each page is **one self-contained HTML file** (inline CSS + JS, images hot-linked from the practice's
 own website / CloudFront bucket, Google Business Profile and Unsplash). For WordPress: create a page with a
@@ -14,7 +26,6 @@ blank / canvas template and paste the whole file into a Custom HTML block, or up
 - **GBP / directions:** https://maps.app.goo.gl/nfztTLTzJS8vadBk7 · embedded Google Map in the contact section
 - **Google Tag Manager `GTM-N394H9F`** in the `<head>` + `<noscript>` iframe right after `<body>`
 - **No forms, no social links, no footer menu** — copyright-only footer
-- Robots: `noindex, follow` (same as the other LPs in this repo) — remove if you want them indexed
 
 ## Brand
 Brand green `#9AC444` (the logo colour) on charcoal `#1E211C`, **Playfair Display** headings +
