@@ -93,60 +93,47 @@ Phone: **(815) 401-9535** (`tel:+18154019535`) · Request Appointment:
 
 ---
 
-# Invisalign® for Kids & Teens — Bradley landing page (Google Ads)
+# Clear Aligners for Kids, Teens & Adults — Bradley landing page (Google Ads)
 
-`invisalign.html` (+ standalone `Joyful-Smiles-Pediatric-Dentistry-Bradley-Invisalign.html`). Uses
-the same Bradley theme as the page above — `theme.css` plus `assets/css/invisalign.css` for the
-Invisalign-only components — so the colors, Amatic SC + Lato fonts, logo, photos, reviews, phone
-**(815) 401-9535**, GMB link and the Typeform booking link
-**https://www.joyfulsmilespediatricdentistry.com/book-now/** all match the Bradley site.
-Dr. Elnagar's photo (`assets/img/doctor-elnagar.jpg`) is the one on the Bradley site's Meet Our
-Doctors page. Prices are set in Lato Black, not Amatic SC, for legibility.
+`clear-aligners.html` (+ standalone `Joyful-Smiles-Pediatric-Dentistry-Bradley-Clear-Aligners.html`).
+Same Bradley theme as the page above (`theme.css` + `assets/css/clear-aligners.css`), phone
+**(815) 401-9535**, Typeform booking link **https://www.joyfulsmilespediatricdentistry.com/book-now/**.
+Title: "Best Clear Aligners for Kids Bradley, IL"; robots `noindex, follow`.
 
-Insurance wording is Bradley's: all major PPO plans; not HMO, DMO, Medicaid, Public Aid or All Kids.
-Payment: CareCredit, cash, check, Visa, MasterCard, AMEX, Discover.
+**Doctors:** Dr. Yaa McDonald is the main profile. Per the PDF, Bradley's orthodontic lead is now
+**Dr. Ghada Nimeri, DMD, MS** (secondary strip, trust strip, hero, final CTA, footer). Her bio and
+photo (`assets/img/doctor-nimeri.jpg`) come from her page on kidsdds.net — she is **not yet listed on
+the Bradley site's Meet Our Doctors page**. Her NPI record (1740731850) confirms an orthodontics
+specialty. Her bio says she is board-certified (Diplomate, American Board of Orthodontics); as with the
+other doctors, the page leaves that out until confirmed. Dr. Elnagar no longer appears on this page.
 
-**Offer, as briefed:** regular price **$8,000** shown struck through, offer price **$6,500** directly
-below it. The $1,500 difference is presented as four "bonus rewards" (layout modeled on the reference
-image's dark reward cards with gold corner brackets and value pills — design only, no content taken):
+**Pricing, from the client's "Ortho costs and notes" PDF (Nov 2026).** The PDF fee for a child's
+24-month treatment is the price the patient pays. The struck-through "regular price" is that fee plus
+the four bonus rewards, the same structure as before ($6,500 + $1,500 = $8,000):
 
-| Reward | Value |
-|---|---|
-| 01 · Free Retainers | $750 |
-| 02 · Free 3D Scan & Smile Preview | $250 |
-| 03 · Free Consultation | $150 |
-| 04 · Free X-Rays & Records | $350 |
-| **Total** | **$1,500** |
+| | Bradley | Tinley Park |
+|---|---|---|
+| Child 24-month treatment (offer price) | **$5,950** | **$6,550** |
+| Reward 01 · Retainers | $560 | $560 |
+| Reward 02 · 3D Scan & Smile Preview | $180 | $180 |
+| Reward 03 · X-Rays & Records | $515 ($320 + $195) | $580 ($385 + $195) |
+| Reward 04 · Consultation | $130 | $190 |
+| Rewards total ("Save …") | $1,385 | $1,510 |
+| Struck-through regular price | ~~$7,335~~ | ~~$8,060~~ |
 
-Below the cards: "Total Invisalign® Bonus: $1,500 in free rewards — included with every Invisalign®
-booking", then a $8,000 − $1,500 = $6,500 strip. The split is my proposal — change the values in the
-reward cards, the pricing list and the FAQ if the practice wants different numbers (they must still
-add up to $1,500). Each reward was chosen because the practice's own content supports it: the
-orthodontic page offers a complimentary consultation, the Invisalign guide on the blog describes the
-digital 3D scan with a preview of the future smile, and the practice takes digital X-rays.
-
-**Sections:** hero with the price card → trust strip → $1,500 rewards band → why Invisalign for kids
-+ "could it help my child?" checklist → Dr. Mo Elnagar (orthodontist) with Dr. Yaa McDonald →
-pricing & ways to pay → Google reviews → FAQ → location & hours → final CTA → footer with offer
-terms. No countdown (lp.js skips it when there are no countdown elements), no footer links.
-
-**Where the content comes from:** the practice's own "Invisalign First-Time Patient Guide" blog
-post (aligners worn 1–2 weeks each, 20–22 hours a day, 12–18 months typical / as little as six
-months, mild pressure for a day or two, Invisalign Teen's compliance indicators and replacement
-aligners), the orthodontic-treatment page (early treatment, expanders, space maintainers) and
-Dr. Mo Elnagar's bio on the site. His NPI record (1285124792) confirms he's an orthodontics
-specialist at UIC's College of Dentistry address.
-
-### Please confirm with the practice before running ads
-
-- **Invisalign provider status.** Neither site has an Invisalign service page; the blog post and
-  Dr. Elnagar's bio ("clear aligners") are the only references. The page uses the Invisalign® name
-  throughout, so the practice should be an active Invisalign provider (Align's trademark rules).
-- **"Board-certified."** Dr. Elnagar's bio says he is board-certified; the ABO directory couldn't be
-  checked, so the page doesn't say it (same rule as Dr. McDonald's board claim). Add it if confirmed.
-- **Which office/days Dr. Elnagar sees Invisalign patients** — his bio is on both sites.
-- **Offer terms in the footer** ("no cash value", "candidacy determined at consultation", etc.) are
-  standard wording I added; adjust to whatever the practice wants.
+**Other changes from the PDF / client:**
+- Every "Invisalign" became "Clear Aligners" (title, meta, copy, buttons, FAQ, footer). The Align
+  trademark line and the Invisalign Teen–only claims (compliance indicators, replacement aligners)
+  are gone. The PDF said "Clear Correct Aligners"; the client's written instruction said "Clear
+  Aligners", which is what the pages use. ClearCorrect® is a separate brand (Straumann) — switch only
+  if the practice is a ClearCorrect provider and wants the brand name.
+- Files renamed so nothing says Invisalign: `clear-aligners.html`, `assets/css/clear-aligners.css`,
+  and the bundle `…-Clear-Aligners.html`.
+- Added "Clear aligners for kids, teens, and **adults**!" under the hero headline (and in the final
+  CTA list, the benefits grid and the "Could clear aligners help?" card).
+- Added **Sunbit** next to CareCredit (trust strip, ways to pay, FAQ, final CTA).
+- Because the price is for a child's 24-month plan and adults are now invited, the page says teen and
+  adult fees are confirmed at the consultation. Confirm that wording with the practice.
 
 Regenerate the bundle after edits:
-`python3 bundle.py invisalign.html Joyful-Smiles-Pediatric-Dentistry-Bradley-Invisalign.html`
+`python3 bundle.py clear-aligners.html Joyful-Smiles-Pediatric-Dentistry-Bradley-Clear-Aligners.html`

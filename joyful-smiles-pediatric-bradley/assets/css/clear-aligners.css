@@ -1,9 +1,9 @@
 /* ==========================================================================
-   Joyful Smiles Pediatric Dentistry of Bradley — Invisalign® for Kids & Teens
+   Joyful Smiles Pediatric Dentistry of Bradley — Clear Aligners (kids, teens & adults)
    Loaded AFTER theme.css: reuses the Bradley tokens (purple #612B7D, teal,
    gold/orange "Book Now" gradient, pink-magenta call gradient, dark
    teal-to-purple band) and the Amatic SC + Lato type pairing. Only the
-   Invisalign-specific components live here.
+   clear-aligner-page components live here.
    ========================================================================== */
 
 /* Top bar offer line */
@@ -15,10 +15,14 @@
 /* Hero headline: the accent phrase gets its own line */
 .hero h1 .accent { display: block; }
 
+/* Audience line under the headline: "for kids, teens, and adults!" */
+.hero-audience { display: inline-block; margin: 0 0 16px; padding: 8px 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(242,199,76,.55); border-radius: var(--radius-pill); font-size: 19px; font-weight: 900; color: #fff; }
+.hero-audience strong { color: var(--gold); text-transform: uppercase; letter-spacing: .04em; }
+
 /* ---------- Hero price card (strike-through "was" price, offer price below) ---------- */
 .price-card {
   display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
-  max-width: 520px; padding: 16px 22px; margin-bottom: 22px;
+  max-width: 640px; padding: 16px 22px; margin-bottom: 22px;
   background: rgba(255,255,255,.08); border: 1px dashed rgba(242,199,76,.75); border-radius: var(--radius-sm);
 }
 .price-label { display: block; font-size: 12.5px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 2px; }
@@ -70,7 +74,7 @@
 .price-math .op { display: grid; place-items: center; font-size: 26px; font-weight: 900; color: var(--gold); }
 .rewards-cta { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
 
-/* ---------- Why Invisalign for kids ---------- */
+/* ---------- Why clear aligners ---------- */
 .why-wrap { display: grid; grid-template-columns: 1.25fr .75fr; gap: 26px; align-items: stretch; }
 .benefit-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
 .benefit { display: flex; gap: 13px; align-items: flex-start; padding: 18px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); }
