@@ -16,8 +16,8 @@
 .hero h1 .accent { display: block; }
 
 /* Audience line under the headline: "for kids, teens, and adults!" */
-.hero-audience { display: inline-block; margin: 0 0 16px; padding: 8px 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(242,199,76,.55); border-radius: var(--radius-pill); font-size: 19px; font-weight: 900; color: #fff; }
-.hero-audience strong { color: var(--gold); text-transform: uppercase; letter-spacing: .04em; }
+.hero-audience { display: inline-block; margin: 0 0 16px; padding: 8px 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(242,199,76,.55); border-radius: var(--radius-pill); font-size: 19px; font-weight: 400; color: #fff; }
+.hero-audience strong { font-weight: 900; color: var(--gold); }
 
 /* ---------- Hero price card (strike-through "was" price, offer price below) ---------- */
 .price-card {
@@ -25,6 +25,7 @@
   max-width: 640px; padding: 16px 22px; margin-bottom: 22px;
   background: rgba(255,255,255,.08); border: 1px dashed rgba(242,199,76,.75); border-radius: var(--radius-sm);
 }
+.price-card > div:first-child { flex: 1 1 0; min-width: 210px; }
 .price-label { display: block; font-size: 12.5px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 2px; }
 .price-was { display: block; font-size: 24px; font-weight: 700; line-height: 1.1; color: rgba(255,255,255,.62); }
 .price-was s { text-decoration-color: var(--pink); text-decoration-thickness: 3px; }
@@ -93,7 +94,7 @@
 .candidate-card li:nth-child(even)::before { background: var(--gold); }
 .candidate-card .btn { margin-top: auto; }
 
-/* ---------- Doctors (orthodontist first, pediatric dentist second) ---------- */
+/* ---------- Doctors (pediatric dentist Dr. McDonald main profile, orthodontist secondary strip) ---------- */
 .doc-team { display: flex; align-items: center; gap: 16px; margin-top: 18px; padding: 16px 18px; background: var(--mint); border-radius: var(--radius-sm); }
 .doc-team img { width: 74px; height: 74px; flex: none; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: var(--shadow-sm); }
 .doc-team p { margin: 0; font-size: 14.5px; line-height: 1.5; }
