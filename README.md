@@ -174,3 +174,38 @@ button; if the video cannot play, its poster frame stays up with a play button.)
   `Everything-Teeth.mp4` into `assets/video/` and add a second `<source>` in `build.py`.
 - The practice's main website lists **(305) 777-7774**. These landing pages use the tracking number
   **(305) 404-6659** you supplied, everywhere.
+
+---
+
+# Boutique Smiles of Plantation — Teeth Cleaning Landing Page
+
+A second, separate client lives in `boutique-smiles/`. It is **not** connected to the Everything Teeth
+pages or to `build.py`; it is a single self-contained HTML file.
+
+| Page | File | Campaign |
+|---|---|---|
+| Teeth Cleaning & Hygiene (Holistic Dentist) | `boutique-smiles/teeth-cleaning-plantation.html` | Google Ads — teeth cleaning |
+
+**Styling** is lifted from the clinic's own "Holistic Dentist" landing page
+(`boutiquesmilesfl.com/lp/new-patient/`): same palette (`#2e4f3a` green, `#728072` sage, `#f6debf`
+peach, `#efede0` cream, `#272727`), same fonts (**moldern** for headings, served locally from
+`boutique-smiles/assets/fonts/`, and **Outfit** from Google Fonts), same section rhythm, button
+geometry, sage header bars, peach testimonial cards on green, and the cream/green footer with map.
+
+**Content** was gathered from the main website (cleaning & hygiene, deep cleanings, prophylaxis,
+periodontal care, fluoride, sealants, oral cancer screenings, digital x-rays, preventive FAQs, About
+and Home pages). Only cleaning / hygiene services are listed — no cosmetic, implant or ortho content.
+
+**Conversion paths** (same as the reference page):
+- Phone **(954) 869-4458** (`tel:+19548694458`)
+- Online booking **https://book.allinone.dental/boutique-smiles?referrer_id=3**
+
+**Tracking:** Google Tag Manager container `GTM-KQJH792J` is in `<head>` plus the `<noscript>`
+fallback. Every CTA pushes `click_to_call` / `click_book_online` / `click_directions` to `dataLayer`
+with a `cta_location` value, so GTM triggers can be built without touching the page.
+
+**SEO tags:** meta title + description, `<meta name="robots" content="noindex, follow">`, Open Graph,
+and a `Dentist` LocalBusiness JSON-LD block.
+
+Images and the heading font were downloaded from the clinic's own CDN into `boutique-smiles/assets/`
+so the page has no runtime dependency on the WordPress site.
