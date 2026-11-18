@@ -209,3 +209,11 @@ and a `Dentist` LocalBusiness JSON-LD block.
 
 Images and the heading font were downloaded from the clinic's own CDN into `boutique-smiles/assets/`
 so the page has no runtime dependency on the WordPress site.
+
+**Standalone build:** `boutique-smiles/teeth-cleaning-plantation-standalone.html` is a single file with every
+image, icon, the logo and the heading font embedded as data URIs (about 1.4 MB). It works when opened or
+uploaded on its own, with no `assets/` folder. Regenerate it after editing the source page with:
+
+```bash
+python3 boutique-smiles/build_standalone.py
+```
