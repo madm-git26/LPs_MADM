@@ -101,7 +101,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
 *,*:before,*:after{box-sizing:border-box;}
-html{font-size:16px;-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+html{font-size:16px;-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:90px;}
+a,button,summary{-webkit-tap-highlight-color:transparent;}
 body{
   margin:0;
   font-family:"Outfit",sans-serif;
@@ -252,12 +253,15 @@ html,body{overflow-x:clip;}
 .x-bar-space{height:85px;}
 
 /* mobile bar */
-.x-bar.mob-head{position:sticky;top:0;z-index:99999;background-color:var(--c-sage);box-shadow:0 3px 25px 0 rgba(0,0,0,.15);}
+.x-bar.mob-head{position:fixed;top:0;left:0;right:0;z-index:99999;background-color:var(--c-sage);box-shadow:0 3px 25px 0 rgba(0,0,0,.15);}
+.mob-bar-space{display:none;height:58px;}
 .x-bar.mob-head .x-bar-container{padding:5px 15px;border-bottom:1.5px solid var(--c-peach);background-color:var(--c-sage);}
 .x-bar.mob-head .x-image.logo{width:220px;margin-top:3px;}
 .x-bar.mob-head .head-actions{column-gap:16px;}
-.x-bar.mob-head .icon-link{display:inline-flex;width:20px;}
-.x-bar.mob-head .icon-link img{width:100%;}
+.x-bar.mob-head .head-actions{column-gap:4px;}
+.x-bar.mob-head .icon-link{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;transition:background-color .25s ease;}
+.x-bar.mob-head .icon-link:active{background-color:rgba(255,255,255,.18);}
+.x-bar.mob-head .icon-link img{width:20px;height:20px;}
 
 /* ------------------------------------------------------------------
    Hero
@@ -340,6 +344,9 @@ html,body{overflow-x:clip;}
 .testimonial .h-card{margin-top:15px;}
 .testimonial .x-content{margin-top:12px;font-size:1em;line-height:1.5;color:var(--c-green);}
 .testimonial .stars{display:flex;gap:2px;margin-top:30px;}
+.review-dots{display:none;justify-content:center;gap:6px;margin-top:18px;}
+.review-dots button{width:12px;height:12px;border-radius:50%;border:1px solid var(--c-peach);background:transparent;padding:0;cursor:pointer;transition:background-color .25s ease;}
+.review-dots button.is-active{background:var(--c-peach);}
 .testimonial .stars svg{width:18px;height:18px;fill:var(--c-green);}
 
 /* ------------------------------------------------------------------
@@ -452,28 +459,108 @@ html,body{overflow-x:clip;}
 @media (max-width:767.98px){
   .ctmPadding{padding-left:16px!important;padding-right:16px!important;}
   .x-section{padding:40px 0;}
-  .h-hero .x-text-content-text-primary{font-size:2.5rem;}
-  .h-section .x-text-content-text-primary{font-size:2rem;}
-  .x-content.hero-sub,.x-content.hero-loc{font-size:18px;}
-  .eyebrow{font-size:18px;}
-  .x-row.cols-3 > .x-row-inner > .x-col,
-  .x-row.cols-4 > .x-row-inner > .x-col,
-  .gallery .x-col{flex-basis:calc(100% - var(--gap));}
-  .x-image.full.media{width:70%;}
-  .btn-row{justify-content:center;}
-  .x-anchor .x-anchor-content{padding:12px 15px;}
-  .x-colophon .foot-name .x-text-content-text-primary{font-size:2.5em;}
-  .x-colophon .foot-line p{font-size:16px;}
+  .mob-bar-space{display:block;}
+  html{scroll-padding-top:70px;}
+
+  /* type scale */
+  .h-hero .x-text-content-text-primary{font-size:2.3rem;line-height:1.08;}
+  .h-section .x-text-content-text-primary{font-size:2rem;line-height:1.05;}
+  .x-content.hero-sub{font-size:17px;}
+  .x-content.hero-loc{font-size:15px;letter-spacing:.04em;text-transform:uppercase;}
+  .eyebrow{font-size:17px;}
+  .x-content{font-size:15.5px;line-height:1.6;}
+  .x-content.lead{margin-top:12px;}
+
+  /* hero: tighter, rounded card over image */
+  .x-section.hero-mobile .x-image img{aspect-ratio:750/560;object-fit:cover;}
+  .x-section.hero-mobile .hero-text{padding:28px 20px 34px;margin-top:-22px;border-radius:22px 22px 0 0;background-color:var(--c-green);row-gap:8px;}
+
+  /* buttons: full-width stack, comfortable tap height */
+  .btn-row{flex-direction:column;align-items:stretch;width:100%;row-gap:10px;margin-top:18px;}
+  .btn-row .x-anchor{width:100%;min-width:0;}
+  .x-anchor .x-anchor-content{padding:14px 16px;}
+  .x-anchor .x-anchor-text-primary{font-size:.95em;letter-spacing:.08rem;}
+
+  /* two-column rows stack */
+  .x-row.cols-2 > .x-row-inner{--gap:16px;margin:-10px -8px;}
+  .x-row.cols-2 > .x-row-inner > .x-col{margin:10px 8px;}
+  .x-image.full.media{width:100%;}
+  .x-image.rounded img{border-radius:16px;}
+
+  /* services: compact icon-left cards */
+  .x-row.cols-4 > .x-row-inner{--gap:12px;margin:-6px -6px;}
+  .x-row.cols-4 > .x-row-inner > .x-col{margin:6px;flex-basis:100%;}
+  .service-card{flex-direction:row;align-items:flex-start;text-align:left;padding:16px 16px 16px 14px;column-gap:14px;box-shadow:0 6px 18px -10px rgba(0,0,0,.18);border-radius:14px;}
+  .service-card:hover{transform:none;}
+  .service-card .icon{flex:0 0 62px;width:62px;height:62px;margin:2px 0 0;}
+  .service-card .h-card{margin-top:0;}
+  .service-card .h-card .x-text-content-text-primary{font-size:1.1em;line-height:1.3;}
+  .service-card .x-content{margin-top:6px;font-size:14.5px;line-height:1.5;}
+  .service-body{min-width:0;flex:1 1 auto;}
+
+  /* what to expect: vertical timeline */
+  .step{flex-direction:row;align-items:flex-start;text-align:left;column-gap:16px;padding:0;border:0;background:transparent;}
+  .step .num{flex:0 0 44px;width:44px;height:44px;font-size:1.4rem;line-height:44px;}
+  .step .h-card{margin-top:4px;}
+  .step .h-card .x-text-content-text-primary{font-size:1.15em;}
+  .step .x-content{margin-top:4px;font-size:14.5px;}
+  .step-body{position:relative;flex:1 1 auto;min-width:0;padding-bottom:22px;}
+  .x-col:not(:last-child) .step-body:after{content:"";position:absolute;left:-38px;top:48px;bottom:0;border-left:2px dashed var(--c-sage);}
+  #expect .x-row.cols-4 > .x-row-inner > .x-col{margin:0 6px;}
+
+  /* doctors: two-up grid */
+  .x-row.cols-3 > .x-row-inner{--gap:14px;margin:-7px -7px;}
+  .x-row.cols-3 > .x-row-inner > .x-col{margin:7px;flex-basis:calc(50% - 14px);}
+  #doctors .x-row.cols-3{margin-top:24px!important;}
+  .doctor .x-image img{border-radius:14px;}
+  .doctor .h-doctor{padding-top:10px;}
+  .h-doctor .x-text-content-text-primary{font-size:1.05rem;line-height:1.25;}
+  .doctor .role{font-size:.72em;letter-spacing:.04rem;line-height:1.3;}
+
+  /* what makes us great: full-width */
+  #different .x-row.cols-3 > .x-row-inner > .x-col{flex-basis:100%;}
+  #different .h-card{margin-top:4px;}
+
+  /* reviews: swipeable cards */
+  #reviews .x-row.cols-3{margin-top:28px!important;}
+  #reviews .x-row.cols-3 > .x-row-inner{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:-7px 0;padding:14px 16px 10px;scroll-padding:0 16px;}
+  #reviews .x-row.cols-3 > .x-row-inner::-webkit-scrollbar{display:none;}
+  #reviews .x-row.cols-3 > .x-row-inner > .x-col{flex:0 0 84%;margin:0 12px 0 0;scroll-snap-align:start;}
+  #reviews .x-row.cols-3 > .x-row-inner > .x-col:last-child{margin-right:0;}
+  #reviews .x-row.cols-3.ctmPadding{padding-left:0!important;padding-right:0!important;}
+  .testimonial{padding:18px 18px 28px 22px;border-radius:14px;}
+  .testimonial .stars{margin-top:18px;}
+  .review-dots{display:flex;}
+
+  /* faq */
+  .faq{margin-top:20px;}
+  .faq summary{font-size:1em;padding:15px 0;}
+  .faq .answer{font-size:15px;}
+
+  /* gallery: two-up */
+  .gallery .x-row-inner{--gap:10px;margin:-5px;}
+  .gallery .x-col{margin:5px;flex-basis:calc(50% - 10px);}
+  .gallery .x-image img{border-radius:10px;}
+  .gallery .x-col:hover{transform:none;}
+
+  /* footer */
+  .x-colophon .foot-name .x-text-content-text-primary{font-size:2.4em;}
+  .x-colophon .foot-line{margin-top:12px;}
+  .x-colophon .foot-line p{font-size:15.5px;}
+  .x-colophon .foot-line .x-graphic svg{width:1.4rem;height:1.4rem;}
+  .x-colophon .x-frame-inner{padding-bottom:240px;}
+  .x-colophon .x-frame{border-radius:14px;overflow:hidden;}
+  .x-colophon .foot-bottom .x-content{font-size:.85em;}
+
+  /* sticky bottom bar */
   .mobile-cta{display:flex;}
   body{padding-bottom:64px;}
-  .faq summary{font-size:1.05em;}
 }
 @media (max-width:480px){
-  .x-text-headline h1{font-size:2.25rem!important;}
-  .x-text-headline h2{font-size:2.18rem!important;}
-  .x-bar.mob-head .x-bar-container{padding:5px 10px;}
-  .x-bar.mob-head .x-image.logo{width:100%;max-width:200px;}
-  .x-image.full.media{width:80%;}
+  .x-text-headline h1{font-size:2.1rem!important;}
+  .x-text-headline h2{font-size:1.9rem!important;}
+  .x-bar.mob-head .x-bar-container{padding:5px 8px 5px 12px;}
+  .x-bar.mob-head .x-image.logo{width:100%;max-width:190px;}
   .x-row.cols-2 > .x-row-inner > .x-col.text-col{padding-left:0;padding-right:0;}
 }
 </style>
@@ -545,6 +632,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
+  <div class="mob-bar-space x-hide-lg x-hide-xl" aria-hidden="true"></div>
 </header>
 
 <div class="x-main full" role="main">
@@ -675,64 +763,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="x-col fade-animation">
         <div class="service-card">
           <div class="icon"><img src="assets/img/img-cleaning-hygiene.webp" width="648" height="648" alt="" loading="lazy"></div>
+          <div class="service-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Routine Teeth Cleaning (Prophylaxis)</h3></div></div></div>
           <div class="x-text x-content">Professional teeth cleaning removes plaque and tartar buildup, polishes your teeth and helps prevent cavities and gum disease. Recommended twice a year for most patients.</div>
+          </div>
         </div>
       </div>
 
       <div class="x-col fade-animation">
         <div class="service-card">
           <div class="icon"><img src="assets/img/img-preventive-dentistry-Deep-Cleanings.webp" width="650" height="648" alt="" loading="lazy"></div>
+          <div class="service-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Deep Cleaning (Scaling &amp; Root Planing)</h3></div></div></div>
           <div class="x-text x-content">A thorough cleaning that removes plaque and tartar below the gum line and smooths root surfaces, helping eliminate bacteria and promote healing of the gum tissue.</div>
+          </div>
         </div>
       </div>
 
       <div class="x-col fade-animation">
         <div class="service-card">
           <div class="icon"><img src="assets/img/img-preventive-dentistry-Periodontal-Care-1.webp" width="650" height="648" alt="" loading="lazy"></div>
+          <div class="service-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Periodontal (Gum) Care</h3></div></div></div>
           <div class="x-text x-content">We prioritize the health of your gums, from routine cleanings and detailed assessments to advanced care, so your whole health can thrive. Led by our board-certified periodontist.</div>
+          </div>
         </div>
       </div>
 
       <div class="x-col fade-animation">
         <div class="service-card">
           <div class="icon"><img src="assets/img/img-preventive-dentistry-Diagnostic-Prevention.webp" width="650" height="650" alt="" loading="lazy"></div>
+          <div class="service-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Hygiene Exam &amp; Oral Cancer Screening</h3></div></div></div>
           <div class="x-text x-content">Every cleaning visit includes a comprehensive exam and a quick oral cancer screening of your gums, tongue and soft tissues, so small concerns are caught early.</div>
+          </div>
         </div>
       </div>
 
       <div class="x-col fade-animation">
         <div class="service-card">
           <div class="icon"><img src="assets/img/img-cbct.webp" width="648" height="648" alt="" loading="lazy"></div>
+          <div class="service-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Low-Radiation Digital X-Rays</h3></div></div></div>
           <div class="x-text x-content">Safe, quick and comfortable. Digital x-rays use only a fraction of the radiation of traditional film, giving us crisp images to check between and below the teeth.</div>
+          </div>
         </div>
       </div>
 
       <div class="x-col fade-animation">
         <div class="service-card">
           <div class="icon"><img src="assets/img/img-preventive-dentistry-Fluoride-Treatments-1.webp" width="650" height="648" alt="" loading="lazy"></div>
+          <div class="service-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Fluoride Treatments</h3></div></div></div>
           <div class="x-text x-content">A simple, non-invasive varnish or gel applied after your cleaning to keep enamel strong and more resistant to the acids that cause cavities. Always your choice.</div>
+          </div>
         </div>
       </div>
 
       <div class="x-col fade-animation">
         <div class="service-card">
           <div class="icon"><img src="assets/img/img-preventive-dentistry-Dental-Sealants.webp" width="650" height="648" alt="" loading="lazy"></div>
+          <div class="service-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Dental Sealants</h3></div></div></div>
           <div class="x-text x-content">A quick, non-invasive protective barrier for the grooves of the molars where plaque and bacteria flourish. Great for children and adults alike, lasting for years.</div>
+          </div>
         </div>
       </div>
 
       <div class="x-col fade-animation">
         <div class="service-card">
           <div class="icon"><img src="assets/img/smiling-patients-with-plantation-dentist.webp" width="1200" height="900" alt="" loading="lazy"></div>
+          <div class="service-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">At-Home Hygiene Coaching</h3></div></div></div>
           <div class="x-text x-content">Good oral hygiene shouldn’t stop when you leave our office. We’ll show you the brushing, flossing and daily habits that keep your teeth and gums healthy between visits.</div>
+          </div>
         </div>
       </div>
 
@@ -820,29 +924,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="x-col fade-animation">
         <div class="step">
           <div class="num" aria-hidden="true">1</div>
+          <div class="step-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Warm Welcome</h3></div></div></div>
           <div class="x-text x-content">Check in with our friendly front desk, complete any forms you haven’t filled out online, then relax in our comfortable waiting area with a beverage.</div>
+          </div>
         </div>
       </div>
       <div class="x-col fade-animation">
         <div class="step">
           <div class="num" aria-hidden="true">2</div>
+          <div class="step-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Exam &amp; Screening</h3></div></div></div>
           <div class="x-text x-content">Your dentist performs a comprehensive exam with low-radiation digital x-rays, a gum health assessment and an oral cancer screening.</div>
+          </div>
         </div>
       </div>
       <div class="x-col fade-animation">
         <div class="step">
           <div class="num" aria-hidden="true">3</div>
+          <div class="step-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Scale, Polish &amp; Floss</h3></div></div></div>
           <div class="x-text x-content">Your hygienist gently scales away plaque and tartar, polishes your teeth and flosses, leaving your smile smooth, bright and shiny.</div>
+          </div>
         </div>
       </div>
       <div class="x-col fade-animation">
         <div class="step">
           <div class="num" aria-hidden="true">4</div>
+          <div class="step-body">
           <div class="x-text x-text-headline h-card"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Your Hygiene Plan</h3></div></div></div>
           <div class="x-text x-content">We review the findings together, share personalized at-home care tips and schedule your next six-month cleaning before you head out.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1025,6 +1137,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </div>
   </div>
+  <div class="review-dots" aria-hidden="true"></div>
 </section>
 
 <!-- ============================================================ -->
@@ -1188,6 +1301,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     },{rootMargin:'0px 0px -10% 0px',threshold:0.05});
     items.forEach(function(el){ io.observe(el); });
   } else { items.forEach(function(el){ el.classList.add('visible'); }); }
+
+  /* Mobile header spacer matches the fixed bar height */
+  var mobBar=document.querySelector('.x-bar.mob-head'), mobSpace=document.querySelector('.mob-bar-space');
+  function sizeSpacer(){ if(mobBar&&mobSpace){ mobSpace.style.height=mobBar.offsetHeight+'px'; } }
+  sizeSpacer(); window.addEventListener('resize',sizeSpacer); window.addEventListener('load',sizeSpacer);
+
+  /* Review dots (mobile swipe) */
+  var track=document.querySelector('#reviews .x-row.cols-3 > .x-row-inner'), dots=document.querySelector('.review-dots');
+  if(track&&dots){
+    var cards=[].slice.call(track.children);
+    cards.forEach(function(c,i){ var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Review '+(i+1)); if(i===0) b.className='is-active';
+      b.addEventListener('click',function(){ track.scrollTo({left:c.offsetLeft-16,behavior:'smooth'}); }); dots.appendChild(b); });
+    var ticking=false;
+    track.addEventListener('scroll',function(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){
+      var x=track.scrollLeft+track.clientWidth*0.3, idx=0; cards.forEach(function(c,i){ if(c.offsetLeft-16<=x) idx=i; });
+      [].forEach.call(dots.children,function(d,i){ d.classList.toggle('is-active',i===idx); }); ticking=false; }); },{passive:true});
+  }
 
   /* Copyright year */
   var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }
