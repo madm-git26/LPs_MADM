@@ -342,6 +342,41 @@ html,body{overflow-x:clip;}
 .doctor .h-doctor{padding-top:18px;}
 
 /* ------------------------------------------------------------------
+   Horizontal slider (doctors) — scroll-snap track + arrows + bar + dots
+------------------------------------------------------------------ */
+.x-slider{position:relative;margin-top:40px;}
+.x-slider .x-slide-track{
+  display:flex;flex-wrap:nowrap;align-items:flex-start;gap:var(--slide-gap,3rem);
+  overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;padding:6px 2px 10px;cursor:grab;
+}
+.x-slider .x-slide-track::-webkit-scrollbar{display:none;}
+.x-slider .x-slide-track.is-dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto;}
+.x-slider .x-slide{flex:0 0 calc((100% - (var(--slides,3) - 1) * var(--slide-gap,3rem)) / var(--slides,3));scroll-snap-align:start;min-width:0;}
+.x-slider .x-slide-track.is-dragging .x-slide{pointer-events:none;}
+.x-slide-nav{display:flex;align-items:center;gap:18px;margin-top:26px;}
+.x-slide-bar{position:relative;flex:1 1 auto;height:4px;border-radius:99px;background:rgba(46,79,58,.16);overflow:hidden;}
+.x-slide-bar > span{position:absolute;top:0;left:0;height:100%;width:30%;border-radius:99px;background:var(--c-green);transition:transform .25s ease,width .25s ease;will-change:transform;}
+.x-slide-arrows{display:flex;gap:10px;}
+.x-slide-arrow{
+  display:inline-flex;align-items:center;justify-content:center;width:3em;height:3em;border-radius:100em;border:1px solid var(--c-sage);
+  background:var(--c-peach);color:var(--c-green);cursor:pointer;padding:0;transition:background-color .25s ease,color .25s ease,opacity .25s ease;
+}
+.x-slide-arrow svg{width:1em;height:1em;fill:currentColor;}
+.x-slide-arrow:hover{background:var(--c-sage);color:var(--c-white);}
+.x-slide-arrow[disabled]{opacity:.35;cursor:default;background:var(--c-peach);color:var(--c-green);}
+.x-slide-dots{display:flex;justify-content:center;gap:4px;margin-top:18px;}
+.x-slide-dots button{width:12px;height:12px;border-radius:100px;border:0;padding:0;background:rgba(0,0,0,.16);cursor:pointer;transition:background-color .25s ease,transform .25s ease;}
+.x-slide-dots button.is-active{background:var(--c-green);transform:scale(1.15);}
+@media (max-width:1199px){.x-slider{--slide-gap:1.5em;}}
+@media (min-width:768px) and (max-width:990.98px){.x-slider{--slides:2;}}
+@media (max-width:767.98px){
+  .x-slider{--slides:1.25;--slide-gap:14px;margin-top:24px;}
+  .x-slide-nav{margin-top:18px;gap:12px;}
+  .x-slide-arrow{width:2.6em;height:2.6em;}
+}
+
+/* ------------------------------------------------------------------
    Testimonials — green section, peach cards
 ------------------------------------------------------------------ */
 .testimonial{
@@ -526,10 +561,9 @@ html,body{overflow-x:clip;}
   .x-col:not(:last-child) .step-body:after{content:"";position:absolute;left:-38px;top:48px;bottom:0;border-left:2px dashed var(--c-sage);}
   #expect .x-row.cols-4 > .x-row-inner > .x-col{margin:0 6px;}
 
-  /* doctors: two-up grid */
+  /* doctors: slider with a peeking next card */
   .x-row.cols-3 > .x-row-inner{--gap:14px;margin:-7px -7px;}
   .x-row.cols-3 > .x-row-inner > .x-col{margin:7px;flex-basis:calc(50% - 14px);}
-  #doctors .x-row.cols-3{margin-top:24px!important;}
   .doctor .x-image img{border-radius:14px;}
   .doctor .h-doctor{padding-top:10px;}
   .h-doctor .x-text-content-text-primary{font-size:1.05rem;line-height:1.25;}
@@ -1007,57 +1041,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
-  <div class="x-row x-container max width cols-3 ctmPadding" style="margin-top:40px;">
-    <div class="x-row-inner">
-
-      <div class="x-col fade-animation">
+  <div class="x-row x-container max width ctmPadding">
+    <div class="x-slider fade-animation" data-x-slider>
+      <div class="x-slide-track" aria-label="Our doctors and hygiene team" tabindex="0">
+      <div class="x-slide">
         <div class="doctor">
           <span class="x-image"><img src="assets/img/img-dr-coelho.webp" width="1369" height="1674" alt="Dr. Alessandra Coelho, DMD" loading="lazy"></span>
           <div class="x-text x-text-headline h-doctor"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Dr. Alessandra Coelho</h3></div></div></div>
           <div class="role">DMD · Founder &amp; General Dentist</div>
         </div>
       </div>
-
-      <div class="x-col fade-animation">
+      <div class="x-slide">
         <div class="doctor">
           <span class="x-image"><img src="assets/img/dentist-dr-camila-di-giorgio-dp.jpg" width="1000" height="1210" alt="Dr. Camila Di Giorgio, DDS" loading="lazy"></span>
           <div class="x-text x-text-headline h-doctor"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Dr. Camila Di Giorgio</h3></div></div></div>
           <div class="role">DDS · General &amp; Special Care Dentist</div>
         </div>
       </div>
-
-      <div class="x-col fade-animation">
+      <div class="x-slide">
         <div class="doctor">
           <span class="x-image"><img src="assets/img/Goncalves-dr.jpg" width="1000" height="1210" alt="Dr. Goncalves, DDS, Periodontist" loading="lazy"></span>
           <div class="x-text x-text-headline h-doctor"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Dr. Goncalves</h3></div></div></div>
           <div class="role">DDS · Board-Certified Periodontist</div>
         </div>
       </div>
-
-      <div class="x-col fade-animation">
+      <div class="x-slide">
         <div class="doctor">
           <span class="x-image"><img src="assets/img/Chapman-dr.jpg" width="1000" height="1210" alt="Dr. Chapman, DMD" loading="lazy"></span>
           <div class="x-text x-text-headline h-doctor"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Dr. Chapman</h3></div></div></div>
           <div class="role">DMD · Endodontist</div>
         </div>
       </div>
-
-      <div class="x-col fade-animation">
+      <div class="x-slide">
         <div class="doctor">
           <span class="x-image"><img src="assets/img/img-dr-Barnes.webp" width="1944" height="2352" alt="Dr. Barnes" loading="lazy"></span>
           <div class="x-text x-text-headline h-doctor"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Dr. Barnes</h3></div></div></div>
           <div class="role">Dentist</div>
         </div>
       </div>
-
-      <div class="x-col fade-animation">
+      <div class="x-slide">
         <div class="doctor">
           <span class="x-image"><img src="assets/img/plantation-dentist-gabi.webp" width="1252" height="1521" alt="Gabi, Registered Dental Hygienist" loading="lazy"></span>
           <div class="x-text x-text-headline h-doctor"><div class="x-text-content"><div class="x-text-content-text"><h3 class="x-text-content-text-primary">Gabi</h3></div></div></div>
           <div class="role">Dental Hygienist</div>
         </div>
       </div>
-
+      </div>
+      <div class="x-slide-nav">
+        <div class="x-slide-bar" aria-hidden="true"><span></span></div>
+        <div class="x-slide-arrows">
+          <button type="button" class="x-slide-arrow" data-x-slide-prev aria-label="Previous"><svg viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg></button>
+          <button type="button" class="x-slide-arrow" data-x-slide-next aria-label="Next"><svg viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></button>
+        </div>
+      </div>
+      <div class="x-slide-dots" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -1348,6 +1385,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var x=track.scrollLeft+track.clientWidth*0.3, idx=0; cards.forEach(function(c,i){ if(c.offsetLeft-16<=x) idx=i; });
       [].forEach.call(dots.children,function(d,i){ d.classList.toggle('is-active',i===idx); }); ticking=false; }); },{passive:true});
   }
+
+  /* Horizontal sliders (doctors): drag, arrows, progress bar, dots, keyboard */
+  document.querySelectorAll('[data-x-slider]').forEach(function(sl){
+    var track=sl.querySelector('.x-slide-track'), slides=[].slice.call(track.children),
+        bar=sl.querySelector('.x-slide-bar > span'), dots=sl.querySelector('.x-slide-dots'),
+        prev=sl.querySelector('[data-x-slide-prev]'), next=sl.querySelector('[data-x-slide-next]');
+    function maxScroll(){ return Math.max(0, track.scrollWidth - track.clientWidth); }
+    function current(){ var x=track.scrollLeft+8, idx=0; slides.forEach(function(c,i){ if(c.offsetLeft - track.offsetLeft <= x) idx=i; }); return idx; }
+    function goTo(i){ i=Math.max(0,Math.min(slides.length-1,i)); track.scrollTo({left:slides[i].offsetLeft - track.offsetLeft, behavior:'smooth'}); }
+    function update(){
+      var m=maxScroll(), ratio=m?track.scrollLeft/m:0, visible=track.clientWidth/track.scrollWidth;
+      if(bar){ var w=Math.max(visible*100,8); bar.style.width=w+'%'; bar.style.transform='translateX('+(ratio*(100-w)/w*100)+'%)'; }
+      var idx=current();
+      if(dots) [].forEach.call(dots.children,function(d,i){ d.classList.toggle('is-active',i===idx); });
+      if(prev) prev.disabled = track.scrollLeft<=2;
+      if(next) next.disabled = track.scrollLeft>=m-2;
+    }
+    if(dots) slides.forEach(function(c,i){ var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Slide '+(i+1)); b.addEventListener('click',function(){ goTo(i); }); dots.appendChild(b); });
+    if(prev) prev.addEventListener('click',function(){ goTo(current()-1); });
+    if(next) next.addEventListener('click',function(){ goTo(current()+1); });
+    track.addEventListener('keydown',function(e){ if(e.key==='ArrowRight'){ goTo(current()+1); e.preventDefault(); } if(e.key==='ArrowLeft'){ goTo(current()-1); e.preventDefault(); } });
+    /* mouse drag */
+    var down=false,startX=0,startL=0,moved=false;
+    track.addEventListener('mousedown',function(e){ down=true; moved=false; startX=e.pageX; startL=track.scrollLeft; });
+    window.addEventListener('mousemove',function(e){ if(!down) return; var dx=e.pageX-startX; if(Math.abs(dx)>4){ moved=true; track.classList.add('is-dragging'); track.scrollLeft=startL-dx; } });
+    window.addEventListener('mouseup',function(){ if(!down) return; down=false; if(moved){ track.classList.remove('is-dragging'); goTo(current()); } });
+    track.addEventListener('click',function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); } },true);
+    var t=false; track.addEventListener('scroll',function(){ if(t) return; t=true; requestAnimationFrame(function(){ update(); t=false; }); },{passive:true});
+    window.addEventListener('resize',update); window.addEventListener('load',update); update();
+  });
 
   /* Copyright year */
   var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }
